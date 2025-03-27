@@ -31,7 +31,12 @@ public class ClienteFTP {
     }
 
     public void crearArchivo(String nombre) throws IOException {
-        controlOut.writeUTF("CREATE " + nombre);
+        controlOut.writeUTF("CREATE_FILE " + nombre);
+        System.out.println(controlIn.readUTF());
+    }
+    
+    public void crearDirectorio(String nombre) throws IOException {
+        controlOut.writeUTF("CREATE_DIR " + nombre);
         System.out.println(controlIn.readUTF());
     }
 
@@ -47,6 +52,7 @@ public class ClienteFTP {
 
     public void subirArchivo(File archivo) throws IOException {
         controlOut.writeUTF("UPLOAD " + archivo.getName());
+        controlOut.writeLong(archivo.length());
         FileInputStream fis = new FileInputStream(archivo);
         byte[] buffer = new byte[4096];
         int bytesRead;
@@ -56,9 +62,40 @@ public class ClienteFTP {
         fis.close();
         System.out.println(controlIn.readUTF());
     }
-
-    public void copiarArchivo(String origen, String destino) throws IOException {
-        controlOut.writeUTF("COPY " + origen + " " + destino);
+    
+    public void subirArchivoComo(File archivoLocal, String nombreRemoto) throws IOException {
+        controlOut.writeUTF("UPLOAD " + nombreRemoto);
+        controlOut.writeLong(archivoLocal.length());
+        try (FileInputStream fis = new FileInputStream(archivoLocal)) {
+            byte[] buffer = new byte[4096];
+            int bytesRead;
+            while ((bytesRead = fis.read(buffer)) != -1) {
+                dataOut.write(buffer, 0, bytesRead);
+            }
+        }
         System.out.println(controlIn.readUTF());
     }
+
+    public void descargarArchivo(String nombreRemoto, File archivoDestino) throws IOException {
+        controlOut.writeUTF("DOWNLOAD " + nombreRemoto);
+        long tamaño = controlIn.readLong();
+        try (FileOutputStream fos = new FileOutputStream(archivoDestino)) {
+            byte[] buffer = new byte[4096];
+            long bytesRestantes = tamaño;
+            while (bytesRestantes > 0) {
+                int bytesLeidos = dataIn.read(buffer, 0, (int)Math.min(buffer.length, bytesRestantes));
+                fos.write(buffer, 0, bytesLeidos);
+                bytesRestantes -= bytesLeidos;
+            }
+        }
+        System.out.println("Archivo descargado: " + nombreRemoto);
+    }
+
+
+//    public void copiarArchivo(String origen, String destino) throws IOException {
+//        controlOut.writeUTF("COPY " + origen + " " + destino);
+//        System.out.println(controlIn.readUTF());
+//    }
+    
+    
 }

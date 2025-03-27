@@ -13,6 +13,7 @@ public class MainFrame extends javax.swing.JFrame {
     private JButton btnChooseLocal;
     private JButton btnChooseRemote;
     private JButton btnCreate;
+    private JButton btnCreate2;
     private JButton btnDelete;
     private JButton btnRename;
     private JButton btnUpload;
@@ -67,7 +68,8 @@ public class MainFrame extends javax.swing.JFrame {
         JPanel bottomPanel = new JPanel(new FlowLayout());
         cmbOperateIn = new JComboBox<>(new String[]{"Local", "Remoto"});
         txtOperationPath = new JTextField(20);
-        btnCreate = new JButton("Crear");
+        btnCreate = new JButton("Crear Directorio");
+        btnCreate2 = new JButton("Crear Archivo");
         btnDelete = new JButton("Borrar");
         btnRename = new JButton("Renombrar");
         btnUpload = new JButton("Subir");
@@ -76,6 +78,7 @@ public class MainFrame extends javax.swing.JFrame {
         bottomPanel.add(cmbOperateIn);
         bottomPanel.add(txtOperationPath);
         bottomPanel.add(btnCreate);
+        bottomPanel.add(btnCreate2);
         bottomPanel.add(btnDelete);
         bottomPanel.add(btnRename);
         bottomPanel.add(btnUpload);
@@ -125,6 +128,33 @@ public class MainFrame extends javax.swing.JFrame {
                     actualizarListaLocal();
                 } else {
                     try {
+                        clienteFTP.crearDirectorio(nombre);
+                        actualizarListaRemota();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        });
+        
+        btnCreate2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String nombre = txtOperationPath.getText();
+                if (cmbOperateIn.getSelectedItem().equals("Local")) {
+                    try {
+                        File nuevoArchivo = new File(carpetaLocal, nombre);
+                        if (nuevoArchivo.createNewFile()) {
+                            System.out.println("Archivo local creado.");
+                        } else {
+                            System.out.println("No se pudo crear el archivo (ya existe o error).");
+                        }
+                        actualizarListaLocal();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                } else {
+                    try {
                         clienteFTP.crearArchivo(nombre);
                         actualizarListaRemota();
                     } catch (IOException ex) {
@@ -133,7 +163,7 @@ public class MainFrame extends javax.swing.JFrame {
                 }
             }
         });
-
+        
         btnDelete.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -176,33 +206,99 @@ public class MainFrame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setMultiSelectionEnabled(true);
                 int returnValue = fileChooser.showOpenDialog(null);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
-                    File archivo = fileChooser.getSelectedFile();
-                    try {
-                        clienteFTP.subirArchivo(archivo);
-                        actualizarListaRemota();
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
+                    File[] archivos = fileChooser.getSelectedFiles();
+                    //File archivo = fileChooser.getSelectedFile();
+                    new Thread(() -> {
+                        for (File archivo : archivos){
+                            try{
+                                clienteFTP.subirArchivo(archivo);
+                            } catch (IOException ex){
+                                ex.printStackTrace();
+                                SwingUtilities.invokeLater(() ->
+                                    JOptionPane.showMessageDialog(null, "Error al subir " + archivo.getName() + ": " + ex.getMessage())
+                                );
+                            }
+                            
+                        }
+                        SwingUtilities.invokeLater(() -> actualizarListaRemota());
+//                        try {
+//                            clienteFTP.subirArchivo(archivo);
+//                            SwingUtilities.invokeLater(() -> {actualizarListaRemota();});
+//                        } catch (IOException ex) {
+//                            ex.printStackTrace();
+//                            SwingUtilities.invokeLater(() -> 
+//                                JOptionPane.showMessageDialog(null, "Error al subir archivo: " + ex.getMessage())
+//                            );
+//                        }
+                    }).start();
                 }
             }
         });
-
+        
         btnCopy.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String[] partes = txtOperationPath.getText().split(" ");
                 if (partes.length == 2) {
-                    try {
-                        clienteFTP.copiarArchivo(partes[0], partes[1]);
-                        actualizarListaRemota();
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
+                    String origen = partes[0];
+                    String destino = partes[1];
+
+                    if (cmbOperateIn.getSelectedItem().equals("Local")) {
+                        // Copiar de local a remoto
+                        File archivoOrigen = new File(carpetaLocal, origen);
+                        if (archivoOrigen.exists()) {
+                            new Thread(() -> {
+                                try {
+                                    clienteFTP.subirArchivoComo(archivoOrigen, destino);
+                                    SwingUtilities.invokeLater(() -> actualizarListaRemota());
+                                } catch (IOException ex) {
+                                    ex.printStackTrace();
+                                    SwingUtilities.invokeLater(() ->
+                                        JOptionPane.showMessageDialog(null, "Error al copiar archivo a remoto: " + ex.getMessage())
+                                    );
+                                }
+                            }).start();
+                        }
+                    } else {
+                        // Copiar de remoto a local
+                        new Thread(() -> {
+                            try {
+                                File archivoDestino = new File(carpetaLocal, destino);
+                                clienteFTP.descargarArchivo(origen, archivoDestino);
+                                SwingUtilities.invokeLater(() -> actualizarListaLocal());
+                            } catch (IOException ex) {
+                                ex.printStackTrace();
+                                SwingUtilities.invokeLater(() ->
+                                    JOptionPane.showMessageDialog(null, "Error al copiar archivo a local: " + ex.getMessage())
+                                );
+                            }
+                        }).start();
                     }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Formato incorrecto. Usa: nombreOrigen nombreDestino");
                 }
             }
         });
+
+
+
+//        btnCopy.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                String[] partes = txtOperationPath.getText().split(" ");
+//                if (partes.length == 2) {
+//                    try {
+//                        clienteFTP.copiarArchivo(partes[0], partes[1]);
+//                        actualizarListaRemota();
+//                    } catch (IOException ex) {
+//                        ex.printStackTrace();
+//                    }
+//                }
+//            }
+//        });
 
         pack();
     }

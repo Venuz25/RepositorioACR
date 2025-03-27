@@ -57,8 +57,11 @@ class ManejadorCliente implements Runnable {
                 } else if (comando.equals("LIST")) {
                     String[] archivos = carpetaRemota.list();
                     dataOut.writeUTF(String.join(",", archivos));
-                } else if (comando.startsWith("CREATE")) {
+                } else if (comando.startsWith("CREATE_DIR")) {
                     new File(carpetaRemota, comando.split(" ")[1]).mkdir();
+                    controlOut.writeUTF("OK");
+                } else if (comando.startsWith("CREATE_FILE")){
+                    new File(carpetaRemota, comando.split(" ")[1]).createNewFile();
                     controlOut.writeUTF("OK");
                 } else if (comando.startsWith("DELETE")) {
                     new File(carpetaRemota, comando.split(" ")[1]).delete();
@@ -69,21 +72,46 @@ class ManejadorCliente implements Runnable {
                     controlOut.writeUTF("OK");
                 } else if (comando.startsWith("UPLOAD")) {
                     String nombreArchivo = comando.split(" ")[1];
+                    long tamaño = controlIn.readLong();
                     FileOutputStream fos = new FileOutputStream(new File(carpetaRemota, nombreArchivo));
                     byte[] buffer = new byte[4096];
-                    int bytesRead;
-                    while ((bytesRead = dataIn.read(buffer)) != -1) {
-                        fos.write(buffer, 0, bytesRead);
+                    long bytesRestantes = tamaño;
+                    //int bytesRead;
+                    while (bytesRestantes > 0){
+                        int bytesLeidos = dataIn.read(buffer,0, (int)Math.min(buffer.length, bytesRestantes));
+                        fos.write(buffer,0, bytesLeidos);
+                        bytesRestantes -= bytesLeidos;
                     }
+                    //while ((bytesRead = dataIn.read(buffer)) != -1) {
+                        //fos.write(buffer, 0, bytesRead);
+                    //}
                     fos.close();
-                    controlOut.writeUTF("OK");
+                    controlOut.writeUTF("Archivo subido: " + nombreArchivo);
                 } else if (comando.startsWith("COPY")) {
                     String[] partes = comando.split(" ");
                     File origen = new File(carpetaRemota, partes[1]);
                     File destino = new File(carpetaRemota, partes[2]);
                     Files.copy(origen.toPath(), destino.toPath());
                     controlOut.writeUTF("OK");
+                } else if (comando.startsWith("DOWNLOAD")) {
+                    String nombreArchivo = comando.split(" ")[1];
+                    File archivo = new File(carpetaRemota, nombreArchivo);
+
+                    if (archivo.exists()) {
+                        controlOut.writeLong(archivo.length());
+
+                        try (FileInputStream fis = new FileInputStream(archivo)) {
+                            byte[] buffer = new byte[4096];
+                            int bytesRead;
+                            while ((bytesRead = fis.read(buffer)) != -1) {
+                                dataOut.write(buffer, 0, bytesRead);
+                            }
+                        }
+                    } else {
+                        controlOut.writeLong(0); // El archivo no existe
+                    }
                 }
+
             }
         } catch (IOException e) {
             e.printStackTrace();
