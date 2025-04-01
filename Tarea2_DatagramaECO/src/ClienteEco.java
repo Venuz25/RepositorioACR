@@ -14,7 +14,6 @@ public class ClienteEco {
             
             System.out.println("Ingrese el mensaje a enviar:");
             String mensaje = scanner.nextLine();
-            System.out.println("\n\n");
             
             byte[] datos = mensaje.getBytes();
             int totalPaquetes = (int) Math.ceil((double) datos.length / MAX_BYTES);
