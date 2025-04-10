@@ -9,7 +9,7 @@ public class ServidorEco {
 
     public static void main(String[] args) {
         Map<Integer, String> fragmentos = new TreeMap<>();
-        int totalEsperado = -1; // Inicializamos en -1 para esperar el primer paquete
+        int totalEsperado = -1; // -1 para esperar el primer paquete
 
         try (DatagramSocket socket = new DatagramSocket(PUERTO)) {
             System.out.println("Servidor ECO iniciado en el puerto " + PUERTO + "\n");
