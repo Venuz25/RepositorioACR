@@ -11,6 +11,7 @@ public class Servidor {
     private static final int SERVER_PORT = 9876;
     private static final int PACKET_SIZE = 1024;
     private static final int END_OF_TRANSMISSION = -99;
+    private static final String SAVE_DIR = "C:\\Users\\areli\\OneDrive\\Documentos\\Escuela\\Aplicaciones para Comunicaciones en Red\\RepositorioACR\\Practica2_ControlFlujo\\Archivos Recibidos\\";
 
     public static void main(String[] args) throws IOException {
         DatagramSocket socket = new DatagramSocket(SERVER_PORT);
@@ -66,7 +67,7 @@ public class Servidor {
         }
 
         // Reconstruir archivo
-        try (FileOutputStream fos = new FileOutputStream(fileName)) {
+        try (FileOutputStream fos = new FileOutputStream(SAVE_DIR + fileName)) {
             for (int i = 0; i < fileChunks.size(); i++) {
                 fos.write(fileChunks.get(i));
             }

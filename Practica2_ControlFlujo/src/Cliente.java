@@ -15,31 +15,19 @@ public class Cliente {
     private static final int END_OF_TRANSMISSION = -99;
 
     public static void main(String[] args) throws IOException {
-        JFrame frame = new JFrame("Cliente UDP - Envío de Archivo");
-        JButton selectButton = new JButton("Seleccionar Archivo");
         JTextArea logArea = new JTextArea(10, 40);
-        JScrollPane scrollPane = new JScrollPane(logArea);
-
-        frame.setLayout(new BorderLayout());
-        frame.add(selectButton, BorderLayout.NORTH);
-        frame.add(scrollPane, BorderLayout.CENTER);
-        frame.pack();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-
-        selectButton.addActionListener((ActionEvent e) -> {
-            JFileChooser fileChooser = new JFileChooser();
-            if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-                File file = fileChooser.getSelectedFile();
-                new Thread(() -> {
-                    try {
-                        sendFile(file, logArea);
-                    } catch (Exception ex) {
-                        ex.printStackTrace();
-                    }
-                }).start();
-            }
-        });
+        JFileChooser fileChooser = new JFileChooser();
+        
+        if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+            new Thread(() -> {
+                try {
+                    sendFile(file, logArea);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }).start();
+        }
     }
 
     private static void sendFile(File file, JTextArea logArea) throws IOException {
@@ -53,7 +41,7 @@ public class Cliente {
         byte[] nameBytes = file.getName().getBytes();
         DatagramPacket namePacket = new DatagramPacket(nameBytes, nameBytes.length, IPAddress, SERVER_PORT);
         socket.send(namePacket);
-        logArea.append("Nombre de archivo enviado: " + file.getName() + "\n");
+        System.out.println("Nombre de archivo enviado: " + file.getName());
 
         int totalPackets = (int) Math.ceil((double) fileData.length / PACKET_SIZE);
         int base = 0, nextSeqNum = 0;
@@ -70,7 +58,7 @@ public class Cliente {
                 System.arraycopy(fileData, start, packetData, 4, end - start);
                 DatagramPacket sendPacket = new DatagramPacket(packetData, packetData.length, IPAddress, SERVER_PORT);
                 socket.send(sendPacket);
-                logArea.append("Enviado paquete #" + nextSeqNum + "\n");
+                System.out.println("Enviado paquete #" + nextSeqNum);
                 nextSeqNum++;
             }
 
@@ -81,11 +69,11 @@ public class Cliente {
                 int ackNum = bytesToInt(ackPacket.getData());
                 if (ackNum >= 0 && ackNum < totalPackets) {
                     acked[ackNum] = true;
-                    logArea.append("Recibido ACK #" + ackNum + "\n");
+                    System.out.println("Recibido ACK #" + ackNum);
                     while (base < totalPackets && acked[base]) base++;
                 }
             } catch (SocketTimeoutException e) {
-                logArea.append("Timeout. Reenviando desde paquete #" + base + "\n");
+                System.out.println("Timeout. Reenviando desde paquete #" + base);
                 nextSeqNum = base;
             }
         }
@@ -94,7 +82,7 @@ public class Cliente {
         byte[] endBytes = intToBytes(END_OF_TRANSMISSION);
         DatagramPacket endPacket = new DatagramPacket(endBytes, endBytes.length, IPAddress, SERVER_PORT);
         socket.send(endPacket);
-        logArea.append("Fin de transmisión enviado.\n");
+       System.out.println("Fin de transmisión enviado.\n");
 
         socket.close();
     }
