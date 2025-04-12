@@ -6,18 +6,21 @@ import java.net.*;
 import java.util.Arrays;
 
 public class Cliente {
-    
+
+    // Configuración de red
     private static int pto = 4444;
     private static String host = "127.0.0.1";
-    
+
+    // Rutas actuales de carpetas local y remota
     private static String carpetaLocal = "";
     private static String carpetaRemota = "";
     private static String rutaActualLocal = "";
     private static String rutaActualRemota = "";
-    
+
     public static String sep = System.getProperty("file.separator");
 
-    // Selecciona carpeta local
+    // ---------- Selección de carpetas ----------
+
     public static void seleccionarCarpetaLocal() {
         JFileChooser chooser = new JFileChooser();
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -29,7 +32,6 @@ public class Cliente {
         }
     }
 
-    // Selecciona carpeta remota
     public static void seleccionarCarpetaRemota() {
         JFileChooser chooser = new JFileChooser();
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -41,10 +43,11 @@ public class Cliente {
         }
     }
 
+    // Envía la ruta seleccionada al servidor para operar en esa carpeta remota
     private static void enviarRutaRemota(String ruta) {
         try (Socket cl = new Socket(host, pto)) {
             DataOutputStream dos = new DataOutputStream(cl.getOutputStream());
-            dos.writeInt(10); // Código 10: Selección de carpeta remota
+            dos.writeInt(10);
             dos.writeUTF(ruta);
             dos.flush();
         } catch (Exception e) {
@@ -53,7 +56,8 @@ public class Cliente {
         actualizarVistaRemota();
     }
 
-    // Actualiza ambas vistas
+    // ---------- Vistas ----------
+
     public static void actualizarVistas() {
         actualizarVistaLocal();
         actualizarVistaRemota();
@@ -69,7 +73,7 @@ public class Cliente {
             Arrays.sort(archivos);
             for (File archivo : archivos) {
                 if (archivo.isDirectory())
-                    DropBox.modeloLocal.addElement("↳ " + archivo.getName());
+                    DropBox.modeloLocal.addElement("\u21b3 " + archivo.getName());
                 else
                     DropBox.modeloLocal.addElement(archivo.getName());
             }
@@ -79,7 +83,7 @@ public class Cliente {
     public static void actualizarVistaRemota() {
         try (Socket cl = new Socket(host, pto)) {
             DataOutputStream dos = new DataOutputStream(cl.getOutputStream());
-            dos.writeInt(1); // Código 1: actualizar lista remota
+            dos.writeInt(1);
             dos.flush();
 
             DataInputStream dis = new DataInputStream(cl.getInputStream());
@@ -90,7 +94,7 @@ public class Cliente {
                 String nombre = dis.readUTF();
                 boolean esCarpeta = dis.readBoolean();
                 if (esCarpeta) {
-                    DropBox.modeloRemoto.addElement("↳ " + nombre);
+                    DropBox.modeloRemoto.addElement("\u21b3 " + nombre);
                 } else {
                     DropBox.modeloRemoto.addElement(nombre);
                 }
@@ -99,11 +103,13 @@ public class Cliente {
             e.printStackTrace();
         }
     }
-    
-    public static void entrarSubcarpeta(String nombre, boolean remoto) {
-        if (!nombre.startsWith("↳ ")) return; // No es carpeta
 
-        nombre = nombre.replace("↳ ", ""); // Limpiar para ruta
+    // ---------- Navegación entre carpetas ----------
+
+    public static void entrarSubcarpeta(String nombre, boolean remoto) {
+        if (!nombre.startsWith("\u21b3 ")) return;
+
+        nombre = nombre.replace("\u21b3 ", "");
 
         if (remoto) {
             rutaActualRemota += sep + nombre;
@@ -113,7 +119,7 @@ public class Cliente {
             actualizarVistaLocal();
         }
     }
-    
+
     public static void subirNivel(boolean remoto) {
         if (remoto) {
             if (rutaActualRemota.equals(carpetaRemota)) return;
@@ -126,6 +132,7 @@ public class Cliente {
         }
     }
 
+    // ---------- Transferencias ----------
 
     private static void enviarArchivo(File f) {
         if (f.isDirectory()) {
@@ -138,7 +145,7 @@ public class Cliente {
         try (Socket cl = new Socket(host, pto)) {
             DataOutputStream dos = new DataOutputStream(cl.getOutputStream());
             FileInputStream fis = new FileInputStream(f);
-            String rutaRelativa = f.getAbsolutePath().replace(carpetaLocal + sep, ""); // Mantener estructura
+            String rutaRelativa = f.getAbsolutePath().replace(carpetaLocal + sep, "");
 
             dos.writeInt(0); // Código 0: subir archivo
             dos.writeUTF(rutaRelativa);
@@ -162,11 +169,9 @@ public class Cliente {
             e.printStackTrace();
         }
     }
-       
-    //Transferir Archivos
+
     public static void transferirArchivos(boolean enRemoto) {
         if (enRemoto) {
-            // Modo REMOTO → copiar desde LOCAL hacia REMOTO
             int[] indices = DropBox.listaLocal.getSelectedIndices();
             if (indices.length == 0) {
                 JOptionPane.showMessageDialog(null, "Seleccione archivos locales para transferir.");
@@ -175,14 +180,13 @@ public class Cliente {
 
             for (int i : indices) {
                 String nombre = DropBox.modeloLocal.getElementAt(i);
-                File f = new File(rutaActualLocal + sep + nombre.replace("↳ ", ""));
-                enviarArchivo(f); // Ya soporta carpetas recursivas
+                File f = new File(rutaActualLocal + sep + nombre.replace("\u21b3 ", ""));
+                enviarArchivo(f);
             }
 
             actualizarVistaRemota();
 
         } else {
-            // Modo LOCAL → copiar desde REMOTO hacia LOCAL
             int[] indices = DropBox.listaRemota.getSelectedIndices();
             if (indices.length == 0) {
                 JOptionPane.showMessageDialog(null, "Seleccione archivos remotos para transferir.");
@@ -195,15 +199,14 @@ public class Cliente {
 
                 for (int i : indices) {
                     String nombreOriginal = DropBox.modeloRemoto.getElementAt(i);
-                    boolean esCarpeta = nombreOriginal.startsWith("↳");
-                    String nombre = nombreOriginal.replace("↳ ", "");
+                    boolean esCarpeta = nombreOriginal.startsWith("\u21b3");
+                    String nombre = nombreOriginal.replace("\u21b3 ", "");
 
                     if (esCarpeta) {
-                        // Solicita carpeta completa recursiva
-                        dos.writeInt(11); // Código para carpeta completa
+                        dos.writeInt(11);
                         dos.writeUTF(nombre);
 
-                        int cantidad = dis.readInt(); // Archivos a recibir
+                        int cantidad = dis.readInt();
                         for (int j = 0; j < cantidad; j++) {
                             String rutaRel = dis.readUTF();
                             long tam = dis.readLong();
@@ -229,7 +232,6 @@ public class Cliente {
                         }
 
                     } else {
-                        // Transferencia de archivo normal
                         dos.writeInt(2);
                         dos.writeInt(1);
                         dos.writeUTF(nombre);
@@ -264,6 +266,7 @@ public class Cliente {
         }
     }
 
+    // Métodos para eliminar archivos o carpetas
     public static void eliminarSeleccionado(boolean remoto) {
         if (remoto) {
             eliminarRemoto();
@@ -279,12 +282,17 @@ public class Cliente {
             return;
         }
 
+        int confirm = JOptionPane.showConfirmDialog(null,
+                "¿Estás seguro de que deseas eliminar los elementos seleccionados?",
+                "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
+        if (confirm != JOptionPane.YES_OPTION) return;
+
         try (Socket cl = new Socket(host, pto)) {
             DataOutputStream dos = new DataOutputStream(cl.getOutputStream());
-            dos.writeInt(5); // Código 5: eliminar remoto
+            dos.writeInt(5);
             dos.writeInt(indices.length);
             for (int i : indices) {
-                String nombre = DropBox.modeloRemoto.getElementAt(i).replace("↳ ", ""); // 🔁 Quitar símbolo
+                String nombre = DropBox.modeloRemoto.getElementAt(i).replace("\u21b3 ", "");
                 dos.writeUTF(nombre);
             }
         } catch (Exception e) {
@@ -301,9 +309,14 @@ public class Cliente {
             return;
         }
 
+        int confirm = JOptionPane.showConfirmDialog(null,
+                "¿Estás seguro de que deseas eliminar los elementos seleccionados?",
+                "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
+        if (confirm != JOptionPane.YES_OPTION) return;
+
         for (int i : indices) {
-            String nombre = DropBox.modeloLocal.getElementAt(i).replace("↳ ", "");
-            File f = new File(rutaActualLocal + sep + nombre); // Usa ruta actual
+            String nombre = DropBox.modeloLocal.getElementAt(i).replace("\u21b3 ", "");
+            File f = new File(rutaActualLocal + sep + nombre);
             eliminarRecursivo(f);
         }
 
@@ -319,18 +332,17 @@ public class Cliente {
                 }
             }
         }
-        boolean ok = f.delete();
-        if (!ok) {
-            System.out.println("No se pudo eliminar: " + f.getAbsolutePath());
-        }
+        f.delete();
     }
+
+    // ---------- Operaciones básicas (crear, renombrar) ----------
 
     public static void crearArchivo(boolean remoto) {
         String nombre = JOptionPane.showInputDialog("Nombre del archivo:");
         if (nombre == null || nombre.isEmpty()) return;
 
         if (remoto) {
-            enviarOperacionTexto(6, nombre); // 6 = crear archivo remoto
+            enviarOperacionTexto(6, nombre);
             actualizarVistaRemota();
         } else {
             try {
@@ -348,7 +360,7 @@ public class Cliente {
         if (nombre == null || nombre.isEmpty()) return;
 
         if (remoto) {
-            enviarOperacionTexto(7, nombre); // 7 = crear carpeta remota
+            enviarOperacionTexto(7, nombre);
             actualizarVistaRemota();
         } else {
             File dir = new File(carpetaLocal + sep + nombre);
@@ -365,7 +377,7 @@ public class Cliente {
             int i = DropBox.listaRemota.getSelectedIndex();
             if (i == -1) return;
             String actual = DropBox.modeloRemoto.getElementAt(i);
-            enviarRenombrar(8, actual, nuevo); // 8 = renombrar remoto
+            enviarRenombrar(8, actual, nuevo);
             actualizarVistaRemota();
         } else {
             int i = DropBox.listaLocal.getSelectedIndex();
@@ -378,6 +390,7 @@ public class Cliente {
         }
     }
 
+    // Envío de operaciones simples al servidor
     private static void enviarOperacionTexto(int bandera, String nombre) {
         try (Socket cl = new Socket(host, pto)) {
             DataOutputStream dos = new DataOutputStream(cl.getOutputStream());

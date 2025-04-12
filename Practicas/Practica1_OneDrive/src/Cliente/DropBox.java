@@ -7,14 +7,22 @@ import Servidor.Servidor;
 
 public class DropBox extends JFrame implements ActionListener {
 
+    // Botones principales para acciones del usuario
     JButton btnTransferir, btnEliminar;
     JButton btnSeleccionarLocal, btnSeleccionarRemota, btnSubirLocal, btnSubirRemota;
     JButton btnCrearArchivo, btnCrearCarpeta, btnRenombrar;
+
+    // Selector de modo de operación (Remoto o Local)
     JComboBox<String> comboOperacion;
+
+    // Listas y modelos para mostrar archivos locales y remotos
     static JList<String> listaLocal, listaRemota;
     static DefaultListModel<String> modeloLocal, modeloRemoto;
+
+    // Barra de progreso para mostrar avance de operaciones
     static JProgressBar barraProgreso;
-    
+
+    // Hilo que mantiene al servidor en ejecución
     private Thread hiloServidor;
 
     public DropBox() {
@@ -22,8 +30,10 @@ public class DropBox extends JFrame implements ActionListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(900, 550);
         setLocationRelativeTo(null);
-        
+
         iniciarServidor();
+
+        // Cierra también el servidor cuando se cierra la ventana
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 detenerServidor();
@@ -35,50 +45,46 @@ public class DropBox extends JFrame implements ActionListener {
 
         modeloLocal = new DefaultListModel<>();
         modeloRemoto = new DefaultListModel<>();
-
         listaLocal = new JList<>(modeloLocal);
         listaRemota = new JList<>(modeloRemoto);
 
         JScrollPane scrollLocal = new JScrollPane(listaLocal);
         JScrollPane scrollRemoto = new JScrollPane(listaRemota);
-
         scrollLocal.setBorder(BorderFactory.createTitledBorder("Carpeta Local"));
         scrollRemoto.setBorder(BorderFactory.createTitledBorder("Carpeta Remota"));
 
-        // Panel izquierdo: Local
+        // Panel izquierdo: contiene archivos locales y botones de navegación
         JPanel panelIzquierdo = new JPanel(new BorderLayout());
         btnSeleccionarLocal = new JButton("Seleccionar Carpeta Local");
         btnSubirLocal = new JButton("⬆ Subir");
-
         JPanel topLeft = new JPanel(new GridLayout(1, 2));
         topLeft.add(btnSeleccionarLocal);
         topLeft.add(btnSubirLocal);
-
         panelIzquierdo.add(topLeft, BorderLayout.NORTH);
         panelIzquierdo.add(scrollLocal, BorderLayout.CENTER);
 
-        // Panel derecho: Remoto
+        // Panel derecho: contiene archivos remotos y botones de navegación
         JPanel panelDerecho = new JPanel(new BorderLayout());
         btnSeleccionarRemota = new JButton("Seleccionar Carpeta Remota");
         btnSubirRemota = new JButton("⬆ Subir");
-
         JPanel topRight = new JPanel(new GridLayout(1, 2));
         topRight.add(btnSeleccionarRemota);
         topRight.add(btnSubirRemota);
-
         panelDerecho.add(topRight, BorderLayout.NORTH);
         panelDerecho.add(scrollRemoto, BorderLayout.CENTER);
 
+        // Panel que une las dos listas de archivos
         JPanel panelCarpetas = new JPanel(new GridLayout(1, 2));
         panelCarpetas.add(panelIzquierdo);
         panelCarpetas.add(panelDerecho);
-
         c.add(panelCarpetas, BorderLayout.CENTER);
 
+        // Barra de progreso en la parte superior de la ventana
         barraProgreso = new JProgressBar(0, 100);
         barraProgreso.setStringPainted(true);
         c.add(barraProgreso, BorderLayout.NORTH);
 
+        // Panel inferior con botones de acción
         JPanel panelBotones = new JPanel(new GridLayout(2, 4, 5, 5));
         comboOperacion = new JComboBox<>(new String[]{"Remoto", "Local"});
         btnTransferir = new JButton("Transferir");
@@ -87,16 +93,15 @@ public class DropBox extends JFrame implements ActionListener {
         btnCrearCarpeta = new JButton("Crear Carpeta");
         btnRenombrar = new JButton("Renombrar");
 
-        panelBotones.add(comboOperacion);        // Primero
-        panelBotones.add(btnTransferir);         // Segundo
+        panelBotones.add(comboOperacion);
+        panelBotones.add(btnTransferir);
         panelBotones.add(btnEliminar);
         panelBotones.add(btnCrearArchivo);
         panelBotones.add(btnCrearCarpeta);
         panelBotones.add(btnRenombrar);
-
         c.add(panelBotones, BorderLayout.SOUTH);
 
-        // Listeners
+        // Asocia acciones a cada botón
         btnSeleccionarLocal.addActionListener(this);
         btnSeleccionarRemota.addActionListener(this);
         btnTransferir.addActionListener(this);
@@ -107,7 +112,7 @@ public class DropBox extends JFrame implements ActionListener {
         btnSubirLocal.addActionListener(this);
         btnSubirRemota.addActionListener(this);
 
-        // Doble clic para explorar subcarpetas
+        // Permite navegar dentro de subcarpetas con doble clic (local)
         listaLocal.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 2) {
@@ -118,6 +123,7 @@ public class DropBox extends JFrame implements ActionListener {
             }
         });
 
+        // Permite navegar dentro de subcarpetas con doble clic (remoto)
         listaRemota.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 2) {
@@ -128,11 +134,12 @@ public class DropBox extends JFrame implements ActionListener {
             }
         });
     }
-    
+
+    // Inicia el servidor en un hilo separado
     private void iniciarServidor() {
         hiloServidor = new Thread(() -> {
             try {
-                Servidor.main(new String[]{}); // Iniciar servidor
+                Servidor.main(new String[]{}); // Ejecuta método main del servidor
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -140,16 +147,17 @@ public class DropBox extends JFrame implements ActionListener {
         hiloServidor.start();
     }
 
+    // Finaliza la aplicación (incluye al servidor)
     private void detenerServidor() {
         try {
-            // Tratar de cerrar el servidor (en este diseño, podrías implementar un método `Servidor.detener()` si fuera un servidor persistente)
             System.out.println("Servidor finalizado.");
-            System.exit(0); // Por simplicidad en esta versión
+            System.exit(0);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    // Maneja los eventos de todos los botones
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         boolean enRemoto = comboOperacion.getSelectedItem().equals("Remoto");
@@ -176,6 +184,6 @@ public class DropBox extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new DropBox().setVisible(true);
+        new DropBox().setVisible(true); // Muestra la ventana principal
     }
 }
