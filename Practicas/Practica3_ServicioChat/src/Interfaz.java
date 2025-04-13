@@ -81,7 +81,7 @@ public class Interfaz extends JFrame {
                     miCliente.enviar(new Mensaje(nombre + ": " + texto, nombre, "", 1, sala));
                 } else {
                     // Mensaje privado
-                    miCliente.enviar(new Mensaje("[" + nombre + "]: " + texto, nombre, destino, 4, sala));
+                    miCliente.enviar(new Mensaje("[Privado] " + nombre + ": " + texto, nombre, destino, 4, sala));
                 }
                 areaMensaje.setText(""); // Limpia el área de texto
             }

@@ -76,11 +76,18 @@ public class Cliente {
                             break;
                         case 4: // Mensaje privado
                             if (msj.getUsuarioDestino().equals(nombre)) {
-                                mostrar("[Privado]: " + msj.getMensaje());
+                                mostrar(msj.getMensaje());
                             }
                             break;
                         case 5: // Mensaje de salida
                             mostrar(msj.getMensaje());
+                            
+                            // Elimina el usuario de la lista de usuarios conectados
+                            SwingUtilities.invokeLater(new Runnable() {
+                                public void run() {
+                                    usuarioConectado.removeItem(msj.getUsuarioOrigen());
+                                }
+                            });
                             break;
                     }
 
