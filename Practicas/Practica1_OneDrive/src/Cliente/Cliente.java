@@ -376,7 +376,7 @@ public class Cliente {
         if (remoto) {
             int i = DropBox.listaRemota.getSelectedIndex();
             if (i == -1) return;
-            String actual = DropBox.modeloRemoto.getElementAt(i);
+            String actual = DropBox.modeloRemoto.getElementAt(i).replace("\u21b3 ", "");
             enviarRenombrar(8, actual, nuevo);
             actualizarVistaRemota();
         } else {
