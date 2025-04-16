@@ -65,8 +65,13 @@ public class Cliente {
                 System.arraycopy(fileData, start, packetData, 4, end - start);
 
                 DatagramPacket sendPacket = new DatagramPacket(packetData, packetData.length, IPAddress, SERVER_PORT);
-                socket.send(sendPacket);
-                System.out.println("Enviado paquete #" + nextSeqNum);
+                if (!simularPerdidaDePaquete()) {
+                    socket.send(sendPacket);
+                    System.out.println("Enviado paquete #" + nextSeqNum);
+                } else {
+                    System.out.println("Simulación: paquete #" + nextSeqNum + " perdido");
+                }
+
                 nextSeqNum++;
             }
 
@@ -99,6 +104,11 @@ public class Cliente {
         System.out.println("Fin de transmisión enviado.\n");
 
         socket.close(); // Cierra el socket
+    }
+    
+    // Simula si un paquete debe perderse
+    private static boolean simularPerdidaDePaquete() {
+        return Math.random() < 0; 
     }
 
     // Convierte un entero a un arreglo de 4 bytes (big endian)

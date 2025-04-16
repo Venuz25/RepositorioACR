@@ -162,6 +162,8 @@ public class DropBox extends JFrame implements ActionListener {
         Object src = e.getSource();
         boolean enRemoto = comboOperacion.getSelectedItem().equals("Remoto");
 
+        DropBox.barraProgreso.setValue(0);
+
         if (src == btnSeleccionarLocal) {
             Cliente.seleccionarCarpetaLocal();
         } else if (src == btnSeleccionarRemota) {

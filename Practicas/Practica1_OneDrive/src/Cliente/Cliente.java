@@ -164,6 +164,7 @@ public class Cliente {
 
             fis.close();
             System.out.println("Archivo enviado: " + rutaRelativa);
+            DropBox.barraProgreso.setValue(0);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -294,6 +295,9 @@ public class Cliente {
             for (int i : indices) {
                 String nombre = DropBox.modeloRemoto.getElementAt(i).replace("\u21b3 ", "");
                 dos.writeUTF(nombre);
+                
+                int porcentaje = (int) (((i + 1) * 100.0) / indices.length);
+                DropBox.barraProgreso.setValue(porcentaje);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -317,6 +321,9 @@ public class Cliente {
         for (int i : indices) {
             String nombre = DropBox.modeloLocal.getElementAt(i).replace("\u21b3 ", "");
             File f = new File(rutaActualLocal + sep + nombre);
+            
+            int porcentaje = (int) (((i + 1) * 100.0) / indices.length);
+            DropBox.barraProgreso.setValue(porcentaje);
             eliminarRecursivo(f);
         }
 
@@ -343,11 +350,13 @@ public class Cliente {
 
         if (remoto) {
             enviarOperacionTexto(6, nombre);
+            DropBox.barraProgreso.setValue(100);
             actualizarVistaRemota();
         } else {
             try {
                 File f = new File(carpetaLocal + sep + nombre);
                 f.createNewFile();
+                DropBox.barraProgreso.setValue(100);
                 actualizarVistaLocal();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -361,10 +370,12 @@ public class Cliente {
 
         if (remoto) {
             enviarOperacionTexto(7, nombre);
+            DropBox.barraProgreso.setValue(100);
             actualizarVistaRemota();
         } else {
             File dir = new File(carpetaLocal + sep + nombre);
             dir.mkdirs();
+            DropBox.barraProgreso.setValue(100);
             actualizarVistaLocal();
         }
     }
@@ -378,14 +389,16 @@ public class Cliente {
             if (i == -1) return;
             String actual = DropBox.modeloRemoto.getElementAt(i).replace("\u21b3 ", "");
             enviarRenombrar(8, actual, nuevo);
+            DropBox.barraProgreso.setValue(100);
             actualizarVistaRemota();
         } else {
             int i = DropBox.listaLocal.getSelectedIndex();
             if (i == -1) return;
-            String actual = DropBox.modeloLocal.getElementAt(i);
+            String actual = DropBox.modeloLocal.getElementAt(i).replace("\u21b3 ", "");
             File oldFile = new File(carpetaLocal + sep + actual);
             File newFile = new File(carpetaLocal + sep + nuevo);
             oldFile.renameTo(newFile);
+            DropBox.barraProgreso.setValue(100);
             actualizarVistaLocal();
         }
     }
