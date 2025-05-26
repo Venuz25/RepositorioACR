@@ -108,7 +108,7 @@ public class Cliente {
     
     // Simula si un paquete debe perderse
     private static boolean simularPerdidaDePaquete() {
-        return Math.random() < 0; 
+        return Math.random() < 0.5; 
     }
 
     // Convierte un entero a un arreglo de 4 bytes (big endian)

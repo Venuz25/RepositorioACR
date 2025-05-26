@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Error 404 - Recurso no encontrado</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff914d;
+            --secondary-color: #ffb480;
+            --text-color: #333;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .error-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .error-icon {
+            font-size: 80px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            animation: shake 1.5s infinite;
+        }
+        
+        h1 {
+            color: var(--dark-color);
+            font-size: 2.5em;
+            margin: 0 0 15px 0;
+        }
+        
+        p {
+            color: var(--dark-color);
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        .error-image {
+            width: 200px;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .home-link {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 145, 77, 0.4);
+        }
+        
+        .home-link:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 145, 77, 0.6);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            10%, 30%, 50%, 70%, 90% { transform: rotate(-5deg); }
+            20%, 40%, 60%, 80% { transform: rotate(5deg); }
+        }
+        
+        .error-actions {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: white;
+            color: var(--dark-color);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .action-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h1>Error 404: Página no encontrada</h1>
+        <p>Lo sentimos, no pudimos encontrar el recurso que estás buscando.</p>
+        
+        <img src="burro.jpg" alt="Burro perdido" class="error-image" onerror="this.style.display='none'">
+        
+        <div class="error-actions">
+            <a href="../index.html" class="home-link">
+                <i class="fas fa-home"></i> Volver al inicio
+            </a>
+        </div>
+    </div>
+</body>
+</html>
