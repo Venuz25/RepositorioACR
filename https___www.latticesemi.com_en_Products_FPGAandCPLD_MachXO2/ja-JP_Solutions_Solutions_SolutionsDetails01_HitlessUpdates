@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+
+
+
+
+<!--[if IE 7]>    <html class="ie lt-ie9 ie7" lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9 ie8" lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 9]>    <html class="ie ie9" lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+<!-- OneTrust Cookies Consent Notice start for www.latticesemi.com -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/8ce0ef32-b483-40ef-a516-d6ebfa92ee46-test/OtAutoBlock.js" ></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="8ce0ef32-b483-40ef-a516-d6ebfa92ee46-test" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for www.latticesemi.com -->
+<head id="hHeadTag">
+
+	<!-- Google Tag Manager -->
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+})(window,document,'script','dataLayer','GTM-MZ9QSXR');</script>
+
+<!-- End Google Tag Manager -->
+
+<!-- Microsoft Clarity - Heatmap -->
+<script>
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "dy0r78kpm3");
+</script>
+<!--End Microsoft Clarity - Heatmap -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>
+	ヒットレスアップデート
+</title><meta name="keywords" content=" Lattice Zero Downtime, Hitless Update FPGA, Hitless Background Update, Lattice Hitless Updates " /><meta name="description" content=" Lattice Hitless Updates features background program over SPI, I2C or JTAG, Freeze I/O during reconfiguration etc., and reconfigure with Zero Downtime" /><link rel="icon" type="image/x-icon" href="/images/favicon.ico" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="VIcurrentDateTime" content="638843328165382986" />
+<script type="text/javascript" src="/layouts/system/VisitorIdentification.js"></script>
+
+	<!-- Conditional Loading of Swiper Stylesheet -->
+<script type="text/javascript">
+    if (window.innerWidth < 768 || (window.innerWidth >= 768 && window.innerWidth <= 1024)) {
+    // Create a link element for the stylesheet
+    var stylesheetLink = document.createElement("link");
+    stylesheetLink.rel = "stylesheet";
+    stylesheetLink.type = "text/css";
+    stylesheetLink.href = "/css/swiperslider.css";
+
+    // Append the link to the head of the document
+    document.head.appendChild(stylesheetLink);
+	
+}
+
+</script>
+        <link type="text/css" href="/css/video-js.css" rel="stylesheet">
+        <!--[if lte IE 7]>
+        <link rel="stylesheet" type="text/css" href="http://www.latticesemi.com/css/video-js-ie7.css" />
+        <![endif]-->
+        <link type="text/css" rel="stylesheet" href="/css/lsc.css">
+
+        
+     
+        <script type="text/javascript">
+            // IE console fix
+            var console = console || { log: function () { }, warn: function () { } };
+            window.lattice = window.lattice || {};
+
+            var $j = window.$j = jQuery.noConflict();
+
+            $j(function () {
+                $j(window).load(function () {
+                    lattice.init($j);
+                });
+            });
+        </script>
+        <script type = "text/javascript">
+            function notificationClickJQuery() {
+                jQuery.ajax({
+                    type: "GET",
+                    url: "~/Services/SitewideNotification.svc/UpdateNotificationforUser",
+                    data: '{currentnotificationid: "' + $("#lblcurrentNotificationID")[0].value + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        jQuery('#dNotificationBar').hide();
+                        return false;
+                    },
+                    failure: function(response) {
+                        alert(response.d);
+                        return true;
+                    }
+                });
+            }
+            function privacypolicyClickJQuery() {
+                jQuery.ajax({
+                    type: "GET",
+                    url: "~/Services/SitewideNotification.svc/UpdatePrivacyPolicyforUser",
+                    data: '{currentnotificationid: "' + $("#lblcurrentPrivacyPolicyID")[0].value + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        jQuery('#dPrivacyPolicyNotificationBar').hide();
+                        return false;
+                    },
+                    failure: function(response) {
+                        alert(response.d);
+                        return true;
+                    }
+                });
+            }
+        </script>
+      <script type="text/javascript" src="/js/jquery.tablesorter.min.js"></script>
+    
+
+	 <script type="text/javascript">
+	 function expiredReCaptcha() 
+{
+    //This method will execute only if Google ReCaptcha expired
+    jQuery("#RecaptchaValidHiddenField").val(""); // making hidden textbox empty 
+	jQuery('#CaptchaErrorMessage').html('Captcha verification failed');  
+			jQuery('#CaptchaErrorMessage').css('color',"red");
+}
+	  var verifyCallback = function(response) {
+         jQuery("#RecaptchaValidHiddenField").val("valid");
+		 if (jQuery("#RecaptchaValidHiddenField").val() !== '') {  
+            //jQuery('#CaptchaErrorMessage').css('color', 'green').html('Success!');  
+		     jQuery(".Recaptcha span.error-message").remove();
+		     jQuery(".form-buttons p.error").attr("style", "display:none");
+        }  else{
+		  document.getElementById("CaptchaErrorMessage").innerHTML = "Required Field";
+		  }
+      };
+  var onloadCallback = function() {
+	 grecaptcha.render('RecaptchaValidHiddenField', {
+          'sitekey' : '6Lci1lYbAAAAACrENFTJJIk2M8u7qa-d2_6O6qaw',
+          'callback' : verifyCallback
+        });
+  };
+</script>
+	  <script src="https://www.recaptcha.net/recaptcha/api.js?onload=onloadCallback"></script>
+
+                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="NLFKM-QREF5-ZS5GY-TB9ZU-TEUFQ",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"NLFKM-QREF5-ZS5GY-TB9ZU-TEUFQ",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="xo7ju7axgz7iw2b3taia-f-5b50b7170-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"39","ak.cp":"1093151","ak.ai":parseInt("650564",10),"ak.ol":"0","ak.cr":50,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"615a7ae1","ak.r":49140,"ak.a2":e,"ak.m":"b","ak.n":"ff","ak.bpcip":"187.190.154.0","ak.cport":1376,"ak.gh":"23.36.183.227","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1748736016","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==RlvuDbQrrmBoHAayVAsE/XaiIwiDYW6bULFvTB0TeU7fG50Sha60mD22mKGRgG/934SwG1FerYtAyKG184c3m2HK/a71D479ejy5dEJr0kO0/zAODbzP8Z8bE0+Pth4Yb/fAsM9gtplINvhMj0rhDoJjOLrjV8xCh4trEGaVXyheRa7QZwR4z0K3qKyYl77iveSpmOD/+1a5RaM8K2w0fTZIqVSg8ckUl0zxPsfu3+4m7z5avO8iwx8vyRGlf/2vZCRI7wNrg9hV+wVst/tSnLPS1/xZQG51NWtglee6vSGQz3pf/yr88SzLhgQVygeK7dcAIVMN4U8xP3TK4WWhjLusSPTRL4H5BR687L7mq2LHfL52Biuol2v6SZi/w890iSPI7YmE68MxMuInI2RbD/D0FvPmPer3bAv0Sa5JNMY=","ak.pv":"34","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+  <body>
+  
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src=63
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <form method="post" action="/ja-JP/Solutions/Solutions/SolutionsDetails01/HitlessUpdates" id="mainform">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['mainform'];
+if (!theForm) {
+    theForm = document.mainform;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D0E5B4D5" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="WC8rgKCauN+GR40Q4Dy0+fvT8a3Jb4At7IWoV5Uo96eqa08tDAuAu8XYBbW9dxmd/gssYb1fQKIILF9lAKw9ugAVN6xzH1isVqYp9dUkNFKyw0J+/IVjfqf48YqQ2wBGCYgrf8cOO8MyaA7DosdYBzuPqKJwGxSARaXd5enX/AEyYKPOb5OWWyrDgpEua20Fuf3PEi+Pg1N7ZvADKMjtc9oWP28IgexsJUYbT+iJQA8GSzxUriHN1BOGxQth5M7cxfR/7uy2DlAKXM7s8xwaoVb3rZ0sDM8TFWvxsg1nxFUC15DlvnCKqQl4WRV9ze0aYnkQs3Mb8/VRiscW+mt75XZqju6ugKvCiLLSxCQeY+HDZzFjRBzY/WUsNNlPbg+I55txzCCN5/0aCQTiWptWCDQ4Grd9UJTdavB2FBCp00da/jDdJKryt8C7FAWl2L/x53RWozWtozjpbgGA88dsiFLKNRcVF83SvgpkrnqyYu73kw+1rB3JsqlqS7PHqWnFEQQSmvpNB5HVYsZPdBM1Mj4SxyYlsV0CSj15xmw/1pmEYPGRDEBOuA5qVPaQtxwbczbb2By62AvNC84l/KH7lSUHKBkGGVzw0b5sy8hgc+gCD5ntga3vNyf+RkngFv63wZifu8CkE+8AXoa8TgRxf3UR29Si8xmDZgjasaZq5Cmv/Kc79bZ9rCT3VpnF53dKeWdnewr6IvGjeTsruz3qTkjzMN05tM/egJh7eHukE7nK2PLm0fizuFxqP+xAlrWgzRYXc/Oxr67h6TzsYFrpQw1REToU3kHTGR8IzrJjP9PsTOF2emVqvLCW4oh6+8Ge6YEQ3zGanHsSAGjLT+c4YQNN8rj75M/s5c+dJN3O0HzVgLzxNm9wlX/V3Px1ls6cAQ8b2FKcK3oKI6icIrg58MjO5fwEnnxkC1niZs+/oh1EnmEz7PuGvAXxBodA7mCWhkzibAA5X3eFYazoYUjig4O2p20DOfwDu+mIR9L0x0k3nF/CyFKUSxf430NouKSAvvURikxxKkdiL3BkR0mf8ywnngO/e+1mOj7CrCD2cfNSs9e9NrTTbuiOtxz2CeN5f3zKePHsi6vuJxvdGAzleT8tiBo+uWbFZ0Jxnidt5j8gENI/vwhrvB6ceK/FZtf1cgPLig==" />
+</div>
+	
+	<script type="text/javascript">
+		var linkDeleteImageUrl = '/temp/iconcache/network/16x16/link_delete.png';
+	</script>
+	
+ 	<!-- END SYSTEM WIDE NOTIFICATION -->
+      
+    
+
+
+
+<!-- START STRIPE CONTAINER -->
+<div class="stripeContainer headerStripe darkBackground" id="JumpAssetMainNav">
+    <!-- START STRIPE CONTENT -->
+    <div  class="stripeContent stickyNav">
+        <div class="line">
+            <div class="unit size1of4">
+               <div id="desktoplogo">
+                 
+                           <a href="/ja-JP">
+                                <img src="/-/media/LatticeSemi/Images/Common/Logo.ashx?h=23&amp;la=ja-JP&amp;mw=144&amp;w=144" class="logo" alt="Lattice Semiconductor" width="144" height="23" />
+                            </a>
+                   
+                            <div class="line hamburgermenu">
+							 <div class="unit size1of7" id="mobilemenu"><img src="/images/menu.png" alt="en" width="22px" height="22px" /></div>
+							 
+							 <div class="unit size4of7" id="mobilelogo"><a href="/ja-JP">
+                                <img src="/-/media/LatticeSemi/Images/Common/Logo.ashx?h=23&amp;la=ja-JP&amp;mw=144&amp;w=144" class="logo" alt="Lattice Semiconductor" width="144" height="23" />
+                            </a></div>
+                            <div class="unit size2of7 lastUnit">
+							<div class="line">
+							<div  class="unit size1of3" id="profile"><img src="/images/profile_icon.png" alt="en" width="22px" height="22px" /></div>
+                                <div class="unit size1of3" id="language">
+                                  
+									<ul>
+                                        <li id="en"><img src='/images/flags/16x16/flag_usa.png' alt="en" /></li>
+                                        <li id="jp"><img src='/images/flags/16x16/flag_Japan.PNG' alt="ja" /></li>
+                                        <li id="cn"><img src='/images/flags/16x16/flag_china.png' alt="zh" /></li>
+                                    </ul>
+                                </div>
+                                <div class="unit size1of3 lastUnit" id="search"><img src="/images/searchmobile.png" alt="en" width="22px" height="22px" /></div>
+                                </div>
+								</div>
+                               
+                        </div>
+                    
+                    
+                   
+                </div> 
+			</div>
+			<div class="unit size3of4 lastUnit">
+			<div class="line">
+				<div class="unit size4of5">
+					<ul class="navItems">
+						<li class="primaryNavigation"><a href="https://www.latticesemi.com/ja-JP/Solutions" class="nULink">アプリケーション</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height5">
+		<li><a><span class="fakeLink">産業用</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Automotive
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/SolutionCategories/Automotive">Automotive Overview</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/DriverAssistance">ADAS / Driver Assistance</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/FunctionalSafety">Functional Safety</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/InVehicleInfotainment">Infotainment</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/QualityAndReliability">Quality & Reliability</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Factory Automation
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/FunctionalSafety">Functional Safety</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/MachineVision">エンベッデッドビジョン</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/SolutionCategories/Automotive">自動車</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Robotics">AI / 機械学習</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Other Industrial
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Medical">HDMIインターフェースブリッジ</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Surveillance">Video Surveillance</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Automate">Lattice Automate</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Drive">Lattice Drive</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">通信</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Client Computing
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Notebooks">Notebooks / PCs</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Printers">Printers</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Tablets">Tablets</a></li>
+				</ul><h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/ORAN">Lattice ORAN</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					データセンター＆エッジコンピューティング
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/PFR">プラットフォームレジリエンス(PFR)</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/DatacenterSystemsServerSolutions">データセンターシステム – サーバー</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/DatacenterSystemsStorage">ストレージ</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/DataCenterSwitches">Switches</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					無線
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/5G">5G Open RAN</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/HetNetSmallCellsSolutions">HetNetスモールセル</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/LowPowerRadios">小電力無線</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/MillimeterWaveRadios">ミリメートル波無線</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					有線
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/IntellectualProperty/IPCore/IPCores01/10GbEthernetMAC">10GbpsイーサネットMAC</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/HitlessUpdates">ヒットレスアップデート</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/IntelligentSFPModules">インテリジェントSFP</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/IntellectualProperty/ReferenceDesigns/ReferenceDesign04/RGMIItoGMIIBridge">RGMIIからGMIIへのブリッジ</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">民生用</span></a><div class="line menuContent">
+			<div class="unit size1of3">
+				<h3>
+					家電製品
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/IoT">AI / 機械学習</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/VRHMD">エンベッデッドビジョン</a></li>
+				</ul>
+			</div><div class="unit size1of3">
+				<h3>
+					モバイル
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/SmartHomeSmartRoom">エンベッデッドビジョン</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/SmartHomeControl">AI / 機械学習</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Aerospace & Defense</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Aerospace & Defense
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/Defense">Defense Overview</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/GuidanceSystems">Guidance Systems</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Software-Defined-Radio">Software Defined Radio</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Space">Space</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/UAVs">UAVs</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Security</span></a><div class="line menuContent">
+			<div class="unit size1of2">
+				<h3>
+					FPGA-Based Security
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/Lattice-FPGA-Security-Solutions">Security Overview</a></li>
+				</ul>
+			</div><div class="unit size1of2 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/ja-JP/Products" class="nULink">製品</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height3">
+		<li><a><span class="fakeLink">プログラマブルロジック</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Control & Security FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/MachXO5-NX">MachXO5-NX</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/Mach-NX">Mach-NX</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/MachXO3D">MachXO3D</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/MachXO3">MachXO3</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/MachXO2">MachXO2</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/PowerAndClockDevices/PlatformManager2">L-ASC10</a></li>
+				</ul><h3>
+					Platforms
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Avant">Lattice Avant</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/LatticeNexus">Lattice Nexus</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Lattice-Nexus-2">Lattice Nexus 2</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					General Purpose FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/Avant-X">Avant-X</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/Avant-G">Avant-G</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/Avant-E">Avant-E</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/Certus-N2">Certus-N2</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/CertusPro-NX">CertusPro-NX</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/Certus-NX">Certus-NX</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/ECP5">ECP5 & ECP5-5G</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Ultra Low Power FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/iCE40UltraPlus">iCE40 UltraPlus</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/iCE40Ultra">iCE40 Ultra</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/iCE40Ultra">iCE40 UltraLite</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/iCE40">iCE40 LP/HX</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Video Connection FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/CrossLink-NX">CrossLinkU-NX</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/CrossLink-NX">CrossLink-NX</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/CrossLinkPlus">CrossLinkPlus</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/CrossLink">CrossLink</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/ja-JP/Products">VIEW ALL DEVICES&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Software Tools</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Software Tools
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/FPGAandLDS/LatticeDiamond">Lattice Diamond</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/FPGAandLDS/LatticePropel">Lattice Propel</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/FPGAandLDS/Radiant">Lattice Radiant</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/AIML/LatticesensAIStudio">Lattice sensAI Studio</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/AIML/Lattice-sensAI-Edge-Vision-Engine-SDK">Lattice sensAI EVE SDK</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/Licensing">Software Licensing</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP">VIEW ALL SOFTWARE TOOLS&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Solutions</span></a><div class="line menuContent">
+			<div class="unit size1of3">
+				<h3>
+					Solutions
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/CommunitySourced">Community Sourced</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=bb168d29ad6b40769878f160546890de&amp;active=demo">Demos</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=6da9534f318a4969a6b5e7dc9081bdba&amp;active=ipcore">IP Cores</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=982db688d64345bbb3af29e62fee1dc3&amp;active=board">Kits & Boards</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=3614c818569f4eecb0602ba20a521a41&amp;active=refdesign">Reference Designs</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/ProgrammingHardware">Programming Hardware</a></li>
+				</ul>
+			</div><div class="unit size1of3">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Automate">Lattice Automate</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Drive">Lattice Drive</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/ORAN">Lattice ORAN</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h3>
+					FPGA-Based Security
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/Lattice-FPGA-Security-Solutions">Security Overview</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/solutionsearch">VIEW ALL SOLUTIONS&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/ja-JP/Support" class="nULink">サポート</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height6">
+		<li><a><span class="fakeLink">テクニカルサポート</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Support
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Support/AnswerDatabase">回答データベース</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support">テクニカルサポートを受ける</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/ContactUs">General Inquiries</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/ja-JP/Support">EXPLORE HELP CENTER&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">ライセンス</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Software Licensing
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Support/Licensing">Request a License</a></li><li><a href="https://www.latticesemi.com/Support/Licensing#purchase">Purchase Software License</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/LatticeIPSupport">IP Licensing Support</a></li><li><a href="https://www.latticesemi.com/Support/Licensing/IPCore/IPCoreNew">New IP License Request</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/Lattice-IP-License-Bundles">IP License Bundles</a></li><li><a href="https://www.latticesemi.com/Support/Licensing/AcademicLicense/Academic%20License%20Request%20Form">Academic License Request</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">品質及び信頼性</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Quality & Reliability
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Support/QualityAndReliability">品質及び信頼性のホーム</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/QualityAndReliability/ExportClassification">輸出分類情報</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/PCN">製品変更のお知らせ（PCN）</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/PartNumberReferenceGuide">品番参考ガイド</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">サービス</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Design Services
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Support/LatticeDesignGroup">Lattice Design Group</a></li><li><a href=""></a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/ProductCustomization">Product Services</a></li>
+				</ul><h3>
+					
+				</h3><ul>
+					<li><a href=""></a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Secure Supply Chain
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/LatticeSupplyGuard">Lattice SupplyGuard</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Training
+				</h3><ul>
+					<li><a href="https://www.latticesemi-insights.com/">Lattice Insights</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Discontinued Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Support/MatureAndDiscontinuedDevices">Mature & Discontinued Devices</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">レガシーデバイス及びソフトウェア</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Legacy Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Support/SoftwareArchive">FPGAソフトウェアアーカイブ</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/ASSPSoftwareArchive">Silicon Imageソフトウェアアーカイブ</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Lattice Partner Network</span></a><div class="line menuContent">
+			<div class="unit size1of2">
+				<h3>
+					Partner Program
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Support/Partner-Network">Program Overview</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/Partners">Find Partners</a></li><li><a href="https://www.latticesemi.com/solutionsearch?&amp;qprovider=3e052bdbb99a4c2691d18011e3a24fdf,5233e49f3f684c95a9db94ab3aed059c,1355762face7416da88444b50acab913,edf1088dea6b4972b73b44fad51554ad,47f66166aa4d48599a7df5ef20cae2a2,14d45119e9ce435a962cd7b6c3036e78,a784f36edaf840f8b6908faf3443f7c2,71d36ac2ef8e488abc0bc0c5c4c4e7f3,b08027d6cadc4efdab09ed480e186731,e4fb27cb7bd24c4c96545dccbb6daed0,ea3c5a961c5649f68d8267ee43086d35,358ab1e5969245e5ab3ecf5964b1ec17​  ​">Explore Partner Solutions</a></li>
+				</ul>
+			</div><div class="unit size1of2 lastUnit">
+				<h3>
+					Partner Type
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=3fcabf6c16c647968c89942cd13e2a54">IP Cores</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=d6eef479dc0c4e109dec6f5de39d5812">Design Services</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=08cc134c4b4f46e08010e44dfd4b7043">Boards</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=a26cc42771d949b5837f9be415f95e2e">Programming Services</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/Partners">EDA </a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/Partners">Embedded</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/ja-JP/Buy/SalesLocator" class="nULink">購入</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height5">
+		<li><a><span class="fakeLink">南北アメリカ地域セールス</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=74F89870335446AB993BD70BB67F209E">ブラジル</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=CC8751866A1A405AA93FB2C743A61159">カナダ</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=3F844FA3FC034BD79249267F15208E65">メキシコ</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=02D1DC98A6F949BAB8EB61B94AA2B274">プエルトリコ</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=B22CA382BCD9497990EFBEACF5897407">アメリカ</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=4721A7D5228C4A459CCDB00C4AD7B745">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">ヨーロッパ・アフリカ地域セールス</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=DFD74C9F2D4B434BB400F68E0CAEC109">フィンランド</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=171D28DDC08349C1A8267772FDFEB442">フランス</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=78B777A06EF845BBA57839C084B0DB66">ドイツ</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=49D9E3960E014D858D6FDAE3D9118C0E">イスラエル</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=341C8947085D47FCA57ABE17B863962F">イタリア</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=A664784F3FC44C248523D10FDAD2E3E7">ノルウェー</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=CA759DC8DE6A4C24B6214F25920BEA8A">スペイン</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=C6F72D45022A445BA3ACBA604F9F44E1">スウェーデン</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=A3769F1BD0DF41E18F11F51A02A45DCE">イギリス</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=56406BCD8BF24AD3B2FB1D36EAE47C14">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">アジア太平洋地域セールス</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=7F8D51D079FE48E38C541D9598987304">オーストラリア</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=1BF85C6578DF4AE7919633E4AFF9416E">中国</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=ACBD88BEC2884BF19239F551E81055B7">インド</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=629E693BD3BE454BA6C118B8FE49DDEB">インドネシア</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=C1F83B11B8CA42EDA0E74619D3408D89">日本</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=5B0541ED60124FC7B3BAE82DC6E8A13D">シンガポール</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=B02FB08BD35247598F9FAE9D72B409AB">韓国</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=756801F046C24109B9744313514EFD9D">台湾</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=176373FF64DE4509A517E896C8DF0B97">ベトナム</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=537DBFB9B472419A9CACF6739C609178">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">オンラインストア</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Lattice Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Buy/BuyOnline/SiliconDevices">半導体デバイス</a></li><li><a href="https://www.latticesemi.com/ja-JP/Buy/BuyOnline/SoftwareCablesandBoards">ソフトウェア、ケーブル、及びボード</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/ja-JP/Buy/BuyOnline">BUY ONLINE&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">製造中止商品</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Discontinued Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices.aspx#ProgrammableLogicDistributors">ロチェスターエレクトロニクス‎</a></li><li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices.aspx#ProgrammableLogicDistributors">アロー・エレクトロニクス</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/ja-JP/Blog" class="nULink">ブログ</a></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/ja-JP/About" class="nULink">会社案内</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height4">
+		<li><a><span class="fakeLink">会社情報</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					About Lattice
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/About">会社情報</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/ESG">企業責任</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/ContactUs">お問い合わせ</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">投資家情報</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Investor Relations
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/About/InvestorRelations">Investor Overview</a></li><li><a href="https://ir.latticesemi.com/investor-overview/shareholder-services/online-investor-kit">オンライン投資家キット</a></li><li><a href="https://ir.latticesemi.com/investor-overview/shareholder-services/investor-faqs">投資家のよくある質問</a></li><li><a href="https://ir.latticesemi.com/investor-overview/corporate-governance/board-of-directors">取締役会</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/Management">役員紹介</a></li><li><a href="https://ir.latticesemi.com/investor-overview/highlights">コーポレートガバナンス</a></li><li><a href="https://ir.latticesemi.com/investor-overview/financial-information/sec-filings">SEC ファイリング</a></li><li><a href="https://ir.latticesemi.com/investor-overview/quarterly-earnings">四半期決算</a></li><li><a href="https://ir.latticesemi.com/investor-overview/analysts">アナリスト</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/EthicsContactInformation">企業倫理</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">プレスルーム</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Newsroom
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/About/Newsroom">ニュースとプレスリリース</a></li><li><a href="https://www.latticesemi.com/ja-JP/Blog">Blogs</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/Newsroom/Events">今後の製品イベント</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/Newsroom/ImageLibrary">画像ライブラリー</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/Newsroom/VideoLibrary">ビデオライブラリ</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/Newsroom/Webinars">Webinar Library</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/Newsroom/MediaContacts">メディアコンタクト</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">採用情報</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Careers
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/About/Jobs">仕事内容</a></li><li><a href="https://careers-latticesemi.icims.com/jobs/intro?hashed=-625919477&amp;mobile=false&amp;width=1378&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-480&amp;jun1offset=-420">募集の検索</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/Jobs/OurBenefits">ベネフィットについて</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li>
+						<li class="flushRight" onclick="showloginDropdown()">
+						<div class="dropdown dropbtn">
+						
+						<div id="myDropdown" class="dropdown-content">
+						
+<a href="/ja-JP/Accounts/SignIn" id="header_0_ctl06_SignInLink">Sign In</a>
+						
+<div class="nooverflow"><a href="/ja-JP/Accounts/AccountRegister" id="header_0_ctl07_aRegister">Register</a></div>
+						</div>
+						</div>
+						</li>
+						<li class="languageSelectionContainer  noOver">
+							
+
+    
+        <ul class="languageOverlay darkBackground" id="languageOverlay">
+			
+					<li> 
+                        
+						<a href="/en/Solutions/Solutions/SolutionsDetails01/HitlessUpdates" >
+                            <img src='/images/flags/16x16/flag_usa.png' alt="en"/>
+						</a>
+					</li>
+				
+					<li class='visibleLanguage'> 
+                        
+						<a href="/ja-JP/Solutions/Solutions/SolutionsDetails01/HitlessUpdates" >
+                            <img src='/images/flags/16x16/flag_Japan.PNG' alt="ja"/>
+						</a>
+					</li>
+				
+					<li> 
+                        
+						<a href="/zh-CN/Solutions/Solutions/SolutionsDetails01/HitlessUpdates" >
+                            <img src='/images/flags/16x16/flag_china.png' alt="zh"/>
+						</a>
+					</li>
+				
+        </ul>
+         <span id="curlang" style="display:none;">ja-JP</span>
+
+						</li>
+					</ul> 
+				</div>
+				<div class="unit size1of5 lastUnit">
+					
+					<div id="header_0_CoveoSearchPanel" class="searchwrapper">
+	
+                        <label for="txtboxSearch">
+						<input name="header_0$ctl05$TXTQuery" type="text" id="header_0_ctl05_TXTQuery" aria-label="Enter search text" autocomplete="off" placeHolder="Search Site" onkeydown="if (event.keyCode == 13) { location.href = &#39;/Search.aspx?&amp;lcid=9&amp;q=&#39; + encodeURIComponent(document.getElementById(&#39;header_0_ctl05_TXTQuery&#39;).value) + &#39;&amp;t=&#39; + (-new Date().getTimezoneOffset()); return false; }" />
+							
+                                
+                        </label>
+                       <img alt="" id="header_0_ctl05_BTNSearch" title="Search" aria-label="Search Site" class="search-button" onclick="location.href = &#39;/Search.aspx?&amp;lcid=9&amp;q=&#39; + encodeURIComponent(document.getElementById(&#39;header_0_ctl05_TXTQuery&#39;).value) + &#39;&amp;t=&#39; + (-new Date().getTimezoneOffset()); return false;" src="/images/search.png" />
+			        
+                       
+                    
+</div>
+				</div>
+			</div>
+			</div>
+        </div>
+    </div>
+	
+</div>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function showloginDropdown() {
+  if (!document.getElementById("myDropdown").classList.contains("show"))
+  document.getElementById("myDropdown").classList.toggle("show");
+  else
+  document.getElementById("myDropdown").classList.remove("show");
+  var menu = document.getElementsByClassName("menuDetails persistMenu");
+  if (menu.length > 0)
+  {
+   //menu[0].style.display = "none";
+   menu[0].parentElement.firstChild.style = "";
+   menu[0].classList.add("hiddenNavigation");
+   menu[0].classList.remove("persistMenu");
+   
+   }
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+    
+    
+
+
+
+<div  class="stripeContainer stripeOne solutionsHeader">
+     <a href="" id="myBtn" class="BackTopActive" aria-label="Back To Top"> </a>
+        <div class="stripeContent ">
+        <!-- END LINE -->
+        <!-- START LINE -->
+        <div class="line flushBottom">
+            <!-- START UNIT -->
+
+            <!-- END UNIT -->
+
+            <!-- START UNIT --> 
+            <div  class="unit size1of1 pageTitle lastUnit">
+                <div class="line">
+                    <div class="unit size1of1">
+                        <!-- START PAGE TITLE -->
+                      
+
+
+<ul class="breadcrumb">
+     <li></li>
+    
+            <li>
+                <a id="header_1_breadcrumb_0_repBreadcrumb_hTags_0" href="/ja-JP/Solutions">アプリケーション</a> >
+
+            </li>
+        
+    <li>ヒットレスアップデート</li>
+</ul>
+<!-- END BREADCRUMBS -->
+
+                      <h1>
+                            ヒットレスアップデート
+                      </h1>
+                      <h2><p>バックグラウンド更新とダウンタイムゼロで再設定が可能</p></h2>
+                        </div>
+                    
+                        <!-- END PAGE TITLE -->
+                    </div>
+            </div>
+            <!-- END UNIT -->
+
+        </div>
+        <!-- END LINE -->
+    </div>
+    <!-- END STRIPE CONTENT -->
+
+
+</div>
+
+
+     <!-- START SYSTEM WIDE NOTIFICATION -->
+	
+	
+
+<!-- START STRIPE CONTAINER -->
+<div class="stripeContainer stripeTwo">
+
+
+    <!-- START STRIPE CONTENT -->
+    <div class="stripeContent">
+
+
+
+        <!-- START LINE -->
+        <div class="line">
+            <div class="unit size1of4 flushLeft left-content">
+                
+
+
+<div class="leftcontentbarsection">
+    <div class="featuredproducts">
+          <h4>Related Products</h4>
+        
+			    <ul>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_0" href="/ja-JP/Products/FPGAandCPLD/MachXO3">MachXO3 – 制御/ブリッジFPGA</a><br />
+			    </li>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_1" href="/ja-JP/Products/FPGAandCPLD/MachXO3D">MachXO3D</a><br />
+			    </li>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_2" href="/ja-JP/Products/DevelopmentBoardsAndKits/MachXO3D_Development_Board">MachXO3D Development Board</a><br />
+			    </li>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_3" href="/ja-JP/Products/DevelopmentBoardsAndKits/MachXO39400DevBoard">MachXO3-9400 開発ボード</a><br />
+			    </li>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_4" href="/ja-JP/Products/DevelopmentBoardsAndKits/MachXO3LFStarterKit">MachXO3LF スターターキット</a><br />
+			    </li>
+		    
+			    </ul>
+		    
+    </div>
+    <div class="featuredsolutions">
+         <h4></h4>
+        
+    </div>
+</div>
+
+
+<!-- START CROSS-CELL NAVIGATION -->
+
+    
+            <div class="sidebarNavBlock">
+            <div id="body_0_leftrail_1_Repeater1_ctl00_0_outerdiv_0">
+<!-- START LINK IMAGE MODULE -->
+<a href="/Accounts/YourAccount/NewsletterSubscriptions"> 
+    
+    <br />
+    <img src="/-/media/LatticeSemi/Images/SidebarAds/Newsletter_Subscribe_JP.ashx?h=227&amp;la=ja-JP&amp;w=220" alt="Newsletter Subscription" width="220" height="227" /><br />
+     
+    
+</a>
+<!-- END  LINK IMAGE MODULE  -->
+</div>
+
+            </div>
+        
+
+<!-- END CROSS-CELL NAVIGATION -->
+
+            </div>
+            <div class="unit lastUnit size3of4 page-content">
+                
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f7a872fddd46d5"></script> 
+<script type="text/javascript">
+    var tweettext = 'Check out ヒットレスアップデート from @latticesemi'; 
+    var addthis_share = addthis_share || {}
+    addthis_share = {
+	    passthrough : {
+	        twitter: {
+	            text: tweettext
+	        }
+	    }
+    }
+</script>
+
+<meta property="og:title" content="ヒットレスアップデート の詳細については、www.latticesemi.com ，をご覧ください！http://t.cn/RXUHWlF" />
+
+    <div class="addthisbutton">
+        
+        <!-- AddThis Button BEGIN -->
+       
+        <!-- AddThis Button END -->
+     <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
+    </div>
+    <div class="clear"></div>
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<!-- START Category Landing Block -->
+
+
+<div class="line">
+    <div class="unit size1of1 lastUnit">
+        
+<!-- START RICH TEXT FIELD SAMPLE -->
+<div id="body_0_content_1_rtDescription_Container" class="rich-text">
+	<p>透明なバックグラウンドプログラミングーダウンタイムやアクティブ設定への中断がなくMachOX3LFの設定を更新できます。</p>
+<p>再設定中のヒットレスI/O－電源のOn/Offやアクティブ設定へ欠陥のない新プログラム復元機能</p>
+<p>デュアルブートサポートによる信頼性－ゴールデンフェールセーフイメージ自動復旧が再設定中のシステムを保護します。</p>
+
+<p>特長</p>
+<ul>
+    <li>SPI、I<sup>2</sup>CおよびJTAGを使ったバックグラウンドプログラム</li>
+    <li>再設定中のI/O固定</li>
+    <li>固定されたI/Oを基にした確定状態から状態マシンの開始</li>
+    <li>外部SPIフラッシュ内のゴールデンイメージからのデュアルブート</li>
+    <li>高い信頼性とゼロダウンタイムのフィールド内アップデート</li>
+</ul>
+</div>
+<!-- END RICH TEXT FIELD SAMPLE -->
+    </div>
+
+   
+    <div class="unit size1of1 sharedRightGutter noLeftMargin">
+        <h3>Features</h3>
+<ul>
+    <li>Background program over SPI, I2C or JTAG</li>
+    <li>Freeze I/O during reconfiguration</li>
+    <li>Start state machines from defined state based on Frozen I/O</li>
+    <li>Dual boot from golden image in external SPI Flash</li>
+    <li>In-field update with high reliability and zero downtime</li>
+</ul>
+    </div>
+
+    
+
+<!-- START RESPONSIVE VIDEO PLAYER -->
+<div id="body_0_content_1_videoplayer_0_divVideoPlayer" class="video-player">
+    
+</div>
+<!-- END RESPONSIVE VIDEO PLAYER -->
+
+
+</div>
+
+
+
+<!-- START Action Links Block -->
+
+        <ul class="action-links">
+    
+        <li>
+            <a href="/ja-JP/Buy/SalesLocator">
+                
+                Contact Sales
+            </a>
+        </li>
+    
+        </ul>
+    
+<!-- END Action Links Block -->
+
+
+<!-- END Category Landing Block -->
+
+
+            </div>
+             
+                                       
+            
+        </div>
+        <!-- END LINE -->
+        <!--START Tabbed Section -->
+        <div class="unit size1of1 page-content">
+            
+
+<!-- START CONTENT TAB WIDGET -->
+    
+            <!-- START TABBED CONTENT SECTION -->
+            
+                <h3 id="body_0_tabbedsection_0_rptTabs_ctl01_0_hSectionTitle_0" class="tabHeader">
+                            Jump to
+     </h3>
+ 
+            
+            <ul class="inlineList tBG clear">
+			
+        
+            <li>
+                <a href="#_20AF36C6E6B249329FED49D6CD6B5E8E">
+                    Block Diagram
+                </a>
+            </li>
+        
+            <li>
+                <a href="#_1A2169818E2E4D0582B0A655220C591F">
+                    ドキュメント
+                </a>
+            </li>
+        
+            <li>
+                <a href="#_7F413A7C6643448E8FBFA76E4EA0E03C">
+                    サポート
+                </a>
+            </li>
+        
+            </ul>
+        
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_1" class="tabHeader">
+                <a id="_20AF36C6E6B249329FED49D6CD6B5E8E">
+                    Block Diagram
+                </a>
+            </h3>
+                
+
+<!-- START KEY POINT SECTION  -->
+<div class="line">
+                
+            
+            
+                    
+                    <div class="unit size1of1 lastUnit">
+                        
+<div class="line gOutline">
+    <div class="unit size1of4 vCenter">
+        
+
+
+<a href="/-/media/LatticeSemi/Images/SolutionsImages/Market/HitlessUpdate.ashx" class="jsModalWindow"  >
+    <img src="/-/media/LatticeSemi/Images/SolutionsImages/Market/HitlessUpdate.ashx?h=149&w=240&hash=583CE6299B2D35D4D63EE837B608F2E62AB4BB37" alt="Hitless Update" /><span>Expand Image</span>
+</a>
+
+
+    </div>
+    <div class="unit size3of4 lastUnit">
+        
+
+<!-- START RICH TEXT FIELD SAMPLE -->
+
+<!-- END RICH TEXT FIELD SAMPLE -->
+
+        
+
+        
+    </div>
+</div>
+
+                    </div>
+
+                
+        
+</div>
+<!-- END KEY POINT SECTION -->
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_2" class="tabHeader">
+                <a id="_1A2169818E2E4D0582B0A655220C591F">
+                    ドキュメント
+                </a>
+            </h3>
+                
+
+<!-- START DOCUMENT EXPLORER TAB -->
+<div>
+
+
+<script type="text/javascript">
+    $j(document).ready(function() {
+        document.cookie = "ZipDownload=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    });
+    
+</script>
+<script>
+    function temp() {
+        //var div = document.getElementById("demopopup");
+        //div.style.visibility = "visible";
+        //alert(div.style.visibility);
+    }
+    function showlogindiv(controlId) {
+        var control = document.getElementById(controlId);
+        control.style.display = "block";
+        return false;
+        //alert(document.body.bgColor);
+    }
+    function hidelogindiv(controlId) {
+        var control = document.getElementById(controlId);
+        control.style.display = "none";
+    }
+</script>
+
+
+<!-- START DOCUMENT EXPLORER -->
+<table class="fullSize docTypes">
+    
+    
+             <tbody>
+                 <tr>
+        
+                    <td class="active">
+                        <div class="docType">
+                            Quick Reference
+                        </div>
+                        <ul>
+                        
+                                        <li>
+                                            <a href="/ja-JP/Solutions/Solutions/SolutionsDetails01/HitlessUpdates?ActiveTab=Key+Documents#_1A2169818E2E4D0582B0A655220C591F"
+                                            
+                                                onclick="return swapActive(this,'_60BC10CE05D54D18B1C05024338DB627');">
+                                                Key Documents 
+                                            </a>    
+                                        </li>
+                            
+                                        <li>
+                                            <a href="/ja-JP/Solutions/Solutions/SolutionsDetails01/HitlessUpdates?ActiveTab=Application+Note#_1A2169818E2E4D0582B0A655220C591F"
+                                            class="activeLink"
+                                                onclick="return swapActive(this,'_79BBBFB7AB5B4D5CA937CCB6044DAE2D');">
+                                                Application Note 
+                                            </a>    
+                                        </li>
+                            
+                                        <li>
+                                            <a href="/ja-JP/Solutions/Solutions/SolutionsDetails01/HitlessUpdates?ActiveTab=User+Manual#_1A2169818E2E4D0582B0A655220C591F"
+                                            
+                                                onclick="return swapActive(this,'_6362550331D24BFD96461ED048E3DDEB');">
+                                                User Manual 
+                                            </a>    
+                                        </li>
+                            
+                    </ul></td>
+            
+                    <td class="closed">
+                        <div class="docType">
+                            Downloads
+                        </div>
+                        <ul>
+                        
+                                        <li>
+                                            <a href="/ja-JP/Solutions/Solutions/SolutionsDetails01/HitlessUpdates?ActiveTab=Design+File#_1A2169818E2E4D0582B0A655220C591F"
+                                            
+                                                onclick="return swapActive(this,'_4C63C86241FF4708897EC983CBB1BA6F');">
+                                                Design File 
+                                            </a>    
+                                        </li>
+                            
+                    </ul></td>
+            
+                </tr>
+            </tbody>
+        
+</table>
+<!-- START CONTENT TAB WIDGET -->
+<!-- END TABBED CONTENT TABS -->
+
+        <!-- Start category Quick Reference   -->            
+                
+                <!-- START Key Documents document type listing SECTION -->
+                <table id="_60BC10CE05D54D18B1C05024338DB627" class="docList fullSize ">
+                    
+                                <thead>
+                                        <tr>
+                                            <td class="noSort subscribeimg" aria-label="No value"></td>
+                                            <td class="noSort downloadimg" aria-label="No value"></td>
+                                            <th class="document-title headerSortDown">TITLE</th>
+                                            <th>NUMBER</th>
+                                            <th>VERSION</th>
+                                            <th>DATE</th>
+                                            <th>FORMAT</th>
+                                            <th class="noSort">SIZE</th>
+                                        </tr>
+                                    </thead>
+									<tfoot>
+                                    <tr>
+                                        <td class="noSort checkbox lightYellowBackground">
+                                        
+                                          <span style="color:#FFF3D3;">  
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_checkSubAll" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$checkSubAll" disabled="disabled" onclick="swapCheckedSubProd(this.checked);" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_checkSubAll">a</label></span></span>
+                                        </td>
+                                        <td class="noSort checkbox lightestBlueBackground">
+                                        <input type="checkbox" id="checkAll" value="false" onclick="swapCheckedDocsProd(this.checked);" aria-label="No Text" />
+                                        </td>
+                                         <td colspan="6" class="noSort">
+                                       Select All
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$SubscriptionButtonAlt" value="Notify Me of Changes *" onclick="showlogindiv(&#39;demopopup&#39;);return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_SubscriptionButtonAlt" class="button disableSub" /> 
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$DownloadButton" value="Download Selected as Zip File" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_DownloadButton" class="button download" /> 
+                                        </td>
+                                    </tr> 
+                                        
+                                    </tfoot>
+                                     <tbody>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_SubCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_SubCheckbox_0">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_SubHiddenField_0" value="{A8B69C49-4828-4502-938E-16D81FB7CC8D}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_docCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_docCheckbox_0">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_docHiddenField_0" value="{A8B69C49-4828-4502-938E-16D81FB7CC8D}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=50123">
+                                                MachXO3 Programming and Configuration User Guide
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td>FPGA-TN-02055</td>
+                                        <td>3.2</td>
+                                        <td>4/22/2025</td>
+                                        <td>PDF</td>
+                                        <td>1.2 MB</td>
+                                    </tr>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_SubCheckbox_1" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_SubCheckbox_1">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_SubHiddenField_1" value="{C5F10151-CD32-491F-B57D-9B83AF26002B}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_docCheckbox_1" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_docCheckbox_1">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_docHiddenField_1" value="{C5F10151-CD32-491F-B57D-9B83AF26002B}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=21638">
+                                                Minimizing System Interruption During Configuration Using TransFR Technology
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td>FPGA-TN-02198</td>
+                                        <td>4.5</td>
+                                        <td>3/6/2025</td>
+                                        <td>PDF</td>
+                                        <td>1.6 MB</td>
+                                    </tr>
+                        
+                                </tbody>                                 
+                        
+                </table>
+                    
+                <!-- START Application Note document type listing SECTION -->
+                <table id="_79BBBFB7AB5B4D5CA937CCB6044DAE2D" class="docList fullSize activeDocList">
+                    
+                                <thead>
+                                        <tr>
+                                            <td class="noSort subscribeimg" aria-label="No value"></td>
+                                            <td class="noSort downloadimg" aria-label="No value"></td>
+                                            <th class="document-title headerSortDown">TITLE</th>
+                                            <th>NUMBER</th>
+                                            <th>VERSION</th>
+                                            <th>DATE</th>
+                                            <th>FORMAT</th>
+                                            <th class="noSort">SIZE</th>
+                                        </tr>
+                                    </thead>
+									<tfoot>
+                                    <tr>
+                                        <td class="noSort checkbox lightYellowBackground">
+                                        
+                                          <span style="color:#FFF3D3;">  
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_checkSubAll" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl01$DocumentListRepeater$ctl00$checkSubAll" disabled="disabled" onclick="swapCheckedSubProd(this.checked);" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_checkSubAll">a</label></span></span>
+                                        </td>
+                                        <td class="noSort checkbox lightestBlueBackground">
+                                        <input type="checkbox" id="checkAll" value="false" onclick="swapCheckedDocsProd(this.checked);" aria-label="No Text" />
+                                        </td>
+                                         <td colspan="6" class="noSort">
+                                       Select All
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl01$DocumentListRepeater$ctl00$SubscriptionButtonAlt" value="Notify Me of Changes *" onclick="showlogindiv(&#39;demopopup&#39;);return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_SubscriptionButtonAlt" class="button disableSub" /> 
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl01$DocumentListRepeater$ctl00$DownloadButton" value="Download Selected as Zip File" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_DownloadButton" class="button download" /> 
+                                        </td>
+                                    </tr> 
+                                        
+                                    </tfoot>
+                                     <tbody>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_SubCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl01$DocumentListRepeater$ctl01$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_SubCheckbox_0">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl01$DocumentListRepeater$ctl01$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_SubHiddenField_0" value="{A8B69C49-4828-4502-938E-16D81FB7CC8D}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_docCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl01$DocumentListRepeater$ctl01$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_docCheckbox_0">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl01$DocumentListRepeater$ctl01$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_docHiddenField_0" value="{A8B69C49-4828-4502-938E-16D81FB7CC8D}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=50123">
+                                                MachXO3 Programming and Configuration User Guide
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td>FPGA-TN-02055</td>
+                                        <td>3.2</td>
+                                        <td>4/22/2025</td>
+                                        <td>PDF</td>
+                                        <td>1.2 MB</td>
+                                    </tr>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_SubCheckbox_1" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl01$DocumentListRepeater$ctl02$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_SubCheckbox_1">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl01$DocumentListRepeater$ctl02$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_SubHiddenField_1" value="{C5F10151-CD32-491F-B57D-9B83AF26002B}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_docCheckbox_1" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl01$DocumentListRepeater$ctl02$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_docCheckbox_1">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl01$DocumentListRepeater$ctl02$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_1_docHiddenField_1" value="{C5F10151-CD32-491F-B57D-9B83AF26002B}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=21638">
+                                                Minimizing System Interruption During Configuration Using TransFR Technology
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td>FPGA-TN-02198</td>
+                                        <td>4.5</td>
+                                        <td>3/6/2025</td>
+                                        <td>PDF</td>
+                                        <td>1.6 MB</td>
+                                    </tr>
+                        
+                                </tbody>                                 
+                        
+                </table>
+                    
+                <!-- START User Manual document type listing SECTION -->
+                <table id="_6362550331D24BFD96461ED048E3DDEB" class="docList fullSize ">
+                    
+                                <thead>
+                                        <tr>
+                                            <td class="noSort subscribeimg" aria-label="No value"></td>
+                                            <td class="noSort downloadimg" aria-label="No value"></td>
+                                            <th class="document-title headerSortDown">TITLE</th>
+                                            <th>NUMBER</th>
+                                            <th>VERSION</th>
+                                            <th>DATE</th>
+                                            <th>FORMAT</th>
+                                            <th class="noSort">SIZE</th>
+                                        </tr>
+                                    </thead>
+									<tfoot>
+                                    <tr>
+                                        <td class="noSort checkbox lightYellowBackground">
+                                        
+                                          <span style="color:#FFF3D3;">  
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_checkSubAll" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl02$DocumentListRepeater$ctl00$checkSubAll" disabled="disabled" onclick="swapCheckedSubProd(this.checked);" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_checkSubAll">a</label></span></span>
+                                        </td>
+                                        <td class="noSort checkbox lightestBlueBackground">
+                                        <input type="checkbox" id="checkAll" value="false" onclick="swapCheckedDocsProd(this.checked);" aria-label="No Text" />
+                                        </td>
+                                         <td colspan="6" class="noSort">
+                                       Select All
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl02$DocumentListRepeater$ctl00$SubscriptionButtonAlt" value="Notify Me of Changes *" onclick="showlogindiv(&#39;demopopup&#39;);return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_SubscriptionButtonAlt" class="button disableSub" /> 
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl02$DocumentListRepeater$ctl00$DownloadButton" value="Download Selected as Zip File" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_DownloadButton" class="button download" /> 
+                                        </td>
+                                    </tr> 
+                                        
+                                    </tfoot>
+                                     <tbody>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_SubCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl02$DocumentListRepeater$ctl01$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_SubCheckbox_0">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl02$DocumentListRepeater$ctl01$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_SubHiddenField_0" value="{7D048239-1247-470D-B2FF-02350260D6D9}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_docCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl02$DocumentListRepeater$ctl01$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_docCheckbox_0">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl02$DocumentListRepeater$ctl01$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_docHiddenField_0" value="{7D048239-1247-470D-B2FF-02350260D6D9}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=52131">
+                                                MachXO3LF 9400C Hitless I/O Demo User Guide
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td>FPGA-UG-02022</td>
+                                        <td>1.0</td>
+                                        <td>6/28/2017</td>
+                                        <td>PDF</td>
+                                        <td>1.5 MB</td>
+                                    </tr>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_SubCheckbox_1" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl02$DocumentListRepeater$ctl02$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_SubCheckbox_1">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl02$DocumentListRepeater$ctl02$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_SubHiddenField_1" value="{B6F5F585-E72E-4749-8936-AEFA16F791D3}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_docCheckbox_1" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl02$DocumentListRepeater$ctl02$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_docCheckbox_1">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl02$DocumentListRepeater$ctl02$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_2_docHiddenField_1" value="{B6F5F585-E72E-4749-8936-AEFA16F791D3}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=53000">
+                                                MachXO3D Hitless I/O and Hitless EBR Demo
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td>FPGA-UG-02069</td>
+                                        <td>1.1</td>
+                                        <td>8/13/2020</td>
+                                        <td>PDF</td>
+                                        <td>3 MB</td>
+                                    </tr>
+                        
+                                </tbody>                                 
+                        
+                </table>
+            
+         
+        <!-- END TABBED CONTENT SECTION -->
+    
+        <!-- Start category Downloads   -->            
+                
+                <!-- START Design File document type listing SECTION -->
+                <table id="_4C63C86241FF4708897EC983CBB1BA6F" class="docList fullSize ">
+                    
+                                <thead>
+                                        <tr>
+                                            <td class="noSort subscribeimg" aria-label="No value"></td>
+                                            <td class="noSort downloadimg" aria-label="No value"></td>
+                                            <th class="document-title headerSortDown">TITLE</th>
+                                            <th>NUMBER</th>
+                                            <th>VERSION</th>
+                                            <th>DATE</th>
+                                            <th>FORMAT</th>
+                                            <th class="noSort">SIZE</th>
+                                        </tr>
+                                    </thead>
+									<tfoot>
+                                    <tr>
+                                        <td class="noSort checkbox lightYellowBackground">
+                                        
+                                          <span style="color:#FFF3D3;">  
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_checkSubAll" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$checkSubAll" disabled="disabled" onclick="swapCheckedSubProd(this.checked);" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_checkSubAll">a</label></span></span>
+                                        </td>
+                                        <td class="noSort checkbox lightestBlueBackground">
+                                        <input type="checkbox" id="checkAll" value="false" onclick="swapCheckedDocsProd(this.checked);" aria-label="No Text" />
+                                        </td>
+                                         <td colspan="6" class="noSort">
+                                       Select All
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$SubscriptionButtonAlt" value="Notify Me of Changes *" onclick="showlogindiv(&#39;demopopup&#39;);return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_SubscriptionButtonAlt" class="button disableSub" /> 
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$DownloadButton" value="Download Selected as Zip File" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_DownloadButton" class="button download" /> 
+                                        </td>
+                                    </tr> 
+                                        
+                                    </tfoot>
+                                     <tbody>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_SubCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_SubCheckbox_0">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_SubHiddenField_0" value="{16D71660-6A97-4025-BA71-121F863AFF14}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_docCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_docCheckbox_0">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_docHiddenField_0" value="{16D71660-6A97-4025-BA71-121F863AFF14}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=52134">
+                                                MachXO3LF 9400C Hitless I/O Demo
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td></td>
+                                        <td>1.0</td>
+                                        <td>6/28/2017</td>
+                                        <td>ZIP</td>
+                                        <td>1.4 MB</td>
+                                    </tr>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_SubCheckbox_1" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_SubCheckbox_1">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_SubHiddenField_1" value="{4114443C-CE87-48BA-A7AB-30AFD9DC1419}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_docCheckbox_1" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_docCheckbox_1">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_docHiddenField_1" value="{4114443C-CE87-48BA-A7AB-30AFD9DC1419}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=53002">
+                                                MachXO3D Hitless I/O and Hitless EBR Demo
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td></td>
+                                        <td>1.1</td>
+                                        <td>8/13/2020</td>
+                                        <td>ZIP</td>
+                                        <td>3 MB</td>
+                                    </tr>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_SubCheckbox_2" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl03$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_SubCheckbox_2">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl03$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_SubHiddenField_2" value="{B3A2F487-BC48-473E-B5B6-1EFC3D628EC0}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_docCheckbox_2" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl03$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_docCheckbox_2">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl03$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_1_DocumentListRepeater_0_docHiddenField_2" value="{B3A2F487-BC48-473E-B5B6-1EFC3D628EC0}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=51702">
+                                                MachXO3 Hitless Update Demo
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td></td>
+                                        <td>1.0</td>
+                                        <td>6/16/2016</td>
+                                        <td>ZIP</td>
+                                        <td>1.9 MB</td>
+                                    </tr>
+                        
+                                </tbody>                                 
+                        
+                </table>
+            
+         
+        <!-- END TABBED CONTENT SECTION -->
+    
+<script type="text/javascript">/* <![CDATA[ */
+jQuery(document).ready(
+	function() {
+		jQuery(".activeDocList").tablesorter(
+						{
+				
+				headers: {
+					
+					6: {sorter: false }
+				}
+			}
+		);
+	}
+);
+
+/* ]]> */</script>
+
+<span class="DocMsg"><p>*By clicking on the "Notify Me of Changes" button, you agree to receive notifications on changes to the document(s) you selected. </p></span>
+<span id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_lmsg_2"></span>
+<div id="demopopup" style="width:300px;height:150px;display:none;border:4px solid #FFC222;left:60px;top:0;background-color:white;padding:10px; display:none;position:fixed;z-index:1000;top:50%;left:50%;margin-top:-75px;margin-left:-150px;">
+    
+    <h3>Please Login to Enable Notifications</h3>
+You need an account to turn on notifications.  Please login or register.
+    <table style="margin-top:20px;">
+        <tr style="padding:10px;">
+            <td style="border-right:1px solid #D0D0D0;"><a id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_lnkloginbtn_2" href="javascript:__doPostBack(&#39;body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$lnkloginbtn&#39;,&#39;&#39;)">Login</a></td>
+            <td><a onclick="hidelogindiv(&#39;demopopup&#39;); return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_NotLogin_2" href="javascript:__doPostBack(&#39;body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$NotLogin&#39;,&#39;&#39;)">Not Now</a></td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+</div>
+<!-- END DOCUMENT EXPLORER TAB -->
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_3" class="tabHeader">
+                <a id="_7F413A7C6643448E8FBFA76E4EA0E03C">
+                    サポート
+                </a>
+            </h3>
+                
+
+<!-- START KEY POINT SECTION  -->
+<div class="line">
+                
+            
+            
+                    
+                    <div class="unit size1of4">
+                        <h4>技術サポート</h4>
+
+<p>サポートが必要な方はこちらまで<br/></p>
+
+    
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/ja-JP/Products/DesignSoftwareAndIP">
+                                    デザインソフトウェア
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/ja-JP/Support">
+                                    技術サポートを受ける
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+        
+
+        
+                    </div>
+
+                
+                    
+                    <div class="unit size1of4">
+                        <h4>ライセンス</h4>
+
+<p>ソフトウェア、IPライセンスが必要な方はこちらまで</p>
+
+    
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/ja-JP/Support/Licensing">
+                                    ラティスソフトウェアライセンス
+                                </a>
+                            
+                            
+                        </li>
+                    
+                        <li>
+                            
+                                <a href="/ja-JP/Support/Licensing">
+                                    品質と信頼性
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/ja-JP/Support/Licensing">
+                                    ラティスIPコアライセンス
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+        
+
+        
+                    </div>
+
+                
+                    
+            
+            
+                    
+                    <div class="unit size1of4">
+                        <h4>品質と信頼性</h4>
+
+<p>疑問に関する参考資料</p>
+
+    
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/ja-JP/Support/QualityAndReliability">
+                                    品質と信頼性のHome
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/ja-JP/Support/PCN">
+                                    製品変更の通知 (PCNs)
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+        
+
+        
+                    </div>
+
+                
+                    
+                    <div class="unit size1of4 lastUnit">
+                        <h4>サービス</h4>
+
+<p>役立つその他サービス</p>
+
+    
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/ja-JP/Support/DesignServices">
+                                    デザインリソース
+                                </a>
+                            
+                            
+                        </li>
+                    
+                        <li>
+                            
+                                <a href="/Home/Support/ThirdPartyProgramming.aspx">
+                                    第三者のプログラミングサポート
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/support/partners.aspx?qparttype=3dc8f4105fae42ac883c1e9384d7d4a7">
+                                    トレーニング
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+        
+
+        
+                    </div>
+
+                
+        
+</div>
+<!-- END KEY POINT SECTION -->
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+<!-- END CONTENT TAB WIDGET -->
+
+        </div>
+        <!--END Tabbed Section -->
+    </div>
+    <!-- END STRIPE CONTENT -->
+
+
+</div>
+
+<!-- END STRIPE CONTAINER -->
+      
+	
+
+<div class="stripeContainer footerStripe">
+	<div class="stripeContent">
+            <div class="line">
+                <div class="unit size2of7">
+					<img src="/images/Lattice_Logo_Yellow_White_Tagline.png" width="200px">
+				</div>
+                <div class="unit size4of7">
+		    	    
+                        
+				            <div class="unit size1of3">
+                                
+                                <a href="https://www.latticesemi.com/About"><h4>会社情報</h4></a>
+<ul>
+    <li><a href="https://www.latticesemi.com/About/ContactUs">お問い合わせ</a></li>
+    <li><a href="https://www.latticesemi.com/About/Newsroom">プレスルーム</a></li>
+    <li><a href="http://ir.latticesemi.com">投資家情報</a></li>
+    <li><a href="https://www.latticesemi.com/About/Jobs">採用情報</a></li>
+    <li><a href="http://ww3.latticesemi.com/Newsletter-Subscribe.html">ニュースレター購読</a></li>
+</ul>
+				            </div> 
+                        
+				            <div class="unit size1of3">
+                                
+                                <a href="https://www.latticesemi.com/Buy/SalesLocator"><h4>購入する</h4></a>
+<ul>
+       <li><a href="https://www.latticesemi.com/Buy">アメリカ</a></li>
+        <li><a href="https://www.latticesemi.com/Buy">ヨーロッパ＆アフリカ</a></li>
+        <li><a href="https://www.latticesemi.com/Buy">アジア太平洋</a></li>
+        <li><a href="https://www.latticesemi.com/Buy/BuyOnline">オンラインストア</a></li>
+</ul>
+				            </div> 
+                        
+				            <div class="unit size1of3">
+                                
+                                <a href="https://www.latticesemi.com/Support"><h4>サポート</h4></a>
+<ul>
+       <li><a href="https://www.latticesemi.com/Support/SubmitSupportTicket">技術サポート</a></li>
+        <li><a href="https://www.latticesemi.com/Support/Licensing">ソフトウェアライセンス</a></li>
+        <li><a href="https://www.latticesemi.com/Support/DesignServices">サービス</a></li>
+        <li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices">レガシーデバイス＆ソフトウェア</a></li>
+</ul>
+				            </div> 
+                         
+                </div>
+                <div class="unit size1of7 lastUnit rText">
+                    <div class="title"><h4>FOLLOW</h4></div>
+					<div>
+			        
+
+		    <div class="line flatList iconList">
+			    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.twitter.com/latticesemi" aria-label="Twitter">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.facebook.com/latticesemi" aria-label="Facebook">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="https://www.linkedin.com/company/lattice-semiconductor" aria-label="LinkedIn">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.youtube.com/latticesemiconductor" aria-label="YouTube">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://i.youku.com/latticesemi" aria-label="Youku">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.weibo.com/latticesemi" aria-label="Weibo">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+		    </div>
+
+            <img src="https://www.latticesemi.com/images/Qrcode_for_Lattice_sm.gif" alt="Lattice QR code">
+                    </div>
+			    </div>
+            </div>
+            <div class="line">
+                <div class="unit size1of1 lastUnit">
+                    <ul class="flatList smallList">
+                        <li><span>&copy;2025 Lattice Semiconductor</span> | </li>
+                        <li><a href="http://www.latticesemi.com/About/LegalNotices.aspx">免責事項</a><a href="https://www.latticesemi.com/About/LegalNotices.aspx">&nbsp;</a>|
+</li>
+<li>
+<a href="http://www.latticesemi.com/About/LegalNotices/PrivacyPolicy.aspx">プライバシープリシー</a> |
+</li>
+<li><a href="http://www.latticesemi.com/About/Sitemap.aspx">サイトマップ</a>|
+</li>
+<li><a href="http://www.latticesemi.com/About/UseOfCookies.aspx">クッキーの使用</a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+	</div>
+</div>
+
+  </form>      
+      <script type="text/javascript">/* <![CDATA[ */
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','/js/analytics.js','ga');
+ 
+  ga('create', 'UA-2724384-2', 'auto');
+var urlCapture = /(\/en|\/ja\-jp|\/zh\-cn)?([^.]+)(.aspx)?/ig;
+var urlPieces = urlCapture.exec(window.location.pathname);
+
+if(urlPieces[2] != undefined)
+     ga('set', 'page', urlPieces[2]);
+
+  ga('send', 'pageview');
+
+
+
+jQuery.ajax({
+  url: '//munchkin.marketo.net/munchkin.js',
+  dataType: 'script',
+  cache: true,
+  success: function() {
+    Munchkin.init('632-NZA-960');
+  }
+});
+
+jQuery(document).ready(function () {
+        jQuery('a[href*="view_document"]').each(function () {
+            jQuery(this).on('click', function () {
+                Munchkin.munchkinFunction('clickLink', {
+                    href: jQuery(this).text()
+                });
+            })
+        })
+    })
+
+/* ]]> */</script>
+  
+  <!--   <script type="text/javascript" src="/js/SitecoreClientTracking.js"></script> -->
+    <script type="text/javascript" src="/js/video.js"></script>
+    <script type="text/javascript">
+            jQuery.noConflict();
+            videojs.options.flash.swf = "/js/video-js.swf"
+    </script>
+    <script type="text/javascript" src="/js/lsc.js"></script>
+  
+      
+  </body>
+</html>
+

@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+
+
+
+
+<!--[if IE 7]>    <html class="ie lt-ie9 ie7" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9 ie8" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 9]>    <html class="ie ie9" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+<!-- OneTrust Cookies Consent Notice start for www.latticesemi.com -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/8ce0ef32-b483-40ef-a516-d6ebfa92ee46-test/OtAutoBlock.js" ></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="8ce0ef32-b483-40ef-a516-d6ebfa92ee46-test" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for www.latticesemi.com -->
+<head id="hHeadTag">
+
+	<!-- Google Tag Manager -->
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+})(window,document,'script','dataLayer','GTM-MZ9QSXR');</script>
+
+<!-- End Google Tag Manager -->
+
+<!-- Microsoft Clarity - Heatmap -->
+<script>
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "dy0r78kpm3");
+</script>
+<!--End Microsoft Clarity - Heatmap -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>
+	GHRD/GSRD Demonstration | Lattice Demos
+</title><meta name="keywords" content="GHRD Demonstration, GHRD Demo, Golden Hardware Demo, Golden Software Demo, Lattice GHRD GSRD Demonstration" /><meta name="description" content="The Golden Hardware and Software Reference Design comprises of components for developing various kind of applications using CertusPro-NX Versa Board." /><link rel="icon" type="image/x-icon" href="/images/favicon.ico" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="VIcurrentDateTime" content="638843327718359156" />
+<script type="text/javascript" src="/layouts/system/VisitorIdentification.js"></script>
+
+	<!-- Conditional Loading of Swiper Stylesheet -->
+<script type="text/javascript">
+    if (window.innerWidth < 768 || (window.innerWidth >= 768 && window.innerWidth <= 1024)) {
+    // Create a link element for the stylesheet
+    var stylesheetLink = document.createElement("link");
+    stylesheetLink.rel = "stylesheet";
+    stylesheetLink.type = "text/css";
+    stylesheetLink.href = "/css/swiperslider.css";
+
+    // Append the link to the head of the document
+    document.head.appendChild(stylesheetLink);
+	
+}
+
+</script>
+        <link type="text/css" href="/css/video-js.css" rel="stylesheet">
+        <!--[if lte IE 7]>
+        <link rel="stylesheet" type="text/css" href="http://www.latticesemi.com/css/video-js-ie7.css" />
+        <![endif]-->
+        <link type="text/css" rel="stylesheet" href="/css/lsc.css">
+
+        
+     
+        <script type="text/javascript">
+            // IE console fix
+            var console = console || { log: function () { }, warn: function () { } };
+            window.lattice = window.lattice || {};
+
+            var $j = window.$j = jQuery.noConflict();
+
+            $j(function () {
+                $j(window).load(function () {
+                    lattice.init($j);
+                });
+            });
+        </script>
+        <script type = "text/javascript">
+            function notificationClickJQuery() {
+                jQuery.ajax({
+                    type: "GET",
+                    url: "~/Services/SitewideNotification.svc/UpdateNotificationforUser",
+                    data: '{currentnotificationid: "' + $("#lblcurrentNotificationID")[0].value + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        jQuery('#dNotificationBar').hide();
+                        return false;
+                    },
+                    failure: function(response) {
+                        alert(response.d);
+                        return true;
+                    }
+                });
+            }
+            function privacypolicyClickJQuery() {
+                jQuery.ajax({
+                    type: "GET",
+                    url: "~/Services/SitewideNotification.svc/UpdatePrivacyPolicyforUser",
+                    data: '{currentnotificationid: "' + $("#lblcurrentPrivacyPolicyID")[0].value + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        jQuery('#dPrivacyPolicyNotificationBar').hide();
+                        return false;
+                    },
+                    failure: function(response) {
+                        alert(response.d);
+                        return true;
+                    }
+                });
+            }
+        </script>
+      <script type="text/javascript" src="/js/jquery.tablesorter.min.js"></script>
+    
+
+	 <script type="text/javascript">
+	 function expiredReCaptcha() 
+{
+    //This method will execute only if Google ReCaptcha expired
+    jQuery("#RecaptchaValidHiddenField").val(""); // making hidden textbox empty 
+	jQuery('#CaptchaErrorMessage').html('Captcha verification failed');  
+			jQuery('#CaptchaErrorMessage').css('color',"red");
+}
+	  var verifyCallback = function(response) {
+         jQuery("#RecaptchaValidHiddenField").val("valid");
+		 if (jQuery("#RecaptchaValidHiddenField").val() !== '') {  
+            //jQuery('#CaptchaErrorMessage').css('color', 'green').html('Success!');  
+		     jQuery(".Recaptcha span.error-message").remove();
+		     jQuery(".form-buttons p.error").attr("style", "display:none");
+        }  else{
+		  document.getElementById("CaptchaErrorMessage").innerHTML = "Required Field";
+		  }
+      };
+  var onloadCallback = function() {
+	 grecaptcha.render('RecaptchaValidHiddenField', {
+          'sitekey' : '6Lci1lYbAAAAACrENFTJJIk2M8u7qa-d2_6O6qaw',
+          'callback' : verifyCallback
+        });
+  };
+</script>
+	  <script src="https://www.recaptcha.net/recaptcha/api.js?onload=onloadCallback"></script>
+
+                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="NLFKM-QREF5-ZS5GY-TB9ZU-TEUFQ",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"NLFKM-QREF5-ZS5GY-TB9ZU-TEUFQ",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="xo7ju7axgz7ig2b3s7rq-f-7db51737a-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"39","ak.cp":"1093151","ak.ai":parseInt("650564",10),"ak.ol":"0","ak.cr":60,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"392a9758","ak.r":49140,"ak.a2":e,"ak.m":"b","ak.n":"ff","ak.bpcip":"187.190.154.0","ak.cport":1500,"ak.gh":"23.36.183.235","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1748735971","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==03+eRV/2I0hvIUeKOn32CBloQwbnFhNljif14EBDdcJImHI3jGPvYUk2n5o6xf33gxkP/8pPpybtS75YCml+GZ98mf34pbqeIF691K5YwQrCIOMG5zm3Vq3zdlx0k0nlq9JebnLpxKWa9hcqAnUfkbMRnbKNzN0JQ2fPQm5Vjbb4fEs6BqTP3izb29iBMu6lpxfeduru8HVaKQMllfeqXyIld1Z27N1juZoiHbod6KlTxBckJNWQgkvsqE0u6Q9kkja3ui4NdcxHWXcVsQTcjxL2nVe8Qn1IwgTPe8gnOxtW2L5wTwbcs5lyeG9xBJAFbyr+aIkQEIlr65CxTFBhTVkvspX8sGmCU2Iz8bgVpmVpwr3DzdPsaJFPN7WP4BzH+hy9El4r5J2nmJLtSlNZfOKuNSCCdt9aKrhAKnbD2Fs=","ak.pv":"34","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+  <body>
+  
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src=63
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <form method="post" action="/products/designsoftwareandip/intellectualproperty/demos/ghrd-gsrd-demonstration" id="mainform">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['mainform'];
+if (!theForm) {
+    theForm = document.mainform;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D0E5B4D5" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="OHu1gLlXXk1+GNnGDWmnRKrDDTvCi6+l+KmCDjMHJ80d9gmcX6TBe9ztnnNB7CoQgQcPlBdv86HwrBDqRssgmbE/BECVs99XkQMOL7bN9H1LvWyKIphBHa8q5xHejC5K1YYznlrVkhRUtON4O5HaO6uhDxG7wEplDfsE8Ikj4iSLiIitpKnUMKohmIF+iQh1d5sRHqFaDtKNZbl4QL45p5RJm9l2mPfXrXo805FNAlgLeu+MmptoIZQSIImeLC27zY6ZnomuhnodB3+3qAPXPdtkTDw9oxSAr3P5nLp8b/RXHRFiKGZ2p4fY7Poqz8PTLPTpEZhxpxbReTN8l+BpvP6TSXWbnJJYqWhHnUhJhDcaI68+unMwiabPY7VYjzMAir05X9CUdeoz/muG+LxdLNAEvfQ4fcJS0v+rEvwqnwkv4nOO4OYqXlAHkuUE2Su5Gt7Bb69AtoMxZ5vebzpCvZwpAJBHZJLtUHAf7aHa6p/BH1xdjot/eawkaaMf2N4dxNrCnf0JkIBRDeSnD5U5HUo94V05DrYwk4YjVwVZUw2c0SGw0VGrn11kj2m07kLQmpRR84wXughSCOkCPFw7vbtawaiWiJFc5tPwwxZhnVgXaA9MOa8kcBLy3A7RYywlWXeJ+Mbb8au6nZ/2BJEhHKQuWIBeqbJHl+YLzzGWc8nxy1Lq8WJZJppmnT0+bl3CpgwVlANaNcu8lxIFMsQW4fGElNhJ2yDZV0NdnAy/I94qCxZjI2j4i7PodiyJ+/dfu6Is5yUWR+hJlMr0PFyvnN6q6JkZB6s008cfFevf5HZcmIYM" />
+</div>
+	
+	<script type="text/javascript">
+		var linkDeleteImageUrl = '/temp/iconcache/network/16x16/link_delete.png';
+	</script>
+	
+ 	<!-- END SYSTEM WIDE NOTIFICATION -->
+      
+    
+
+
+
+<!-- START STRIPE CONTAINER -->
+<div class="stripeContainer headerStripe darkBackground" id="JumpAssetMainNav">
+    <!-- START STRIPE CONTENT -->
+    <div  class="stripeContent stickyNav">
+        <div class="line">
+            <div class="unit size1of4">
+               <div id="desktoplogo">
+                 
+                           <a href="/en">
+                                <img src="/-/media/LatticeSemi/Images/Common/Logo.ashx?h=23&amp;la=en&amp;mw=144&amp;w=144" class="logo" alt="Lattice Semiconductor" width="144" height="23" />
+                            </a>
+                   
+                            <div class="line hamburgermenu">
+							 <div class="unit size1of7" id="mobilemenu"><img src="/images/menu.png" alt="en" width="22px" height="22px" /></div>
+							 
+							 <div class="unit size4of7" id="mobilelogo"><a href="/en">
+                                <img src="/-/media/LatticeSemi/Images/Common/Logo.ashx?h=23&amp;la=en&amp;mw=144&amp;w=144" class="logo" alt="Lattice Semiconductor" width="144" height="23" />
+                            </a></div>
+                            <div class="unit size2of7 lastUnit">
+							<div class="line">
+							<div  class="unit size1of3" id="profile"><img src="/images/profile_icon.png" alt="en" width="22px" height="22px" /></div>
+                                <div class="unit size1of3" id="language">
+                                  
+									<ul>
+                                        <li id="en"><img src='/images/flags/16x16/flag_usa.png' alt="en" /></li>
+                                        <li id="jp"><img src='/images/flags/16x16/flag_Japan.PNG' alt="ja" /></li>
+                                        <li id="cn"><img src='/images/flags/16x16/flag_china.png' alt="zh" /></li>
+                                    </ul>
+                                </div>
+                                <div class="unit size1of3 lastUnit" id="search"><img src="/images/searchmobile.png" alt="en" width="22px" height="22px" /></div>
+                                </div>
+								</div>
+                               
+                        </div>
+                    
+                    
+                   
+                </div> 
+			</div>
+			<div class="unit size3of4 lastUnit">
+			<div class="line">
+				<div class="unit size4of5">
+					<ul class="navItems">
+						<li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Solutions" class="nULink">Applications</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height5">
+		<li><a><span class="fakeLink">Industrial & Auto</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Automotive
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/SolutionCategories/Automotive">Automotive Overview</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/DriverAssistance">ADAS / Driver Assistance</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/FunctionalSafety">Functional Safety</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/InVehicleInfotainment">Infotainment</a></li><li><a href="https://www.latticesemi.com/en/Support/QualityAndReliability">Quality & Reliability</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Factory Automation
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/FunctionalSafety">Functional Safety</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/MachineVision">Machine Vision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/PLCHMI">PLCs</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Robotics">Robotics</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Other Industrial
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Medical">Medical</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Surveillance">Video Surveillance</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Automate">Lattice Automate</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Drive">Lattice Drive</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Comms & Computing</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Client Computing
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Notebooks">Notebooks / PCs</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Printers">Printers</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Tablets">Tablets</a></li>
+				</ul><h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/ORAN">Lattice ORAN</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Datacenter Systems
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/PFR">Platform Firmware Resiliency</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/DatacenterSystemsServerSolutions">Servers</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/DatacenterSystemsStorage">Storage</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/DataCenterSwitches">Switches</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Wireless
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/5G">5G Open RAN</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/HetNetSmallCellsSolutions">HetNet Small Cells</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LowPowerRadios">Low Power Radios</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/MillimeterWaveRadios">Millimeter Wave Radios</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Wireline
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/IntellectualProperty/IPCore/IPCores01/10GbEthernetMAC">10 Gbps Ethernet MAC</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/HitlessUpdates">Hitless Updates</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/IntelligentSFPModules">Intelligent SFP</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/IntellectualProperty/ReferenceDesigns/ReferenceDesign04/RGMIItoGMIIBridge">RGMII to GMII Bridge</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Consumer</span></a><div class="line menuContent">
+			<div class="unit size1of3">
+				<h3>
+					Prosumer Electronics
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/IoT">IoT & Wearables</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/VRHMD">VR Head Mounted Display</a></li>
+				</ul>
+			</div><div class="unit size1of3">
+				<h3>
+					Smart Home
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/SmartHomeSmartRoom">Consumer Robots & Toys</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/SmartHomeControl">Home Control & Security</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Aerospace & Defense</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Aerospace & Defense
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/Defense">Defense Overview</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/GuidanceSystems">Guidance Systems</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Software-Defined-Radio">Software Defined Radio</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Space">Space</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/UAVs">UAVs</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Security</span></a><div class="line menuContent">
+			<div class="unit size1of2">
+				<h3>
+					FPGA-Based Security
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/Lattice-FPGA-Security-Solutions">Security Overview</a></li>
+				</ul>
+			</div><div class="unit size1of2 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Products" class="nULink">Products</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height3">
+		<li><a><span class="fakeLink">FPGAs & Other Devices</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Control & Security FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/MachXO5-NX">MachXO5-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Mach-NX">Mach-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/MachXO3D">MachXO3D</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/MachXO3">MachXO3</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/MachXO2">MachXO2</a></li><li><a href="https://www.latticesemi.com/en/Products/PowerAndClockDevices/PlatformManager2">L-ASC10</a></li>
+				</ul><h3>
+					Platforms
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Avant">Lattice Avant</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeNexus">Lattice Nexus</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Lattice-Nexus-2">Lattice Nexus 2</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					General Purpose FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Avant-X">Avant-X</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Avant-G">Avant-G</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Avant-E">Avant-E</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Certus-N2">Certus-N2</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CertusPro-NX">CertusPro-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Certus-NX">Certus-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/ECP5">ECP5 & ECP5-5G</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Ultra Low Power FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40UltraPlus">iCE40 UltraPlus</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40Ultra">iCE40 Ultra</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40Ultra">iCE40 UltraLite</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40">iCE40 LP/HX</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Video Connection FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CrossLink-NX">CrossLinkU-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CrossLink-NX">CrossLink-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CrossLinkPlus">CrossLinkPlus</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CrossLink">CrossLink</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/en/Products">VIEW ALL DEVICES&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Software Tools</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Software Tools
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/FPGAandLDS/LatticeDiamond">Lattice Diamond</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/FPGAandLDS/LatticePropel">Lattice Propel</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/FPGAandLDS/Radiant">Lattice Radiant</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/AIML/LatticesensAIStudio">Lattice sensAI Studio</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/AIML/Lattice-sensAI-Edge-Vision-Engine-SDK">Lattice sensAI EVE SDK</a></li><li><a href="https://www.latticesemi.com/en/Support/Licensing">Software Licensing</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP">VIEW ALL SOFTWARE TOOLS&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Solutions</span></a><div class="line menuContent">
+			<div class="unit size1of3">
+				<h3>
+					Solutions
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/CommunitySourced">Community Sourced</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=bb168d29ad6b40769878f160546890de&amp;active=demo">Demos</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=6da9534f318a4969a6b5e7dc9081bdba&amp;active=ipcore">IP Cores</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=982db688d64345bbb3af29e62fee1dc3&amp;active=board">Kits & Boards</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=3614c818569f4eecb0602ba20a521a41&amp;active=refdesign">Reference Designs</a></li><li><a href="https://www.latticesemi.com/en/Products/ProgrammingHardware">Programming Hardware</a></li>
+				</ul>
+			</div><div class="unit size1of3">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Automate">Lattice Automate</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Drive">Lattice Drive</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/ORAN">Lattice ORAN</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h3>
+					FPGA-Based Security
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/Lattice-FPGA-Security-Solutions">Security Overview</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/solutionsearch">VIEW ALL SOLUTIONS&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Support" class="nULink">Support</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height6">
+		<li><a><span class="fakeLink">Technical Support</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Support
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/AnswerDatabase">Answer Database</a></li><li><a href="https://www.latticesemi.com/en/Support">Get Technical Support</a></li><li><a href="https://www.latticesemi.com/en/About/ContactUs">General Inquiries</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/en/Support">EXPLORE HELP CENTER&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Software Licensing</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Software Licensing
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Support/Licensing">Request a License</a></li><li><a href="https://www.latticesemi.com/Support/Licensing#purchase">Purchase Software License</a></li><li><a href="https://www.latticesemi.com/en/Support/LatticeIPSupport">IP Licensing Support</a></li><li><a href="https://www.latticesemi.com/Support/Licensing/IPCore/IPCoreNew">New IP License Request</a></li><li><a href="https://www.latticesemi.com/en/Support/Lattice-IP-License-Bundles">IP License Bundles</a></li><li><a href="https://www.latticesemi.com/Support/Licensing/AcademicLicense/Academic%20License%20Request%20Form">Academic License Request</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Quality & Reliability</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Quality & Reliability
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/QualityAndReliability">Quality & Reliability Information</a></li><li><a href="https://www.latticesemi.com/en/Support/QualityAndReliability/ExportClassification">Export Classification Information</a></li><li><a href="https://www.latticesemi.com/en/Support/PCN">Product Change Notifications (PCNs)</a></li><li><a href="https://www.latticesemi.com/en/Support/PartNumberReferenceGuide">Part Number Reference Guide</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Services</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Design Services
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/LatticeDesignGroup">Lattice Design Group</a></li><li><a href=""></a></li><li><a href="https://www.latticesemi.com/en/Support/ProductCustomization">Product Services</a></li>
+				</ul><h3>
+					
+				</h3><ul>
+					<li><a href=""></a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Secure Supply Chain
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSupplyGuard">Lattice SupplyGuard</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Training
+				</h3><ul>
+					<li><a href="https://www.latticesemi-insights.com/">Lattice Insights</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Discontinued Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/MatureAndDiscontinuedDevices">Mature & Discontinued Devices</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Legacy Devices & Software</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Legacy Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/SoftwareArchive">FPGA Software Archive</a></li><li><a href="https://www.latticesemi.com/en/Support/ASSPSoftwareArchive">Silicon Image Software Archive</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Lattice Partner Network</span></a><div class="line menuContent">
+			<div class="unit size1of2">
+				<h3>
+					Partner Program
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/Partner-Network">Program Overview</a></li><li><a href="https://www.latticesemi.com/en/Support/Partners">Find Partners</a></li><li><a href="https://www.latticesemi.com/solutionsearch?&amp;qprovider=3e052bdbb99a4c2691d18011e3a24fdf,5233e49f3f684c95a9db94ab3aed059c,1355762face7416da88444b50acab913,edf1088dea6b4972b73b44fad51554ad,47f66166aa4d48599a7df5ef20cae2a2,14d45119e9ce435a962cd7b6c3036e78,a784f36edaf840f8b6908faf3443f7c2,71d36ac2ef8e488abc0bc0c5c4c4e7f3,b08027d6cadc4efdab09ed480e186731,e4fb27cb7bd24c4c96545dccbb6daed0,ea3c5a961c5649f68d8267ee43086d35,358ab1e5969245e5ab3ecf5964b1ec17​  ​">Explore Partner Solutions</a></li>
+				</ul>
+			</div><div class="unit size1of2 lastUnit">
+				<h3>
+					Partner Type
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=3fcabf6c16c647968c89942cd13e2a54">IP Cores</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=d6eef479dc0c4e109dec6f5de39d5812">Design Services</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=08cc134c4b4f46e08010e44dfd4b7043">Boards</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=a26cc42771d949b5837f9be415f95e2e">Programming Services</a></li><li><a href="https://www.latticesemi.com/en/Support/Partners">EDA </a></li><li><a href="https://www.latticesemi.com/en/Support/Partners">Embedded</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Buy/SalesLocator" class="nULink">Buy</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height5">
+		<li><a><span class="fakeLink">Americas Sales</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=74F89870335446AB993BD70BB67F209E">Brazil</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=CC8751866A1A405AA93FB2C743A61159">Canada</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=3F844FA3FC034BD79249267F15208E65">Mexico</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=02D1DC98A6F949BAB8EB61B94AA2B274">Puerto Rico</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=B22CA382BCD9497990EFBEACF5897407">USA</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=4721A7D5228C4A459CCDB00C4AD7B745">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Europe & Africa Sales</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=DFD74C9F2D4B434BB400F68E0CAEC109">Finland</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=171D28DDC08349C1A8267772FDFEB442">France</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=78B777A06EF845BBA57839C084B0DB66">Germany</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=49D9E3960E014D858D6FDAE3D9118C0E">Israel</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=341C8947085D47FCA57ABE17B863962F">Italy</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=A664784F3FC44C248523D10FDAD2E3E7">Norway</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=CA759DC8DE6A4C24B6214F25920BEA8A">Spain</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=C6F72D45022A445BA3ACBA604F9F44E1">Sweden</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=A3769F1BD0DF41E18F11F51A02A45DCE">United Kingdom</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=56406BCD8BF24AD3B2FB1D36EAE47C14">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Asia Pacific Sales</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=7F8D51D079FE48E38C541D9598987304">Australia</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=1BF85C6578DF4AE7919633E4AFF9416E">China</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=ACBD88BEC2884BF19239F551E81055B7">India</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=629E693BD3BE454BA6C118B8FE49DDEB">Indonesia</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=C1F83B11B8CA42EDA0E74619D3408D89">Japan</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=5B0541ED60124FC7B3BAE82DC6E8A13D">Singapore</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=B02FB08BD35247598F9FAE9D72B409AB">South Korea</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=756801F046C24109B9744313514EFD9D">Taiwan</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=176373FF64DE4509A517E896C8DF0B97">Vietnam</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=537DBFB9B472419A9CACF6739C609178">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Online Store</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Lattice Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Buy/BuyOnline/SiliconDevices">Silicon Devices</a></li><li><a href="https://www.latticesemi.com/en/Buy/BuyOnline/SoftwareCablesandBoards">Software, Cables, & Boards</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/en/Buy/BuyOnline">BUY ONLINE&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Discontinued Products</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Discontinued Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices.aspx#ProgrammableLogicDistributors">Rochester Electronics</a></li><li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices.aspx#ProgrammableLogicDistributors">Arrow Electronics</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Blog">Blog</a></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/About" class="nULink">About Lattice</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height4">
+		<li><a><span class="fakeLink">About Lattice</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					About Lattice
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/About">About the Company</a></li><li><a href="https://www.latticesemi.com/en/About/ESG">Corporate Stewardship</a></li><li><a href="https://www.latticesemi.com/en/About/ContactUs">Contact Us</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Investor Relations</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Investor Relations
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/About/InvestorRelations">Investor Overview</a></li><li><a href="https://ir.latticesemi.com/investor-overview/shareholder-services/online-investor-kit">Online Investor Kit</a></li><li><a href="https://ir.latticesemi.com/investor-overview/shareholder-services/investor-faqs">Investor FAQ</a></li><li><a href="https://ir.latticesemi.com/investor-overview/corporate-governance/board-of-directors">Board Of Directors</a></li><li><a href="https://www.latticesemi.com/en/About/Management">Management</a></li><li><a href="https://ir.latticesemi.com/investor-overview/highlights">Corporate Governance</a></li><li><a href="https://ir.latticesemi.com/investor-overview/financial-information/sec-filings">SEC Filings</a></li><li><a href="https://ir.latticesemi.com/investor-overview/quarterly-earnings">Quarterly Earnings</a></li><li><a href="https://ir.latticesemi.com/investor-overview/analysts">Analysts</a></li><li><a href="https://www.latticesemi.com/en/About/EthicsContactInformation">Ethics</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Newsroom</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Newsroom
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/About/Newsroom">Announcements</a></li><li><a href="https://www.latticesemi.com/en/Blog">Blogs</a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/Events">Upcoming Product Events </a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/ImageLibrary">Image Library</a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/VideoLibrary">Video Library</a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/Webinars">Webinar Library</a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/MediaContacts">Media Contacts</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Careers</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Careers
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/About/Jobs">Careers Homepage</a></li><li><a href="https://careers-latticesemi.icims.com/jobs/intro?hashed=-625919477&amp;mobile=false&amp;width=1378&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-480&amp;jun1offset=-420">Search Job Openings</a></li><li><a href="https://www.latticesemi.com/en/About/Jobs/OurBenefits">Our Benefits</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li>
+						<li class="flushRight" onclick="showloginDropdown()">
+						<div class="dropdown dropbtn">
+						
+						<div id="myDropdown" class="dropdown-content">
+						
+<a href="/en/Accounts/SignIn" id="header_0_ctl06_SignInLink">Sign In</a>
+						
+<div class="nooverflow"><a href="/en/Accounts/AccountRegister" id="header_0_ctl07_aRegister">Register</a></div>
+						</div>
+						</div>
+						</li>
+						<li class="languageSelectionContainer  noOver">
+							
+
+    
+        <ul class="languageOverlay darkBackground" id="languageOverlay">
+			
+					<li class='visibleLanguage'> 
+                        
+						<a href="/en/Products/DesignSoftwareAndIP/IntellectualProperty/Demos/GHRD-GSRD-Demonstration" >
+                            <img src='/images/flags/16x16/flag_usa.png' alt="en"/>
+						</a>
+					</li>
+				
+					<li> 
+                        
+						<a href="/ja-JP/Products/DesignSoftwareAndIP/IntellectualProperty/Demos/GHRD-GSRD-Demonstration" >
+                            <img src='/images/flags/16x16/flag_Japan.PNG' alt="ja"/>
+						</a>
+					</li>
+				
+					<li> 
+                        
+						<a href="/zh-CN/Products/DesignSoftwareAndIP/IntellectualProperty/Demos/GHRD-GSRD-Demonstration" >
+                            <img src='/images/flags/16x16/flag_china.png' alt="zh"/>
+						</a>
+					</li>
+				
+        </ul>
+         <span id="curlang" style="display:none;">en</span>
+
+						</li>
+					</ul> 
+				</div>
+				<div class="unit size1of5 lastUnit">
+					
+					<div id="header_0_CoveoSearchPanel" class="searchwrapper">
+	
+                        <label for="txtboxSearch">
+						<input name="header_0$ctl05$TXTQuery" type="text" id="header_0_ctl05_TXTQuery" aria-label="Enter search text" autocomplete="off" placeHolder="Search Site" onkeydown="if (event.keyCode == 13) { location.href = &#39;/Search.aspx?&amp;lcid=9&amp;q=&#39; + encodeURIComponent(document.getElementById(&#39;header_0_ctl05_TXTQuery&#39;).value) + &#39;&amp;t=&#39; + (-new Date().getTimezoneOffset()); return false; }" />
+							
+                                
+                        </label>
+                       <img alt="" id="header_0_ctl05_BTNSearch" title="Search" aria-label="Search Site" class="search-button" onclick="location.href = &#39;/Search.aspx?&amp;lcid=9&amp;q=&#39; + encodeURIComponent(document.getElementById(&#39;header_0_ctl05_TXTQuery&#39;).value) + &#39;&amp;t=&#39; + (-new Date().getTimezoneOffset()); return false;" src="/images/search.png" />
+			        
+                       
+                    
+</div>
+				</div>
+			</div>
+			</div>
+        </div>
+    </div>
+	
+</div>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function showloginDropdown() {
+  if (!document.getElementById("myDropdown").classList.contains("show"))
+  document.getElementById("myDropdown").classList.toggle("show");
+  else
+  document.getElementById("myDropdown").classList.remove("show");
+  var menu = document.getElementsByClassName("menuDetails persistMenu");
+  if (menu.length > 0)
+  {
+   //menu[0].style.display = "none";
+   menu[0].parentElement.firstChild.style = "";
+   menu[0].classList.add("hiddenNavigation");
+   menu[0].classList.remove("persistMenu");
+   
+   }
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+    
+    
+
+
+
+<div  class="stripeContainer stripeOne productsHeader">
+     <a href="" id="myBtn" class="BackTopActive" aria-label="Back To Top"> </a>
+        <div class="stripeContent ">
+        <!-- END LINE -->
+        <!-- START LINE -->
+        <div class="line flushBottom">
+            <!-- START UNIT -->
+
+            <!-- END UNIT -->
+
+            <!-- START UNIT --> 
+            <div  class="unit size1of1 pageTitle lastUnit">
+                <div class="line">
+                    <div class="unit size1of1">
+                        <!-- START PAGE TITLE -->
+                      
+
+
+<ul class="breadcrumb">
+     <li><a href="/">Home</a>  &gt;</li>
+    
+            <li>
+                <a id="header_1_breadcrumb_0_repBreadcrumb_hTags_0" href="/en/Products">Products</a> >
+
+            </li>
+        
+            <li>
+                <a id="header_1_breadcrumb_0_repBreadcrumb_hTags_1" href="/en/Products/DesignSoftwareAndIP">FPGA Design Software | Lattice Semiconductor</a> >
+
+            </li>
+        
+    <li>GHRD/GSRD Demonstration</li>
+</ul>
+<!-- END BREADCRUMBS -->
+
+                      <h1>
+                            GHRD/GSRD Demonstration
+                      </h1>
+                      <h2>A Collection of Hardware and Software for Developing Various Applications</h2>
+                        </div>
+                    
+                        <!-- END PAGE TITLE -->
+                    </div>
+            </div>
+            <!-- END UNIT -->
+
+        </div>
+        <!-- END LINE -->
+    </div>
+    <!-- END STRIPE CONTENT -->
+
+
+</div>
+
+
+     <!-- START SYSTEM WIDE NOTIFICATION -->
+	
+	
+
+<!-- START STRIPE CONTAINER -->
+<div class="stripeContainer stripeTwo">
+
+
+    <!-- START STRIPE CONTENT -->
+    <div class="stripeContent">
+
+
+
+        <!-- START LINE -->
+        <div class="line">
+            <div class="unit size1of4 flushLeft left-content">
+                
+
+
+<div class="leftcontentbarsection">
+    <div class="featuredproducts">
+          <h4>Related Products</h4>
+        
+			    <ul>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_0" href="/en/Products/FPGAandCPLD/Avant-E">Avant-E</a><br />
+			    </li>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_1" href="/en/Products/DevelopmentBoardsAndKits/Avant-E-Evaluation-Board">Avant-E Evaluation Board</a><br />
+			    </li>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_2" href="/en/Products/FPGAandCPLD/CertusPro-NX">CertusPro-NX</a><br />
+			    </li>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_3" href="/en/Products/DevelopmentBoardsAndKits/CertusPro-NX-Versa-Board">CertusPro-NX Versa Board</a><br />
+			    </li>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_4" href="/en/Products/DesignSoftwareAndIP/IntellectualProperty/ReferenceDesigns/ReferenceDesigns05/GHRD-GSRD-Reference-Design">GHRD/GSRD Reference Design</a><br />
+			    </li>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_5" href="/en/Products/DesignSoftwareAndIP/FPGAandLDS/Radiant">Lattice Radiant</a><br />
+			    </li>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_6" href="/en/Products/DesignSoftwareAndIP/FPGAandLDS/LatticePropel">Lattice Propel System Design Environment</a><br />
+			    </li>
+		    
+			    </ul>
+		    
+    </div>
+    <div class="featuredsolutions">
+         <h4>Related Applications</h4>
+        
+			    <ul>
+		    
+			    <li>     
+				    <a id="body_0_leftrail_0_rptFeaturedSolutionsNavigation_FeaturedSolutionsNavigationLink_0" href="/en/Solutions/Solutions/SolutionsDetails02/LatticeNexus">Lattice Nexus Platform</a><br />
+			    </li>
+		    
+			    </ul>
+		    
+    </div>
+</div>
+
+
+<!-- START CROSS-CELL NAVIGATION -->
+
+    
+
+<!-- END CROSS-CELL NAVIGATION -->
+
+            </div>
+            <div class="unit lastUnit size3of4 page-content">
+                
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f7a872fddd46d5"></script> 
+<script type="text/javascript">
+    var tweettext = 'Check out GHRD/GSRD Demonstration from @latticesemi'; 
+    var addthis_share = addthis_share || {}
+    addthis_share = {
+	    passthrough : {
+	        twitter: {
+	            text: tweettext
+	        }
+	    }
+    }
+</script>
+
+<meta property="og:title" content="Check out GHRD/GSRD Demonstration on www.latticesemi.com! http://t.cn/RXUHWlF" />
+
+    <div class="addthisbutton">
+        
+        <!-- AddThis Button BEGIN -->
+       
+        <!-- AddThis Button END -->
+     <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
+    </div>
+    <div class="clear"></div>
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<!-- START Category Landing Block -->
+
+
+<div class="line">
+    <div class="unit size1of1 lastUnit">
+        
+<!-- START RICH TEXT FIELD SAMPLE -->
+<div id="body_0_content_1_rtDescription_Container" class="rich-text">
+	<p>The Golden System Reference Design (GSRD) and the Golden Hardware Reference Design (GHRD) comprise a collection of software and hardware components for developing various applications using the Lattice FPGA. </p>
+<p>The Golden System Reference Design (GSRD) is a collection of software and hardware components for developing a wide variety of end-user applications using the Lattice FPGA. The GSRD architecture provides a base level FPGA system design that allows user to add or remove any additional soft-IPs or custom IPs, without having to build the entire FPGA system from scratch. You can focus on integration and testing your own developed blocks and scale your application accordingly. The GSRD demo also showcases various complex soft-IP features, systems, and tool capabilities to help you understand Lattice FPGA devices better. </p>
+</div>
+<!-- END RICH TEXT FIELD SAMPLE -->
+    </div>
+
+   
+    <div class="unit size1of1 sharedRightGutter noLeftMargin">
+        <h3>Features</h3>
+<ul>
+<li>Support RISC-V RX Soft CPU and AXI4 Interconnect </li>
+<li>QSPI Flash Controller and on-chip System Memory </li>
+<li>ABP connected UART, GPIO and LED output </li>
+<li>Memory Controller with LPDDR4 support </li>
+<li>RGMII/SGMII Gigabit Ethernet interface and SGDMA data transfer IP </li>
+</ul>
+    </div>
+
+    
+
+<!-- START RESPONSIVE VIDEO PLAYER -->
+<div id="body_0_content_1_videoplayer_0_divVideoPlayer" class="video-player">
+    
+</div>
+<!-- END RESPONSIVE VIDEO PLAYER -->
+
+
+</div>
+
+
+
+<!-- START Action Links Block -->
+
+        <ul class="action-links">
+    
+        <li>
+            <a href="/en/Buy/SalesLocator">
+                
+                Contact Sales
+            </a>
+        </li>
+    
+        </ul>
+    
+<!-- END Action Links Block -->
+
+
+<!-- END Category Landing Block -->
+
+
+            </div>
+             
+                                       
+            
+        </div>
+        <!-- END LINE -->
+        <!--START Tabbed Section -->
+        <div class="unit size1of1 page-content">
+            
+
+<!-- START CONTENT TAB WIDGET -->
+    
+            <!-- START TABBED CONTENT SECTION -->
+            
+                <h3 id="body_0_tabbedsection_0_rptTabs_ctl01_0_hSectionTitle_0" class="tabHeader">
+                            Jump to
+     </h3>
+ 
+            
+            <ul class="inlineList tBG clear">
+			
+        
+            <li>
+                <a href="#_226E9C6889664BE7B273F3BB786811EA">
+                    Block Diagram
+                </a>
+            </li>
+        
+            <li>
+                <a href="#_A2EE58A57A7C4008B57D1773FBAAD486">
+                    Release Version
+                </a>
+            </li>
+        
+            <li>
+                <a href="#_2C592540E98B4B6984F8C80889028B8A">
+                    Documentation
+                </a>
+            </li>
+        
+            </ul>
+        
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_1" class="tabHeader">
+                <a id="_226E9C6889664BE7B273F3BB786811EA">
+                    Block Diagram
+                </a>
+            </h3>
+                
+
+<!-- START KEY POINT SECTION  -->
+<div class="line">
+                
+            
+            
+                    
+                    <div class="unit size1of1 lastUnit">
+                        
+<div class="line gOutline">
+    <div class="unit size1of4 vCenter">
+        
+
+
+<a href="/-/media/LatticeSemi/Images/ProductImages/ReferenceDesign/ReferenceDesigns05/GSRD_Avant_BD.ashx" class="jsModalWindow"  >
+    <img src="/-/media/LatticeSemi/Images/ProductImages/ReferenceDesign/ReferenceDesigns05/GSRD_Avant_BD.ashx?h=149&w=240&hash=C69DB0C77763FC86586CB9750D5F56772713263F" alt="GHRD/GSRD Reference Design and Demo version 1.0 block diagram for Avant-E " /><span>Expand Image</span>
+</a>
+
+
+    </div>
+    <div class="unit size3of4 lastUnit">
+        <h4>GHRD/GSRD Reference Design and Demo version 1.0 block diagram for Avant-E </h4>
+
+<!-- START RICH TEXT FIELD SAMPLE -->
+
+<!-- END RICH TEXT FIELD SAMPLE -->
+
+        
+
+        
+    </div>
+</div>
+
+                    </div>
+
+                
+                    </div><div class="line">
+                    <div class="unit size1of1 lastUnit">
+                        
+<div class="line gOutline">
+    <div class="unit size1of4 vCenter">
+        
+
+
+<a href="/-/media/LatticeSemi/Images/ProductImages/ReferenceDesign/ReferenceDesigns05/GSRD-CPNX-2_0-Block-Diagram.ashx" class="jsModalWindow"  >
+    <img src="/-/media/LatticeSemi/Images/ProductImages/ReferenceDesign/ReferenceDesigns05/GSRD-CPNX-2_0-Block-Diagram.ashx?h=149&w=240&hash=8F4E2A53A4F724B18640297AAA7C38A2A4F9EF45" alt="​GHRD/GSRD Reference Design and Demo version 2.0 block diagram for CertusPro-NX" /><span>Expand Image</span>
+</a>
+
+
+    </div>
+    <div class="unit size3of4 lastUnit">
+        <h4>GHRD/GSRD Reference Design and Demo version 2.0 block diagram for CertusPro-NX​</h4>
+
+<!-- START RICH TEXT FIELD SAMPLE -->
+
+<!-- END RICH TEXT FIELD SAMPLE -->
+
+        
+
+        
+    </div>
+</div>
+
+                    </div>
+
+                
+                    </div><div class="line">
+                    <div class="unit size1of1 lastUnit">
+                        
+<div class="line gOutline">
+    <div class="unit size1of4 vCenter">
+        
+
+
+<a href="/-/media/LatticeSemi/Images/ProductImages/DesignSoftwareandIntellectualProperty/IP/Demos/GHRD-GSRD-Demo-BD.ashx" class="jsModalWindow"  >
+    <img src="/-/media/LatticeSemi/Images/ProductImages/DesignSoftwareandIntellectualProperty/IP/Demos/GHRD-GSRD-Demo-BD.ashx?h=149&w=240&hash=2B3E710DAD54ACC30B7C9C12F59704F639AD0270" alt="GHRD/GSRD Demonstration Block Diagram" /><span>Expand Image</span>
+</a>
+
+
+    </div>
+    <div class="unit size3of4 lastUnit">
+        <h4>GHRD/GSRD Reference Design and Demo version 1.0 block diagram for CertusPro-NX​</h4>
+
+<!-- START RICH TEXT FIELD SAMPLE -->
+
+<!-- END RICH TEXT FIELD SAMPLE -->
+
+        
+
+        
+    </div>
+</div>
+
+                    </div>
+
+                
+        
+</div>
+<!-- END KEY POINT SECTION -->
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_2" class="tabHeader">
+                <a id="_A2EE58A57A7C4008B57D1773FBAAD486">
+                    Release Version
+                </a>
+            </h3>
+                
+<!-- START RICH TEXT TAB CONTENT -->
+	
+<!-- START RICH TEXT FIELD SAMPLE -->
+<div id="body_0_tabbedsection_0_rptTabs_ctl01_2_ctl00_2_Container_2" class="rich-text">
+	<table class="data">
+    <thead>
+        <tr>
+            <th class="allowWrap" style="text-align: center;">GHRD/GSRD Name</th>
+            <th class="allowWrap">GHRD/GSRD Version</th>
+            <th class="allowWrap">Supported FPGA Family</th>
+            <th class="allowWrap">Supported FPGA Board Name</th>
+            <th class="allowWrap">Lattice Radiant Software Version</th>
+            <th class="allowWrap">Lattice Propel Design Environment Version</th>
+            <th class="allowWrap">U-boot Branch (Tag)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="allowWrap">Golden System Reference Design for CertusPro-NX</td>
+            <td>2.0</td>
+            <td>CertusPro-NX</td>
+            <td>CertusPro-NX Versa Board</td>
+            <td>2024.1.1</td>
+            <td>2024.1</td>
+            <td>Branch = lattice_v2024.04<br />
+            Tag = lattice_gsrd_2024_01</td>
+        </tr>
+        <tr>
+            <td class="allowWrap">Golden System Reference Design for CertusPro-NX</td>
+            <td>1.0</td>
+            <td>CertusPro-NX</td>
+            <td>CertusPro-NX Versa Board</td>
+            <td>2023.2</td>
+            <td>2023.2</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="allowWrap">Golden System Reference Design for Avant-E</td>
+            <td>1.0</td>
+            <td>Avant-E</td>
+            <td>Avant-E Evaluation Board</td>
+            <td>2024.1.1</td>
+            <td>2024.1</td>
+            <td>-</td>
+        </tr>
+    </tbody>
+</table>
+<p class="footnote">* The flash device on CertusPro-NX Versa Board is a Winbond W25Q512JVEIQ or Macronix MX25L51245G.<br />
+* The CertusPro-NX Golden System Reference Design and Demo V2.0 &ndash; Bitstream can be programmed to Winbond W25Q512JVEIQ flash only.<br />
+* Refer to <a href="/en/Support/AnswerDatabase/7/5/4/7540">FAQ#7540</a>&nbsp;for guidance to update the bitstream based on the flash manufacturer on your CertusPro-NX Versa Board.</p>
+</div>
+<!-- END RICH TEXT FIELD SAMPLE -->
+<!-- START RICH TEXT TAB CONTENT -->
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_3" class="tabHeader">
+                <a id="_2C592540E98B4B6984F8C80889028B8A">
+                    Documentation
+                </a>
+            </h3>
+                
+
+<!-- START DOCUMENT EXPLORER TAB -->
+<div>
+
+
+<script type="text/javascript">
+    $j(document).ready(function() {
+        document.cookie = "ZipDownload=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    });
+    
+</script>
+<script>
+    function temp() {
+        //var div = document.getElementById("demopopup");
+        //div.style.visibility = "visible";
+        //alert(div.style.visibility);
+    }
+    function showlogindiv(controlId) {
+        var control = document.getElementById(controlId);
+        control.style.display = "block";
+        return false;
+        //alert(document.body.bgColor);
+    }
+    function hidelogindiv(controlId) {
+        var control = document.getElementById(controlId);
+        control.style.display = "none";
+    }
+</script>
+
+
+<!-- START DOCUMENT EXPLORER -->
+<table class="fullSize docTypes">
+    
+    
+             <tbody>
+                 <tr>
+        
+                    <td class="active">
+                        <div class="docType">
+                            Quick Reference
+                        </div>
+                        <ul>
+                        
+                                        <li>
+                                            <a href="/en/Products/DesignSoftwareAndIP/IntellectualProperty/Demos/GHRD-GSRD-Demonstration?ActiveTab=User+Manual#_2C592540E98B4B6984F8C80889028B8A"
+                                            class="activeLink"
+                                                onclick="return swapActive(this,'_6362550331D24BFD96461ED048E3DDEB');">
+                                                User Manual 
+                                            </a>    
+                                        </li>
+                            
+                    </ul></td>
+            
+                    <td class="closed">
+                        <div class="docType">
+                            Technical Resources
+                        </div>
+                        <ul>
+                        
+                                        <li>
+                                            <a href="/en/Products/DesignSoftwareAndIP/IntellectualProperty/Demos/GHRD-GSRD-Demonstration?ActiveTab=Reference+Design#_2C592540E98B4B6984F8C80889028B8A"
+                                            
+                                                onclick="return swapActive(this,'_2D5D8EE7547B47CA9B2EF7D7284B1A36');">
+                                                Reference Design 
+                                            </a>    
+                                        </li>
+                            
+                    </ul></td>
+            
+                    <td class="closed">
+                        <div class="docType">
+                            Downloads
+                        </div>
+                        <ul>
+                        
+                                        <li>
+                                            <a href="/en/Products/DesignSoftwareAndIP/IntellectualProperty/Demos/GHRD-GSRD-Demonstration?ActiveTab=Design+File#_2C592540E98B4B6984F8C80889028B8A"
+                                            
+                                                onclick="return swapActive(this,'_4C63C86241FF4708897EC983CBB1BA6F');">
+                                                Design File 
+                                            </a>    
+                                        </li>
+                            
+                    </ul></td>
+            
+                </tr>
+            </tbody>
+        
+</table>
+<!-- START CONTENT TAB WIDGET -->
+<!-- END TABBED CONTENT TABS -->
+
+        <!-- Start category Quick Reference   -->            
+                
+                <!-- START User Manual document type listing SECTION -->
+                <table id="_6362550331D24BFD96461ED048E3DDEB" class="docList fullSize activeDocList">
+                    
+                                <thead>
+                                        <tr>
+                                            <td class="noSort subscribeimg" aria-label="No value"></td>
+                                            <td class="noSort downloadimg" aria-label="No value"></td>
+                                            <th class="document-title headerSortDown">TITLE</th>
+                                            <th>NUMBER</th>
+                                            <th>VERSION</th>
+                                            <th>DATE</th>
+                                            <th>FORMAT</th>
+                                            <th class="noSort">SIZE</th>
+                                        </tr>
+                                    </thead>
+									<tfoot>
+                                    <tr>
+                                        <td class="noSort checkbox lightYellowBackground">
+                                        
+                                          <span style="color:#FFF3D3;">  
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_0_DocumentListRepeater_0_checkSubAll" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$checkSubAll" disabled="disabled" onclick="swapCheckedSubProd(this.checked);" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_0_DocumentListRepeater_0_checkSubAll">a</label></span></span>
+                                        </td>
+                                        <td class="noSort checkbox lightestBlueBackground">
+                                        <input type="checkbox" id="checkAll" value="false" onclick="swapCheckedDocsProd(this.checked);" aria-label="No Text" />
+                                        </td>
+                                         <td colspan="6" class="noSort">
+                                       Select All
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$SubscriptionButtonAlt" value="Notify Me of Changes *" onclick="showlogindiv(&#39;demopopup&#39;);return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_0_DocumentListRepeater_0_SubscriptionButtonAlt" class="button disableSub" /> 
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$DownloadButton" value="Download Selected as Zip File" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_0_DocumentListRepeater_0_DownloadButton" class="button download" /> 
+                                        </td>
+                                    </tr> 
+                                        
+                                    </tfoot>
+                                     <tbody>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_0_DocumentListRepeater_0_SubCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_0_DocumentListRepeater_0_SubCheckbox_0">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_0_DocumentListRepeater_0_SubHiddenField_0" value="{360E5F84-9A24-4E52-9FAA-1BDC4ED0FAF1}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_0_DocumentListRepeater_0_docCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_0_DocumentListRepeater_0_docCheckbox_0">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_0_DocumentListRepeater_0_docHiddenField_0" value="{360E5F84-9A24-4E52-9FAA-1BDC4ED0FAF1}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=54134">
+                                                CertusPro-NX Golden System Demo V1.0 - User Guide​
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td>FPGA-UG-02205</td>
+                                        <td>1.1</td>
+                                        <td>2/20/2024</td>
+                                        <td>PDF</td>
+                                        <td>1.8 MB</td>
+                                    </tr>
+                        
+                                </tbody>                                 
+                        
+                </table>
+            
+         
+        <!-- END TABBED CONTENT SECTION -->
+    
+        <!-- Start category Technical Resources   -->            
+                
+                <!-- START Reference Design document type listing SECTION -->
+                <table id="_2D5D8EE7547B47CA9B2EF7D7284B1A36" class="docList fullSize ">
+                    
+                                <thead>
+                                        <tr>
+                                            <td class="noSort subscribeimg" aria-label="No value"></td>
+                                            <td class="noSort downloadimg" aria-label="No value"></td>
+                                            <th class="document-title headerSortDown">TITLE</th>
+                                            <th>NUMBER</th>
+                                            <th>VERSION</th>
+                                            <th>DATE</th>
+                                            <th>FORMAT</th>
+                                            <th class="noSort">SIZE</th>
+                                        </tr>
+                                    </thead>
+									<tfoot>
+                                    <tr>
+                                        <td class="noSort checkbox lightYellowBackground">
+                                        
+                                          <span style="color:#FFF3D3;">  
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_checkSubAll" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$checkSubAll" disabled="disabled" onclick="swapCheckedSubProd(this.checked);" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_checkSubAll">a</label></span></span>
+                                        </td>
+                                        <td class="noSort checkbox lightestBlueBackground">
+                                        <input type="checkbox" id="checkAll" value="false" onclick="swapCheckedDocsProd(this.checked);" aria-label="No Text" />
+                                        </td>
+                                         <td colspan="6" class="noSort">
+                                       Select All
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$SubscriptionButtonAlt" value="Notify Me of Changes *" onclick="showlogindiv(&#39;demopopup&#39;);return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_SubscriptionButtonAlt" class="button disableSub" /> 
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$DownloadButton" value="Download Selected as Zip File" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_DownloadButton" class="button download" /> 
+                                        </td>
+                                    </tr> 
+                                        
+                                    </tfoot>
+                                     <tbody>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_SubCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_SubCheckbox_0">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_SubHiddenField_0" value="{9FD802B0-78B4-40D4-AC93-23A7611EBB7E}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_docCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_docCheckbox_0">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_docHiddenField_0" value="{9FD802B0-78B4-40D4-AC93-23A7611EBB7E}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=54468">
+                                                CertusPro-NX Golden System Reference Design and Demo V2.0 - User Guide​
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td>FPGA-RD-02300</td>
+                                        <td>1.0</td>
+                                        <td>10/28/2024</td>
+                                        <td>PDF</td>
+                                        <td>6.7 MB</td>
+                                    </tr>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_SubCheckbox_1" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_SubCheckbox_1">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_SubHiddenField_1" value="{9F2394D5-2FE3-43A3-9303-9332712EC0A3}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_docCheckbox_1" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_docCheckbox_1">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_1_DocumentListRepeater_0_docHiddenField_1" value="{9F2394D5-2FE3-43A3-9303-9332712EC0A3}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=54617">
+                                                Avant-E Golden System Reference Design and Demo V1.0 - User Guide
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td>FPGA-RD-02296</td>
+                                        <td>1.0</td>
+                                        <td>2/24/2025</td>
+                                        <td>PDF</td>
+                                        <td>4.9 MB</td>
+                                    </tr>
+                        
+                                </tbody>                                 
+                        
+                </table>
+            
+         
+        <!-- END TABBED CONTENT SECTION -->
+    
+        <!-- Start category Downloads   -->            
+                
+                <!-- START Design File document type listing SECTION -->
+                <table id="_4C63C86241FF4708897EC983CBB1BA6F" class="docList fullSize ">
+                    
+                                <thead>
+                                        <tr>
+                                            <td class="noSort subscribeimg" aria-label="No value"></td>
+                                            <td class="noSort downloadimg" aria-label="No value"></td>
+                                            <th class="document-title headerSortDown">TITLE</th>
+                                            <th>NUMBER</th>
+                                            <th>VERSION</th>
+                                            <th>DATE</th>
+                                            <th>FORMAT</th>
+                                            <th class="noSort">SIZE</th>
+                                        </tr>
+                                    </thead>
+									<tfoot>
+                                    <tr>
+                                        <td class="noSort checkbox lightYellowBackground">
+                                        
+                                          <span style="color:#FFF3D3;">  
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_checkSubAll" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$checkSubAll" disabled="disabled" onclick="swapCheckedSubProd(this.checked);" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_checkSubAll">a</label></span></span>
+                                        </td>
+                                        <td class="noSort checkbox lightestBlueBackground">
+                                        <input type="checkbox" id="checkAll" value="false" onclick="swapCheckedDocsProd(this.checked);" aria-label="No Text" />
+                                        </td>
+                                         <td colspan="6" class="noSort">
+                                       Select All
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$SubscriptionButtonAlt" value="Notify Me of Changes *" onclick="showlogindiv(&#39;demopopup&#39;);return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_SubscriptionButtonAlt" class="button disableSub" /> 
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$DownloadButton" value="Download Selected as Zip File" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_DownloadButton" class="button download" /> 
+                                        </td>
+                                    </tr> 
+                                        
+                                    </tfoot>
+                                     <tbody>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_0">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_SubHiddenField_0" value="{99EA5F0C-5F5A-45E1-B982-BB883D79DCF5}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             </span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_docHiddenField_0" value="{99EA5F0C-5F5A-45E1-B982-BB883D79DCF5}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="https://www.latticesemi.com/view_document?document_id=54618">
+                                                Avant-E Golden System Reference Design and Demo V1.0 - Bitstream
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td></td>
+                                        <td></td>
+                                        <td>2/24/2025</td>
+                                        <td>ZIP</td>
+                                        <td>21.5 MB</td>
+                                    </tr>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_1" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_1">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_SubHiddenField_1" value="{8A2C3F5F-8761-48D8-BC42-52163F45D72D}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_1" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_1">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_docHiddenField_1" value="{8A2C3F5F-8761-48D8-BC42-52163F45D72D}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=54470">
+                                                CertusPro-NX Golden System Reference Design and Demo V2.0 - Bitstream 
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td></td>
+                                        <td></td>
+                                        <td>10/28/2024</td>
+                                        <td>ZIP</td>
+                                        <td>7.2 MB</td>
+                                    </tr>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_2" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl03$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_2">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl03$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_SubHiddenField_2" value="{8AC63BAA-F0B3-43BC-BEBC-0D0E52833B65}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_2" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl03$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_2">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl03$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_DocumentsRepeater_3_DocumentTableRepeater_2_DocumentListRepeater_0_docHiddenField_2" value="{8AC63BAA-F0B3-43BC-BEBC-0D0E52833B65}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=54214">
+                                                CertusPro-NX Golden System Reference Design and Demo V1.0 - Bitstream​
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td></td>
+                                        <td></td>
+                                        <td>2/20/2024</td>
+                                        <td>ZIP</td>
+                                        <td>7.3 MB</td>
+                                    </tr>
+                        
+                                </tbody>                                 
+                        
+                </table>
+            
+         
+        <!-- END TABBED CONTENT SECTION -->
+    
+<script type="text/javascript">/* <![CDATA[ */
+jQuery(document).ready(
+	function() {
+		jQuery(".activeDocList").tablesorter(
+						{
+				
+				headers: {
+					
+					6: {sorter: false }
+				}
+			}
+		);
+	}
+);
+
+/* ]]> */</script>
+
+<span class="DocMsg"><p>*By clicking on the "Notify Me of Changes" button, you agree to receive notifications on changes to the document(s) you selected. </p></span>
+<span id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_lmsg_3"></span>
+<div id="demopopup" style="width:300px;height:150px;display:none;border:4px solid #FFC222;left:60px;top:0;background-color:white;padding:10px; display:none;position:fixed;z-index:1000;top:50%;left:50%;margin-top:-75px;margin-left:-150px;">
+    
+    <h3>Please Login to Enable Notifications</h3>
+You need an account to turn on notifications.  Please login or register.
+    <table style="margin-top:20px;">
+        <tr style="padding:10px;">
+            <td style="border-right:1px solid #D0D0D0;"><a id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_lnkloginbtn_3" href="javascript:__doPostBack(&#39;body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$lnkloginbtn&#39;,&#39;&#39;)">Login</a></td>
+            <td><a onclick="hidelogindiv(&#39;demopopup&#39;); return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_3_SectionFileDownloads_3_NotLogin_3" href="javascript:__doPostBack(&#39;body_0$tabbedsection_0$rptTabs$ctl03$ctl01$SectionFileDownloads$NotLogin&#39;,&#39;&#39;)">Not Now</a></td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+</div>
+<!-- END DOCUMENT EXPLORER TAB -->
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+<!-- END CONTENT TAB WIDGET -->
+
+        </div>
+        <!--END Tabbed Section -->
+    </div>
+    <!-- END STRIPE CONTENT -->
+
+
+</div>
+
+<!-- END STRIPE CONTAINER -->
+      
+	
+
+<div class="stripeContainer footerStripe">
+	<div class="stripeContent">
+            <div class="line">
+                <div class="unit size2of7">
+					<img src="/images/Lattice_Logo_Yellow_White_Tagline.png" width="200px">
+				</div>
+                <div class="unit size4of7">
+		    	    
+                        
+				            <div class="unit size1of3">
+                                
+                                <h4>ABOUT LATTICE</h4>
+<ul>
+    <li><a href="https://www.latticesemi.com/About">Our Company</a></li>
+    <li><a href="https://www.latticesemi.com/About/Newsroom">Newsroom</a></li>
+    <li><a href="http://ir.latticesemi.com">Investor Relations</a></li>
+    <li><a href="https://www.latticesemi.com/About/Jobs">Careers</a></li>
+    <li><a href="https://www.latticesemi.com/Accounts/YourAccount/NewsletterSubscriptions">Newsletter</a></li>
+</ul>
+				            </div> 
+                        
+				            <div class="unit size1of3">
+                                
+                                <h4>SALES</h4>
+<ul>
+       <li><a href="https://www.latticesemi.com/Buy">Americas</a></li>
+        <li><a href="https://www.latticesemi.com/Buy">Europe &amp; Africa</a></li>
+        <li><a href="https://www.latticesemi.com/Buy">Asia Pacific</a></li>
+        <li><a href="https://www.latticesemi.com/Buy/BuyOnline">Online Store</a></li>
+</ul>
+				            </div> 
+                        
+				            <div class="unit size1of3">
+                                
+                                <h4>SUPPORT</h4>
+<ul>
+    <li><a href="https://www.latticesemi.com/Support/SubmitTechSupport">Technical Support</a></li>
+    <li><a href="https://www.latticesemi.com/Support/Licensing">Software Licensing</a></li>
+    <li><a href="https://www.latticesemi.com/Support/Partner-Network">Partner Network</a></li>
+    <li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices">Legacy Devices &amp; Software</a></li>
+    <li><a href="https://www.latticesemi-insights.com/">Training</a></li>
+    <li><a href="https://www.latticesemi.com/About/ContactUs">Contact Us</a></li>
+</ul>
+				            </div> 
+                         
+                </div>
+                <div class="unit size1of7 lastUnit rText">
+                    <div class="title"><h4>FOLLOW</h4></div>
+					<div>
+			        
+
+		    <div class="line flatList iconList">
+			    
+				    <div class="unit size1of6">
+					  
+                         <a href="https://www.linkedin.com/company/lattice-semiconductor" aria-label="LinkedIn">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.facebook.com/latticesemi" aria-label="Facebook">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.twitter.com/latticesemi" aria-label="Twitter">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.youtube.com/latticesemiconductor" aria-label="YouTube">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.weibo.com/latticesemi" aria-label="Weibo">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+		    </div>
+
+            <img src="https://www.latticesemi.com/images/Qrcode_for_Lattice_sm.gif" alt="Lattice QR code">
+                    </div>
+			    </div>
+            </div>
+            <div class="line">
+                <div class="unit size1of1 lastUnit">
+                    <ul class="flatList smallList">
+                        <li><span>&copy;2025 Lattice Semiconductor</span> | </li>
+                        <li>
+<a href="https://www.latticesemi.com/About/LegalNotices.aspx">
+Legal Notices
+</a>
+|
+</li>
+<li>
+<a href="https://www.latticesemi.com/About/LegalNotices/PrivacyPolicy.aspx">
+Privacy Policy
+</a>
+|
+</li>
+<li>
+<a href="https://www.latticesemi.com/About/Sitemap.aspx">
+Site Map
+</a>
+|
+</li>
+<li>
+<a href="https://www.latticesemi.com/About/UseOfCookies.aspx">
+Use of Cookies
+</a>
+|
+</li>
+<li>
+<a href="https://www.latticesemi.com/About/LegalNotices/AccessibilityStatement.aspx">Accessibility Statement</a>
+</li>
+                    </ul>
+                    
+                </div>
+            </div>
+	</div>
+</div>
+
+  </form>      
+      <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','/js/analytics.js','ga');
+ 
+  ga('create', 'UA-2724384-1', 'auto');
+ga('require', 'linkid', 'linkid.js');
+var urlCapture = /(\/en|\/ja\-jp|\/zh\-cn)?([^.]+)(.aspx)?/ig;
+var urlPieces = urlCapture.exec(window.location.pathname);
+
+if(urlPieces[2] != undefined)
+     ga('set', 'page', urlPieces[2]);
+
+  ga('send', 'pageview');
+
+jQuery('a[href*=latticestore]').each(function () {
+      jQuery(this).on('click', function() {
+        ga('send', 'event', 'Outgoing store link', 'click', jQuery(this).text());
+      });
+	  });
+
+jQuery('a[href*=Buy]').each(function () {
+      jQuery(this).on('click', function() {
+        ga('send', 'event', 'Contact Sales Button', 'click', jQuery(this).text());
+      });
+	  });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src=https://www.googletagmanager.com/gtag/js?id=G-4EQQCB3EBE></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4EQQCB3EBE');
+</script>
+
+  
+  <!--   <script type="text/javascript" src="/js/SitecoreClientTracking.js"></script> -->
+    <script type="text/javascript" src="/js/video.js"></script>
+    <script type="text/javascript">
+            jQuery.noConflict();
+            videojs.options.flash.swf = "/js/video-js.swf"
+    </script>
+    <script type="text/javascript" src="/js/lsc.js"></script>
+  
+      
+  </body>
+</html>
+

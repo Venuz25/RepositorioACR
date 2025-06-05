@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+
+
+
+
+<!--[if IE 7]>    <html class="ie lt-ie9 ie7" lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9 ie8" lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 9]>    <html class="ie ie9" lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+<!-- OneTrust Cookies Consent Notice start for www.latticesemi.com -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/8ce0ef32-b483-40ef-a516-d6ebfa92ee46-test/OtAutoBlock.js" ></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="8ce0ef32-b483-40ef-a516-d6ebfa92ee46-test" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for www.latticesemi.com -->
+<head id="hHeadTag">
+
+	<!-- Google Tag Manager -->
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+})(window,document,'script','dataLayer','GTM-MZ9QSXR');</script>
+
+<!-- End Google Tag Manager -->
+
+<!-- Microsoft Clarity - Heatmap -->
+<script>
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "dy0r78kpm3");
+</script>
+<!--End Microsoft Clarity - Heatmap -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>
+	Lattice ORAN™ Solution Stack | Low Power ORAN Deployment
+</title><meta name="keywords" content="Lattice ORAN Solution Stack, ORAN Solution, Lattice ORAN, Low Power ORAN Deployment  " /><meta name="description" content="Lattice ORAN Solution Stack provides tight, secure, and flexible synchronization based on IEEE 1588v2 PTP Protocols &amp; ITU standards." /><link rel="icon" type="image/x-icon" href="/images/favicon.ico" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="VIcurrentDateTime" content="638843327968559472" />
+<script type="text/javascript" src="/layouts/system/VisitorIdentification.js"></script>
+
+	<!-- Conditional Loading of Swiper Stylesheet -->
+<script type="text/javascript">
+    if (window.innerWidth < 768 || (window.innerWidth >= 768 && window.innerWidth <= 1024)) {
+    // Create a link element for the stylesheet
+    var stylesheetLink = document.createElement("link");
+    stylesheetLink.rel = "stylesheet";
+    stylesheetLink.type = "text/css";
+    stylesheetLink.href = "/css/swiperslider.css";
+
+    // Append the link to the head of the document
+    document.head.appendChild(stylesheetLink);
+	
+}
+
+</script>
+        <link type="text/css" href="/css/video-js.css" rel="stylesheet">
+        <!--[if lte IE 7]>
+        <link rel="stylesheet" type="text/css" href="http://www.latticesemi.com/css/video-js-ie7.css" />
+        <![endif]-->
+        <link type="text/css" rel="stylesheet" href="/css/lsc.css">
+
+        
+     
+        <script type="text/javascript">
+            // IE console fix
+            var console = console || { log: function () { }, warn: function () { } };
+            window.lattice = window.lattice || {};
+
+            var $j = window.$j = jQuery.noConflict();
+
+            $j(function () {
+                $j(window).load(function () {
+                    lattice.init($j);
+                });
+            });
+        </script>
+        <script type = "text/javascript">
+            function notificationClickJQuery() {
+                jQuery.ajax({
+                    type: "GET",
+                    url: "~/Services/SitewideNotification.svc/UpdateNotificationforUser",
+                    data: '{currentnotificationid: "' + $("#lblcurrentNotificationID")[0].value + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        jQuery('#dNotificationBar').hide();
+                        return false;
+                    },
+                    failure: function(response) {
+                        alert(response.d);
+                        return true;
+                    }
+                });
+            }
+            function privacypolicyClickJQuery() {
+                jQuery.ajax({
+                    type: "GET",
+                    url: "~/Services/SitewideNotification.svc/UpdatePrivacyPolicyforUser",
+                    data: '{currentnotificationid: "' + $("#lblcurrentPrivacyPolicyID")[0].value + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        jQuery('#dPrivacyPolicyNotificationBar').hide();
+                        return false;
+                    },
+                    failure: function(response) {
+                        alert(response.d);
+                        return true;
+                    }
+                });
+            }
+        </script>
+      <script type="text/javascript" src="/js/jquery.tablesorter.min.js"></script>
+    
+
+	 <script type="text/javascript">
+	 function expiredReCaptcha() 
+{
+    //This method will execute only if Google ReCaptcha expired
+    jQuery("#RecaptchaValidHiddenField").val(""); // making hidden textbox empty 
+	jQuery('#CaptchaErrorMessage').html('Captcha verification failed');  
+			jQuery('#CaptchaErrorMessage').css('color',"red");
+}
+	  var verifyCallback = function(response) {
+         jQuery("#RecaptchaValidHiddenField").val("valid");
+		 if (jQuery("#RecaptchaValidHiddenField").val() !== '') {  
+            //jQuery('#CaptchaErrorMessage').css('color', 'green').html('Success!');  
+		     jQuery(".Recaptcha span.error-message").remove();
+		     jQuery(".form-buttons p.error").attr("style", "display:none");
+        }  else{
+		  document.getElementById("CaptchaErrorMessage").innerHTML = "Required Field";
+		  }
+      };
+  var onloadCallback = function() {
+	 grecaptcha.render('RecaptchaValidHiddenField', {
+          'sitekey' : '6Lci1lYbAAAAACrENFTJJIk2M8u7qa-d2_6O6qaw',
+          'callback' : verifyCallback
+        });
+  };
+</script>
+	  <script src="https://www.recaptcha.net/recaptcha/api.js?onload=onloadCallback"></script>
+
+                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="NLFKM-QREF5-ZS5GY-TB9ZU-TEUFQ",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"NLFKM-QREF5-ZS5GY-TB9ZU-TEUFQ",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="xo7ju7axgz7ig2b3s76a-f-aadbe712e-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"39","ak.cp":"1093151","ak.ai":parseInt("650564",10),"ak.ol":"0","ak.cr":79,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"615a00d4","ak.r":49140,"ak.a2":e,"ak.m":"b","ak.n":"ff","ak.bpcip":"187.190.154.0","ak.cport":1309,"ak.gh":"23.36.183.227","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1748735996","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==Ec6R6qMb/sVFQm15PQZfUOEYx4RTgGwP3mQreH+683xm9TJ4N7JBk8zMpR3vuRo4NpTEVNmkTM6Fs2MtAy5uR4GY4TlE1fKvQHST84oj/xqrap2g1gN+BNR6w3NQCfLIFAIuIgkRCXVEFQHqScJWpUdAOVTbNz+4K4rPlyjEvWZhbEnlpjtsAc/IALBU+2k3gdTlD6rTJe+6lJeDMAnFdEdTwWzAusZWGsmoexfZgaLuuCT2jGljkyR1JIuoqnWJOKgkaeb/4GNoTo2D4FPySouvdHMzIQnNAgSlZu0BD/XXJvxYuhY39SgLPPc5Kzi+4nnf5FTlQ8U2YjR7rr2OBoT11U5OOZ8Y2qlI6wf3WC5R8UpwkA2wZxVwUfjXA086ERUHGko+jkX6LiFvKgboUK9mcg25qyYopaPdJ+IkTRQ=","ak.pv":"34","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+  <body>
+  
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src=63
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <form method="post" action="/ja-JP/Solutions/Solutions/SolutionsDetails02/ORAN" id="mainform">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['mainform'];
+if (!theForm) {
+    theForm = document.mainform;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D0E5B4D5" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="5cS7UB/EGlNdDdDKr2PShApMu2B5qMGODdyzhgkU3+8DQy2voRt75YzxYnSNHvs4eICiK1/mNUYtKBqglBrGsBhdv6mwotNmA7jlvrkJqqJ523scTYG8z1VCW56PDgIEMlsKvN4SvADg2OX6TneTVEDGhZ0Is9uJ734vQ8qhjBNkk3TlhBiTa6V5IsNXHKY4xSFvx2mN6jx15PYdtcKlS5kSTTean668re+qAH8cQd0QJmphQx0nbK/WIxd7QNPcBAwOeA3jg/S3rPYMdSfq74M7AwwNdupoLRfuf3bgrfNV88UYQC2kyZ7/u7JLqo9GyGTs5d1hPfTvDFuhWYJ3YIq5QbNifb5WFadgtTQSsRbfE9AjGDfSUlqycm5vSPNzEFDbR25ov3ViJzyqhEkygAnxXpEfH5PAvx8fEqk2FsKRhHqgBdAeAqxQ+Ots2DuziUix1rO908Z1mK0tWm41bQLMpIlpOn3wjNpCDisYXUNbrbb3Pqfgdx45JlGmjdgdwygAR7zayr7JyzhLZl/j9CG1H7KxfoJPnVdvRMij3xL9D2oM/XYusjaUB+vFjthMGaj8HlSRmAOgaCq2bjjXeSqIHIVwIwUIHYbWWsG0336M6r+uGk5GdsVmlJjBuoBTXQr0EJAcKmREGZkmpVv345VQJEURe0cRsL6Tmhwhvc4ObcmyknPoKXPTKMcH7+CQSldYJkKskYlwWLPVsQUe0HsREZw8oDczrjEhztfyTIDQqgSzsSFwfs5oXMKkzVj5HypjnhXYKdTQNaSVzgHLHFW2jlnBrUhUO7UjIYdOt7khDePNrf3TjAfw6mKm5L0ljH14ln1WVa6R2XBVzeUCfsELo3gUlxxXATlHf2KFGXqmhxVTwST2d/KPTucbYBBRzaAiXgD6Jadah97NbJv2+vL9I1DL5iiaGIh/VTLSVBGPeooS58pquEgT/G47iANIuqLBYvckioGvXOf5pr8iyMMbzNksr1zpmmhCuZwraoZmxxU2" />
+</div>
+	
+	<script type="text/javascript">
+		var linkDeleteImageUrl = '/temp/iconcache/network/16x16/link_delete.png';
+	</script>
+	
+ 	<!-- END SYSTEM WIDE NOTIFICATION -->
+      
+    
+
+
+
+<!-- START STRIPE CONTAINER -->
+<div class="stripeContainer headerStripe darkBackground" id="JumpAssetMainNav">
+    <!-- START STRIPE CONTENT -->
+    <div  class="stripeContent stickyNav">
+        <div class="line">
+            <div class="unit size1of4">
+               <div id="desktoplogo">
+                 
+                           <a href="/ja-JP">
+                                <img src="/-/media/LatticeSemi/Images/Common/Logo.ashx?h=23&amp;la=ja-JP&amp;mw=144&amp;w=144" class="logo" alt="Lattice Semiconductor" width="144" height="23" />
+                            </a>
+                   
+                            <div class="line hamburgermenu">
+							 <div class="unit size1of7" id="mobilemenu"><img src="/images/menu.png" alt="en" width="22px" height="22px" /></div>
+							 
+							 <div class="unit size4of7" id="mobilelogo"><a href="/ja-JP">
+                                <img src="/-/media/LatticeSemi/Images/Common/Logo.ashx?h=23&amp;la=ja-JP&amp;mw=144&amp;w=144" class="logo" alt="Lattice Semiconductor" width="144" height="23" />
+                            </a></div>
+                            <div class="unit size2of7 lastUnit">
+							<div class="line">
+							<div  class="unit size1of3" id="profile"><img src="/images/profile_icon.png" alt="en" width="22px" height="22px" /></div>
+                                <div class="unit size1of3" id="language">
+                                  
+									<ul>
+                                        <li id="en"><img src='/images/flags/16x16/flag_usa.png' alt="en" /></li>
+                                        <li id="jp"><img src='/images/flags/16x16/flag_Japan.PNG' alt="ja" /></li>
+                                        <li id="cn"><img src='/images/flags/16x16/flag_china.png' alt="zh" /></li>
+                                    </ul>
+                                </div>
+                                <div class="unit size1of3 lastUnit" id="search"><img src="/images/searchmobile.png" alt="en" width="22px" height="22px" /></div>
+                                </div>
+								</div>
+                               
+                        </div>
+                    
+                    
+                   
+                </div> 
+			</div>
+			<div class="unit size3of4 lastUnit">
+			<div class="line">
+				<div class="unit size4of5">
+					<ul class="navItems">
+						<li class="primaryNavigation"><a href="https://www.latticesemi.com/ja-JP/Solutions" class="nULink">アプリケーション</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height5">
+		<li><a><span class="fakeLink">産業用</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Automotive
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/SolutionCategories/Automotive">Automotive Overview</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/DriverAssistance">ADAS / Driver Assistance</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/FunctionalSafety">Functional Safety</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/InVehicleInfotainment">Infotainment</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/QualityAndReliability">Quality & Reliability</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Factory Automation
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/FunctionalSafety">Functional Safety</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/MachineVision">エンベッデッドビジョン</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/SolutionCategories/Automotive">自動車</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Robotics">AI / 機械学習</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Other Industrial
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Medical">HDMIインターフェースブリッジ</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Surveillance">Video Surveillance</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Automate">Lattice Automate</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Drive">Lattice Drive</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">通信</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Client Computing
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Notebooks">Notebooks / PCs</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Printers">Printers</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Tablets">Tablets</a></li>
+				</ul><h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/ORAN">Lattice ORAN</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					データセンター＆エッジコンピューティング
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/PFR">プラットフォームレジリエンス(PFR)</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/DatacenterSystemsServerSolutions">データセンターシステム – サーバー</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/DatacenterSystemsStorage">ストレージ</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/DataCenterSwitches">Switches</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					無線
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/5G">5G Open RAN</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/HetNetSmallCellsSolutions">HetNetスモールセル</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/LowPowerRadios">小電力無線</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/MillimeterWaveRadios">ミリメートル波無線</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					有線
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/IntellectualProperty/IPCore/IPCores01/10GbEthernetMAC">10GbpsイーサネットMAC</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/HitlessUpdates">ヒットレスアップデート</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/IntelligentSFPModules">インテリジェントSFP</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/IntellectualProperty/ReferenceDesigns/ReferenceDesign04/RGMIItoGMIIBridge">RGMIIからGMIIへのブリッジ</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">民生用</span></a><div class="line menuContent">
+			<div class="unit size1of3">
+				<h3>
+					家電製品
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/IoT">AI / 機械学習</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/VRHMD">エンベッデッドビジョン</a></li>
+				</ul>
+			</div><div class="unit size1of3">
+				<h3>
+					モバイル
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/SmartHomeSmartRoom">エンベッデッドビジョン</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/SmartHomeControl">AI / 機械学習</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Aerospace & Defense</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Aerospace & Defense
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/Defense">Defense Overview</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/GuidanceSystems">Guidance Systems</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Software-Defined-Radio">Software Defined Radio</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Space">Space</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/UAVs">UAVs</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Security</span></a><div class="line menuContent">
+			<div class="unit size1of2">
+				<h3>
+					FPGA-Based Security
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/Lattice-FPGA-Security-Solutions">Security Overview</a></li>
+				</ul>
+			</div><div class="unit size1of2 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/ja-JP/Products" class="nULink">製品</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height3">
+		<li><a><span class="fakeLink">プログラマブルロジック</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Control & Security FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/MachXO5-NX">MachXO5-NX</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/Mach-NX">Mach-NX</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/MachXO3D">MachXO3D</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/MachXO3">MachXO3</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/MachXO2">MachXO2</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/PowerAndClockDevices/PlatformManager2">L-ASC10</a></li>
+				</ul><h3>
+					Platforms
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Avant">Lattice Avant</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/LatticeNexus">Lattice Nexus</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Lattice-Nexus-2">Lattice Nexus 2</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					General Purpose FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/Avant-X">Avant-X</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/Avant-G">Avant-G</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/Avant-E">Avant-E</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/Certus-N2">Certus-N2</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/CertusPro-NX">CertusPro-NX</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/Certus-NX">Certus-NX</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/ECP5">ECP5 & ECP5-5G</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Ultra Low Power FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/iCE40UltraPlus">iCE40 UltraPlus</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/iCE40Ultra">iCE40 Ultra</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/iCE40Ultra">iCE40 UltraLite</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/iCE40">iCE40 LP/HX</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Video Connection FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/CrossLink-NX">CrossLinkU-NX</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/CrossLink-NX">CrossLink-NX</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/CrossLinkPlus">CrossLinkPlus</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/FPGAandCPLD/CrossLink">CrossLink</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/ja-JP/Products">VIEW ALL DEVICES&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Software Tools</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Software Tools
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/FPGAandLDS/LatticeDiamond">Lattice Diamond</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/FPGAandLDS/LatticePropel">Lattice Propel</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/FPGAandLDS/Radiant">Lattice Radiant</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/AIML/LatticesensAIStudio">Lattice sensAI Studio</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/AIML/Lattice-sensAI-Edge-Vision-Engine-SDK">Lattice sensAI EVE SDK</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/Licensing">Software Licensing</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP">VIEW ALL SOFTWARE TOOLS&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Solutions</span></a><div class="line menuContent">
+			<div class="unit size1of3">
+				<h3>
+					Solutions
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails01/CommunitySourced">Community Sourced</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=bb168d29ad6b40769878f160546890de&amp;active=demo">Demos</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=6da9534f318a4969a6b5e7dc9081bdba&amp;active=ipcore">IP Cores</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=982db688d64345bbb3af29e62fee1dc3&amp;active=board">Kits & Boards</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=3614c818569f4eecb0602ba20a521a41&amp;active=refdesign">Reference Designs</a></li><li><a href="https://www.latticesemi.com/ja-JP/Products/ProgrammingHardware">Programming Hardware</a></li>
+				</ul>
+			</div><div class="unit size1of3">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Automate">Lattice Automate</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/Drive">Lattice Drive</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/ORAN">Lattice ORAN</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h3>
+					FPGA-Based Security
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Products/Lattice-FPGA-Security-Solutions">Security Overview</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/solutionsearch">VIEW ALL SOLUTIONS&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/ja-JP/Support" class="nULink">サポート</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height6">
+		<li><a><span class="fakeLink">テクニカルサポート</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Support
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Support/AnswerDatabase">回答データベース</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support">テクニカルサポートを受ける</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/ContactUs">General Inquiries</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/ja-JP/Support">EXPLORE HELP CENTER&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">ライセンス</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Software Licensing
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Support/Licensing">Request a License</a></li><li><a href="https://www.latticesemi.com/Support/Licensing#purchase">Purchase Software License</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/LatticeIPSupport">IP Licensing Support</a></li><li><a href="https://www.latticesemi.com/Support/Licensing/IPCore/IPCoreNew">New IP License Request</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/Lattice-IP-License-Bundles">IP License Bundles</a></li><li><a href="https://www.latticesemi.com/Support/Licensing/AcademicLicense/Academic%20License%20Request%20Form">Academic License Request</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">品質及び信頼性</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Quality & Reliability
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Support/QualityAndReliability">品質及び信頼性のホーム</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/QualityAndReliability/ExportClassification">輸出分類情報</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/PCN">製品変更のお知らせ（PCN）</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/PartNumberReferenceGuide">品番参考ガイド</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">サービス</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Design Services
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Support/LatticeDesignGroup">Lattice Design Group</a></li><li><a href=""></a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/ProductCustomization">Product Services</a></li>
+				</ul><h3>
+					
+				</h3><ul>
+					<li><a href=""></a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Secure Supply Chain
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Solutions/Solutions/SolutionsDetails02/LatticeSupplyGuard">Lattice SupplyGuard</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Training
+				</h3><ul>
+					<li><a href="https://www.latticesemi-insights.com/">Lattice Insights</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Discontinued Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Support/MatureAndDiscontinuedDevices">Mature & Discontinued Devices</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">レガシーデバイス及びソフトウェア</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Legacy Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Support/SoftwareArchive">FPGAソフトウェアアーカイブ</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/ASSPSoftwareArchive">Silicon Imageソフトウェアアーカイブ</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Lattice Partner Network</span></a><div class="line menuContent">
+			<div class="unit size1of2">
+				<h3>
+					Partner Program
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Support/Partner-Network">Program Overview</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/Partners">Find Partners</a></li><li><a href="https://www.latticesemi.com/solutionsearch?&amp;qprovider=3e052bdbb99a4c2691d18011e3a24fdf,5233e49f3f684c95a9db94ab3aed059c,1355762face7416da88444b50acab913,edf1088dea6b4972b73b44fad51554ad,47f66166aa4d48599a7df5ef20cae2a2,14d45119e9ce435a962cd7b6c3036e78,a784f36edaf840f8b6908faf3443f7c2,71d36ac2ef8e488abc0bc0c5c4c4e7f3,b08027d6cadc4efdab09ed480e186731,e4fb27cb7bd24c4c96545dccbb6daed0,ea3c5a961c5649f68d8267ee43086d35,358ab1e5969245e5ab3ecf5964b1ec17​  ​">Explore Partner Solutions</a></li>
+				</ul>
+			</div><div class="unit size1of2 lastUnit">
+				<h3>
+					Partner Type
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=3fcabf6c16c647968c89942cd13e2a54">IP Cores</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=d6eef479dc0c4e109dec6f5de39d5812">Design Services</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=08cc134c4b4f46e08010e44dfd4b7043">Boards</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=a26cc42771d949b5837f9be415f95e2e">Programming Services</a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/Partners">EDA </a></li><li><a href="https://www.latticesemi.com/ja-JP/Support/Partners">Embedded</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/ja-JP/Buy/SalesLocator" class="nULink">購入</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height5">
+		<li><a><span class="fakeLink">南北アメリカ地域セールス</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=74F89870335446AB993BD70BB67F209E">ブラジル</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=CC8751866A1A405AA93FB2C743A61159">カナダ</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=3F844FA3FC034BD79249267F15208E65">メキシコ</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=02D1DC98A6F949BAB8EB61B94AA2B274">プエルトリコ</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=B22CA382BCD9497990EFBEACF5897407">アメリカ</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=4721A7D5228C4A459CCDB00C4AD7B745">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">ヨーロッパ・アフリカ地域セールス</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=DFD74C9F2D4B434BB400F68E0CAEC109">フィンランド</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=171D28DDC08349C1A8267772FDFEB442">フランス</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=78B777A06EF845BBA57839C084B0DB66">ドイツ</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=49D9E3960E014D858D6FDAE3D9118C0E">イスラエル</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=341C8947085D47FCA57ABE17B863962F">イタリア</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=A664784F3FC44C248523D10FDAD2E3E7">ノルウェー</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=CA759DC8DE6A4C24B6214F25920BEA8A">スペイン</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=C6F72D45022A445BA3ACBA604F9F44E1">スウェーデン</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=A3769F1BD0DF41E18F11F51A02A45DCE">イギリス</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=56406BCD8BF24AD3B2FB1D36EAE47C14">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">アジア太平洋地域セールス</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=7F8D51D079FE48E38C541D9598987304">オーストラリア</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=1BF85C6578DF4AE7919633E4AFF9416E">中国</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=ACBD88BEC2884BF19239F551E81055B7">インド</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=629E693BD3BE454BA6C118B8FE49DDEB">インドネシア</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=C1F83B11B8CA42EDA0E74619D3408D89">日本</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=5B0541ED60124FC7B3BAE82DC6E8A13D">シンガポール</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=B02FB08BD35247598F9FAE9D72B409AB">韓国</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=756801F046C24109B9744313514EFD9D">台湾</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=176373FF64DE4509A517E896C8DF0B97">ベトナム</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=537DBFB9B472419A9CACF6739C609178">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">オンラインストア</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Lattice Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/Buy/BuyOnline/SiliconDevices">半導体デバイス</a></li><li><a href="https://www.latticesemi.com/ja-JP/Buy/BuyOnline/SoftwareCablesandBoards">ソフトウェア、ケーブル、及びボード</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/ja-JP/Buy/BuyOnline">BUY ONLINE&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">製造中止商品</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Discontinued Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices.aspx#ProgrammableLogicDistributors">ロチェスターエレクトロニクス‎</a></li><li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices.aspx#ProgrammableLogicDistributors">アロー・エレクトロニクス</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/ja-JP/Blog" class="nULink">ブログ</a></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/ja-JP/About" class="nULink">会社案内</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height4">
+		<li><a><span class="fakeLink">会社情報</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					About Lattice
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/About">会社情報</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/ESG">企業責任</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/ContactUs">お問い合わせ</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">投資家情報</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Investor Relations
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/About/InvestorRelations">Investor Overview</a></li><li><a href="https://ir.latticesemi.com/investor-overview/shareholder-services/online-investor-kit">オンライン投資家キット</a></li><li><a href="https://ir.latticesemi.com/investor-overview/shareholder-services/investor-faqs">投資家のよくある質問</a></li><li><a href="https://ir.latticesemi.com/investor-overview/corporate-governance/board-of-directors">取締役会</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/Management">役員紹介</a></li><li><a href="https://ir.latticesemi.com/investor-overview/highlights">コーポレートガバナンス</a></li><li><a href="https://ir.latticesemi.com/investor-overview/financial-information/sec-filings">SEC ファイリング</a></li><li><a href="https://ir.latticesemi.com/investor-overview/quarterly-earnings">四半期決算</a></li><li><a href="https://ir.latticesemi.com/investor-overview/analysts">アナリスト</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/EthicsContactInformation">企業倫理</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">プレスルーム</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Newsroom
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/About/Newsroom">ニュースとプレスリリース</a></li><li><a href="https://www.latticesemi.com/ja-JP/Blog">Blogs</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/Newsroom/Events">今後の製品イベント</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/Newsroom/ImageLibrary">画像ライブラリー</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/Newsroom/VideoLibrary">ビデオライブラリ</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/Newsroom/Webinars">Webinar Library</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/Newsroom/MediaContacts">メディアコンタクト</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">採用情報</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Careers
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/ja-JP/About/Jobs">仕事内容</a></li><li><a href="https://careers-latticesemi.icims.com/jobs/intro?hashed=-625919477&amp;mobile=false&amp;width=1378&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-480&amp;jun1offset=-420">募集の検索</a></li><li><a href="https://www.latticesemi.com/ja-JP/About/Jobs/OurBenefits">ベネフィットについて</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li>
+						<li class="flushRight" onclick="showloginDropdown()">
+						<div class="dropdown dropbtn">
+						
+						<div id="myDropdown" class="dropdown-content">
+						
+<a href="/ja-JP/Accounts/SignIn" id="header_0_ctl06_SignInLink">Sign In</a>
+						
+<div class="nooverflow"><a href="/ja-JP/Accounts/AccountRegister" id="header_0_ctl07_aRegister">Register</a></div>
+						</div>
+						</div>
+						</li>
+						<li class="languageSelectionContainer  noOver">
+							
+
+    
+        <ul class="languageOverlay darkBackground" id="languageOverlay">
+			
+					<li> 
+                        
+						<a href="/en/Solutions/Solutions/SolutionsDetails02/ORAN" >
+                            <img src='/images/flags/16x16/flag_usa.png' alt="en"/>
+						</a>
+					</li>
+				
+					<li class='visibleLanguage'> 
+                        
+						<a href="/ja-JP/Solutions/Solutions/SolutionsDetails02/ORAN" >
+                            <img src='/images/flags/16x16/flag_Japan.PNG' alt="ja"/>
+						</a>
+					</li>
+				
+					<li> 
+                        
+						<a href="/zh-CN/Solutions/Solutions/SolutionsDetails02/ORAN" >
+                            <img src='/images/flags/16x16/flag_china.png' alt="zh"/>
+						</a>
+					</li>
+				
+        </ul>
+         <span id="curlang" style="display:none;">ja-JP</span>
+
+						</li>
+					</ul> 
+				</div>
+				<div class="unit size1of5 lastUnit">
+					
+					<div id="header_0_CoveoSearchPanel" class="searchwrapper">
+	
+                        <label for="txtboxSearch">
+						<input name="header_0$ctl05$TXTQuery" type="text" id="header_0_ctl05_TXTQuery" aria-label="Enter search text" autocomplete="off" placeHolder="Search Site" onkeydown="if (event.keyCode == 13) { location.href = &#39;/Search.aspx?&amp;lcid=9&amp;q=&#39; + encodeURIComponent(document.getElementById(&#39;header_0_ctl05_TXTQuery&#39;).value) + &#39;&amp;t=&#39; + (-new Date().getTimezoneOffset()); return false; }" />
+							
+                                
+                        </label>
+                       <img alt="" id="header_0_ctl05_BTNSearch" title="Search" aria-label="Search Site" class="search-button" onclick="location.href = &#39;/Search.aspx?&amp;lcid=9&amp;q=&#39; + encodeURIComponent(document.getElementById(&#39;header_0_ctl05_TXTQuery&#39;).value) + &#39;&amp;t=&#39; + (-new Date().getTimezoneOffset()); return false;" src="/images/search.png" />
+			        
+                       
+                    
+</div>
+				</div>
+			</div>
+			</div>
+        </div>
+    </div>
+	
+</div>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function showloginDropdown() {
+  if (!document.getElementById("myDropdown").classList.contains("show"))
+  document.getElementById("myDropdown").classList.toggle("show");
+  else
+  document.getElementById("myDropdown").classList.remove("show");
+  var menu = document.getElementsByClassName("menuDetails persistMenu");
+  if (menu.length > 0)
+  {
+   //menu[0].style.display = "none";
+   menu[0].parentElement.firstChild.style = "";
+   menu[0].classList.add("hiddenNavigation");
+   menu[0].classList.remove("persistMenu");
+   
+   }
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+    
+    
+
+
+
+<div  class="stripeContainer stripeOne solutionsHeader">
+     <a href="" id="myBtn" class="BackTopActive" aria-label="Back To Top"> </a>
+        <div class="stripeContent ">
+        <!-- END LINE -->
+        <!-- START LINE -->
+        <div class="line flushBottom">
+            <!-- START UNIT -->
+
+            <!-- END UNIT -->
+
+            <!-- START UNIT --> 
+            <div  class="unit size1of1 pageTitle lastUnit">
+                <div class="line">
+                    <div class="unit size1of1">
+                        <!-- START PAGE TITLE -->
+                      
+
+
+<ul class="breadcrumb">
+     <li></li>
+    
+            <li>
+                <a id="header_1_breadcrumb_0_repBreadcrumb_hTags_0" href="/ja-JP/Solutions">アプリケーション</a> >
+
+            </li>
+        
+    <li>Lattice ORAN Solution Stack</li>
+</ul>
+<!-- END BREADCRUMBS -->
+
+                      <h1>
+                            Lattice ORAN™ Solution Stack
+                      </h1>
+                      <h2>Secure, Synchronized, and Low Power ORAN Deployment</h2>
+                        </div>
+                    
+                        <!-- END PAGE TITLE -->
+                    </div>
+            </div>
+            <!-- END UNIT -->
+
+        </div>
+        <!-- END LINE -->
+    </div>
+    <!-- END STRIPE CONTENT -->
+
+
+</div>
+
+
+     <!-- START SYSTEM WIDE NOTIFICATION -->
+	
+	
+
+<!-- START STRIPE CONTAINER -->
+<div class="stripeContainer stripeTwo">
+
+
+    <!-- START STRIPE CONTENT -->
+    <div class="stripeContent">
+
+
+
+        <!-- START LINE -->
+        <div class="line">
+            <div class="unit size1of4 flushLeft left-content">
+                
+
+
+<div class="leftcontentbarsection">
+    <div class="featuredproducts">
+          <h4>Related Products</h4>
+        
+			    <ul>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_0" href="/ja-JP/Products/FPGAandCPLD/CertusPro-NX">CertusPro-NX</a><br />
+			    </li>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_1" href="/ja-JP/Products/DesignSoftwareAndIP/FPGAandLDS/Radiant">Lattice Radiantソフトウェア</a><br />
+			    </li>
+		    
+			    <li> 
+				    <a id="body_0_leftrail_0_rptFeaturedProductsNavigation_FeaturedProductsNavigationLink_2" href="/ja-JP/Products/DesignSoftwareAndIP/FPGAandLDS/LatticePropel">Lattice Propelシステム設計環境</a><br />
+			    </li>
+		    
+			    </ul>
+		    
+    </div>
+    <div class="featuredsolutions">
+         <h4></h4>
+        
+    </div>
+</div>
+
+
+<!-- START CROSS-CELL NAVIGATION -->
+
+    
+            <div class="sidebarNavBlock">
+            <div id="body_0_leftrail_1_Repeater1_ctl00_0_outerdiv_0">
+<!-- START LINK IMAGE MODULE -->
+<a href="/Accounts/YourAccount/NewsletterSubscriptions"> 
+    
+    <br />
+    <img src="/-/media/LatticeSemi/Images/SidebarAds/Newsletter_Subscribe_JP.ashx?h=227&amp;la=ja-JP&amp;w=220" alt="Newsletter Subscription" width="220" height="227" /><br />
+     
+    
+</a>
+<!-- END  LINK IMAGE MODULE  -->
+</div>
+
+            </div>
+        
+
+<!-- END CROSS-CELL NAVIGATION -->
+
+            </div>
+            <div class="unit lastUnit size3of4 page-content">
+                
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f7a872fddd46d5"></script> 
+<script type="text/javascript">
+    var tweettext = 'Check out Lattice ORAN™ Solution Stack from @latticesemi'; 
+    var addthis_share = addthis_share || {}
+    addthis_share = {
+	    passthrough : {
+	        twitter: {
+	            text: tweettext
+	        }
+	    }
+    }
+</script>
+
+<meta property="og:title" content="Lattice ORAN™ Solution Stack の詳細については、www.latticesemi.com ，をご覧ください！http://t.cn/RXUHWlF" />
+
+    <div class="addthisbutton">
+        
+        <!-- AddThis Button BEGIN -->
+       
+        <!-- AddThis Button END -->
+     <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
+    </div>
+    <div class="clear"></div>
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<!-- START Category Landing Block -->
+
+
+<div class="line">
+    <div class="unit size1of1 lastUnit">
+        
+<!-- START RICH TEXT FIELD SAMPLE -->
+<div id="body_0_content_1_rtDescription_Container" class="rich-text">
+	<p>The Lattice ORAN&trade; Solution Stack is engineered to facilitate swift ORAN deployment, offering a comprehensive suite of solutions that address critical aspects such as advanced security (featuring encryption, authentication, key management and root-of-trust mechanisms), versatile fronthaul synchronization (including ORAN functional split options, IEEE 1588/TSN, and eCPRI), and efficient low-power hardware acceleration for essential functions like MACsec/IPsec and 5G-ORAN small cell capabilities, such as digital signal processing and secure packet processing. This suite is pivotal as the wireless network evolves towards a Software-Defined Networking (SDN) model and disaggregation.</p>
+<p><strong>Evolution of Lattice ORAN Stacks</strong></p>
+<p>Launched in 2022, <strong>Lattice ORAN 1.0</strong> introduces the solution to securing the increasingly complex and vulnerable control plane functions brought about by the advent of Software-Defined Networking (SDN) and widespread network disaggregation. Recognizing the critical need for robust security in the ORAN ecosystem, this version introduces "Lattice Secure the Wire" technology. It fortifies the network's defense by implementing Zero Trust protections, ensuring that all messages exchanged between the various control plane components are encrypted, signed, and authenticated. This comprehensive security strategy not only addresses the escalating threats but also lays a solid foundation for a secure, resilient network infrastructure, setting a precedent for future ORAN deployments to follow.</p>
+<p><strong>Lattice ORAN 1.1</strong>: This update, in 2023, expanded the Lattice ORAN stack to meet the intricate timing and synchronization needs across diverse 3GPP/ORAN deployment scenarios. It ensures secure, precise, and adaptable synchronization leveraging IEEE 1588v2 PTP Protocols &amp; ITU standards. It supports a variety of timing sources (DPLL/OCXO and GNSS) and interfaces like PCIe &amp; 10 G Ethernet, fully integrating IEEE/ITU standards directly onto Lattice FPGA platforms. This version delivers 1588 Class C compliance with mutual authentication security protocol, underscoring the stack's capability to meet stringent timing requirements with robust security. This one of a kind secure synchronization solution facilitates robust, high-performance ORAN deployments that are equipped to handle the demands of next-generation wireless communication technologies.</p>
+<p><strong>Lattice ORAN 1.2</strong>: Continuing the Open RAN innovation, Lattice introduces the latest advancement in the ORAN 1.2 stack: a pioneering small cell solution employing the Low Power CertusPro-NX FPGA technology. This iteration is meticulously engineered to ensure efficient, low-power data exchange and synchronization between baseband modems and RF front ends. It achieves this through an enhanced PCIe Gen 3 to JESD204B Bridge, integrated with advanced frame time control mechanisms. These mechanisms are crucial for managing timing and synchronization within cellular networks, ensuring precise alignment of data frames across the communication protocol stack. By optimizing Serdes speeds and logic cell efficiency, this solution not only enables reduced energy consumption and footprint but also eliminates the complexity of installation and maintenance. Removing specific vendor dependencies, our solution emphasizes versatility and security, making it an ideal choice for telecom operators aiming to deploy cost-effective, secure, and scalable small cell networks.</p>
+</div>
+<!-- END RICH TEXT FIELD SAMPLE -->
+    </div>
+
+   
+    <div class="unit size1of1 sharedRightGutter noLeftMargin">
+        <img alt="Lattice ORAN 1.2 Solution Stack " src="/-/media/LatticeSemi/Images/SolutionsImages/SolutionDetails/Lattice-ORAN-1_2_Stack.ashx?h=472&amp;w=750&amp;la=ja-JP" style="height: 472px; width: 750px;" />
+<ul class="action-links">
+    <li>
+    <a href="/ja-JP/Buy/SalesLocator">Contact Sales
+    </a>
+    </li>
+</ul>
+    </div>
+
+    
+
+<!-- START RESPONSIVE VIDEO PLAYER -->
+<div id="body_0_content_1_videoplayer_0_divVideoPlayer" class="video-player">
+    
+</div>
+<!-- END RESPONSIVE VIDEO PLAYER -->
+
+
+</div>
+
+
+
+<!-- START Action Links Block -->
+
+        <ul class="action-links">
+    
+        </ul>
+    
+<!-- END Action Links Block -->
+
+
+<!-- END Category Landing Block -->
+
+
+            </div>
+             
+                                       
+            
+        </div>
+        <!-- END LINE -->
+        <!--START Tabbed Section -->
+        <div class="unit size1of1 page-content">
+            
+
+<!-- START CONTENT TAB WIDGET -->
+    
+            <!-- START TABBED CONTENT SECTION -->
+            
+                <h3 id="body_0_tabbedsection_0_rptTabs_ctl01_0_hSectionTitle_0" class="tabHeader">
+                            Jump to
+     </h3>
+ 
+            
+            <ul class="inlineList tBG clear">
+			
+        
+            <li>
+                <a href="#_F333A415257149AB9EA53ED1C4D960CA">
+                    Video
+                </a>
+            </li>
+        
+            <li>
+                <a href="#_FE2098E27DE7435EB2A57362798BB568">
+                    System Architecture
+                </a>
+            </li>
+        
+            <li>
+                <a href="#_0E3C2818B36D42BC82AF6312F251A55F">
+                    Reference Designs
+                </a>
+            </li>
+        
+            <li>
+                <a href="#_AD42406CD6DE4F24991D39511F117B44">
+                    Demos
+                </a>
+            </li>
+        
+            <li>
+                <a href="#_1F44F1A8B3F34E519C9ED738968AF224">
+                    Development Kits & Boards
+                </a>
+            </li>
+        
+            <li>
+                <a href="#_561D2F67680A4CAAAC40175706804CF4">
+                    Software Tools
+                </a>
+            </li>
+        
+            <li>
+                <a href="#_40434503B6674344BF220414447E3CBA">
+                    Documentation
+                </a>
+            </li>
+        
+            </ul>
+        
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_1" class="tabHeader">
+                <a id="_F333A415257149AB9EA53ED1C4D960CA">
+                    Video
+                </a>
+            </h3>
+                
+
+<!-- START KEY POINT SECTION  -->
+<div class="line">
+                
+            
+            
+                    
+                    <div class="unit size1of1 lastUnit">
+                        
+<div class="line gOutline">
+    <div class="unit size1of4 vCenter">
+        
+
+
+<a href="#13A4541140C84A3B912890733A51C84C" class="jsModalWindow jsInline"  >
+    <img src="/-/media/LatticeSemi/Videos/Thumbnails/DevCon24/Demos/LDC24_Demo-Yongatek_Lattice_ORAN_Radio_Unit_Implemented_on_CPNX-100.ashx?h=135&amp;la=ja-JP&amp;mh=149&amp;mw=240&amp;w=240" alt="Yongatek Lattice ORAN™ Radio Unit Implemented on CPNX-100" width="240" height="135" /><div class='playbutton'></div><span></span>
+</a>
+<div style="display: none;">
+    <div id="13A4541140C84A3B912890733A51C84C"  >
+        
+
+<!-- START VIDEO PLAYER, top of page, plays inline. -->
+<div id="body_0_tabbedsection_0_rptTabs_ctl01_1_rpKeyPointGroups_1_rpKeyPoint_0_ctl01_0_ctl04_0_ctl04_0_divVideoPlayer_0" class="video-player">
+	
+	<video width="900" height="506" poster="/-/media/LatticeSemi/Videos/Thumbnails/DevCon24/Demos/LDC24_Demo-Yongatek_Lattice_ORAN_Radio_Unit_Implemented_on_CPNX-100.ashx" class="video-js vjs-default-skin vjs-big-play-centered" preload="none" data-setup="{}" controls=""><source src="https://files.latticesemi.com/finalVids/DevCon24/Demos/LDC24+Demo+-+Yongatek+Lattice+ORAN+Radio+Unit+Implemented+on+CPNX-100.mp4" type="video/mp4"></source><p>Your browser does not support video playback.</p></video>
+	
+</div>
+<!-- END VIDEO PLAYER -->
+
+    </div>
+</div>
+
+    </div>
+    <div class="unit size3of4 lastUnit">
+        <h4>Lattice ORAN™ Radio Unit Implemented on CPNX-100</h4>
+
+<!-- START RICH TEXT FIELD SAMPLE -->
+<div id="body_0_tabbedsection_0_rptTabs_ctl01_1_rpKeyPointGroups_1_rpKeyPoint_0_ctl01_0_ctl05_0_ctl01_0_Container_0" class="rich-text">
+	In this demo, we introduce the Lattice ORAN™ Radio Unit (O-RU), which features advanced capabilities such as Lower PHY baseband processing on the Lattice CertusPro™-NX FPGA. It includes FFT/IFFT, CP addition and removal, PRACH filtering, and digital beamforming. The O-RU supports up to 4 transmit and 4 receive antennas (4T4R), offers an RF bandwidth of 100MHz, and operates at frequencies up to 6GHz. Additionally, it has Ethernet interfaces for I&amp;Q sample exchange with Higher PHY and a JESD204B interface with RFFE, highlighting its robust performance and versatility in modern communication systems.
+</div>
+<!-- END RICH TEXT FIELD SAMPLE -->
+
+        
+
+        
+    </div>
+</div>
+
+                    </div>
+
+                
+        
+</div>
+<!-- END KEY POINT SECTION -->
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_2" class="tabHeader">
+                <a id="_FE2098E27DE7435EB2A57362798BB568">
+                    System Architecture
+                </a>
+            </h3>
+                
+<!-- START RICH TEXT TAB CONTENT -->
+	
+<!-- START RICH TEXT FIELD SAMPLE -->
+<div id="body_0_tabbedsection_0_rptTabs_ctl01_2_ctl00_2_Container_2" class="rich-text">
+	<p>The ORAN 1.2 system architecture features a low power PCIe to JESD204B bridge, facilitating bidirectional data transfers between PCIe IP and JESD204B IP at speeds of 6.144 Gbps per lane. This design ensures efficient data embedding into PCIe Memory Write packets for Gen3 speed transmission to the PCIe link partner, and vice versa, enhancing system performance and reliability. Integrated with a 153.6 MHz user clock domain and dual 250 MHz output clocks, including a 90-degree phase-shifted clock. This precise clocking setup, provides the frame time control, guaranteeing that data packets are aligned and synchronized with the network's timing requirements. Hence, enhancing the seamless operation and reliability of 5G Small Cell networks by minimizing timing errors and data corruption.</p>
+<img alt="Lattice ORAN Solution Stack System Architecture" src="/-/media/LatticeSemi/Images/SolutionsImages/SolutionDetails/Lattice-ORAN-1_2-System-Architecture_BD.ashx?h=351&amp;w=700&amp;la=ja-JP" style="height: 351px; width: 700px;" />
+</div>
+<!-- END RICH TEXT FIELD SAMPLE -->
+<!-- START RICH TEXT TAB CONTENT -->
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_3" class="tabHeader">
+                <a id="_E9A334356A1E4202964F947E30996219">
+                    Customer Application
+                </a>
+            </h3>
+                
+
+<!-- START KEY POINT SECTION  -->
+<div class="line">
+                
+            </div><div class="line"><div class="unit size1of1 lastUnit"><p>5G Mid-Power Integrated Small Cell, reference platform is a comprehensive development board tailored for 5G baseband processors and transceiver frontends. It's designed to kickstart customer development with features like 4T4R 100MHz IBW/OBW for mid-power RF and support for outdoor integrated radio from 1W to 20W per channel. With Power over Ethernet (PoE) capabilities up to 10W per channel and an all-in-one box solution integrating CU/DU/RU, this design is both power and cost-efficient. It's ideal for deployment in varied environments such as sports venues, hotspots for 5G densification, enterprise private networks, and college campuses.</p></div></div><div class="line">
+            
+                    
+                    <div class="unit size1of1 lastUnit">
+                        
+<div class="line gOutline">
+    <div class="unit size1of4 vCenter">
+        
+
+
+<a href="/-/media/LatticeSemi/Images/SolutionsImages/SolutionDetails/Lattice-ORAN-Customer-Application-BD.ashx" class="jsModalWindow"  >
+    <img src="/-/media/LatticeSemi/Images/SolutionsImages/SolutionDetails/Lattice-ORAN-Customer-Application-BD.ashx?h=149&w=240&hash=1B35C69B09BF0E8DEA855A2E9D30CD4C08DB21F6" alt="5G Mid-Power Radio Unit /  Integrated Small Cell Customer Application BD" /><span>Expand Image</span>
+</a>
+
+
+    </div>
+    <div class="unit size3of4 lastUnit">
+        <h4>5G Mid-Power Radio Unit /  Integrated Small Cell </h4>
+
+<!-- START RICH TEXT FIELD SAMPLE -->
+<div id="body_0_tabbedsection_0_rptTabs_ctl01_3_rpKeyPointGroups_3_rpKeyPoint_0_ctl01_0_ctl05_0_ctl01_0_Container_0" class="rich-text">
+	<ul>
+    <li>Development board for host processor, modem and transceiver</li>
+    <li>Enablement to jump-start customer development </li>
+    <li>4T4R, 100MHz IBW/OBW, mid-power RF</li>
+    <li>Outdoor integrated radio &ndash; specifically 1W - 20W per channel</li>
+    <li>PoE up to 10W per channel</li>
+    <li>All in one box where CU/DU/RU exists as a signal unit</li>
+    <li>Power and cost-efficient</li>
+</ul>
+<p>Example Deployment Use Cases: Street, Sports venue, Hotspots, 5G Densification, Enterprise, Private Networks, College Campus + Others</p>
+<img alt="Lattice ORAN Customer Application Table" src="/-/media/LatticeSemi/Images/SolutionsImages/SolutionDetails/Lattice-ORAN-Customer-Application-Table.ashx?h=202&amp;w=700&amp;la=ja-JP" style="height: 202px; width: 700px;" />
+</div>
+<!-- END RICH TEXT FIELD SAMPLE -->
+
+        
+
+        
+    </div>
+</div>
+
+                    </div>
+
+                
+        
+</div>
+<!-- END KEY POINT SECTION -->
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_4" class="tabHeader">
+                <a id="_0E3C2818B36D42BC82AF6312F251A55F">
+                    Reference Designs
+                </a>
+            </h3>
+                
+
+
+<link rel="Stylesheet" href="/css/lscSolr.css" type="text/css" />
+
+
+<style>
+    .CesFacetHeader {
+    padding: 7px 11px 7px 11px;
+    border-bottom: 1px solid #bababa;
+    border-top: 1px solid #bababa;
+    color: #fff;
+    margin: 0 0 0 0;
+    background: #717073;
+}
+    .CesFacetBodySearchBox {
+    position: relative;
+}
+    .CesFacetHeaderLeft {
+    display: none;
+}
+    .CesFacetLineText {
+    float: left;
+    white-space: nowrap;
+}
+    .CesFacetLineCheckBox {
+  
+}
+   
+ 
+</style>
+<div class="solutionsearch">
+<div class="unit size4of5 search-results">
+<div class="line">
+        
+             
+                    <div class="line">
+                        <div class="unit size3of3">
+                              <div class="borderimg"><img src='/-/media/LatticeSemi/Images/ProductImages/ReferenceDesign/ReferenceDesigns05/ORAN-Control-Block-Diagram-Reference-Design.ashx?w=93&amp;h=80&amp;bc=transparent&amp;as=1&amp;thn=1' alt='Lattice ORAN™ 1.0 Security Reference Design' /></div>
+                            <div class="maxwidthtxt"><h4>Reference Design</h4></div>
+                        </div>
+                        <div class="unit size2of3 lastUnit">
+                            <div class="blueborder">
+                                <div class="leftsection">
+                                      <h3><strong> <a href='/products/designsoftwareandip/intellectualproperty/referencedesigns/referencedesigns05/control-reference-design'>Lattice ORAN™ 1.0 Security Reference Design</a></strong></h3> 
+                                        <div> Lattice ORAN enable secure out-of-band communication over I3C/SMBus/I2C/PCIe and provide crypto-256 and Crypto-384 services to customers through software APIs.<br/></div>
+                                </div>
+                                <div class="rightsection"><a href='/SolutionSearch.aspx?qprod=8f4583d065fd436eb0e9797e92b18379'>CertusPro-NX</a>&nbsp;</div>
+                                <div style="clear:left;"></div>
+                                <div class="leftsection margintop"><a href='/SolutionSearch.aspx?qtag=38f6ae5c77cb433aa47035dfd7c41ae2'>5G</a>, <a href='/SolutionSearch.aspx?qtag=c88de6ca329c4c4dbb7e13fa84e77796'>PCIe</a>, <a href='/SolutionSearch.aspx?qtag=098f5649f45b411ca7df772d8b1743ce'>SPI</a>, <a href='/SolutionSearch.aspx?qtag=59cc41f505a14805bbbb99b1605c1617'>Lattice ORAN</a>&nbsp;</div>
+                                <div class="rightsection margintop"><a href='/SolutionSearch.aspx?qprovider=19571966d0eb45b59d14214f4fe5545a'><img src = '/-/media/LatticeSemi/Images/ImageLibrary/Logos/Lattice_Logo_Color_TransparentBG.ashx?h=23&la=en&as=0&bc=ffffff' alt = 'Lattice ORAN™ 1.0 Security Reference Design' /></a></div> 
+                            </div> 
+                        </div>
+                    </div>
+               
+            
+             
+                    <div class="line">
+                        <div class="unit size3of3">
+                              <div class="borderimg"><img src='/-/media/LatticeSemi/Images/ProductImages/ReferenceDesign/ReferenceDesigns05/5G-Small-Cell-RD_BD.ashx?w=93&amp;h=80&amp;bc=transparent&amp;as=1&amp;thn=1' alt='5G Small Cell PCIe to JESD204B Bridge Reference Design' /></div>
+                            <div class="maxwidthtxt"><h4>Reference Design</h4></div>
+                        </div>
+                        <div class="unit size2of3 lastUnit">
+                            <div class="blueborder">
+                                <div class="leftsection">
+                                      <h3><strong> <a href='/products/designsoftwareandip/intellectualproperty/referencedesigns/referencedesigns05/5g-small-cell-pcie-to-jesd204b-bridge-rd'>5G Small Cell PCIe to JESD204B Bridge Reference Design</a></strong></h3> 
+                                        <div> 5G Mid-Power Integrated Small Cell, reference platform is a comprehensive development board tailored for 5G baseband processors and transceiver frontends.<br/></div>
+                                </div>
+                                <div class="rightsection"><a href='/SolutionSearch.aspx?qprod=8f4583d065fd436eb0e9797e92b18379'>CertusPro-NX</a>&nbsp;</div>
+                                <div style="clear:left;"></div>
+                                <div class="leftsection margintop"><a href='/SolutionSearch.aspx?qtag=59cc41f505a14805bbbb99b1605c1617'>Lattice ORAN</a>, <a href='/SolutionSearch.aspx?qtag=c88de6ca329c4c4dbb7e13fa84e77796'>PCIe</a>, <a href='/SolutionSearch.aspx?qtag=dbe95cc0983f4bc1bd3093935be4947a'>JESD204B</a>, <a href='/SolutionSearch.aspx?qtag=38f6ae5c77cb433aa47035dfd7c41ae2'>5G</a>, <a href='/SolutionSearch.aspx?qtag=2f19be6f690d4c82a14a759ad787fe84'>SDR</a>&nbsp;</div>
+                                <div class="rightsection margintop"><a href='/SolutionSearch.aspx?qprovider=19571966d0eb45b59d14214f4fe5545a'><img src = '/-/media/LatticeSemi/Images/ImageLibrary/Logos/Lattice_Logo_Color_TransparentBG.ashx?h=23&la=en&as=0&bc=ffffff' alt = '5G Small Cell PCIe to JESD204B Bridge Reference Design' /></a></div> 
+                            </div> 
+                        </div>
+                    </div>
+               
+            
+             
+                    <div class="line">
+                        <div class="unit size3of3">
+                              <div class="borderimg"><img src='/-/media/LatticeSemi/Images/ProductImages/ReferenceDesign/ReferenceDesigns05/ORAN_1_1_Block_Diagram.ashx?w=93&amp;h=80&amp;bc=transparent&amp;as=1&amp;thn=1' alt='Lattice ORAN IEEE 1588 PTP Secure Sync Reference Design' /></div>
+                            <div class="maxwidthtxt"><h4>Reference Design</h4></div>
+                        </div>
+                        <div class="unit size2of3 lastUnit">
+                            <div class="blueborder">
+                                <div class="leftsection">
+                                      <h3><strong> <a href='/products/designsoftwareandip/intellectualproperty/referencedesigns/referencedesigns05/lattice-oran-ieee-1588-ptp-secure-sync'>Lattice ORAN IEEE 1588 PTP Secure Sync Reference Design</a></strong></h3> 
+                                        <div> Lattice ORAN 1.1 RD shows how to provide ultra-reliable time synchronization & phase alignment for delivering timing accuracy in 5G ORAN networks. <br/></div>
+                                </div>
+                                <div class="rightsection"><a href='/SolutionSearch.aspx?qprod=8f4583d065fd436eb0e9797e92b18379'>CertusPro-NX</a>&nbsp;</div>
+                                <div style="clear:left;"></div>
+                                <div class="leftsection margintop"><a href='/SolutionSearch.aspx?qtag=59cc41f505a14805bbbb99b1605c1617'>Lattice ORAN</a>, <a href='/SolutionSearch.aspx?qtag=c88de6ca329c4c4dbb7e13fa84e77796'>PCIe</a>, <a href='/SolutionSearch.aspx?qtag=c1abcd09c91f4f10bb7c4d690ef5559f'>SFP</a>, <a href='/SolutionSearch.aspx?qtag=66f114d54e314f47a8d23ba66adf500d'>SERDES</a>, <a href='/SolutionSearch.aspx?qtag=1eb6396c3eb247aab2b8d2f3c56d0bc1'>FMC</a>, <a href='/SolutionSearch.aspx?qtag=a8369389fae54bbeb519975458e20c32'>IEEE1588</a>, <a href='/SolutionSearch.aspx?qtag=2f19be6f690d4c82a14a759ad787fe84'>SDR</a>&nbsp;</div>
+                                <div class="rightsection margintop"><a href='/SolutionSearch.aspx?qprovider=19571966d0eb45b59d14214f4fe5545a'><img src = '/-/media/LatticeSemi/Images/ImageLibrary/Logos/Lattice_Logo_Color_TransparentBG.ashx?h=23&la=en&as=0&bc=ffffff' alt = 'Lattice ORAN IEEE 1588 PTP Secure Sync Reference Design' /></a></div> 
+                            </div> 
+                        </div>
+                    </div>
+               
+            
+
+            
+      </div>
+     
+    
+  
+    </div>
+   <div class="unit size4of5" style="float:right;">
+ <div class="aligncenter" style="margin-bottom:50px;" >
+      
+                
+           
+    </div>
+     </div>
+    </div>
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_5" class="tabHeader">
+                <a id="_1F44F1A8B3F34E519C9ED738968AF224">
+                    Development Kits & Boards
+                </a>
+            </h3>
+                
+
+
+<link rel="Stylesheet" href="/css/lscSolr.css" type="text/css" />
+
+
+<style>
+    .CesFacetHeader {
+    padding: 7px 11px 7px 11px;
+    border-bottom: 1px solid #bababa;
+    border-top: 1px solid #bababa;
+    color: #fff;
+    margin: 0 0 0 0;
+    background: #717073;
+}
+    .CesFacetBodySearchBox {
+    position: relative;
+}
+    .CesFacetHeaderLeft {
+    display: none;
+}
+    .CesFacetLineText {
+    float: left;
+    white-space: nowrap;
+}
+    .CesFacetLineCheckBox {
+  
+}
+   
+ 
+</style>
+<div class="solutionsearch">
+<div class="unit size4of5 search-results">
+<div class="line">
+        
+             
+                    <div class="line">
+                        <div class="unit size3of3">
+                              <div class="borderimg"><img src='/-/media/LatticeSemi/Images/ProductImages/DevelopmentKitsAndBoards/CertusPro-NX-Versa-Board/LFCPNX-VERSA-BRD-RevB-Side.ashx?w=93&amp;h=80&amp;bc=transparent&amp;as=1&amp;thn=1' alt='CertusPro-NX Versa Board' /></div>
+                            <div class="maxwidthtxt"><h4>Board</h4></div>
+                        </div>
+                        <div class="unit size2of3 lastUnit">
+                            <div class="yellowborder">
+                                <div class="leftsection">
+                                      <h3><strong> <a href='/products/developmentboardsandkits/certuspro-nx-versa-board'>CertusPro-NX Versa Board</a></strong></h3> 
+                                        <div> CertusPro-NX Versa Board supports a wide range industry standards such as MIPI, SFP+, 10 GbE, LPDDR4 and PCIe (Gen3) for rapid prototyping and testing.<br/></div>
+                                </div>
+                                <div class="rightsection"><a href='/SolutionSearch.aspx?qprod=8f4583d065fd436eb0e9797e92b18379'>CertusPro-NX</a>&nbsp;</div>
+                                <div style="clear:left;"></div>
+                                <div class="leftsection margintop"><a href='/SolutionSearch.aspx?qtag=fc9f436c4eb948acb811eed162472391'>Lattice mVision</a>, <a href='/SolutionSearch.aspx?qtag=2db181dcb8254ccfadb607f0703203b9'>MIPI</a>, <a href='/SolutionSearch.aspx?qtag=11b48b9241924133a3178b3c61b55b65'>LPDDR4</a>, <a href='/SolutionSearch.aspx?qtag=c88de6ca329c4c4dbb7e13fa84e77796'>PCIe</a>, <a href='/SolutionSearch.aspx?qtag=bc0029af0f5042a790150401e7b2fb33'>Video Tx/Rx</a>, <a href='/SolutionSearch.aspx?qtag=32cad02cb73b40929f08153c8d8381be'>IoT & Wearables</a>, <a href='/SolutionSearch.aspx?qtag=30baca4e2da34fe9b514a848ddf97ee7'>Smart Toys & Robots</a>, <a href='/SolutionSearch.aspx?qtag=993e95cfa04943b2a0832565662c0b94'>Home Control Appliances & Security</a>, <a href='/SolutionSearch.aspx?qtag=d40a1b7e95e14fba81270c7c44242256'>Notebooks & PCs</a>, <a href='/SolutionSearch.aspx?qtag=8459af767d404843b91768d531c266b9'>Tablets</a>, <a href='/SolutionSearch.aspx?qtag=0f8d7b080ce84550a3f283f28c7f0ec2'>Printers</a>, <a href='/SolutionSearch.aspx?qtag=2753ed77989a48b6a8f07cb4679f2ba9'>AR / VR & Drones</a>, <a href='/SolutionSearch.aspx?qtag=c1abcd09c91f4f10bb7c4d690ef5559f'>SFP</a>, <a href='/SolutionSearch.aspx?qtag=59cc41f505a14805bbbb99b1605c1617'>Lattice ORAN</a>, <a href='/SolutionSearch.aspx?qtag=1a3813721c3e455aa221f7d29d7ec056'>Lattice Automate</a>, <a href='/SolutionSearch.aspx?qtag=71a47292cf9f42aca99ff37e7c9a4696'>GPIO Control</a>, <a href='/SolutionSearch.aspx?qtag=0b8ee0a58e7e4bb2a46e39f90e1f0335'>I2C</a>, <a href='/SolutionSearch.aspx?qtag=44d51251a85e4845afb8228f4b69c77e'>PMOD</a>, <a href='/SolutionSearch.aspx?qtag=66f114d54e314f47a8d23ba66adf500d'>SERDES</a>, <a href='/SolutionSearch.aspx?qtag=aa6731f47d6d49f8a3e9464c9c56d101'>SMA</a>, <a href='/SolutionSearch.aspx?qtag=098f5649f45b411ca7df772d8b1743ce'>SPI</a>, <a href='/SolutionSearch.aspx?qtag=14786d62381348aaa68d69b72d6b2457'>UART</a>, <a href='/SolutionSearch.aspx?qtag=2aa3372accbe43a49b50d2e31a232882'>Automotive</a>, <a href='/SolutionSearch.aspx?qtag=6c7b6d3a69a74ef19e8d6f8f2bb46bf6'>Industrial Networking</a>&nbsp;</div>
+                                <div class="rightsection margintop"><a href='/SolutionSearch.aspx?qprovider=19571966d0eb45b59d14214f4fe5545a'><img src = '/-/media/LatticeSemi/Images/ImageLibrary/Logos/Lattice_Logo_Color_TransparentBG.ashx?h=23&la=en&as=0&bc=ffffff' alt = 'CertusPro-NX Versa Board' /></a></div> 
+                            </div> 
+                        </div>
+                    </div>
+               
+            
+             
+                    <div class="line">
+                        <div class="unit size3of3">
+                              <div class="borderimg"><img src='/-/media/LatticeSemi/Images/ProductImages/DevelopmentKitsAndBoards/CertusPro-NX-PCIe-Bridge-Board/LFCPNX-PCIEB-EVN-revA-Side.ashx?w=93&amp;h=80&amp;bc=transparent&amp;as=1&amp;thn=1' alt='CertusPro-NX PCIe Bridge Board' /></div>
+                            <div class="maxwidthtxt"><h4>Board</h4></div>
+                        </div>
+                        <div class="unit size2of3 lastUnit">
+                            <div class="yellowborder">
+                                <div class="leftsection">
+                                      <h3><strong> <a href='/products/developmentboardsandkits/certuspro-nx-pcie-bridge-board'>CertusPro-NX PCIe Bridge Board</a></strong></h3> 
+                                        <div> The CertusPro-NX PCIe Bridge Board enables video bridge capabilities to PCIe and embedded vision type applications.<br/></div>
+                                </div>
+                                <div class="rightsection"><a href='/SolutionSearch.aspx?qprod=8f4583d065fd436eb0e9797e92b18379'>CertusPro-NX</a>&nbsp;</div>
+                                <div style="clear:left;"></div>
+                                <div class="leftsection margintop"><a href='/SolutionSearch.aspx?qtag=fc9f436c4eb948acb811eed162472391'>Lattice mVision</a>, <a href='/SolutionSearch.aspx?qtag=59cc41f505a14805bbbb99b1605c1617'>Lattice ORAN</a>, <a href='/SolutionSearch.aspx?qtag=c88de6ca329c4c4dbb7e13fa84e77796'>PCIe</a>, <a href='/SolutionSearch.aspx?qtag=ec27f8eb72c8477890e534b8ab400a57'>JTAG</a>, <a href='/SolutionSearch.aspx?qtag=baf393375a264c589327f1fc10403aed'>SPI Flash</a>, <a href='/SolutionSearch.aspx?qtag=11b48b9241924133a3178b3c61b55b65'>LPDDR4</a>, <a href='/SolutionSearch.aspx?qtag=44d51251a85e4845afb8228f4b69c77e'>PMOD</a>, <a href='/SolutionSearch.aspx?qtag=66f114d54e314f47a8d23ba66adf500d'>SERDES</a>, <a href='/SolutionSearch.aspx?qtag=535dbf149aba4d34b95a9f3b4b79666b'>X/S/RGMII</a>, <a href='/SolutionSearch.aspx?qtag=6c7b6d3a69a74ef19e8d6f8f2bb46bf6'>Industrial Networking</a>, <a href='/SolutionSearch.aspx?qtag=1eb6396c3eb247aab2b8d2f3c56d0bc1'>FMC</a>&nbsp;</div>
+                                <div class="rightsection margintop"><a href='/SolutionSearch.aspx?qprovider=19571966d0eb45b59d14214f4fe5545a'><img src = '/-/media/LatticeSemi/Images/ImageLibrary/Logos/Lattice_Logo_Color_TransparentBG.ashx?h=23&la=en&as=0&bc=ffffff' alt = 'CertusPro-NX PCIe Bridge Board' /></a></div> 
+                            </div> 
+                        </div>
+                    </div>
+               
+            
+             
+                    <div class="line">
+                        <div class="unit size3of3">
+                              <div class="borderimg"><img src='/-/media/LatticeSemi/Images/ProductImages/DevelopmentKitsAndBoards/ORAN-Timing-Synchronization/LFCPNX-10GE0PTP-EVN-revb-kit-side.ashx?w=93&amp;h=80&amp;bc=transparent&amp;as=1&amp;thn=1' alt='Lattice ORAN Timing and Synchronization Kit' /></div>
+                            <div class="maxwidthtxt"><h4>Board</h4></div>
+                        </div>
+                        <div class="unit size2of3 lastUnit">
+                            <div class="yellowborder">
+                                <div class="leftsection">
+                                      <h3><strong> <a href='/products/developmentboardsandkits/oran-timing-synchronization-kit'>Lattice ORAN Timing and Synchronization Kit</a></strong></h3> 
+                                        <div> ORAN Sync Board has 2x 10GE & 2x 1GE ports, SMA & FMC connectors for testing, demos, development, GNSS & on-board timing sources, ToD, & PPS RJ48 connectors<br/></div>
+                                </div>
+                                <div class="rightsection"><a href='/SolutionSearch.aspx?qprod=8f4583d065fd436eb0e9797e92b18379'>CertusPro-NX</a>&nbsp;</div>
+                                <div style="clear:left;"></div>
+                                <div class="leftsection margintop"><a href='/SolutionSearch.aspx?qtag=38f6ae5c77cb433aa47035dfd7c41ae2'>5G</a>, <a href='/SolutionSearch.aspx?qtag=59cc41f505a14805bbbb99b1605c1617'>Lattice ORAN</a>, <a href='/SolutionSearch.aspx?qtag=1eb6396c3eb247aab2b8d2f3c56d0bc1'>FMC</a>, <a href='/SolutionSearch.aspx?qtag=aa6731f47d6d49f8a3e9464c9c56d101'>SMA</a>, <a href='/SolutionSearch.aspx?qtag=a8369389fae54bbeb519975458e20c32'>IEEE1588</a>, <a href='/SolutionSearch.aspx?qtag=2f19be6f690d4c82a14a759ad787fe84'>SDR</a>&nbsp;</div>
+                                <div class="rightsection margintop"><a href='/SolutionSearch.aspx?qprovider=19571966d0eb45b59d14214f4fe5545a'><img src = '/-/media/LatticeSemi/Images/ImageLibrary/Logos/Lattice_Logo_Color_TransparentBG.ashx?h=23&la=en&as=0&bc=ffffff' alt = 'Lattice ORAN Timing and Synchronization Kit' /></a></div> 
+                            </div> 
+                        </div>
+                    </div>
+               
+            
+
+            
+      </div>
+     
+    
+  
+    </div>
+   <div class="unit size4of5" style="float:right;">
+ <div class="aligncenter" style="margin-bottom:50px;" >
+      
+                
+           
+    </div>
+     </div>
+    </div>
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_6" class="tabHeader">
+                <a id="_AD42406CD6DE4F24991D39511F117B44">
+                    Demos
+                </a>
+            </h3>
+                
+
+
+<link rel="Stylesheet" href="/css/lscSolr.css" type="text/css" />
+
+
+<style>
+    .CesFacetHeader {
+    padding: 7px 11px 7px 11px;
+    border-bottom: 1px solid #bababa;
+    border-top: 1px solid #bababa;
+    color: #fff;
+    margin: 0 0 0 0;
+    background: #717073;
+}
+    .CesFacetBodySearchBox {
+    position: relative;
+}
+    .CesFacetHeaderLeft {
+    display: none;
+}
+    .CesFacetLineText {
+    float: left;
+    white-space: nowrap;
+}
+    .CesFacetLineCheckBox {
+  
+}
+   
+ 
+</style>
+<div class="solutionsearch">
+<div class="unit size4of5 search-results">
+<div class="line">
+        
+             
+                    <div class="line">
+                        <div class="unit size3of3">
+                              <div class="borderimg"><img src='/-/media/LatticeSemi/Images/ProductImages/ReferenceDesign/ReferenceDesigns05/ORAN_1_1_Block_Diagram.ashx?w=93&amp;h=80&amp;bc=transparent&amp;as=1&amp;thn=1' alt='Demo for Lattice ORAN Secure Sync for IEEE 1588 PTP' /></div>
+                            <div class="maxwidthtxt"><h4>Demo</h4></div>
+                        </div>
+                        <div class="unit size2of3 lastUnit">
+                            <div class="greenborder">
+                                <div class="leftsection">
+                                      <h3><strong> <a href='/products/designsoftwareandip/intellectualproperty/demos/demo-for-lattice-oran-secure-sync-for-ieee-1588-ptp'>Demo for Lattice ORAN Secure Sync for IEEE 1588 PTP</a></strong></h3> 
+                                        <div> Demo for Lattice ORAN Secure Sync show how Lattice FPGA w/ soft IPs can support tight & secure synchronization using 1588 PTP & ITU profiles for Telecom. <br/></div>
+                                </div>
+                                <div class="rightsection"><a href='/SolutionSearch.aspx?qprod=8f4583d065fd436eb0e9797e92b18379'>CertusPro-NX</a>&nbsp;</div>
+                                <div style="clear:left;"></div>
+                                <div class="leftsection margintop"><a href='/SolutionSearch.aspx?qtag=59cc41f505a14805bbbb99b1605c1617'>Lattice ORAN</a>, <a href='/SolutionSearch.aspx?qtag=c88de6ca329c4c4dbb7e13fa84e77796'>PCIe</a>, <a href='/SolutionSearch.aspx?qtag=c1abcd09c91f4f10bb7c4d690ef5559f'>SFP</a>, <a href='/SolutionSearch.aspx?qtag=66f114d54e314f47a8d23ba66adf500d'>SERDES</a>, <a href='/SolutionSearch.aspx?qtag=1eb6396c3eb247aab2b8d2f3c56d0bc1'>FMC</a>, <a href='/SolutionSearch.aspx?qtag=a8369389fae54bbeb519975458e20c32'>IEEE1588</a>, <a href='/SolutionSearch.aspx?qtag=38f6ae5c77cb433aa47035dfd7c41ae2'>5G</a>&nbsp;</div>
+                                <div class="rightsection margintop"><a href='/SolutionSearch.aspx?qprovider=19571966d0eb45b59d14214f4fe5545a'><img src = '/-/media/LatticeSemi/Images/ImageLibrary/Logos/Lattice_Logo_Color_TransparentBG.ashx?h=23&la=en&as=0&bc=ffffff' alt = 'Demo for Lattice ORAN Secure Sync for IEEE 1588 PTP' /></a></div> 
+                            </div> 
+                        </div>
+                    </div>
+               
+            
+             
+                    <div class="line">
+                        <div class="unit size3of3">
+                              <div class="borderimg"><img src='/-/media/LatticeSemi/Images/ProductImages/DesignSoftwareandIntellectualProperty/IP/Demos/ORAN-Block-Diagram-Control-Demo.ashx?w=93&amp;h=80&amp;bc=transparent&amp;as=1&amp;thn=1' alt='Lattice ORAN™ Control Demonstration' /></div>
+                            <div class="maxwidthtxt"><h4>Demo</h4></div>
+                        </div>
+                        <div class="unit size2of3 lastUnit">
+                            <div class="greenborder">
+                                <div class="leftsection">
+                                      <h3><strong> <a href='/products/designsoftwareandip/intellectualproperty/demos/control-demonstration'>Lattice ORAN™ Control Demonstration</a></strong></h3> 
+                                        <div> Lattice ORAN provides packet authentication, encryption and decryption and support SPDM protocol over MCTP.<br/></div>
+                                </div>
+                                <div class="rightsection"><a href='/SolutionSearch.aspx?qprod=8f4583d065fd436eb0e9797e92b18379'>CertusPro-NX</a>&nbsp;</div>
+                                <div style="clear:left;"></div>
+                                <div class="leftsection margintop"><a href='/SolutionSearch.aspx?qtag=38f6ae5c77cb433aa47035dfd7c41ae2'>5G</a>, <a href='/SolutionSearch.aspx?qtag=c88de6ca329c4c4dbb7e13fa84e77796'>PCIe</a>, <a href='/SolutionSearch.aspx?qtag=098f5649f45b411ca7df772d8b1743ce'>SPI</a>, <a href='/SolutionSearch.aspx?qtag=59cc41f505a14805bbbb99b1605c1617'>Lattice ORAN</a>&nbsp;</div>
+                                <div class="rightsection margintop"><a href='/SolutionSearch.aspx?qprovider=19571966d0eb45b59d14214f4fe5545a'><img src = '/-/media/LatticeSemi/Images/ImageLibrary/Logos/Lattice_Logo_Color_TransparentBG.ashx?h=23&la=en&as=0&bc=ffffff' alt = 'Lattice ORAN™ Control Demonstration' /></a></div> 
+                            </div> 
+                        </div>
+                    </div>
+               
+            
+
+            
+      </div>
+     
+    
+  
+    </div>
+   <div class="unit size4of5" style="float:right;">
+ <div class="aligncenter" style="margin-bottom:50px;" >
+      
+                
+           
+    </div>
+     </div>
+    </div>
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_7" class="tabHeader">
+                <a id="_561D2F67680A4CAAAC40175706804CF4">
+                    Software Tools
+                </a>
+            </h3>
+                
+
+<!-- START KEY POINT SECTION  -->
+<div class="line">
+                
+            </div><div class="line"><div class="unit size1of1 lastUnit"><p><a href="/ja-JP/Products/DesignSoftwareAndIP/FPGAandLDS/Radiant"><img alt="Lattice Radiant" src="/-/media/LatticeSemi/Images/ProductImages/DesignSoftwareandIntellectualProperty/Radiant_Logo.ashx?la=ja-JP" /></a><a href="/ja-JP/Products/DesignSoftwareAndIP/FPGAandLDS/LatticePropel"><img alt="Lattice Propel" src="/-/media/LatticeSemi/Images/ProductImages/DesignSoftwareandIntellectualProperty/Propel/Propel_Logo.ashx?h=83&amp;w=181&amp;la=ja-JP" width="181" height="83" /></a></p></div></div><div class="line">
+            
+        
+</div>
+<!-- END KEY POINT SECTION -->
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_8" class="tabHeader">
+                <a id="_40434503B6674344BF220414447E3CBA">
+                    Documentation
+                </a>
+            </h3>
+                
+
+<!-- START DOCUMENT EXPLORER TAB -->
+<div>
+
+
+<script type="text/javascript">
+    $j(document).ready(function() {
+        document.cookie = "ZipDownload=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    });
+    
+</script>
+<script>
+    function temp() {
+        //var div = document.getElementById("demopopup");
+        //div.style.visibility = "visible";
+        //alert(div.style.visibility);
+    }
+    function showlogindiv(controlId) {
+        var control = document.getElementById(controlId);
+        control.style.display = "block";
+        return false;
+        //alert(document.body.bgColor);
+    }
+    function hidelogindiv(controlId) {
+        var control = document.getElementById(controlId);
+        control.style.display = "none";
+    }
+</script>
+
+
+<!-- START DOCUMENT EXPLORER -->
+<table class="fullSize docTypes">
+    
+    
+             <tbody>
+                 <tr>
+        
+                    <td class="active">
+                        <div class="docType">
+                            Quick Reference
+                        </div>
+                        <ul>
+                        
+                                        <li>
+                                            <a href="/ja-JP/Solutions/Solutions/SolutionsDetails02/ORAN?ActiveTab=User+Manual#_40434503B6674344BF220414447E3CBA"
+                                            class="activeLink"
+                                                onclick="return swapActive(this,'_6362550331D24BFD96461ED048E3DDEB');">
+                                                User Manual 
+                                            </a>    
+                                        </li>
+                            
+                    </ul></td>
+            
+                    <td class="closed">
+                        <div class="docType">
+                            Technical Resources
+                        </div>
+                        <ul>
+                        
+                                        <li>
+                                            <a href="/ja-JP/Solutions/Solutions/SolutionsDetails02/ORAN?ActiveTab=Reference+Design#_40434503B6674344BF220414447E3CBA"
+                                            
+                                                onclick="return swapActive(this,'_2D5D8EE7547B47CA9B2EF7D7284B1A36');">
+                                                Reference Design 
+                                            </a>    
+                                        </li>
+                            
+                    </ul></td>
+            
+                    <td class="closed">
+                        <div class="docType">
+                            Information Resources
+                        </div>
+                        <ul>
+                        
+                                        <li>
+                                            <a href="/ja-JP/Solutions/Solutions/SolutionsDetails02/ORAN?ActiveTab=%e3%83%9b%e3%83%af%e3%82%a4%e3%83%88%e3%83%9a%e3%83%bc%e3%83%91%e3%83%bc#_40434503B6674344BF220414447E3CBA"
+                                            
+                                                onclick="return swapActive(this,'_D0698B4192224DFDA5A6F5ADD96AE1BD');">
+                                                ホワイトペーパー 
+                                            </a>    
+                                        </li>
+                            
+                    </ul></td>
+            
+                </tr>
+            </tbody>
+        
+</table>
+<!-- START CONTENT TAB WIDGET -->
+<!-- END TABBED CONTENT TABS -->
+
+        <!-- Start category Quick Reference   -->            
+                
+                <!-- START User Manual document type listing SECTION -->
+                <table id="_6362550331D24BFD96461ED048E3DDEB" class="docList fullSize activeDocList">
+                    
+                                <thead>
+                                        <tr>
+                                            <td class="noSort subscribeimg" aria-label="No value"></td>
+                                            <td class="noSort downloadimg" aria-label="No value"></td>
+                                            <th class="document-title headerSortDown">TITLE</th>
+                                            <th>NUMBER</th>
+                                            <th>VERSION</th>
+                                            <th>DATE</th>
+                                            <th>FORMAT</th>
+                                            <th class="noSort">SIZE</th>
+                                        </tr>
+                                    </thead>
+									<tfoot>
+                                    <tr>
+                                        <td class="noSort checkbox lightYellowBackground">
+                                        
+                                          <span style="color:#FFF3D3;">  
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_0_DocumentListRepeater_0_checkSubAll" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$checkSubAll" disabled="disabled" onclick="swapCheckedSubProd(this.checked);" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_0_DocumentListRepeater_0_checkSubAll">a</label></span></span>
+                                        </td>
+                                        <td class="noSort checkbox lightestBlueBackground">
+                                        <input type="checkbox" id="checkAll" value="false" onclick="swapCheckedDocsProd(this.checked);" aria-label="No Text" />
+                                        </td>
+                                         <td colspan="6" class="noSort">
+                                       Select All
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$SubscriptionButtonAlt" value="Notify Me of Changes *" onclick="showlogindiv(&#39;demopopup&#39;);return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_0_DocumentListRepeater_0_SubscriptionButtonAlt" class="button disableSub" /> 
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$DownloadButton" value="Download Selected as Zip File" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_0_DocumentListRepeater_0_DownloadButton" class="button download" /> 
+                                        </td>
+                                    </tr> 
+                                        
+                                    </tfoot>
+                                     <tbody>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_0_DocumentListRepeater_0_SubCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_0_DocumentListRepeater_0_SubCheckbox_0">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_0_DocumentListRepeater_0_SubHiddenField_0" value="{400581BB-AEFA-462E-BEC8-158DE124221E}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_0_DocumentListRepeater_0_docCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_0_DocumentListRepeater_0_docCheckbox_0">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_0_DocumentListRepeater_0_docHiddenField_0" value="{400581BB-AEFA-462E-BEC8-158DE124221E}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=54181">
+                                                FPGA-UG-02203-1-0-Lattice ORAN Embedded PTP Programming User Guide
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td>FPGA-UG02203</td>
+                                        <td>1.0</td>
+                                        <td>1/31/2024</td>
+                                        <td>PDF</td>
+                                        <td>1012.2 KB</td>
+                                    </tr>
+                        
+                                </tbody>                                 
+                        
+                </table>
+            
+         
+        <!-- END TABBED CONTENT SECTION -->
+    
+        <!-- Start category Technical Resources   -->            
+                
+                <!-- START Reference Design document type listing SECTION -->
+                <table id="_2D5D8EE7547B47CA9B2EF7D7284B1A36" class="docList fullSize ">
+                    
+                                <thead>
+                                        <tr>
+                                            <td class="noSort subscribeimg" aria-label="No value"></td>
+                                            <td class="noSort downloadimg" aria-label="No value"></td>
+                                            <th class="document-title headerSortDown">TITLE</th>
+                                            <th>NUMBER</th>
+                                            <th>VERSION</th>
+                                            <th>DATE</th>
+                                            <th>FORMAT</th>
+                                            <th class="noSort">SIZE</th>
+                                        </tr>
+                                    </thead>
+									<tfoot>
+                                    <tr>
+                                        <td class="noSort checkbox lightYellowBackground">
+                                        
+                                          <span style="color:#FFF3D3;">  
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_1_DocumentListRepeater_0_checkSubAll" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$checkSubAll" disabled="disabled" onclick="swapCheckedSubProd(this.checked);" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_1_DocumentListRepeater_0_checkSubAll">a</label></span></span>
+                                        </td>
+                                        <td class="noSort checkbox lightestBlueBackground">
+                                        <input type="checkbox" id="checkAll" value="false" onclick="swapCheckedDocsProd(this.checked);" aria-label="No Text" />
+                                        </td>
+                                         <td colspan="6" class="noSort">
+                                       Select All
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$SubscriptionButtonAlt" value="Notify Me of Changes *" onclick="showlogindiv(&#39;demopopup&#39;);return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_1_DocumentListRepeater_0_SubscriptionButtonAlt" class="button disableSub" /> 
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$DownloadButton" value="Download Selected as Zip File" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_1_DocumentListRepeater_0_DownloadButton" class="button download" /> 
+                                        </td>
+                                    </tr> 
+                                        
+                                    </tfoot>
+                                     <tbody>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_1_DocumentListRepeater_0_SubCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_1_DocumentListRepeater_0_SubCheckbox_0">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_1_DocumentListRepeater_0_SubHiddenField_0" value="{10899CFE-A137-4DCF-B020-DE3E62DD3241}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_1_DocumentListRepeater_0_docCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_1_DocumentListRepeater_0_docCheckbox_0">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl01$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_1_DocumentListRepeater_0_docHiddenField_0" value="{10899CFE-A137-4DCF-B020-DE3E62DD3241}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=53930">
+                                                Lattice 5G ORAN Solution Stack 1.1 : Secure IEEE 1588 Precision Timing Protocol (PTP) - User Guide 
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td>FPGA-RD-02273</td>
+                                        <td>1.1</td>
+                                        <td>9/11/2023</td>
+                                        <td>PDF</td>
+                                        <td>3.3 MB</td>
+                                    </tr>
+                        
+                                </tbody>                                 
+                        
+                </table>
+            
+         
+        <!-- END TABBED CONTENT SECTION -->
+    
+        <!-- Start category Information Resources   -->            
+                
+                <!-- START ホワイトペーパー document type listing SECTION -->
+                <table id="_D0698B4192224DFDA5A6F5ADD96AE1BD" class="docList fullSize ">
+                    
+                                <thead>
+                                        <tr>
+                                            <td class="noSort subscribeimg" aria-label="No value"></td>
+                                            <td class="noSort downloadimg" aria-label="No value"></td>
+                                            <th class="document-title headerSortDown">TITLE</th>
+                                            <th>NUMBER</th>
+                                            <th>VERSION</th>
+                                            <th>DATE</th>
+                                            <th>FORMAT</th>
+                                            <th class="noSort">SIZE</th>
+                                        </tr>
+                                    </thead>
+									<tfoot>
+                                    <tr>
+                                        <td class="noSort checkbox lightYellowBackground">
+                                        
+                                          <span style="color:#FFF3D3;">  
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_checkSubAll" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$checkSubAll" disabled="disabled" onclick="swapCheckedSubProd(this.checked);" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_checkSubAll">a</label></span></span>
+                                        </td>
+                                        <td class="noSort checkbox lightestBlueBackground">
+                                        <input type="checkbox" id="checkAll" value="false" onclick="swapCheckedDocsProd(this.checked);" aria-label="No Text" />
+                                        </td>
+                                         <td colspan="6" class="noSort">
+                                       Select All
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$SubscriptionButtonAlt" value="Notify Me of Changes *" onclick="showlogindiv(&#39;demopopup&#39;);return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubscriptionButtonAlt" class="button disableSub" /> 
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$DownloadButton" value="Download Selected as Zip File" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_DownloadButton" class="button download" /> 
+                                        </td>
+                                    </tr> 
+                                        
+                                    </tfoot>
+                                     <tbody>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_0">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubHiddenField_0" value="{FBB04A3D-E9DE-4A9C-BA26-D4329E471049}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_0">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docHiddenField_0" value="{FBB04A3D-E9DE-4A9C-BA26-D4329E471049}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=53560">
+                                                Bringing Security to 5G ORAN Deployments
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td></td>
+                                        <td>1.0</td>
+                                        <td>5/31/2022</td>
+                                        <td>PDF</td>
+                                        <td>177.5 KB</td>
+                                    </tr>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_1" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_1">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubHiddenField_1" value="{E30690A4-B8A2-4D6D-ACCC-9B7E23D9C2CB}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_1" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_1">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl02$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docHiddenField_1" value="{E30690A4-B8A2-4D6D-ACCC-9B7E23D9C2CB}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=54660">
+                                                5G OFDM Modulation with Lattice iFFT and FIR IPs Use Case
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td>WP0042</td>
+                                        <td></td>
+                                        <td>3/25/2025</td>
+                                        <td>PDF</td>
+                                        <td>3.8 MB</td>
+                                    </tr>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_2" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl03$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_2">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl03$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubHiddenField_2" value="{3D3E5584-D4C6-42F2-8E8C-471F47ADDDD2}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_2" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl03$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_2">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl03$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docHiddenField_2" value="{3D3E5584-D4C6-42F2-8E8C-471F47ADDDD2}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=54705">
+                                                Green FPGA: The Role of FPGA in Waveform Agnostics Radio Unit (RU) for 5G and 6G Applications 
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td></td>
+                                        <td>1.0</td>
+                                        <td>4/16/2025</td>
+                                        <td>PDF</td>
+                                        <td>1.1 MB</td>
+                                    </tr>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_3" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl04$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_3">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl04$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubHiddenField_3" value="{8A9AD4B5-A5FA-4C92-BA5F-C22B54C6794B}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_3" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl04$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_3">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl04$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docHiddenField_3" value="{8A9AD4B5-A5FA-4C92-BA5F-C22B54C6794B}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=54706">
+                                                FPGA Design and Implementation of a 5G Industrial Internet of Things Solution for Industry 4.0 Automation and Edge AI Application 
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td></td>
+                                        <td></td>
+                                        <td>4/16/2025</td>
+                                        <td>PDF</td>
+                                        <td>1.4 MB</td>
+                                    </tr>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_4" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl05$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_4">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl05$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubHiddenField_4" value="{CA189AEA-2AD2-49C6-9A5B-62A04EC0B632}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_4" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl05$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_4">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl05$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docHiddenField_4" value="{CA189AEA-2AD2-49C6-9A5B-62A04EC0B632}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=54378">
+                                                Rapid Prototype Work Flow with HDL Coder - 5G OFDM and Single Tone Modulation Use Case
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td>WP0039</td>
+                                        <td>1.0</td>
+                                        <td>8/8/2024</td>
+                                        <td>PDF</td>
+                                        <td>1.8 MB</td>
+                                    </tr>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_5" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl06$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubCheckbox_5">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl06$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_SubHiddenField_5" value="{787E8C4B-C870-42E7-85EA-D61D037FC5C7}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_5" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl06$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docCheckbox_5">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$DocumentsRepeater$ctl02$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl06$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_DocumentsRepeater_8_DocumentTableRepeater_2_DocumentListRepeater_0_docHiddenField_5" value="{787E8C4B-C870-42E7-85EA-D61D037FC5C7}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=53899">
+                                                FPGA Design and Implementation of Secure IEEE 1588 Precision Timing Protocol for ORAN and 5G New Radio Applications
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td></td>
+                                        <td>1.0</td>
+                                        <td>6/21/2023</td>
+                                        <td>PDF</td>
+                                        <td>965.5 KB</td>
+                                    </tr>
+                        
+                                </tbody>                                 
+                        
+                </table>
+            
+         
+        <!-- END TABBED CONTENT SECTION -->
+    
+<script type="text/javascript">/* <![CDATA[ */
+jQuery(document).ready(
+	function() {
+		jQuery(".activeDocList").tablesorter(
+						{
+				
+				headers: {
+					
+					6: {sorter: false }
+				}
+			}
+		);
+	}
+);
+
+/* ]]> */</script>
+
+<span class="DocMsg"><p>*By clicking on the "Notify Me of Changes" button, you agree to receive notifications on changes to the document(s) you selected. </p></span>
+<span id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_lmsg_8"></span>
+<div id="demopopup" style="width:300px;height:150px;display:none;border:4px solid #FFC222;left:60px;top:0;background-color:white;padding:10px; display:none;position:fixed;z-index:1000;top:50%;left:50%;margin-top:-75px;margin-left:-150px;">
+    
+    <h3>Please Login to Enable Notifications</h3>
+You need an account to turn on notifications.  Please login or register.
+    <table style="margin-top:20px;">
+        <tr style="padding:10px;">
+            <td style="border-right:1px solid #D0D0D0;"><a id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_lnkloginbtn_8" href="javascript:__doPostBack(&#39;body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$lnkloginbtn&#39;,&#39;&#39;)">Login</a></td>
+            <td><a onclick="hidelogindiv(&#39;demopopup&#39;); return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_8_SectionFileDownloads_8_NotLogin_8" href="javascript:__doPostBack(&#39;body_0$tabbedsection_0$rptTabs$ctl08$ctl01$SectionFileDownloads$NotLogin&#39;,&#39;&#39;)">Not Now</a></td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+</div>
+<!-- END DOCUMENT EXPLORER TAB -->
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+<!-- END CONTENT TAB WIDGET -->
+
+        </div>
+        <!--END Tabbed Section -->
+    </div>
+    <!-- END STRIPE CONTENT -->
+
+
+</div>
+
+<!-- END STRIPE CONTAINER -->
+      
+	
+
+<div class="stripeContainer footerStripe">
+	<div class="stripeContent">
+            <div class="line">
+                <div class="unit size2of7">
+					<img src="/images/Lattice_Logo_Yellow_White_Tagline.png" width="200px">
+				</div>
+                <div class="unit size4of7">
+		    	    
+                        
+				            <div class="unit size1of3">
+                                
+                                <a href="https://www.latticesemi.com/About"><h4>会社情報</h4></a>
+<ul>
+    <li><a href="https://www.latticesemi.com/About/ContactUs">お問い合わせ</a></li>
+    <li><a href="https://www.latticesemi.com/About/Newsroom">プレスルーム</a></li>
+    <li><a href="http://ir.latticesemi.com">投資家情報</a></li>
+    <li><a href="https://www.latticesemi.com/About/Jobs">採用情報</a></li>
+    <li><a href="http://ww3.latticesemi.com/Newsletter-Subscribe.html">ニュースレター購読</a></li>
+</ul>
+				            </div> 
+                        
+				            <div class="unit size1of3">
+                                
+                                <a href="https://www.latticesemi.com/Buy/SalesLocator"><h4>購入する</h4></a>
+<ul>
+       <li><a href="https://www.latticesemi.com/Buy">アメリカ</a></li>
+        <li><a href="https://www.latticesemi.com/Buy">ヨーロッパ＆アフリカ</a></li>
+        <li><a href="https://www.latticesemi.com/Buy">アジア太平洋</a></li>
+        <li><a href="https://www.latticesemi.com/Buy/BuyOnline">オンラインストア</a></li>
+</ul>
+				            </div> 
+                        
+				            <div class="unit size1of3">
+                                
+                                <a href="https://www.latticesemi.com/Support"><h4>サポート</h4></a>
+<ul>
+       <li><a href="https://www.latticesemi.com/Support/SubmitSupportTicket">技術サポート</a></li>
+        <li><a href="https://www.latticesemi.com/Support/Licensing">ソフトウェアライセンス</a></li>
+        <li><a href="https://www.latticesemi.com/Support/DesignServices">サービス</a></li>
+        <li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices">レガシーデバイス＆ソフトウェア</a></li>
+</ul>
+				            </div> 
+                         
+                </div>
+                <div class="unit size1of7 lastUnit rText">
+                    <div class="title"><h4>FOLLOW</h4></div>
+					<div>
+			        
+
+		    <div class="line flatList iconList">
+			    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.twitter.com/latticesemi" aria-label="Twitter">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.facebook.com/latticesemi" aria-label="Facebook">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="https://www.linkedin.com/company/lattice-semiconductor" aria-label="LinkedIn">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.youtube.com/latticesemiconductor" aria-label="YouTube">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://i.youku.com/latticesemi" aria-label="Youku">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.weibo.com/latticesemi" aria-label="Weibo">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+		    </div>
+
+            <img src="https://www.latticesemi.com/images/Qrcode_for_Lattice_sm.gif" alt="Lattice QR code">
+                    </div>
+			    </div>
+            </div>
+            <div class="line">
+                <div class="unit size1of1 lastUnit">
+                    <ul class="flatList smallList">
+                        <li><span>&copy;2025 Lattice Semiconductor</span> | </li>
+                        <li><a href="http://www.latticesemi.com/About/LegalNotices.aspx">免責事項</a><a href="https://www.latticesemi.com/About/LegalNotices.aspx">&nbsp;</a>|
+</li>
+<li>
+<a href="http://www.latticesemi.com/About/LegalNotices/PrivacyPolicy.aspx">プライバシープリシー</a> |
+</li>
+<li><a href="http://www.latticesemi.com/About/Sitemap.aspx">サイトマップ</a>|
+</li>
+<li><a href="http://www.latticesemi.com/About/UseOfCookies.aspx">クッキーの使用</a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+	</div>
+</div>
+
+  </form>      
+      <script type="text/javascript">/* <![CDATA[ */
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','/js/analytics.js','ga');
+ 
+  ga('create', 'UA-2724384-2', 'auto');
+var urlCapture = /(\/en|\/ja\-jp|\/zh\-cn)?([^.]+)(.aspx)?/ig;
+var urlPieces = urlCapture.exec(window.location.pathname);
+
+if(urlPieces[2] != undefined)
+     ga('set', 'page', urlPieces[2]);
+
+  ga('send', 'pageview');
+
+
+
+jQuery.ajax({
+  url: '//munchkin.marketo.net/munchkin.js',
+  dataType: 'script',
+  cache: true,
+  success: function() {
+    Munchkin.init('632-NZA-960');
+  }
+});
+
+jQuery(document).ready(function () {
+        jQuery('a[href*="view_document"]').each(function () {
+            jQuery(this).on('click', function () {
+                Munchkin.munchkinFunction('clickLink', {
+                    href: jQuery(this).text()
+                });
+            })
+        })
+    })
+
+/* ]]> */</script>
+  
+  <!--   <script type="text/javascript" src="/js/SitecoreClientTracking.js"></script> -->
+    <script type="text/javascript" src="/js/video.js"></script>
+    <script type="text/javascript">
+            jQuery.noConflict();
+            videojs.options.flash.swf = "/js/video-js.swf"
+    </script>
+    <script type="text/javascript" src="/js/lsc.js"></script>
+  
+      
+  </body>
+</html>
+

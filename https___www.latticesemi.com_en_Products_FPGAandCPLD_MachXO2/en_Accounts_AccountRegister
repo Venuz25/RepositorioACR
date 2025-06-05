@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+
+
+
+
+<!--[if IE 7]>    <html class="ie lt-ie9 ie7" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9 ie8" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 9]>    <html class="ie ie9" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+<!-- OneTrust Cookies Consent Notice start for www.latticesemi.com -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/8ce0ef32-b483-40ef-a516-d6ebfa92ee46-test/OtAutoBlock.js" ></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="8ce0ef32-b483-40ef-a516-d6ebfa92ee46-test" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for www.latticesemi.com -->
+<head id="hHeadTag">
+
+	<!-- Google Tag Manager -->
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+})(window,document,'script','dataLayer','GTM-MZ9QSXR');</script>
+
+<!-- End Google Tag Manager -->
+
+<!-- Microsoft Clarity - Heatmap -->
+<script>
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "dy0r78kpm3");
+</script>
+<!--End Microsoft Clarity - Heatmap -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>
+	Account Register
+</title><link rel="icon" type="image/x-icon" href="/images/favicon.ico" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="VIcurrentDateTime" content="638843326981550219" />
+<script type="text/javascript" src="/layouts/system/VisitorIdentification.js"></script>
+
+	<!-- Conditional Loading of Swiper Stylesheet -->
+<script type="text/javascript">
+    if (window.innerWidth < 768 || (window.innerWidth >= 768 && window.innerWidth <= 1024)) {
+    // Create a link element for the stylesheet
+    var stylesheetLink = document.createElement("link");
+    stylesheetLink.rel = "stylesheet";
+    stylesheetLink.type = "text/css";
+    stylesheetLink.href = "/css/swiperslider.css";
+
+    // Append the link to the head of the document
+    document.head.appendChild(stylesheetLink);
+	
+}
+
+</script>
+        <link type="text/css" href="/css/video-js.css" rel="stylesheet">
+        <!--[if lte IE 7]>
+        <link rel="stylesheet" type="text/css" href="http://www.latticesemi.com/css/video-js-ie7.css" />
+        <![endif]-->
+        <link type="text/css" rel="stylesheet" href="/css/lsc.css">
+
+        
+     
+        <script type="text/javascript">
+            // IE console fix
+            var console = console || { log: function () { }, warn: function () { } };
+            window.lattice = window.lattice || {};
+
+            var $j = window.$j = jQuery.noConflict();
+
+            $j(function () {
+                $j(window).load(function () {
+                    lattice.init($j);
+                });
+            });
+        </script>
+        <script type = "text/javascript">
+            function notificationClickJQuery() {
+                jQuery.ajax({
+                    type: "GET",
+                    url: "~/Services/SitewideNotification.svc/UpdateNotificationforUser",
+                    data: '{currentnotificationid: "' + $("#lblcurrentNotificationID")[0].value + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        jQuery('#dNotificationBar').hide();
+                        return false;
+                    },
+                    failure: function(response) {
+                        alert(response.d);
+                        return true;
+                    }
+                });
+            }
+            function privacypolicyClickJQuery() {
+                jQuery.ajax({
+                    type: "GET",
+                    url: "~/Services/SitewideNotification.svc/UpdatePrivacyPolicyforUser",
+                    data: '{currentnotificationid: "' + $("#lblcurrentPrivacyPolicyID")[0].value + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        jQuery('#dPrivacyPolicyNotificationBar').hide();
+                        return false;
+                    },
+                    failure: function(response) {
+                        alert(response.d);
+                        return true;
+                    }
+                });
+            }
+        </script>
+      <script type="text/javascript" src="/js/jquery.tablesorter.min.js"></script>
+    
+
+	 <script type="text/javascript">
+	 function expiredReCaptcha() 
+{
+    //This method will execute only if Google ReCaptcha expired
+    jQuery("#RecaptchaValidHiddenField").val(""); // making hidden textbox empty 
+	jQuery('#CaptchaErrorMessage').html('Captcha verification failed');  
+			jQuery('#CaptchaErrorMessage').css('color',"red");
+}
+	  var verifyCallback = function(response) {
+         jQuery("#RecaptchaValidHiddenField").val("valid");
+		 if (jQuery("#RecaptchaValidHiddenField").val() !== '') {  
+            //jQuery('#CaptchaErrorMessage').css('color', 'green').html('Success!');  
+		     jQuery(".Recaptcha span.error-message").remove();
+		     jQuery(".form-buttons p.error").attr("style", "display:none");
+        }  else{
+		  document.getElementById("CaptchaErrorMessage").innerHTML = "Required Field";
+		  }
+      };
+  var onloadCallback = function() {
+	 grecaptcha.render('RecaptchaValidHiddenField', {
+          'sitekey' : '6Lci1lYbAAAAACrENFTJJIk2M8u7qa-d2_6O6qaw',
+          'callback' : verifyCallback
+        });
+  };
+</script>
+	  <script src="https://www.recaptcha.net/recaptcha/api.js?onload=onloadCallback"></script>
+
+                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="NLFKM-QREF5-ZS5GY-TB9ZU-TEUFQ",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"NLFKM-QREF5-ZS5GY-TB9ZU-TEUFQ",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="xo7ju7axgz7iw2b3s6mq-f-d2fa592bd-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"39","ak.cp":"1093151","ak.ai":parseInt("650564",10),"ak.ol":"0","ak.cr":100,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"61578f85","ak.r":49140,"ak.a2":e,"ak.m":"b","ak.n":"ff","ak.bpcip":"187.190.154.0","ak.cport":1315,"ak.gh":"23.36.183.227","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1748735897","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==b9japc9SSwyhJGlB7kpEn+rEWZgQboq9aei48X/32YmxZbRZw8cnoUBf9RdhgRG6xTdjBgES4OATzXRYQThifPxZwho52HP38l38+sR6MqDAbZJQjmNua7Pd8HgjhVAudVDXsVUu5IW6yRZHxUX7J4oOWrUeGN00n5Gg/0CehN3kZh675b75w6F2lRM9idDWSq61N9Axoo5zE6QvSK031hozpM1dFHU7tAxkYtl9zKOB+NF7S4hJ7GAWhYeswo394nZ+QAXkg90kYGPW4Q8TQSBpB3rKR9gfHKxauxTTL6BZUH4V279869tIChKzSYXHzMlgcho3M/oBSo5IEbEc/KQ7j6+SYqfms5EJyuWsf09/cjX7h4Luh6ZMPNxx9Zfm8Fmq0F4qdSCQWo9fTaIOtIOR1agW3+xXuDKjM07kRE8=","ak.pv":"34","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+  <body>
+  
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src=63
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <form method="post" action="/en/Accounts/AccountRegister" id="mainform">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="k1sTyuJYzAfc6g8x7pN0ZPrnv7o1AA854+fvX8eSaUsZXWgRwMoDtYnAbsJurEsRXixSHgo63KcF8B9YkPmCiusOuWrSD6oI9c7vf7t544grAy+4TXJr6J4BEoak8TzJf+DlqigbgyGb/BWhLXkBJ6iy0HQhX0kKw6++g42C/E+5T0rLf70T/Pv4l/QgWpFhWO6xQoVUzMq2KnnqX2Zp8YP2a3hMSnIdPhGDsNfrtcwGm11ydFNCvtwtpuna1vNYlgJ5t/IsdIfa90FIuki1cNu3UUeaEbY0Mcq5zCaGfq1wkr6yP7kxsJGQKbtTyw5zS4M96xU9TqiadYby/O7HyOtUrzJ1bIsltWQB9ug3AsVIAEz8ivj1VNZIbWYJW0XLm1vLBLkvufrCWa79hMo2DPnRab9GzpkhzYUK8psxwOeZChCY49iZtmYr17jB6zSzdU0vs98GLHd2oqTk7Ed22aK+wWFsdhLpi70r4v3wU11hJHllERltzA4BxfoSDnpJq6oE5V2n7PdAPd6r7r9eGeLRfb1WrOO5Zu4/TK5BDNulc3SwsQ6vH9KNdR/1OEXra9Vi0MwLnTbSaHcuVB2iNHJVlRx/Ejz42orjinpChfUpX7cu9sJ/Y4jegVnfhyIjIhQR/0v7Sj/SuYN4QIXDgKGlI3itW0D2z1y9ac4YEaMerNIcrN1M0d8WfAL7y4y6iXxAF8KRf09GM6J2OruIaxrgwC7x5qTSGUAkhNRYXIC6X6tGspx9FVm8B8NdG4SlsX7Fg5NKYsNVcAORyaRHoaFFp9D2b07WJ1bnTAGRdr/GqpTAu6JVPkj3sJ7QQT7oApI9kbfe9+kGFKwSH2H21iUIbvmrEuY4dbZOpdQfUFayZPMfuU8rOuJjnf+jUYOfgbtVjGFrGxcMh53/ukuZbRvcSXHV6fQ4nLIy9oyrPl2X9fjtnHACh4hEjyJL5qRRv2UirpTWiAEVDd3zn6l5j2lZfStK3Bk7mX7kila+kGyr64IRbllcBx32RM+dbj2oCy7JbD3g25LAf5xyMpy1IUPaOPmU8B9sCPSveVKJtXmJ2QQ/zsuZovfx3QF4zA5q6gN194UTkljh1PsLyCOdePUVHmAwz8gi/6HHarSfGRtDC6Ppo4AbrEJqff1wQJwimNcZA6/y91EOSb9rNaILOtZMdbaMt7jmsnwSDHJdYtQjOH6GuoQ2uraLKs8g3vWd3CD5Ofq28tpKk8mr4ZwuT09a++aiPtiMVGJf0lJutZxBo9St1Y+ueET31phOwRH2LQ7qyr0nzRXWrU6lcryoYYMIJRaIqebOpeHY2u9H/mNZRD8P2Ih+YeldcaJaKPCisuBJk6j5oAq01mKc9Llqkx1vbLL3Ax6cuVJlhAA+MTabkrPqHYNxZufc03XHxsyarCdxC1cecNBA1Of5anv5dxi8tL3ZB9iYh/uDAp9gZTw4l+59yUYa/6dbAkN7BJhTvAzjYlMh4A7+UaX1hMYue+efr58Zr3M61G5yRqnDe5GmHHnfAKiqfUnaUr7jplmeEzcr311hwwZkt+VnyUkGsX4luP79Y2o1qu90oQqdlPr0wjMCYnwUcnGmUKd3J4LFQGCGRDLlJz+lW0IQ7VOHpZB/rKfmt8VpoBWWacfflhMQF7IwC4pP0eZg4T+/FzvTgDZ+qetvJ51EBfbBg73AYZYqenM2mAgQRz33srpAL94SmdweG+wrgHVvN/Th/5mRnxiXy8tksSonRYgzsB6205ADmXhrXtlGdfn3v3dT6Qd19I5qScBPRK5EOlRboTMMHWwGuqUE6Je2zuaJNE2H1Y+JJlr4pW2MwMImTv8/Na5o3kKnJUdifjQfwGkKawpE72u3rJxz88F1nzNtrrwCJVmcl7QeXFvWM/tjhL4o7smBOour0nPmI4J6R++AHUoZ/gkhAPQvgvxHTzoPOtwyld+D+IKknVjRDPw5FsKnmptzBTsbh+ddldcJVJWs8F2xOhVFIYtGm5CF6t1xMrQnqlM92r+AJWsnFItD/Zpcc/4N05sHQqwkC4k7KMyu2R5dYK5OQb8DLqBDTwHzebRdLZSkhclSiCjcGbH8PjJFgV7uNS083sOP2ze87Ny0HNYPD+rJ7O/AORKibz9o5QAbCST/uoBgEc3bt/sYs2V4QzVkeIRzun71+TM1RrjwZFETBGB2iv39fLx5KB+S/XfAdYpjNIs65YRMhjVUfjtU0YMsxKcWW5gbP7wHseq+nwWa56f6wQChFFl/qIPvVx7GU6cZysjyeS23eNTqQwFNR5r5DqsH875++DP3a8cB+ZUIjj0dHKzOE/C4ibx5YM4WGOB78mBy+u+0oGbbY5kIjssr9n2bns1aBgHCc8jR0+MW3XhllxRp3iPYZ4VSj5UkVM0L0pFnlqd9zo0egC4qSLGtw4S2kbxPdrZaS9U4vqKFi5Ww/p7xdGfv46AQ/cQaqls+fDY+31q/wpZBCj2mnNId5Sm/nz75V4tcIHK35Xknt8HhOwbSO5SISrlCyGpjFLbODlDeKJpMMmozQ01wlR3wr3zXuNgRfBT//fym/kfFNrFJQ/7EiPhr5A3aT1S44Npc5RfP+z929GMPaZwq7m1n02WsSKaTnIJt+OMnP4gCkWrz9EFm5hy+rBpkn/0i8uOltUEq/effv6l6Fef6Z4jE6ywPd3AX75rGF5NDEDM+1Ixl2HZJI/x2to0Hh7C2To97Nh7P08d6nyRaMdzISK2zmPq1QkpE5EJgOtSukRIZzY8/5gW4bwizVxckswMv2O3zK+h/UyomY0LY3oQoXbgL1HBy/S2OTUKtlTgdIF/UvmKmZ2/O80rQp0lbO1OsONsGNdinAuCgJf7mkFXdVHcR4J1qk5x8fFFr3z28LxbCA0hFDAdqznSL0g17sG2xYyfPV3xOw7ngudhaxNXWSiScdE4NlG/psBhwMrPjxGy3nnlqVOU//ki4P2BLhXEQoTx64Xf5rM5ct8EhQxcEbl09ANZW21VKvdqFNKpbov6mMWwcD18B8D4pzK81zLOA69L2IDhPjI1pjGKDmrvRhHGqkJIqqLdZh76VmAbe9AdE9xCQvLx3Ehy+LCe3VIo/bnF8WAHxWeubyk/iNR445G8ntWIF1FH0mR7zuIr4XKCWa+qPWtHudoHCM6PwSYltnNO1C5iec1KvRB3G0dYrIN0zlWNGBVglDAGhaGYxK0J5GL6abYBKbPGU6VJWfYdWTWsw3IXnhH9uMxMEVi0wJUeFy7b84pXA/5Ox5PfQyWKMWBOtcA/Ug0dDTcVSbg6FdtQ6NdUMkuH5eORg6Qih5fKVkAQsRXy30tMubYFnhgPSwrnnW2WAW/E+37GMWN7y1Q5tdRth0l370gdbh5OO4LiNOv2vkupH/g+7ox5G/jWwO83FWbLp6hEYE5Sd8Ej8L/UxL4jRLBwJChlRjPHgyOZ9AUJprhmQr7cXYTaiRtUQBR/FJQSReHHSEPur35KTTBN6v7EPzIzlBUjl/nTwTkPXq2EnqFXlCJHnmSOkuKigXZ+D/3v8mkRsF4K1FFtoA/G5IQV1e9eHw7rctNJmFIIa00Q9R7Q52qeN4789v1OYQTSi7ftCs17UHJ+WbcV6UVTjbmH2t44IvcoSfXpt5jRC7l8mLha8hmTvJ0JljNkedWwQ0bS/yquiNCxmNOmZPqHZJg5FPiQYFbmGcfhoTKWrrycLKy7M8JvVzrSQkJXQwwtAlCSLALj2mhbdPViImqt6Z9KVtQTjoc18UAwEw+aN4tn/npVNyN4F3y5g5nUUudiY9LM9U2A3QGroUN5d1QkU9So3B0lIpmekOeBWjZ3JgpcEiKcVwzwKn6TMbUYF/fZvVUpAD5PV4TgT+qu2Isrnoq0UzykaHDRbeJ6fKlLide92NK7YsVCLmoPg2TbabEJ/iNybabPwOhHhO5Llv2HGF+4bzzPK7pYH5xFl1EWOwsFIs+N2d64KHu48H4VvrtPq+1axt4iF0k023vT8c9IDQZM4q8mSB+AZjrL5sF6eVFkh2FcPfu7JUKj9bbe8vvSw5j00cJ9CuPTsW2Y3WGXLnVc6KK21ymUa2TLLN009exRrfpL7RoODd7Yxf7m3S3iQDKqa4HCi5HxebFiBe99+qwHYfnII3gPb4C/92vWznU0EkfL0gwbSybTdS0AxlFz2twDnkVMPPVk6ickVD1aVFiQl+n1bEslA7mLDPaZycFW71FtQ64G/WWDTqcHqsXXdzX9EOi/AFuG67cCJ420usD7kcEnwoNRUKMnuEG6eZIfS5dWMVpr1Cv2HhjLmA9rBPWRoLTGy0aINrjyPxaa/z3I5yDt8KFBr00ZNV/4HMDpvZDMDjDCyo0UAg3pA0/j+6E1Ql4AIT9pR5gVkCH/oFIF2YsfZ9CUGTohU4rbOqnZoEz0RRMOxLeBmIC+iGm4ed3Rp2Ygn/SEqsSimzi7vxHcaqn+yxoBqTjyPliUQHWWFiQF+OAv4n7zqwnuG8ThkfFKbvApezcxGKDOD+w8CPg7+hWMG7QDqt3eZA/parvQYiyg33OTsexWTHCrBeVLfJSO8SJTbwO0qxB7EOfRHLOTLypcsUOUKPLS70srWIam2elAhS4/njSRhQNJ906xFswG+bC0S23+boYq//NTWF2EY/kQ+v72kgzN4K9Gwt1eoPgbGPzEPE+g71CuufiG+z7MfWpLAnBLmgoIrQkKM6qPK78dlVNpUvX756nFU8Qa2G05MtFldSJ2WB5F1CavmXpEt+zwDxl5JT5h5EBr+qjqwmGZC64vYZRH1OmydLN/utzHJOIZOg8gOos4/rzD3asBLnofIcIaoGa/S/+uAA6W7ofQWAGXDeFRXFF85WoMXKs93zcVY1jUlCM+RZxaYYP42UsbCmy35/vKnmcoCc7cX0QahX6CnWypLok19Q7DwHYkuhCA4rt+dcyPWXJSyao11+DqCnnKiEP+4o63xcOlN8LVgGnjXCmIweX/uag69qSswiKC5L8CZ9NmZlgwZV/V7ItxMTRmL8T8y/D9zLX43eYRuPMP/dSEe3vCJ1UL/aomxEX+XVfxKGFdxe46RElEFjfvX4T5HA1+XxL7eJaL6MGrf2UFYkGk2VvdSPskLRHQW2A/gPpFXhnXt0O7/m1Spqve8w9w/O2ITpLcXoW209qhJ331JfIcvOJgBVVwdkCczV2JZnlfxMOM2Hz8t7FvwdCtChdZ0ZXr0i845v3cWafSlvW0QcMkXck+na17Zo7eX1g54KJDuYRGqeg63niBvxA/ah4ginfV2LKHKNJlE5tMQCOx38XPs/CuHMC8JBPyNcReziB+ztDaeWnV8gfMunTZU/+GmCcW3pS454a8chWimwfIU4kP8YaGo2FGg9uDkj+zfnqm0j3mocTK/mgit27O6hQtEdO4EF1LXRmOFIk6c1OOKTvlqLho0TTRAg3LMGusxjEzit1T2kmx6V2A/SdQfc3arwIYNO+bIPK8ZlLGixCRCfIxi4uHdkyylsIgaRL4GnBmDCjNFjgu2azcp4jrJo6Y3IKeCADHSKZ6rlZ+5ZeU3SL/rWsxY7+JbdAs1rwWpFN8jzjjXp2hPJBN5kVc4lOAGsvgWIlxeWVltyKoffyGxCeN6Tmf2Dx/YvwXnqeTes7fCBVuL4JMs4ojZwNRcaKCEP0b06TxajazGcfcifmL13kT/YvsL77Nh5m5Zy8dq1UHpWJNhC2w/s/0zly5WY/BIdgCGcwaqZeNWrxHsV8KePIVze/amA01seHTIMcPeWHiBkFLlBI7ihKhQiyCyEStiO96cK5UnYgeECyuqKWZ2TzNR8wAWT46hFKm4eEpPud6bOgKEapjAWTTIz07wnDxSD7c7Bkblfhi0tZPxlaFsCbnVHs2bcWfkXn9O5nvJ/LGfYm2ANK5jtSyVGoDLuFTkHzrXlgYrTk5DtlJ0IyNOKU1L7GD4l1q2n3rk22vmvP1D3kympxduTuTmwxikIyBoS5eiZozjOtMPZS9hNwUdMSHt5DBXkk0zTNdYMESO81gTtWoBrHjeG+MengkSzjiP4rSZAy6GFVWDZt/zF0Ji3A42LTzmmkGbNHd125pbv0xaAsHlHiFVDdQGlLujRBOCXrWh1+VKZnQQTYblqO++eUwHIJzZ60hvatr7u3UAfd8cY2X7N4pczN7P/oaY8pYxTZkVfQ4F7sL4R65u9fdyt8q1DA5jSRqZt6G2Tb9aAZXEZcCgL09VLgjwsnQRpckmnxp5jYUMKk1nHqgbTm3vbw1d5lXsbyhMg4XSFGsPtk1xl+4IOZ/2zpXGHw+HgH0hYhn6DoT6Eq+PRJImZr2t2NyluAnHcKa305SGMMzWQt1QHMcc+rhjWeRj+IEpS88a3n+ND4Mlmnw5MdWictJQIgKUwlB7K8f+cC8XT6J3zFTs0uFoi0DxQqAm/lzbuovALvqW6L+Nm3EJeAz3uf7ngoEWfR2R4YkB18m81nR/KgQm6gNH+yrZg7xoay2IJdveM+PBh92y/KGE2XAs7oDQ3S0oO5jbjy8nLv0RraOmE9T10xus1fIT7keDWG/sTTu1yVG5je0HnhetYdSB3NpPC4EUo8tPVI1GDJtetLVcMcx0P2bNG57K3byRMHCNnD3t2w6IZFIKu0aFixzXuAYGpoSEn2jnjgnuCaMqkfnmUdvVpVasX0Laa4DFsbVKPXc2MHck9MsbfyGK6t4hd4ErTGtwT3uShmAldlFKqqY+BAsitomIREMq2e0PC8S97EbIXhWSwSaaxuM8EHtcyj1HPnwDAXNS8WuYZSzrNc/PFWC5x/aG8lBtMb319w6o5LuqprVs9UWpDx1/z3Vyh1T1Fv3Ez2kBhOgIhoEi2pchomhPuCyr7cISC/QS99qOt4RUWWUaOQlHkdR6Vp/KdTSoEAJnHL0K0DvBZlbGcg0Zg0ARhIw6G+zofwDoIQifIgkfTpnMeRNAe5QdWdLDbj9OiVx2+60J7TsMiNJb+xvahtNAIdfsntxndduuv/Ne9CxM5eZjoRWNcZbWzgYNv85LO+x5u5lEf+z9gxgH5j8/vXKhe5zMEvTo4yzZOSyyQcGoJ8zAMu9kJ04UdxejHb036/IOuf/JkbNtwpSD/pYKDDcccfA9Np+Bdu4uZe9C9V0nb1rZHUj+rDUbe0vlIPUp/UzOKwM/a0U+5hiBdFgq5k3D5A+n1990dCkJTwGiwlVdxoE8YtfsfsBHHm0SzBwEw/yKPjJJ+j94n5VcshP+Esxzftu+kzNKVvVzO++ActhRUwDndj7aDoI7EW/fpiCZrVXwfav2xfcezgm2hdp0ZTYW26E0HQS534c/LhCeyNdDgJNveMypxJZBwgxkaj+YGn442KoMKSlEWDd3e1RTAKr/c4YnqqIAqTytm/ZZ1D4iRPfnwpKZcGIcvKJStIqjygUQ5oZtBSC9Bu35e6R8wGzN5kVryIG7tdqHUPnk/yFgEB6T+1QrGTjiLEdcLeDWqVrWtUhJkf/urji1r/tDFFWTLpZpz6p/HhpfnkDBtxb2EeyA9eTxZNfjHz6vNJwo4g8xFoEiIs621ZuvmbTD1FuWpOjhI9rYuVvEgZ7FTFQznIBwgP3R4Q5xlh9UNgc7D7DpPcKR2RZzaJEzZvShj3yo6dQ9nTYMCUHFxRsi7a1jnAXoVRLoe0QycgmasVxuZYEVIW6LZoZdxBXnXpxjo2SqXDJF4r9/fuODLxCZOzqyfcZAxLtKtz937tky7L0P7HfLVGDfLdci63T64gfImQGCa/8MFHbQFdDFex0NnSbnvbjGMLxq0wBmuYjFG8ctLV4AHfrMcTgkcds8tdxObYGYwdS9aZurOVPByGtg6LIUpZXYBnukfhamQ+AbtuYQ2WMKrjDrc4b4HN/abndcGlIYbtNNjAL4xozM6gJScJjrl1mClvNehU5m6PEa1pERu9lXIJrUMHOMJpOhtXUrbHq6DmD3uFE3To+NP6ZIM04H8Z7emdl8OvvucAT3PsTgYVBZ55Y9ZXnFfbkTHP7s2/glhe28Zsm/QhwZSXeC5nJjvZIJ/HaBXWBkWC3PWWZuMf7JFyiZv5cRxwwY2lEto1z1LtmkwnQKjx1wiyFRAJ50KTjdT8Vz/lV4hKpkclsMtEwn/WqK4KYRlCDBhhsb8aI0LaYyFlq+MMOsJ5M/BtiLtjQppoF7C1YEGFfyGiKQhvwod1oQDZbCBMZ/cy6268Df9umadSOjth6XTBUbAkdz9GGt+5G2M8HMGrFCAmvhscF2lpiSRdDBq2USW/fgRcd8J8+N4KR9tPDsHT/dgSD9lWIhDz9Tf31af+eTCrJ5ZE6wAK3XSHvG6bqX7wvmrUJZatSMpKFH0wh0o4KQXhswJVpOU4zEW7+FRJS1Ku7t+fp5oN8aAh7zbYWzGcKlDZ4e7bKXt7GRBQ21eAGGECWpyiJMrv+/Uy7882bcJAA5X3oQEyk7XRIAZpF/1SiJ0Mu8QqyYnT3cXswdwALofvi42yew6MMYsG6NhE6QlcDOtc0cs9HqIlCiLCtVxsBY9hNyC8mjmM9RNUlCnhEfVLmmp6zmSKWgFz7sX7DN4nLKOwtNHfO50N/JIvFLhGwKS1sKUq3IS9cYvksCvm7T7Yc2EnnqsbcXbxVDCB26bI5ds07op0kCma9yzKJrFNHMs7CcRQ7sDY53ZVpUA7NMRSF4vQwnXMWKRhQglRfSz761YrkSm/jdZoGH4PtmFrI/zUyNHtXkvPKPyBWhN26ya4dlQl3iHRsGoSYeJNrG6Vxm/mnEQTZuWs+fUAr5f6Lxx6TBCNod7jnIGpgZeP9yTwrql6uZu51ugJTUHaQXqOrR0iOveLdfMbDPiYS5NO6VObO2CQzdeQRObbJ2LhmhGnS9igJwzmcY7ZlS1V2PLPOjM22C7LeXY0k6Nia9npD++I+KIkqpbBer+796HQ9vQvBpm7wUAFhwgxANrqlrgPLeM/urkJCJYmd3sUW65hwH/aB733ce4+AygbvVRRIxlP03qHDqjUVp/jjnHCHDHDM6H8jQmuyvLY0+DmDjL71wgpE/tB/raeegbw5XJ1E2enccrIFwLo9qvRK4h841z1lkI1gceUduX3jG/a6Tcvcpm27byC65QKulSuAidNeqmVv4z2bOGifC+ccnfWYEqy8Cdz1IRZ+ONALDvyVvIF8xu8WZk6oUwdsTtW9htRO+K0PS8b4FOWn9A8hZEKHCPWHhf8H1sme1/3aMA8Y7fWHHBnr9r0xKP7a5diH5WVrMj78C7LiRVYNPw6nco/qtHLza4g4cEubyI6wneiVu5CmP2c0tBaf4s5xSaUUbChBunU0ZteITlvswNcqD3FTQEfQSTHB0b47eipj5GJt3FY4eveavj5dtS/490SsEFmrXGoGYdfeOrlt7ijvrcdkozuTUPsro1R6r7EBMEj8o3wiQ3sAIJuL/IW08ziuJXUt8Mu9XKz5Bp2qCua2o158pSoBwYLtR3tr+jPM5sg5B7ztV5021b1gOLv/ONPmIZgn475vezm7/T7dkhmm+Z2OExxZcdCQYs2hLK5d2+z2knQvffuFsDLOyEBCn2tpDgFn+Ov7SDapGSCPn/NoPgsoOl/luAWdzrOVZ2fbwcGeSk05L6Wj4tk8WGJfPXZdSDnB7HJjrCQ7y0sJNITeL9nM+1loZ2xK2ajcmR2Oek/eYMiWqEB5+XzvTp1+zvtP+XKWul2+cuUQbfT4r9STvpbGvRq2R2Xdu4Y5WmXpI3oU8/wkGUjYBA9VQwgVhqfY/yjZHy1YgG9sXwjvyHL0pOSmXi5ktF13+/X09ISKcv5AYuIX1HH8WtGW9/elD9zdrP5WL+1T4C+WypbY2EZyegSCVirCyNS5YOs9E0h4lu0C5mVhtCGj19tDocgYT8CTuV3SdHRQmtNNUY4GFPml9q9sbRH50Hgxd0Z0QINhwvZ6AkZ4NVJE453VBOa9vLqDOrDPv3m9BWFFbO9t5YTIaSixNt9qpvstMYbJ3Fh7Zcwf/Nv2fzlUyYOqbnAmMOzfM7PT3bznj0hOMnbLyqNORXnSKYWGoU3WslJibgUnHnsj6jtCXNXVVSf77Au8JYq5sczPKVf/neHN76lIviwi69TPkAPoD9fbUEUIfep4gkLKOZao59wnawoi4pyVHgKHvmOQDhf6cIO/4di6a1Bm/8yFqT9+qUJs8AEpDQ9k20QEM7sHyGs1y+Nh9r7xQKeMPHcLBa/0C/Zxyn2UxZEg35IW1go7cTp1UKrB3JE3sFmRGCLrfmWM7Bt0StAYLhfkXcxGJVt/AYandZ7k4h43yj1WFR5N3yi7tLjaZIRK+VriRtoVDda5o7Q9K94e42P8e1DyKqNxETssOhiNqnNWOIQ1snannz1FKrgwWN1Bs5gFYvUsTi09Gg6iYbrx/WitGNMSmhnCD4bbxLMNaYe+8mMisu0+G2RSyOVyuuYWaBictWxIeAGYGTqx4az5y2HbGjNDtWBYTUDX1Y2JCgT97toIHPbi3nKNr0goCSWU4oHwccHOrOEPBFqYTc/uxBxc/XlFrtQGX2jkrTFxjeJ0hhGFXIH3Bl9ga2ygBU+i1YAO1TNOZLzQENKGFcDgvyPX6YYpK+WFolRiadb05S63flDt4lhth/dSgmslLf0UfAsD+cIZ6Ik3H/2w4Yz9fJpicDr/mjhz5lJZYWs47mp5rRIWc/MmVAJs3IVMhYyUTSziaoWI8s8JOI/plsxqys7Ub4pzNADZeZEzAeZ3JEB7VptssgkS3T6CiInK8HHdHGO44NqN+VXaBFuzA+FA0AYLfw9GKlbb7jlzlgcYIg7g6kJUAOW2UzOZy2ZYVnUZM44HLosXtDJNOGMf0HvbLuQL/kkHxjzx5BmX/pzdr5S0NzfkdJzW7WOI2MHTal3k8s9dBasN2xT+JuA6TzMxQj9hf4CU6E1NkDauQG+f5vDP8p947WB73IY7Ud1oQhnhFWVd83OCUG+ilW7i4FHjfV2SAzHwje6FNHFY/mUdnYQ2akpLV/cfHSxaj7AdK9vBu64WosTK85W/4NntlhiNVPAk0/yEb1yS8ZvXPWZW9oywYZkZX6PtvsfBktY8r7H7218dMYzbcD0e8gMPn6GGa7V5qSPMMAH1FZMX6VTTupqFh5MZ/VRMdoQZNGE+4TrRDX+t51CxfglQbRT1VR9nWJpv0d627BUuTg8D35S/esxU/qHYTYpdGdqlNojrp8JYu9VZQc3cXi/RjkTsqJOtgfVBnSDvMITfx8SGYd/xLThZWe77GM5SZ4FtemxdLxCN8mQTgyFeRQmtLV/LT7M8KKz0Hz0v3mxxjauPKKiQBpdOZm9ZQWKKLJVfIzVXzYVd9nIEUzzTkuMkggGZPzNLKLk7fDLz1IbhLNLQkhA/RRrJVz6cOuROMMkz36r1mZ4ysZfZO12PJqyXEI75pvDjqTtxLaZvPV/wKsKTx84ZG/UMiTChHFG4/vLBppljDUgwYFdyxj2N9s9ZjqZAYqxXzUITPp3QZxYo6Lco0ML1KDAT+DaWrknijCv7dPOqOFJrMA4yYmVws76kr+MxX+1ytQkV9/61gyUpuNk+wi/cBU9fP+UPjUfok1NpcP0tjCvoct4OEmneQsWjbdbawHzltY0ZYRf/0AJ3FeAs9LMsP7Az+UZuCowjs2NlHJT5MfhSnatK3YxwNrN3X94fM41Ll77bSIaRtn5RQ6IVcZzcGHoLdU4jKwfJ/p0EVl0C6/xoQwdoSCy3AdsnwOawGIQqNaqnaUITgkavRfob+CHkW2rSv+sUfp80GrYnnPFZqcbBfooMgjY45D6f55l62yDVr6STgib3UDfoxcSwyVUAC+cnN5nRDDW0wP7FamYUqNWEKord29qHjKkCylFCEvyq4E06tz6uABb+w7GF0N5xk7ja0ZWoTbrWmSJHXg67H9RcTwy1gSmUSC/s5CKQ4HcuccLOaBWM/MILSRrtdDiCKNReFgKv/dAYuz9bz+9oNQWmW7Yv+PfKZGYvwhgBETevcKoH9DUM/C7eEk8gCmFiJp+HIFzZ5b+i2jkeLrDAlnzJcF8Z4rC1L+YPUhJoqVOgOudC47DtZDnxmVuWYdKSGRxyY5/Qemj4qlxNFQb/15XA/XV7EBAzdSO/lyw3+z4HKGuUzsvG5FqAm4sE588ee/bxP19tYmYKmy7W96ZfSy9jBcG902NC5xQOoioLX/hS6r9xmWr9IwVXRD/vPB37oRW3Dnelry8h9IRt6UG8tvJYS2AOPT337TkZUzGtELec4uOvWrxTe8f1dnjP18u66Px9uG+9r2F+G1N3QjF95i75yI7RzLYTYr6IYVqzDpGhayp1pg2VlqCORGaonayd00LLTSfl5cBMLNc536Oif5cOzBBrzqBA0sWOm86nor1U4Y5DwSZEN9JK2J6RiGvk4z/O3xNnjZHs+0HbZrm8GTuTNe1JHVZTUyYLkHSAmhd0ESe95X99XUDM/pGcWe9UhpUupNkBl807XfvnIOFbSnYBnvpyptxCDeqhkb7heBiNANxFx3xb/bxZyqCain/qgmlf6ZzJctc646KJ7LsUjsXC8OkeyxehRMYJqqWFyOmEdu5Ni/2XkvXY43X+6rEbsw2gPVsCXArQgD7Y6Y+XNpfayFsMeybhUyec99isACLv/qZaXHj0t78WAske3XL2mX2cz0oiSDwHtDxyLJLrTgvwpZUviKBJLG21b1FOVdmIroeKq2ADbBOSJi/HmbF4y8g1YlNA4pclD8V89uwumplRvUGN5QTT6rJjj2xGMcM4xkee+xtK1JbXOQIC9c/mewIiKPY+LxpOJYi7oxWJMiVU7lbwrnIUCN8dgn3TPRTTd47Ib33MZuDdMQyV3pt8hkfuHhrlR510hTDPQ8jAn8tKjONqTFuq5r+OuC3f/AaN1rD75Z5jauCQqpOdFRZBMHL+7OQMSLjRpdjCkJG6e6wblC1GvSjVjSXWHc/X6Vy+/wFo43YsuTCy+5tKd0wdj8YlBKGY+UzAIj0/42jvKt+Sv2T7aNV5chFTU6iRb07O2WG0gaEXTzC8rTOVfAxL27KInYxJxsrubZBkzJv1+Eh2eqmiWsCfOr8eoi2XKfJWwY/VKYgh0rose9xw61WwDNj6RkZ8s5iRePYqZ2QzTDp/zyyGhZo/XDN0PqlAmBy6tbhJJNyEUGsVvMAbP68kpbOl3T2Xy+l+6lerDjowO3zCZGWQUzGIUn5LsaD9z0zFGIJEXwfLA7XNcBBm9Qzhxe9m3TsEiPLOk7XIYstYmYUZM/XQyPdyDKBX/CLufOi+2hlz2Repfav5shnsG0fFSC0G1SXkhTujyDOGGUuEFZJ/DtL6EJg2vISC1eXXwRM9uLTxob69cFHIVL24Jqv3+Qfj6UrjUM1QRuR5kAUVlU/FrWKCeUmDrjAC3nR0J4RVZ61j6eobYZ8iOQuciA1WHl54E7Ftg5MhRDSXbqr4vkgLzRrK2ewo5WlUID3Rx+PbzGxGXZbjmKTiXqM0KlHKNmjLj9DtV5+eVIa6gixQ4Bbr5REQUZ/ZCu2qErpbVmdO/517E+qvedGTmPuBbryKS409aMDMIHInrogexLbcOGncr9znYJskNOOITWmYnCdcV4No+u9wbYwJnqo1+rar5dyBCEWSKp7aQyeLdPQTxIro9YYfpk3qhBZ3ssa+4nbKcr25FjycwQGE6SE65PdrQauOUptRNt6jpmhXSNtxm0sM9w/nKZA1tCMg8oSxrbxQqXihCgrU8+3T4BrrEkveVuOrkrEtcsEJiLhEERvvGqQGJ5BYw5hIiCI7OzZYLSHEpj23nWgLFBObT/0Qd1o/Scv9XGm+UXL6te3KLPRnXutndpS9HZEvOw6AuSfKrx1q3cc3CnS61ErPkHktOwTT2nsMXtQ/GZDNWcpYBGNvUwZRWdMWkUATzqR2Jd1ALikQ9umxUztnQUQJFP9Gatg2NqPl5GXt+kKBIN8ylaDXPQ7YwfxXidLmu8UmU6pLIxNYaaPBgDxd5ApNVOZgmWlxbVHlTDeB0fLXT85mqdZk1n2TFYO0yP/EIdyCjFEt/VKdRvwBLxlZH7NAv6lzUy3WlKHMOiW1kisRphHZFOWoPeaRwGzduIQNJkAgB88v0mic7BFBYXIUnEU3/rU0IjxJeXgbCJgaQPxrUPq4KyKy8tPv8NUrTqDrJWGkPTM2BLraea1lWuYq8DehsEP8ANjMyaonlLROP/zs4FqzfKCTIOJmIZemXbqMhFO89OfU9aaqzaqifaGyA+OHGSxNJ3u/zKgOBQpnRLjQAglVLzPHzandiZV91aBwYGnTyl+jFWkgaf8yWB3SRAfrYw9DgomMncAvXrgRJZT5nzoBc/1/zRlCvQH+KomqiyON6II/pRr9ThfhWX+sgRebXwwvqyCdKiCkTqbqI3VGnJ4fpQ3XyOliZP/IeUiYxN6l3RR8ZASgtuol1qMzf+LPdIssTz/TPQ/poiqahS8wbIqSgHErBd2vrk/VG3fFsGp/P+74ASusGoizZND8oP0Ufam+f/1qvJnnYw55gKLoFoFT6mhB+Wg9wNnbkbYWHa3KroJOtn/2DiMPV8OVHcxEbiL5zqQ9eCHFfqq/oMTP8eLPj0RVqS9VxU6zoMwJE8IhgFqODi18EVMaLIgpNNv9W+ypm3LIMxZS+jQxEwCAapd+FHUmwsPNTnjMF4dLVaF7iU7wnT7SoJsW8kpsYZwUa2llSqm9VmqUnEDlhxFAGq2ouCWIoxWROmhDGz7vgccN/jPvlrBxJr/479uqqYs7Kwt3zAfXir3pHwFfUPqThY89uyB2TJwcj0t9XoIGuxv6nTY+umZB+rKhIkp52S1Mjoh7aoLzlPeUMtWr4ecCIND1fJ4/8241eUbstc5HUm7E6/1LDC02ihjSsW2Lg5K4CihCKiIQnOeWiwxHWISx21+u2BypgkVIIb6VVXEy07dXvtWqzAbm5eTBXFkKQ5mmb2eM/S9YYc/dI8wAlWbfgaeYq1/lxlqO7eO0TChft3L2kqc+OEtDtRrveB2CUcM01Fx+9T1cMEMcoyEgm52+8ZVvePfE2lgnpqHE6RB1emi5OItN9RfmVRKcqQUqwVIr3vZyg99OuF5loHig3QtXTAWRAd/fCxi5apzVDIC4XjtqaPGnhLdgCRKA7gqa9YR72n03XzP9wZIqv7kMyWQZzLp6b2zAQ04AIFh6D5BARHjHGkJoL+1dsgwZnq6uC3048XMkMkiAB1e/sVjTuLWQ6EMkk5cwmZ3wadu10jEO3H33G86JMFCIWNV4YDUd1y/txoCFr7bfwp463DiG52O7DaPipQQpxzmgURHNP3QiH2qB1aoNhfX+kaQk8+x8Q2OEwt8pXk3zrXkYiAVLZJlqdurR8L9xwom3C0kvg0FwPCgp5TARIjO1NbEJB24+MIwwXEvJk+XenHj5LyZNUI1rJMsgiHQ64SyHgXjAQN6fUG1p5sfypDVknpsBnDmT3eWHev6GC15Y4ncrj7HNnO1oOvA0iWJrDvq7XqdCfn04NrCmwzzaZ7fZ49AUW9g3rXgxwxJXJeLqvZ1/jw3k4zs4Fp+1fYUwNlsltx+F0ZOyWvHf6GLC3+GiRH+ODgZAeb0oku3uJoj9q/w1uXr7uheijpsDRlZi26Isgd+8rbiomG/P6YB5LU1JAryYbcQXl5cUY1ToAmA7eDz6sRCdayyyqBjJcwIrLAZnBnM9WC3lmRH4GUJFXA0TPnwdyQIx7YQZsaGyCT/q/keZ5u5XfNbZ8UiPG3TBIX0I4a9fUvbnDCjSfNrCMn43ETdI4aZn9LsCINSSabQilDj8L9S7pybeIWdf3LC3ccC83QogeQ24nZKDZolw/8IH6xUc3cHt0NwWP3qlx4LHTFFuunTBb3HFGT09wXMEWxb9xZwCE2idLw1V4dlHj44gXsiYvGJyk6CH0efgBILVfIF18ZduVyQO86079bTbP5l9d8dpPBiNVXHr2rc8EqixxhsZQtuGeIVtMlkUT+aRQzTBQuUaOnqrpoYoUdRwmZoxQmm1aUeabqbBl8/euf1W6lr7F3ZkfKzW+lF8oxpy+i2juKOGIBEde5SunIbC2O+rL0BHO6QlGBFJJNIsvv1NRNnmNQ/243ch/TPJ8KNKoo8gzOWWwEh/qyx6n47fihWYVGNNpyVTjvZ27bFeiC8Bo21QWu94VA9CfZMulWi0v1K9s5nvjn/3hReljJuaVnyPC1XOqYsCfnErZBKnY7N32j5HjwpGVMybzHH3arUcsaFanY5tyX+tljAksYoicF98KIXo5ugfhl032cHYLVB/NovPNlOobxmjSv1BEHCGYSQLedjTEVqSula7xsvFSSbK7FnypL+FdfOj997OtlSjdD2raJbU+GES3+XbuHb32R8mM9rrklbxmbp90Mym6tHPqvnGKxTNh7DY9qF8QrUaHrUQVb80Ryt55HYFHCQ9PH8ZhtkEJLE09akX199PDfhztffOuGQ2yt6NPUNKSP5CWNllwCRyF75LZs5lWeP8EIuma/W3vgPzDWFgsL9UFjcRKpzdpiAtHh89wIgNrUaq16AANeo8GaJJ5YTvxsTCnvpB5oqZQUG6BhoEiGiXDBecD+jNvgTIqtq7bu/rBL2huxKZiBulUE6IAOnE9fxnIKhVnAzhrUuHVVJodJaJgR0V/JoHLGrIqq5OUpmX4bL0OpbC5E3POjIfkEKHUNYyYUHSoT4Ors4E/qfUil/clo7bFecN/xUvo0fVCCQs0Ds9bryUTQp3vJG7fNfq34gKn3fE=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D0E5B4D5" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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" />
+</div>
+	
+	<script type="text/javascript">
+		var linkDeleteImageUrl = '/temp/iconcache/network/16x16/link_delete.png';
+	</script>
+	
+ 	<!-- END SYSTEM WIDE NOTIFICATION -->
+      
+    
+
+
+
+<!-- START STRIPE CONTAINER -->
+<div class="stripeContainer headerStripe darkBackground" id="JumpAssetMainNav">
+    <!-- START STRIPE CONTENT -->
+    <div  class="stripeContent stickyNav">
+        <div class="line">
+            <div class="unit size1of4">
+               <div id="desktoplogo">
+                 
+                           <a href="/en">
+                                <img src="/-/media/LatticeSemi/Images/Common/Logo.ashx?h=23&amp;la=en&amp;mw=144&amp;w=144" class="logo" alt="Lattice Semiconductor" width="144" height="23" />
+                            </a>
+                   
+                            <div class="line hamburgermenu">
+							 <div class="unit size1of7" id="mobilemenu"><img src="/images/menu.png" alt="en" width="22px" height="22px" /></div>
+							 
+							 <div class="unit size4of7" id="mobilelogo"><a href="/en">
+                                <img src="/-/media/LatticeSemi/Images/Common/Logo.ashx?h=23&amp;la=en&amp;mw=144&amp;w=144" class="logo" alt="Lattice Semiconductor" width="144" height="23" />
+                            </a></div>
+                            <div class="unit size2of7 lastUnit">
+							<div class="line">
+							<div  class="unit size1of3" id="profile"><img src="/images/profile_icon.png" alt="en" width="22px" height="22px" /></div>
+                                <div class="unit size1of3" id="language">
+                                  
+									<ul>
+                                        <li id="en"><img src='/images/flags/16x16/flag_usa.png' alt="en" /></li>
+                                        <li id="jp"><img src='/images/flags/16x16/flag_Japan.PNG' alt="ja" /></li>
+                                        <li id="cn"><img src='/images/flags/16x16/flag_china.png' alt="zh" /></li>
+                                    </ul>
+                                </div>
+                                <div class="unit size1of3 lastUnit" id="search"><img src="/images/searchmobile.png" alt="en" width="22px" height="22px" /></div>
+                                </div>
+								</div>
+                               
+                        </div>
+                    
+                    
+                   
+                </div> 
+			</div>
+			<div class="unit size3of4 lastUnit">
+			<div class="line">
+				<div class="unit size4of5">
+					<ul class="navItems">
+						<li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Solutions" class="nULink">Applications</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height5">
+		<li><a><span class="fakeLink">Industrial & Auto</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Automotive
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/SolutionCategories/Automotive">Automotive Overview</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/DriverAssistance">ADAS / Driver Assistance</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/FunctionalSafety">Functional Safety</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/InVehicleInfotainment">Infotainment</a></li><li><a href="https://www.latticesemi.com/en/Support/QualityAndReliability">Quality & Reliability</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Factory Automation
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/FunctionalSafety">Functional Safety</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/MachineVision">Machine Vision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/PLCHMI">PLCs</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Robotics">Robotics</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Other Industrial
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Medical">Medical</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Surveillance">Video Surveillance</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Automate">Lattice Automate</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Drive">Lattice Drive</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Comms & Computing</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Client Computing
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Notebooks">Notebooks / PCs</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Printers">Printers</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Tablets">Tablets</a></li>
+				</ul><h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/ORAN">Lattice ORAN</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Datacenter Systems
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/PFR">Platform Firmware Resiliency</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/DatacenterSystemsServerSolutions">Servers</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/DatacenterSystemsStorage">Storage</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/DataCenterSwitches">Switches</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Wireless
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/5G">5G Open RAN</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/HetNetSmallCellsSolutions">HetNet Small Cells</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LowPowerRadios">Low Power Radios</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/MillimeterWaveRadios">Millimeter Wave Radios</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Wireline
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/IntellectualProperty/IPCore/IPCores01/10GbEthernetMAC">10 Gbps Ethernet MAC</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/HitlessUpdates">Hitless Updates</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/IntelligentSFPModules">Intelligent SFP</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/IntellectualProperty/ReferenceDesigns/ReferenceDesign04/RGMIItoGMIIBridge">RGMII to GMII Bridge</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Consumer</span></a><div class="line menuContent">
+			<div class="unit size1of3">
+				<h3>
+					Prosumer Electronics
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/IoT">IoT & Wearables</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/VRHMD">VR Head Mounted Display</a></li>
+				</ul>
+			</div><div class="unit size1of3">
+				<h3>
+					Smart Home
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/SmartHomeSmartRoom">Consumer Robots & Toys</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/SmartHomeControl">Home Control & Security</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Aerospace & Defense</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Aerospace & Defense
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/Defense">Defense Overview</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/GuidanceSystems">Guidance Systems</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Software-Defined-Radio">Software Defined Radio</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Space">Space</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/UAVs">UAVs</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Security</span></a><div class="line menuContent">
+			<div class="unit size1of2">
+				<h3>
+					FPGA-Based Security
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/Lattice-FPGA-Security-Solutions">Security Overview</a></li>
+				</ul>
+			</div><div class="unit size1of2 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Products" class="nULink">Products</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height3">
+		<li><a><span class="fakeLink">FPGAs & Other Devices</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Control & Security FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/MachXO5-NX">MachXO5-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Mach-NX">Mach-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/MachXO3D">MachXO3D</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/MachXO3">MachXO3</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/MachXO2">MachXO2</a></li><li><a href="https://www.latticesemi.com/en/Products/PowerAndClockDevices/PlatformManager2">L-ASC10</a></li>
+				</ul><h3>
+					Platforms
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Avant">Lattice Avant</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeNexus">Lattice Nexus</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Lattice-Nexus-2">Lattice Nexus 2</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					General Purpose FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Avant-X">Avant-X</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Avant-G">Avant-G</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Avant-E">Avant-E</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Certus-N2">Certus-N2</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CertusPro-NX">CertusPro-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Certus-NX">Certus-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/ECP5">ECP5 & ECP5-5G</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Ultra Low Power FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40UltraPlus">iCE40 UltraPlus</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40Ultra">iCE40 Ultra</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40Ultra">iCE40 UltraLite</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40">iCE40 LP/HX</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Video Connection FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CrossLink-NX">CrossLinkU-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CrossLink-NX">CrossLink-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CrossLinkPlus">CrossLinkPlus</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CrossLink">CrossLink</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/en/Products">VIEW ALL DEVICES&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Software Tools</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Software Tools
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/FPGAandLDS/LatticeDiamond">Lattice Diamond</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/FPGAandLDS/LatticePropel">Lattice Propel</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/FPGAandLDS/Radiant">Lattice Radiant</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/AIML/LatticesensAIStudio">Lattice sensAI Studio</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/AIML/Lattice-sensAI-Edge-Vision-Engine-SDK">Lattice sensAI EVE SDK</a></li><li><a href="https://www.latticesemi.com/en/Support/Licensing">Software Licensing</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP">VIEW ALL SOFTWARE TOOLS&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Solutions</span></a><div class="line menuContent">
+			<div class="unit size1of3">
+				<h3>
+					Solutions
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/CommunitySourced">Community Sourced</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=bb168d29ad6b40769878f160546890de&amp;active=demo">Demos</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=6da9534f318a4969a6b5e7dc9081bdba&amp;active=ipcore">IP Cores</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=982db688d64345bbb3af29e62fee1dc3&amp;active=board">Kits & Boards</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=3614c818569f4eecb0602ba20a521a41&amp;active=refdesign">Reference Designs</a></li><li><a href="https://www.latticesemi.com/en/Products/ProgrammingHardware">Programming Hardware</a></li>
+				</ul>
+			</div><div class="unit size1of3">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Automate">Lattice Automate</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Drive">Lattice Drive</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/ORAN">Lattice ORAN</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h3>
+					FPGA-Based Security
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/Lattice-FPGA-Security-Solutions">Security Overview</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/solutionsearch">VIEW ALL SOLUTIONS&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Support" class="nULink">Support</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height6">
+		<li><a><span class="fakeLink">Technical Support</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Support
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/AnswerDatabase">Answer Database</a></li><li><a href="https://www.latticesemi.com/en/Support">Get Technical Support</a></li><li><a href="https://www.latticesemi.com/en/About/ContactUs">General Inquiries</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/en/Support">EXPLORE HELP CENTER&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Software Licensing</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Software Licensing
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Support/Licensing">Request a License</a></li><li><a href="https://www.latticesemi.com/Support/Licensing#purchase">Purchase Software License</a></li><li><a href="https://www.latticesemi.com/en/Support/LatticeIPSupport">IP Licensing Support</a></li><li><a href="https://www.latticesemi.com/Support/Licensing/IPCore/IPCoreNew">New IP License Request</a></li><li><a href="https://www.latticesemi.com/en/Support/Lattice-IP-License-Bundles">IP License Bundles</a></li><li><a href="https://www.latticesemi.com/Support/Licensing/AcademicLicense/Academic%20License%20Request%20Form">Academic License Request</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Quality & Reliability</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Quality & Reliability
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/QualityAndReliability">Quality & Reliability Information</a></li><li><a href="https://www.latticesemi.com/en/Support/QualityAndReliability/ExportClassification">Export Classification Information</a></li><li><a href="https://www.latticesemi.com/en/Support/PCN">Product Change Notifications (PCNs)</a></li><li><a href="https://www.latticesemi.com/en/Support/PartNumberReferenceGuide">Part Number Reference Guide</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Services</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Design Services
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/LatticeDesignGroup">Lattice Design Group</a></li><li><a href=""></a></li><li><a href="https://www.latticesemi.com/en/Support/ProductCustomization">Product Services</a></li>
+				</ul><h3>
+					
+				</h3><ul>
+					<li><a href=""></a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Secure Supply Chain
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSupplyGuard">Lattice SupplyGuard</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Training
+				</h3><ul>
+					<li><a href="https://www.latticesemi-insights.com/">Lattice Insights</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Discontinued Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/MatureAndDiscontinuedDevices">Mature & Discontinued Devices</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Legacy Devices & Software</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Legacy Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/SoftwareArchive">FPGA Software Archive</a></li><li><a href="https://www.latticesemi.com/en/Support/ASSPSoftwareArchive">Silicon Image Software Archive</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Lattice Partner Network</span></a><div class="line menuContent">
+			<div class="unit size1of2">
+				<h3>
+					Partner Program
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/Partner-Network">Program Overview</a></li><li><a href="https://www.latticesemi.com/en/Support/Partners">Find Partners</a></li><li><a href="https://www.latticesemi.com/solutionsearch?&amp;qprovider=3e052bdbb99a4c2691d18011e3a24fdf,5233e49f3f684c95a9db94ab3aed059c,1355762face7416da88444b50acab913,edf1088dea6b4972b73b44fad51554ad,47f66166aa4d48599a7df5ef20cae2a2,14d45119e9ce435a962cd7b6c3036e78,a784f36edaf840f8b6908faf3443f7c2,71d36ac2ef8e488abc0bc0c5c4c4e7f3,b08027d6cadc4efdab09ed480e186731,e4fb27cb7bd24c4c96545dccbb6daed0,ea3c5a961c5649f68d8267ee43086d35,358ab1e5969245e5ab3ecf5964b1ec17​  ​">Explore Partner Solutions</a></li>
+				</ul>
+			</div><div class="unit size1of2 lastUnit">
+				<h3>
+					Partner Type
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=3fcabf6c16c647968c89942cd13e2a54">IP Cores</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=d6eef479dc0c4e109dec6f5de39d5812">Design Services</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=08cc134c4b4f46e08010e44dfd4b7043">Boards</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=a26cc42771d949b5837f9be415f95e2e">Programming Services</a></li><li><a href="https://www.latticesemi.com/en/Support/Partners">EDA </a></li><li><a href="https://www.latticesemi.com/en/Support/Partners">Embedded</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Buy/SalesLocator" class="nULink">Buy</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height5">
+		<li><a><span class="fakeLink">Americas Sales</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=74F89870335446AB993BD70BB67F209E">Brazil</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=CC8751866A1A405AA93FB2C743A61159">Canada</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=3F844FA3FC034BD79249267F15208E65">Mexico</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=02D1DC98A6F949BAB8EB61B94AA2B274">Puerto Rico</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=B22CA382BCD9497990EFBEACF5897407">USA</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=4721A7D5228C4A459CCDB00C4AD7B745">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Europe & Africa Sales</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=DFD74C9F2D4B434BB400F68E0CAEC109">Finland</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=171D28DDC08349C1A8267772FDFEB442">France</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=78B777A06EF845BBA57839C084B0DB66">Germany</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=49D9E3960E014D858D6FDAE3D9118C0E">Israel</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=341C8947085D47FCA57ABE17B863962F">Italy</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=A664784F3FC44C248523D10FDAD2E3E7">Norway</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=CA759DC8DE6A4C24B6214F25920BEA8A">Spain</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=C6F72D45022A445BA3ACBA604F9F44E1">Sweden</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=A3769F1BD0DF41E18F11F51A02A45DCE">United Kingdom</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=56406BCD8BF24AD3B2FB1D36EAE47C14">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Asia Pacific Sales</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=7F8D51D079FE48E38C541D9598987304">Australia</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=1BF85C6578DF4AE7919633E4AFF9416E">China</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=ACBD88BEC2884BF19239F551E81055B7">India</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=629E693BD3BE454BA6C118B8FE49DDEB">Indonesia</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=C1F83B11B8CA42EDA0E74619D3408D89">Japan</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=5B0541ED60124FC7B3BAE82DC6E8A13D">Singapore</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=B02FB08BD35247598F9FAE9D72B409AB">South Korea</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=756801F046C24109B9744313514EFD9D">Taiwan</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=176373FF64DE4509A517E896C8DF0B97">Vietnam</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=537DBFB9B472419A9CACF6739C609178">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Online Store</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Lattice Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Buy/BuyOnline/SiliconDevices">Silicon Devices</a></li><li><a href="https://www.latticesemi.com/en/Buy/BuyOnline/SoftwareCablesandBoards">Software, Cables, & Boards</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/en/Buy/BuyOnline">BUY ONLINE&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Discontinued Products</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Discontinued Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices.aspx#ProgrammableLogicDistributors">Rochester Electronics</a></li><li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices.aspx#ProgrammableLogicDistributors">Arrow Electronics</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Blog">Blog</a></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/About" class="nULink">About Lattice</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height4">
+		<li><a><span class="fakeLink">About Lattice</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					About Lattice
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/About">About the Company</a></li><li><a href="https://www.latticesemi.com/en/About/ESG">Corporate Stewardship</a></li><li><a href="https://www.latticesemi.com/en/About/ContactUs">Contact Us</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Investor Relations</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Investor Relations
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/About/InvestorRelations">Investor Overview</a></li><li><a href="https://ir.latticesemi.com/investor-overview/shareholder-services/online-investor-kit">Online Investor Kit</a></li><li><a href="https://ir.latticesemi.com/investor-overview/shareholder-services/investor-faqs">Investor FAQ</a></li><li><a href="https://ir.latticesemi.com/investor-overview/corporate-governance/board-of-directors">Board Of Directors</a></li><li><a href="https://www.latticesemi.com/en/About/Management">Management</a></li><li><a href="https://ir.latticesemi.com/investor-overview/highlights">Corporate Governance</a></li><li><a href="https://ir.latticesemi.com/investor-overview/financial-information/sec-filings">SEC Filings</a></li><li><a href="https://ir.latticesemi.com/investor-overview/quarterly-earnings">Quarterly Earnings</a></li><li><a href="https://ir.latticesemi.com/investor-overview/analysts">Analysts</a></li><li><a href="https://www.latticesemi.com/en/About/EthicsContactInformation">Ethics</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Newsroom</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Newsroom
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/About/Newsroom">Announcements</a></li><li><a href="https://www.latticesemi.com/en/Blog">Blogs</a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/Events">Upcoming Product Events </a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/ImageLibrary">Image Library</a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/VideoLibrary">Video Library</a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/Webinars">Webinar Library</a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/MediaContacts">Media Contacts</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Careers</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Careers
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/About/Jobs">Careers Homepage</a></li><li><a href="https://careers-latticesemi.icims.com/jobs/intro?hashed=-625919477&amp;mobile=false&amp;width=1378&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-480&amp;jun1offset=-420">Search Job Openings</a></li><li><a href="https://www.latticesemi.com/en/About/Jobs/OurBenefits">Our Benefits</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li>
+						<li class="flushRight" onclick="showloginDropdown()">
+						<div class="dropdown dropbtn">
+						
+						<div id="myDropdown" class="dropdown-content">
+						
+<a href="/en/Accounts/SignIn" id="header_0_ctl06_SignInLink">Sign In</a>
+						
+<div class="nooverflow"><a href="/en/Accounts/AccountRegister" id="header_0_ctl07_aRegister">Register</a></div>
+						</div>
+						</div>
+						</li>
+						<li class="languageSelectionContainer  noOver">
+							
+
+    
+        <ul class="languageOverlay darkBackground" id="languageOverlay">
+			
+					<li class='visibleLanguage'> 
+                        
+						<a href="/en/Accounts/AccountRegister" >
+                            <img src='/images/flags/16x16/flag_usa.png' alt="en"/>
+						</a>
+					</li>
+				
+					<li> 
+                        
+						<a href="/ja-JP/Accounts/AccountRegister" >
+                            <img src='/images/flags/16x16/flag_Japan.PNG' alt="ja"/>
+						</a>
+					</li>
+				
+					<li> 
+                        
+						<a href="/zh-CN/Accounts/AccountRegister" >
+                            <img src='/images/flags/16x16/flag_china.png' alt="zh"/>
+						</a>
+					</li>
+				
+        </ul>
+         <span id="curlang" style="display:none;">en</span>
+
+						</li>
+					</ul> 
+				</div>
+				<div class="unit size1of5 lastUnit">
+					
+					<div id="header_0_CoveoSearchPanel" class="searchwrapper">
+	
+                        <label for="txtboxSearch">
+						<input name="header_0$ctl05$TXTQuery" type="text" id="header_0_ctl05_TXTQuery" aria-label="Enter search text" autocomplete="off" placeHolder="Search Site" onkeydown="if (event.keyCode == 13) { location.href = &#39;/Search.aspx?&amp;lcid=9&amp;q=&#39; + encodeURIComponent(document.getElementById(&#39;header_0_ctl05_TXTQuery&#39;).value) + &#39;&amp;t=&#39; + (-new Date().getTimezoneOffset()); return false; }" />
+							
+                                
+                        </label>
+                       <img alt="" id="header_0_ctl05_BTNSearch" title="Search" aria-label="Search Site" class="search-button" onclick="location.href = &#39;/Search.aspx?&amp;lcid=9&amp;q=&#39; + encodeURIComponent(document.getElementById(&#39;header_0_ctl05_TXTQuery&#39;).value) + &#39;&amp;t=&#39; + (-new Date().getTimezoneOffset()); return false;" src="/images/search.png" />
+			        
+                       
+                    
+</div>
+				</div>
+			</div>
+			</div>
+        </div>
+    </div>
+	
+</div>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function showloginDropdown() {
+  if (!document.getElementById("myDropdown").classList.contains("show"))
+  document.getElementById("myDropdown").classList.toggle("show");
+  else
+  document.getElementById("myDropdown").classList.remove("show");
+  var menu = document.getElementsByClassName("menuDetails persistMenu");
+  if (menu.length > 0)
+  {
+   //menu[0].style.display = "none";
+   menu[0].parentElement.firstChild.style = "";
+   menu[0].classList.add("hiddenNavigation");
+   menu[0].classList.remove("persistMenu");
+   
+   }
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+    
+    
+
+
+
+<div  class="stripeContainer stripeOne resourcesHeader">
+     <a href="" id="myBtn" class="BackTopActive" aria-label="Back To Top"> </a>
+        <div class="stripeContent ">
+        <!-- END LINE -->
+        <!-- START LINE -->
+        <div class="line flushBottom">
+            <!-- START UNIT -->
+
+            <!-- END UNIT -->
+
+            <!-- START UNIT --> 
+            <div  class="unit size1of1 pageTitle lastUnit">
+                <div class="line">
+                    <div class="unit size1of1">
+                        <!-- START PAGE TITLE -->
+                      
+
+
+<ul class="breadcrumb">
+     <li><a href="/">Home</a>  &gt;</li>
+    
+    <li>Account Register</li>
+</ul>
+<!-- END BREADCRUMBS -->
+
+                      <h1>
+                            Account Register
+                      </h1>
+                      
+                        </div>
+                    
+                        <!-- END PAGE TITLE -->
+                    </div>
+            </div>
+            <!-- END UNIT -->
+
+        </div>
+        <!-- END LINE -->
+    </div>
+    <!-- END STRIPE CONTENT -->
+
+
+</div>
+
+
+     <!-- START SYSTEM WIDE NOTIFICATION -->
+	
+	
+
+<!-- START STRIPE CONTAINER -->
+<div class="stripeContainer stripeTwo">
+
+
+    <!-- START STRIPE CONTENT -->
+    <div class="stripeContent">
+
+
+
+        <!-- START LINE -->
+        <div class="line">
+            <div class="unit size1of5 flushLeft left-content">
+                
+            </div>
+            <div class="unit lastUnit size4of5 page-content">
+                <p>Please note that providing incomplete information or using abbreviated company names may
+    slow the processing of your registration request. If you are not affiliated with a company or other organization 
+    (such as a university), please enter &quot;Individual&quot; in the company name field; do not use other single-word 
+    terms such as &quot;student,&quot; &quot;private,&quot; &quot;self,&quot; &quot;home,&quot; &quot;school,&quot; &quot;university,&quot; or 
+    &quot;none,&quot; as these will delay processing of your registration.</p>
+
+
+<!-- START ACCOUNT REGISTRATION -->
+<div id="body_0_content_0_AccountCreationForm" class="account-creation form-container jsValidationSection">
+     <div class="account-section">
+        <p>To request an account, please fill out and submit the following form. To activate the account, a confirmation email will be automatically sent to the specified email address.</p>
+        <p class="intro-note"><em>Note: Please add "webmaster@latticesemi.com" and "latticenews@latticesemi.com" to your email address book to ensure you receive the confirmation email and any newsletters you select. If you do not receive a confirmation email within a few minutes please check your junk mail folder.</em></p>
+        <fieldset>
+            
+             <div class="form-field">
+                <label>First Name</label>
+                <input name="body_0$content_0$FirstName" type="text" id="body_0_content_0_FirstName" class="jsIsRequired" aria-label="First Name" />
+            </div>
+            <div class="form-field">
+                <label>Last Name</label>
+                <input name="body_0$content_0$LastName" type="text" id="body_0_content_0_LastName" class="jsIsRequired" aria-label="Last Name" />
+            </div>
+            <div class="form-field">
+                <label>Company, or "Individual"</label>
+                <input name="body_0$content_0$Company" type="text" id="body_0_content_0_Company" class="jsIsRequired jsCompanyCheck" aria-label="Company, or &quot;Individual&quot;" />
+                <script type="text/javascript">//<![CDATA[
+                    var jsInvalidCompanies = "academy,aerospace,casa,China,consultant,education,free,home,Japan,me,Mexico,military,micro,nada,none,privat,private,school,self,student,university,taiwan,no,na,universidad,korea,office,independent,test,engineer,consulting,electronic,escuela,germany,N/A,no company,industrial,tecnologico,no tengo,educacion,independencia,beijing,estudiante,ingenieria,strategy,electronica,world,tec,utt,utp,personal,lanzhou,power,programming,car company,villas,student ltd,mind,particular,country,deutschland,software,automation,college,some,matic,mic,tri,metro,sam,fer,non,un,computer services,Telecom,utn,leader,team,wisdom,study,destiny,colombia,enginer,jet,dragon,building,sunrise,automotive,house,harvest,sigma,company,shanghai,hit,active,delta,right,akademika,singapore,teacher,institute,unity,hunan,art,hefei,systems,independents,apex,person";
+                    var jsInvalidCompanyMessage = "You have entered a disallowed single-word term in the company name field. Please use your organization’s full legal name. If you are not affiliated with a company or other organization (such as a university), please enter &quot;Individual&quot; in the company name field.";
+                // ]]></script>
+            </div>
+            <div class="form-field">
+                <label>Please select a valid market</label>
+                <select name="body_0$content_0$MarketServed" id="body_0_content_0_MarketServed" class="jsIsRequired" aria-label="Please select a valid market">
+	<option value="0">Select ...</option>
+	<option value="Aerospace/Military">Aerospace/Military</option>
+	<option value="Automotive">Automotive</option>
+	<option value="Broadcast">Broadcast</option>
+	<option value="Communications">Communications</option>
+	<option value="Compute">Compute</option>
+	<option value="Consumer">Consumer</option>
+	<option value="Industrial/Scientific/Medical">Industrial/Scientific/Medical</option>
+
+</select>
+            </div>
+            <div class="form-field">
+                <label>Please select a valid job category</label>
+	            <select name="body_0$content_0$ddlJobCategory" id="body_0_content_0_ddlJobCategory" class="jsIsRequired" aria-label="Please select a valid job category">
+	<option value="0">Select ...</option>
+	<option value="Academic">Academic</option>
+	<option value="Engineer">Engineer</option>
+	<option value="Management">Management</option>
+	<option value="Other">Other</option>
+	<option value="Sales">Sales</option>
+
+</select>
+                
+            </div>
+           <div class="form-field">
+                <label>Street Address 1</label>
+                <input name="body_0$content_0$Address1" type="text" id="body_0_content_0_Address1" class="jsIsRequired" aria-label="Street Address 1" />
+            </div>
+            <div class="form-field">
+                <label>Street Address 2 (optional)</label>
+                <input name="body_0$content_0$Address2" type="text" id="body_0_content_0_Address2" aria-label="Street Address 2 (optional)" />
+            </div>
+            <div class="form-field">
+                <label>City</label>
+                <input name="body_0$content_0$City" type="text" id="body_0_content_0_City" class="jsIsRequired" aria-label="City" />
+            </div>
+            <div class="form-field">
+                <label>Country / Region</label>
+                <select name="body_0$content_0$ddlCountry" id="ddlCountry" class="jsIsRequired jsChangeCountry" aria-label="Country / Region">
+	<option value="0">Select ...</option>
+	<option value="AF">Afghanistan</option>
+	<option value="AL">Albania</option>
+	<option value="DZ">Algeria</option>
+	<option value="AS">American Samoa</option>
+	<option value="AD">Andorra</option>
+	<option value="AO">Angola</option>
+	<option value="AI">Anguilla</option>
+	<option value="AQ">Antarctica</option>
+	<option value="AG">Antigua and Barbuda</option>
+	<option value="AR">Argentina</option>
+	<option value="AM">Armenia</option>
+	<option value="AW">Aruba</option>
+	<option value="AU">Australia</option>
+	<option value="AT">Austria</option>
+	<option value="AZ">Azerbaidjan</option>
+	<option value="BS">Bahamas</option>
+	<option value="BH">Bahrain</option>
+	<option value="BD">Bangladesh</option>
+	<option value="BB">Barbados</option>
+	<option value="BY">Belarus</option>
+	<option value="BE">Belgium</option>
+	<option value="BZ">Belize</option>
+	<option value="BJ">Benin</option>
+	<option value="BM">Bermuda</option>
+	<option value="BT">Bhutan</option>
+	<option value="BO">Bolivia</option>
+	<option value="BA">Bosnia-Herzegovina</option>
+	<option value="BW">Botswana</option>
+	<option value="BV">Bouvet Island</option>
+	<option value="BR">Brazil</option>
+	<option value="IO">British Indian Ocean Territory</option>
+	<option value="BN">Brunei Darussalam</option>
+	<option value="BG">Bulgaria</option>
+	<option value="BF">Burkina Faso</option>
+	<option value="BI">Burundi</option>
+	<option value="KH">Cambodia</option>
+	<option value="CM">Cameroon</option>
+	<option value="CA">Canada</option>
+	<option value="CV">Cape Verde</option>
+	<option value="KY">Cayman Islands</option>
+	<option value="CF">Central African Republic</option>
+	<option value="TD">Chad</option>
+	<option value="CL">Chile</option>
+	<option value="CN">China</option>
+	<option value="CX">Christmas Island</option>
+	<option value="CC">Cocos (Keeling) Islands</option>
+	<option value="CO">Colombia</option>
+	<option value="KM">Comoros</option>
+	<option value="CD">Congo, Democratic Republic of the</option>
+	<option value="CG">Congo (Republic of)</option>
+	<option value="CK">Cook Islands</option>
+	<option value="CR">Costa Rica</option>
+	<option value="HR">Croatia</option>
+	<option value="CU">Cuba</option>
+	<option value="CY">Cyprus</option>
+	<option value="CZ">Czech Republic</option>
+	<option value="DK">Denmark</option>
+	<option value="DJ">Djibouti</option>
+	<option value="DM">Dominica</option>
+	<option value="DO">Dominican Republic</option>
+	<option value="TP">East Timor</option>
+	<option value="EC">Ecuador</option>
+	<option value="EG">Egypt</option>
+	<option value="SV">El Salvador</option>
+	<option value="GQ">Equatorial Guinea</option>
+	<option value="ER">Eritrea</option>
+	<option value="EE">Estonia</option>
+	<option value="ET">Ethiopia</option>
+	<option value="FK">Falkland Islands</option>
+	<option value="FO">Faroe Islands</option>
+	<option value="FJ">Fiji</option>
+	<option value="FI">Finland</option>
+	<option value="FR">France</option>
+	<option value="GF">French Guyana</option>
+	<option value="TF">French Southern Territories</option>
+	<option value="GA">Gabon</option>
+	<option value="GM">Gambia</option>
+	<option value="GE">Georgia</option>
+	<option value="DE">Germany</option>
+	<option value="GH">Ghana</option>
+	<option value="GI">Gibraltar</option>
+	<option value="GR">Greece</option>
+	<option value="GL">Greenland</option>
+	<option value="GD">Grenada</option>
+	<option value="GP">Guadeloupe (French)</option>
+	<option value="GU">Guam (USA)</option>
+	<option value="GT">Guatemala</option>
+	<option value="GG">Guernsy (Channel Islands)</option>
+	<option value="GN">Guinea</option>
+	<option value="GW">Guinea Bissau</option>
+	<option value="GY">Guyana</option>
+	<option value="HT">Haiti</option>
+	<option value="HM">Heard and McDonald Islands</option>
+	<option value="HN">Honduras</option>
+	<option value="HK">Hong Kong</option>
+	<option value="HU">Hungary</option>
+	<option value="IS">Iceland</option>
+	<option value="IN">India</option>
+	<option value="ID">Indonesia</option>
+	<option value="IR">Iran</option>
+	<option value="IQ">Iraq</option>
+	<option value="IE">Ireland</option>
+	<option value="IL">Israel</option>
+	<option value="IT">Italy</option>
+	<option value="CI">Ivory Coast (Cote D&#39;Ivoire)</option>
+	<option value="JM">Jamaica</option>
+	<option value="JP">Japan</option>
+	<option value="JO">Jordan</option>
+	<option value="KZ">Kazakhstan</option>
+	<option value="KE">Kenya</option>
+	<option value="KI">Kiribati</option>
+	<option value="KW">Kuwait</option>
+	<option value="KG">Kyrgyzstan</option>
+	<option value="LA">Laos</option>
+	<option value="LV">Latvia</option>
+	<option value="LB">Lebanon</option>
+	<option value="LS">Lesotho</option>
+	<option value="LR">Liberia</option>
+	<option value="LY">Libya</option>
+	<option value="LI">Liechtenstein</option>
+	<option value="LT">Lithuania</option>
+	<option value="LU">Luxembourg</option>
+	<option value="MO">Macau</option>
+	<option value="MK">Macedonia</option>
+	<option value="MG">Madagascar</option>
+	<option value="MW">Malawi</option>
+	<option value="MY">Malaysia</option>
+	<option value="MV">Maldives</option>
+	<option value="ML">Mali</option>
+	<option value="MT">Malta</option>
+	<option value="MH">Marshall Islands</option>
+	<option value="MQ">Martinique (French)</option>
+	<option value="MR">Mauritania</option>
+	<option value="MU">Mauritius</option>
+	<option value="YT">Mayotte</option>
+	<option value="MX">Mexico</option>
+	<option value="FM">Micronesia</option>
+	<option value="MD">Moldavia</option>
+	<option value="MC">Monaco</option>
+	<option value="MN">Mongolia</option>
+	<option value="ME">Montenegro</option>
+	<option value="MS">Montserrat</option>
+	<option value="MA">Morocco</option>
+	<option value="MZ">Mozambique</option>
+	<option value="MM">Myanmar (Burma)</option>
+	<option value="NA">Namibia</option>
+	<option value="NR">Nauru</option>
+	<option value="NP">Nepal</option>
+	<option value="NL">Netherlands</option>
+	<option value="AN">Netherlands Antilles</option>
+	<option value="NC">New Caledonia (French)</option>
+	<option value="NZ">New Zealand</option>
+	<option value="NI">Nicaragua</option>
+	<option value="NE">Niger</option>
+	<option value="NG">Nigeria</option>
+	<option value="NU">Niue</option>
+	<option value="NF">Norfolk Island</option>
+	<option value="MP">Northern Mariana Islands</option>
+	<option value="KP">North Korea</option>
+	<option value="NO">Norway</option>
+	<option value="OM">Oman</option>
+	<option value="PK">Pakistan</option>
+	<option value="PW">Palau</option>
+	<option value="PA">Panama</option>
+	<option value="PG">Papua New Guinea</option>
+	<option value="PY">Paraguay</option>
+	<option value="PE">Peru</option>
+	<option value="PH">Philippines</option>
+	<option value="PN">Pitcairn Island</option>
+	<option value="PL">Poland</option>
+	<option value="PF">Polynesia (French)</option>
+	<option value="PT">Portugal</option>
+	<option value="PR">Puerto Rico</option>
+	<option value="QA">Qatar</option>
+	<option value="RE">Reunion (French)</option>
+	<option value="RO">Romania</option>
+	<option value="RU">Russia</option>
+	<option value="RW">Rwanda</option>
+	<option value="SH">Saint Helena</option>
+	<option value="KN">Saint Kitts &amp; Nevis Anguilla</option>
+	<option value="LC">Saint Lucia</option>
+	<option value="PM">Saint Pierre and Miquelon</option>
+	<option value="ST">Saint Tome (Sao Tome) and Prin</option>
+	<option value="VC">Saint Vincent &amp; Grenadines</option>
+	<option value="WS">Samoa</option>
+	<option value="SM">San Marino</option>
+	<option value="SA">Saudi Arabia</option>
+	<option value="SN">Senegal</option>
+	<option value="RS">Serbia</option>
+	<option value="SC">Seychelles</option>
+	<option value="GS">S. Georgia &amp; S. Sandwich Isls.</option>
+	<option value="SL">Sierra Leone</option>
+	<option value="SG">Singapore</option>
+	<option value="SK">Slovak Republic</option>
+	<option value="SI">Slovenia</option>
+	<option value="SB">Solomon Islands</option>
+	<option value="SO">Somalia</option>
+	<option value="ZA">South Africa</option>
+	<option value="KR">South Korea</option>
+	<option value="ES">Spain</option>
+	<option value="LK">Sri Lanka</option>
+	<option value="SD">Sudan</option>
+	<option value="SR">Suriname</option>
+	<option value="SJ">Svalbard and Jan Mayen Islands</option>
+	<option value="SZ">Swaziland</option>
+	<option value="SE">Sweden</option>
+	<option value="CH">Switzerland</option>
+	<option value="SY">Syria</option>
+	<option value="TW">Taiwan</option>
+	<option value="TJ">Tajikistan</option>
+	<option value="TZ">Tanzania</option>
+	<option value="TH">Thailand</option>
+	<option value="TG">Togo</option>
+	<option value="TK">Tokelau</option>
+	<option value="TO">Tonga</option>
+	<option value="TT">Trinidad and Tobago</option>
+	<option value="TN">Tunisia</option>
+	<option value="TR">Turkey</option>
+	<option value="TM">Turkmenistan</option>
+	<option value="TC">Turks and Caicos Islands</option>
+	<option value="TV">Tuvalu</option>
+	<option value="UG">Uganda</option>
+	<option value="UA">Ukraine</option>
+	<option value="AE">United Arab Emirates</option>
+	<option value="GB">United Kingdom</option>
+	<option value="US">United States</option>
+	<option value="UY">Uruguay</option>
+	<option value="UM">USA Minor Outlying Islands</option>
+	<option value="UZ">Uzbekistan</option>
+	<option value="VU">Vanuatu</option>
+	<option value="VA">Vatican City State</option>
+	<option value="VE">Venezuela</option>
+	<option value="VN">Vietnam</option>
+	<option value="VG">Virgin Islands (British)</option>
+	<option value="VI">Virgin Islands (USA)</option>
+	<option value="WF">Wallis and Futuna Islands</option>
+	<option value="EH">Western Sahara</option>
+	<option value="YE">Yemen</option>
+	<option value="ZM">Zambia</option>
+	<option value="ZW">Zimbabwe</option>
+
+</select>
+            </div>
+            <div class="form-field">
+				<label>State/Province</label>
+				<select name="body_0$content_0$ddlStates" id="ddlStates" class="jsIsValidState" aria-label="State/Province">
+	<option value="0">Select ...</option>
+	<option value="AL" class="US">Alabama</option>
+	<option value="AK" class="US">Alaska</option>
+	<option value="AB" class="CA">Alberta</option>
+	<option value="AH" class="CN">Anhui</option>
+	<option value="AZ" class="US">Arizona</option>
+	<option value="AR" class="US">Arkansas</option>
+	<option value="BJ" class="CN">Beijing</option>
+	<option value="BC" class="CA">British Columbia</option>
+	<option value="CA" class="US">California</option>
+	<option value="CQ" class="CN">Chongqing</option>
+	<option value="CO" class="US">Colorado</option>
+	<option value="CT" class="US">Connecticut</option>
+	<option value="DE" class="US">Delaware</option>
+	<option value="DC" class="US">District Of Columbia</option>
+	<option value="FL" class="US">Florida</option>
+	<option value="FJ" class="CN">Fujian</option>
+	<option value="GS" class="CN">Gansu</option>
+	<option value="GA" class="US">Georgia</option>
+	<option value="GD" class="CN">Guangdong</option>
+	<option value="GX" class="CN">Guangxi</option>
+	<option value="GZ" class="CN">Guizhou</option>
+	<option value="HI" class="CN">Hainan</option>
+	<option value="HI" class="US">Hawaii</option>
+	<option value="HE" class="CN">Hebei</option>
+	<option value="HL" class="CN">Heilongjiang</option>
+	<option value="HA" class="CN">Henan</option>
+	<option value="HB" class="CN">Hubei</option>
+	<option value="HN" class="CN">Hunan</option>
+	<option value="ID" class="US">Idaho</option>
+	<option value="IL" class="US">Illinois</option>
+	<option value="IN" class="US">Indiana</option>
+	<option value="IA" class="US">Iowa</option>
+	<option value="JS" class="CN">Jiangsu</option>
+	<option value="JX" class="CN">Jiangxi</option>
+	<option value="JL" class="CN">Jilin</option>
+	<option value="KS" class="US">Kansas</option>
+	<option value="KY" class="US">Kentucky</option>
+	<option value="LN" class="CN">Liaoning</option>
+	<option value="LA" class="US">Louisiana</option>
+	<option value="MO" class="CN">Macau</option>
+	<option value="ME" class="US">Maine</option>
+	<option value="MB" class="CA">Manitoba</option>
+	<option value="MD" class="US">Maryland</option>
+	<option value="MA" class="US">Massachusetts</option>
+	<option value="MI" class="US">Michigan</option>
+	<option value="AA" class="US">Military Post Office (AA)</option>
+	<option value="AE" class="US">Military Post Office (AE)</option>
+	<option value="AP" class="US">Military Post Office (AP)</option>
+	<option value="MN" class="US">Minnesota</option>
+	<option value="MS" class="US">Mississippi</option>
+	<option value="MO" class="US">Missouri</option>
+	<option value="MT" class="US">Montana</option>
+	<option value="NE" class="US">Nebraska</option>
+	<option value="NM" class="CN">Neimenggu</option>
+	<option value="NV" class="US">Nevada</option>
+	<option value="NB" class="CA">New Brunswick</option>
+	<option value="NL" class="CA">Newfoundland/Labrador</option>
+	<option value="NH" class="US">New Hampshire</option>
+	<option value="NJ" class="US">New Jersey</option>
+	<option value="NM" class="US">New Mexico</option>
+	<option value="NY" class="US">New York</option>
+	<option value="NX" class="CN">Ningxia</option>
+	<option value="NC" class="US">North Carolina</option>
+	<option value="ND" class="US">North Dakota</option>
+	<option value="NT" class="CA">Northwest Territories</option>
+	<option value="NS" class="CA">Nova Scotia</option>
+	<option value="OH" class="US">Ohio</option>
+	<option value="OK" class="US">Oklahoma</option>
+	<option value="ON" class="CA">Ontario</option>
+	<option value="OR" class="US">Oregon</option>
+	<option value="XX">(Outside US/Canada/China)</option>
+	<option value="PA" class="US">Pennsylvania</option>
+	<option value="PE" class="CA">Price Edward Island</option>
+	<option value="PR" class="US">Puerto Rico</option>
+	<option value="QH" class="CN">Qinghai</option>
+	<option value="QC" class="CA">Quebec</option>
+	<option value="RI" class="US">Rhode Island</option>
+	<option value="SK" class="CA">Saskatchewan</option>
+	<option value="SN" class="CN">Shaanxi</option>
+	<option value="SD" class="CN">Shandong</option>
+	<option value="SH" class="CN">Shanghai</option>
+	<option value="SX" class="CN">Shanxi</option>
+	<option value="SC" class="CN">Sichuan</option>
+	<option value="SC" class="US">South Carolina</option>
+	<option value="SD" class="US">South Dakota</option>
+	<option value="TN" class="US">Tennessee</option>
+	<option value="TX" class="US">Texas</option>
+	<option value="TJ" class="CN">Tianjin</option>
+	<option value="UT" class="US">Utah</option>
+	<option value="VT" class="US">Vermont</option>
+	<option value="VA" class="US">Virginia</option>
+	<option value="WA" class="US">Washington</option>
+	<option value="WV" class="US">West Virginia</option>
+	<option value="WI" class="US">Wisconsin</option>
+	<option value="WY" class="US">Wyoming</option>
+	<option value="XJ" class="CN">Xinjiang</option>
+	<option value="XZ" class="CN">Xizang</option>
+	<option value="YT" class="CA">Yukon Territory</option>
+	<option value="YN" class="CN">Yunnan</option>
+	<option value="ZJ" class="CN">Zhejiang</option>
+
+</select>
+			</div>
+            <div class="form-field">
+                <label>Zip/Postal Code</label>
+                <input name="body_0$content_0$ZipPostCode" type="text" id="body_0_content_0_ZipPostCode" class="jsIsZipCode" aria-label="Zip/Postal Code" />
+            </div>
+            <div class="form-field">
+                <label>Telephone</label>
+                <input name="body_0$content_0$Telephone" type="text" id="body_0_content_0_Telephone" class="jsIsPhoneNumber" aria-label="Telephone" />
+            </div>
+           <div class="form-field">
+                <label>E-mail Address</label>
+                <input name="body_0$content_0$EmailAddress" type="text" id="body_0_content_0_EmailAddress" class="jsIsRequired jsIsEmail" aria-label="E-mail Address" />
+            </div>
+            <div class="form-field">
+                <label>Password (4 + characters)</label>
+                <input name="body_0$content_0$Password" type="password" id="body_0_content_0_Password" class="jsIsRequired jsConfirmTarget jsMinLength" aria-label="Password (4 + characters)" />
+				<span class="label-notes"></span>
+            </div>
+            <div class="form-field">
+                <label>Re-enter Password</label>
+                <input name="body_0$content_0$PasswordConfirmation" type="password" id="body_0_content_0_PasswordConfirmation" class="jsIsRequired jsConfirm jsMinLength" aria-label="Re-enter Password" />
+            </div>
+        </fieldset>
+    </div>
+    <fieldset class="newsletter-section">
+        <legend>Subscribe to News</legend>
+        <p>Keep up with the latest from Lattice by subscribing to email newsletters and PCNs. Please select the options that interest you and then click on the "create account" button below. You will receive a confirmation email to activate your subscription, so a valid email address is required. For more information on how we process your data and how to unsubscribe, please read our <a href="https://www.latticesemi.com/About/LegalNotices/PrivacyPolicy.aspx">privacy policy here</a>.</p>
+            <label>
+                 Email preference:
+            </label>
+                 <span id="body_0_content_0_rblEmailFormatPreferences"><input id="body_0_content_0_rblEmailFormatPreferences_0" type="radio" name="body_0$content_0$rblEmailFormatPreferences" value="{419D7A4A-03BF-4187-BA25-46A2FDC94B58}" checked="checked" /><label for="body_0_content_0_rblEmailFormatPreferences_0">HTML (with graphics)</label><input id="body_0_content_0_rblEmailFormatPreferences_1" type="radio" name="body_0$content_0$rblEmailFormatPreferences" value="{72CF2E51-F5B2-47A8-A069-6479B1BE8864}" /><label for="body_0_content_0_rblEmailFormatPreferences_1">Text (plain text)</label></span>
+            
+			    <div class="newsletter-type">
+				        <input id="body_0_content_0_NewsletterTypesListView_LatticeNEWS_0" type="checkbox" name="body_0$content_0$NewsletterTypesListView$ctl00$LatticeNEWS" /><label for="body_0_content_0_NewsletterTypesListView_LatticeNEWS_0">Yes,</label>
+                        <input type="hidden" name="body_0$content_0$NewsletterTypesListView$ctl00$MarketoFieldName" id="body_0_content_0_NewsletterTypesListView_MarketoFieldName_0" value="LatticeNEWS" />
+                        <input type="hidden" name="body_0$content_0$NewsletterTypesListView$ctl00$SubscriptionId" id="body_0_content_0_NewsletterTypesListView_SubscriptionId_0" value="{6386BA32-B7AF-4A33-828C-E93353501D62}" />
+				         <span class="details">
+				             I want to receive Lattice newsletters which will inform me of the latest products, solutions, events, and opportunities to learn more.   
+			            </span>
+			        </div>
+                
+			    <div class="newsletter-type">
+				        <input id="body_0_content_0_NewsletterTypesListView_LatticeNEWS_1" type="checkbox" name="body_0$content_0$NewsletterTypesListView$ctl01$LatticeNEWS" /><label for="body_0_content_0_NewsletterTypesListView_LatticeNEWS_1">Yes,</label>
+                        <input type="hidden" name="body_0$content_0$NewsletterTypesListView$ctl01$MarketoFieldName" id="body_0_content_0_NewsletterTypesListView_MarketoFieldName_1" value="WebsiteNEWS_PCN" />
+                        <input type="hidden" name="body_0$content_0$NewsletterTypesListView$ctl01$SubscriptionId" id="body_0_content_0_NewsletterTypesListView_SubscriptionId_1" value="{05ED3A80-E5AB-4040-BD94-869A4C1574CF}" />
+				         <span class="details">
+				             I want to receive Product Change Notifications (PCNs) which will inform me of material changes to products and solutions.  
+			            </span>
+			        </div>
+                
+    </fieldset>
+    
+        
+   
+    <fieldset class="TandC">
+        <label for="TandC">
+            I agree with the <a href="/About/LegalNotices">Terms and Conditions of Use</a> for this website and confirm that neither I nor my company or other organization is on any restricted parties list as described therein.
+        </label>
+        <input id="TandC" type="checkbox" name="body_0$content_0$TandC" />
+		
+        <script type="text/javascript">            //<![CDATA[
+            jQuery("#TandC").addClass("jsIsRequired");
+        //]]></script>
+    </fieldset>
+	 <fieldset class="Recaptcha">
+	    <div id="RecaptchaValidHiddenField" class="jsIsRequired" ></div>
+        <div style="color:Red" id="CaptchaErrorMessage"></div>
+	</fieldset>
+    <div class="form-buttons jsValidationSubmit" >
+        <p class="error" style="display: none;" id="errorSummary">There were errors in the form. Please correct the errors before submitting.</p>
+	    <input type="button" id="createAccount" value="Create Account" remoteSubmit="CreateAccountButton" />
+	</div>
+
+	<div style="display: none;">
+		<input type="submit" name="body_0$content_0$CreateAccountButton" value="Create Account" id="CreateAccountButton" aria-label="Create Account" />
+    </div>
+</div>
+<!-- END ACCOUNT REGISTRATION -->
+
+            </div>
+             
+                                       
+            
+        </div>
+        <!-- END LINE -->
+        <!--START Tabbed Section -->
+        <div class="unit size1of1 page-content">
+            
+        </div>
+        <!--END Tabbed Section -->
+    </div>
+    <!-- END STRIPE CONTENT -->
+
+
+</div>
+
+<!-- END STRIPE CONTAINER -->
+      
+	
+
+<div class="stripeContainer footerStripe">
+	<div class="stripeContent">
+            <div class="line">
+                <div class="unit size2of7">
+					<img src="/images/Lattice_Logo_Yellow_White_Tagline.png" width="200px">
+				</div>
+                <div class="unit size4of7">
+		    	    
+                        
+				            <div class="unit size1of3">
+                                
+                                <h4>ABOUT LATTICE</h4>
+<ul>
+    <li><a href="https://www.latticesemi.com/About">Our Company</a></li>
+    <li><a href="https://www.latticesemi.com/About/Newsroom">Newsroom</a></li>
+    <li><a href="http://ir.latticesemi.com">Investor Relations</a></li>
+    <li><a href="https://www.latticesemi.com/About/Jobs">Careers</a></li>
+    <li><a href="https://www.latticesemi.com/Accounts/YourAccount/NewsletterSubscriptions">Newsletter</a></li>
+</ul>
+				            </div> 
+                        
+				            <div class="unit size1of3">
+                                
+                                <h4>SALES</h4>
+<ul>
+       <li><a href="https://www.latticesemi.com/Buy">Americas</a></li>
+        <li><a href="https://www.latticesemi.com/Buy">Europe &amp; Africa</a></li>
+        <li><a href="https://www.latticesemi.com/Buy">Asia Pacific</a></li>
+        <li><a href="https://www.latticesemi.com/Buy/BuyOnline">Online Store</a></li>
+</ul>
+				            </div> 
+                        
+				            <div class="unit size1of3">
+                                
+                                <h4>SUPPORT</h4>
+<ul>
+    <li><a href="https://www.latticesemi.com/Support/SubmitTechSupport">Technical Support</a></li>
+    <li><a href="https://www.latticesemi.com/Support/Licensing">Software Licensing</a></li>
+    <li><a href="https://www.latticesemi.com/Support/Partner-Network">Partner Network</a></li>
+    <li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices">Legacy Devices &amp; Software</a></li>
+    <li><a href="https://www.latticesemi-insights.com/">Training</a></li>
+    <li><a href="https://www.latticesemi.com/About/ContactUs">Contact Us</a></li>
+</ul>
+				            </div> 
+                         
+                </div>
+                <div class="unit size1of7 lastUnit rText">
+                    <div class="title"><h4>FOLLOW</h4></div>
+					<div>
+			        
+
+		    <div class="line flatList iconList">
+			    
+				    <div class="unit size1of6">
+					  
+                         <a href="https://www.linkedin.com/company/lattice-semiconductor" aria-label="LinkedIn">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.facebook.com/latticesemi" aria-label="Facebook">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.twitter.com/latticesemi" aria-label="Twitter">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.youtube.com/latticesemiconductor" aria-label="YouTube">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.weibo.com/latticesemi" aria-label="Weibo">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+		    </div>
+
+            <img src="https://www.latticesemi.com/images/Qrcode_for_Lattice_sm.gif" alt="Lattice QR code">
+                    </div>
+			    </div>
+            </div>
+            <div class="line">
+                <div class="unit size1of1 lastUnit">
+                    <ul class="flatList smallList">
+                        <li><span>&copy;2025 Lattice Semiconductor</span> | </li>
+                        <li>
+<a href="https://www.latticesemi.com/About/LegalNotices.aspx">
+Legal Notices
+</a>
+|
+</li>
+<li>
+<a href="https://www.latticesemi.com/About/LegalNotices/PrivacyPolicy.aspx">
+Privacy Policy
+</a>
+|
+</li>
+<li>
+<a href="https://www.latticesemi.com/About/Sitemap.aspx">
+Site Map
+</a>
+|
+</li>
+<li>
+<a href="https://www.latticesemi.com/About/UseOfCookies.aspx">
+Use of Cookies
+</a>
+|
+</li>
+<li>
+<a href="https://www.latticesemi.com/About/LegalNotices/AccessibilityStatement.aspx">Accessibility Statement</a>
+</li>
+                    </ul>
+                    
+                </div>
+            </div>
+	</div>
+</div>
+
+  </form>      
+      <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','/js/analytics.js','ga');
+ 
+  ga('create', 'UA-2724384-1', 'auto');
+ga('require', 'linkid', 'linkid.js');
+var urlCapture = /(\/en|\/ja\-jp|\/zh\-cn)?([^.]+)(.aspx)?/ig;
+var urlPieces = urlCapture.exec(window.location.pathname);
+
+if(urlPieces[2] != undefined)
+     ga('set', 'page', urlPieces[2]);
+
+  ga('send', 'pageview');
+
+jQuery('a[href*=latticestore]').each(function () {
+      jQuery(this).on('click', function() {
+        ga('send', 'event', 'Outgoing store link', 'click', jQuery(this).text());
+      });
+	  });
+
+jQuery('a[href*=Buy]').each(function () {
+      jQuery(this).on('click', function() {
+        ga('send', 'event', 'Contact Sales Button', 'click', jQuery(this).text());
+      });
+	  });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src=https://www.googletagmanager.com/gtag/js?id=G-4EQQCB3EBE></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4EQQCB3EBE');
+</script>
+
+  
+  <!--   <script type="text/javascript" src="/js/SitecoreClientTracking.js"></script> -->
+    <script type="text/javascript" src="/js/video.js"></script>
+    <script type="text/javascript">
+            jQuery.noConflict();
+            videojs.options.flash.swf = "/js/video-js.swf"
+    </script>
+    <script type="text/javascript" src="/js/lsc.js"></script>
+  
+      
+  </body>
+</html>
+

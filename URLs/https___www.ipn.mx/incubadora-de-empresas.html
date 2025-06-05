@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRXBW0BXRN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HRXBW0BXRN');
+    </script>
+    
+    <meta property="og:site_name" content="IPN" />
+    <meta property="og:url" content="https://www.ipn.mx/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dirección de Incubación de Empresas Tecnológicas">
+    <meta property="og:description" content="Impulsa tu startup con el DIET. Servicios de incubación para empresas tecnológicas con enfoque en innovación, mentoría y desarrollo empresarial.">
+    <meta property="og:image" itemprop="image"  content="https://www.ipn.mx/assets/files/main/img/template/header/logo-ipn-horizontal.png">
+    <meta property="og:image:type" content="image/jpg" />
+    
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>Dirección de Incubación de Empresas Tecnológicas | IPN Oficial</title>
+    <base href="diet.html" />
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Impulsa tu startup con el DIET. Servicios de incubación para empresas tecnológicas con enfoque en innovación, mentoría y desarrollo empresarial.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--  
+    <link rel="shortcut icon" href="favicon.ico">
+    -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    
+    <!-- Estilos bootstrap -->
+    <link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    
+    <link href="all.css"  rel="stylesheet">
+    
+    <!-- Estilos template -->
+    <link rel="stylesheet" type="text/css" href="style-template.css">
+        
+    <!-- Referencia Owl carrusel -->
+    <link rel="stylesheet" type="text/css" href="owl.carousel.min.css"/>
+    <link rel="stylesheet" type="text/css" href="owl.theme.default.min.css"/>
+    
+    <!-- Galería -->
+    <link rel="stylesheet" href="lightbox.min.css">
+
+    <!-- Estilos componentes -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container encabezado-ipn">
+
+        <div class="utilerias-header text-right">
+            <ul class="list-inline text-end utilerias-list">
+                <li class="list-inline-item">
+                    <a href="directorio-telefonico.html">DIRECTORIO</a> |
+                </li>
+                <li class="list-inline-item">
+                    <a href="correo-electronico.html">CORREO</a> |
+                </li>
+                <li class="list-inline-item">
+                    <a href="calendario-academico.html">CALENDARIO</a> |
+                </li>
+                <li class="list-inline-item">
+                    <a href="transparencia.html">TRANSPARENCIA</a> |
+                </li>
+                <li class="list-inline-item">
+                    <a href="proteccion-datos-personales.html">PROTECCIÓN DE DATOS</a>
+                </li>
+            </ul>
+        </div>
+        <div class="header-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="sep.html" class="d-inline enlace-educacion">
+                            <img src="/assets/files/main/img/template/header/pleca-educacion.svg" class="logo-educacion">
+                        </a>
+                        <!-- <a href="ipn.mx" class="d-inline-block"> -->
+                        <a href="ipn.mx">
+                            <img src="/assets/files/main/img/template/header/logo-ipn-horizontal.svg" class="logo-ipn" alt="Logo IPN">
+                            <!-- Logo anterior
+                            <img src="/assets/files/main/img/template/header/logo-ipn-guinda.svg" class="logo-ipn" alt="Logo IPN">
+                            <p class="d-inline-block logo-ipn-enlace">
+                                Instituto Politécnico Nacional <br>
+                                <span class="sm">"La Técnica al Servicio de la Patria"</span>
+                            </p>
+                            -->
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accesibilidad-header text-right">
+            <ul class="list-inline text-end">
+                <li class="list-inline-item">
+                    <a href="english.html" hreflang="“en-us”" class="mr-3">
+                        <img src="/assets/files/main/img/template/header/icono-idioma-esp.png" width="45" alt="Idioma Espanol">
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <i class="fab fa-accessible-icon"></i>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn--accesibilidad contraste" onclick="toogleContraste();">
+                        <i class="fas fa-adjust"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn--accesibilidad aumentaLetra" href="#">A+</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn--accesibilidad reduceLetra" href="#">A-</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn--accesibilidad resetLetra">A </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="bkg_Default  ">
+    <div class="menu-principal sticky-top" id="menu-principal">
+  <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid p-0">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenuPrincipal" aria-controls="navbarMenuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarMenuPrincipal">
+              
+                
+                <ul class="navbar-nav w-100 justify-content-center me-auto mb-2 mb-lg-0">
+                    <li>
+                      <div class="position-relative">
+                        <div class="position-absolute banderin d-none">
+                            <img src="/" alt="Imagen IPN SIIS y DIET" class="banderin-img">
+                        </div>
+                      </div>                        
+                    </li>
+                    <li class="px-xl-3 px-xxl-5 d-none"></li>
+                    <li class="px-xl-3 px-xxl-5 d-none"></li>
+                    <li>
+                        <!-- outerTpl -->
+<ul class="navbar-nav w-100 d-flex justify-content-center me-auto mb-2 mb-lg-0">
+    <!-- rowTpl -->
+<li class="nav-item first active ">
+    <a class="nav-link" href="diet.html" title="Dirección de Incubación de Empresas Tecnológicas" >Inicio</a>
+    
+</li>
+<!-- rowTpl -->
+<li class="nav-item dropdown  ">
+    <a class="nav-link dropdown-toggle" href="#" title="Conócenos: Incubación de Empresas DIET"  role="button" data-bs-toggle="dropdown" aria-expanded="false">Conócenos</a>
+    <!-- innerTpl -->
+<ul class="dropdown-menu">
+    <!-- innerRowTpl -->
+<li>
+    <a class="dropdown-item first" href="mision-y-vision.html" title="Misión y Visión : Incubación de Empresas" >Misión y Visión</a>
+    
+</li>
+<!-- innerRowTpl -->
+<li>
+    <a class="dropdown-item " href="titulares.html" title="Titulares: Incubación de Empresas Tecnológicas" >Titulares</a>
+    
+</li>
+<!-- innerRowTpl -->
+<li>
+    <a class="dropdown-item " href="informes.html" title="Informes:  Incubación de Empresas Tecnológicas" >Informes</a>
+    
+</li>
+<!-- innerRowTpl -->
+<li>
+    <a class="dropdown-item last" href="preguntas-frecuentes.html" title="Preguntas frecuentes:  Incubación de empresas" >Preguntas frecuentes</a>
+    
+</li>
+
+</ul>
+</li>
+<!-- rowTpl -->
+<li class="nav-item  ">
+    <a class="nav-link" href="incubación.html" title="Proceso de Incubación de Empresas DIET" >Incubación</a>
+    
+</li>
+<!-- rowTpl -->
+<li class="nav-item dropdown  ">
+    <a class="nav-link dropdown-toggle" href="#" title="Talento Emprendedor en Empresas DIET"  role="button" data-bs-toggle="dropdown" aria-expanded="false">Talento emprendedor</a>
+    <!-- innerTpl -->
+<ul class="dropdown-menu">
+    <!-- innerRowTpl -->
+<li>
+    <a class="dropdown-item first" href="capacitacion.html" title="Formación para Emprendedores Tecnológicos DIET" >Formación</a>
+    
+</li>
+<!-- innerRowTpl -->
+<li>
+    <a class="dropdown-item last" href="formacion.html" title="Ángeles Guindas: Mentores en Innovación DIET" >Ángeles Guindas</a>
+    
+</li>
+
+</ul>
+</li>
+<!-- rowTpl -->
+<li class="nav-item  ">
+    <a class="nav-link" href="laboratorios.html" title="Laboratorios de Innovación y Tecnología DIET" >Laboratorios</a>
+    
+</li>
+<!-- rowTpl -->
+<li class="nav-item dropdown  ">
+    <a class="nav-link dropdown-toggle" href="#" title="Transparencia en la Gestión de Incubación DIET"  role="button" data-bs-toggle="dropdown" aria-expanded="false">Transparencia</a>
+    <!-- innerTpl -->
+<ul class="dropdown-menu">
+    <!-- innerRowTpl -->
+<li>
+    <a class="dropdown-item first" href="aviso-de-privacidad.html" title="Aviso de Privacidad DIET Incubación" >Aviso de Privacidad</a>
+    
+</li>
+<!-- innerRowTpl -->
+<li>
+    <a class="dropdown-item " href="contrataciones-con-terceros.html" title="Contrataciones con Terceros en el DIET" >Contrataciones con terceros</a>
+    
+</li>
+<!-- innerRowTpl -->
+<li>
+    <a class="dropdown-item last" href="formato-estandarizado-acciones-de-emprendimiento.html" title="Formato estandarizado acciones de emprendimiento" >Formato estandarizado acciones de emprendimiento</a>
+    
+</li>
+
+</ul>
+</li>
+<!-- rowTpl -->
+<li class="nav-item last ">
+    <a class="nav-link" href="ambiental.html" title="Compromiso Ambiental en Emprendimiento DIET" >Ambiental</a>
+    
+</li>
+
+</ul>
+                    </li>
+                </ul>
+            
+              <ul class="utilerias-box navbar-nav" role="search">
+                  <li class="utilerias-separador"></li>
+                  <!--
+                  <li class="nav-item d-none">
+                      <a class="nav-link offcanvas-icon" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenuPrincipal" aria-controls="offcanvasMenuPrincipal">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
+                              <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"/>
+                          </svg>
+                      </a>
+                  </li>
+                  -->
+                  <li class="nav-item">
+                      <button type="button" class="nav-link utilerias-busqueda" data-bs-toggle="modal" data-bs-target="#modalBusqueda">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                           </svg>
+                      </button>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+</div>
+
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb p-2 ">
+            <li id="breadcrumb-item">
+        <a href="ipn.mx">
+        <i class="fas fa-home"></i>
+        </a> &nbsp; / &nbsp;
+        <li id="breadcrumb-item">
+	Inicio
+ 
+ 
+ 
+ 
+ 
+ 
+
+</li></li>
+        </ol>
+    </nav>
+</div>
+</div>
+
+<div class="bkg_Default  ">
+    <div id="sliderCentral" name="sliderCentral" class="carousel slide sliderIndicators" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      
+    </div>
+    <div class="carousel-inner" id="sliderCentral-inner">
+        <div class="carousel-item active">
+    <a href="convocatorias.html" target="_blank">
+        <img src="/assets/files/diet/img/webbannersiis-mesa-de-trabajo-1.jpg" class="d-block w-100" alt="">
+    </a>
+    <div class="carousel-caption d-none d-md-block">
+        <h5></h5>
+        <p></p>
+    </div>
+</div><div class="carousel-item ">
+    <a href="merito.pdf" target="_blank">
+        <img src="/assets/files/diet/assets/uploads/banner-bootcamp-20250408-141141-0000.png" class="d-block w-100" alt="">
+    </a>
+    <div class="carousel-caption d-none d-md-block">
+        <h5></h5>
+        <p></p>
+    </div>
+</div><div class="carousel-item ">
+    <a href="fesadem2025.docx" target="_blank">
+        <img src="/assets/files/diet/img/enc-faqs.jpg" class="d-block w-100" alt="Formato Estandarizado de Acciones de Emprendimiento">
+    </a>
+    <div class="carousel-caption d-none d-md-block">
+        <h5>Formato Estandarizado de Acciones de Emprendimiento</h5>
+        <p></p>
+    </div>
+</div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#sliderCentral" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#sliderCentral" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+</div>
+
+<div class="bkg_Guinda3  ">
+    <div class="container    "><div class="row py-3 ">
+        <div class="col-12 col-sm-5 offset-sm-1 "><h2 class="text-start fw-bolder ">En la DIET somos...</h2>
+
+<div class="text_justify">
+<p>Los encargados de impulsar la generación de empresas innovadoras y de alto impacto con capacidad de insertarse en cadenas productivas y satisfacer los requerimientos tecnológicos, de sectores prioritarios, que aporten a la creación de riqueza y bienestar nacional; así como de fomentar una cultura emprendedora en la comunidad politécnica basada en el desarrollo de competencias, habilidades, aptitudes y actitudes de emprendimiento.</p>
+
+</div></div>
+        <div class="col-12 col-sm-5 mt-4 mt-sm-0 "><div class="p-4">
+</div>
+
+<div class="text-center">
+    <img src="/assets/files/diet/img/diet-listones-01.jpg" class="img-fluid w-100   " alt="Personal de la DIET">
+</div></div>
+</div></div>
+</div>
+
+<div class="bkg_Default  ">
+    <div class="container    "><div class="row py-3  "  > 
+        <div class="col-12 col-sm-4 ">
+            <h2 class="text-start fw-bold ">Elige tu camino</h2>
+
+<div >
+<p>La mejor herramienta es el conocimiento, aquí te presentamos la oferta que tenemos preparada especialmente para fortalecer tu formación emprendedora y si ya tienes un camino recorrido puedes optar por estructurarlo a través de nuestro Modelo de Emprendimiento Politécnico.</p>
+
+</div>
+        </div>
+        <div class="col-12 col-sm-4 mt-4 mt-sm-0 ">
+             <a href="capacitaci%C3%B3n.html" class="icono" >
+    <div class="text-center">
+        <img src="/assets/files/diet/assets/img/emp-off.png" class="img-fluid" alt="Icono de formacion emprendedora">
+        <img src="/assets/files/diet/assets/uploads/emp-on.png" alt="Icono de formacion emprendedora" class="img-fluid icono-hover u-oculto">
+        <p class="">Formacion emprendedora</p>
+    </div>
+ </a>
+
+<div class="d-grid gap-2 acordeon_collap">
+    <p>
+        <a class="btn" name="btnGeneral" data-bs-toggle="collapse" href="#AFormacion" role="button" aria-expanded="true">
+            Formarte en la DIET te permite <i class="fas fa-plus-circle"></i>
+        </a>
+    </p>
+    <div class="collapse acordeon_lista" id="AFormacion">
+        <div class="card card-body">
+            <ul><li><b>Desarrollar </b>tus habilidades </li><li><b>Descubrir </b>nuevas herramientas </li><li><b>Conectar </b>con otros emprendedores </li><li><b>Actualizarte </b>constantemente </li><li><b>Mejorar tus estratégias</b> </li></ul>
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+    <a href="capacitaci%C3%B3n.html"  type="button" class="btn m-3   btn-outline-dark" name="btnEnlace">Me interesa</a>
+</div>
+        </div>
+        <div class="col-12 col-sm-4 mt-4 mt-sm-0 ">
+             <a href="incubaci%C3%B3n.html" class="icono" >
+    <div class="text-center">
+        <img src="/assets/files/diet/assets/uploads/ua-off.png" class="img-fluid" alt="Icono de incubacion">
+        <img src="/assets/files/diet/assets/uploads/ua-on.png" alt="Icono de incubacion" class="img-fluid icono-hover u-oculto">
+        <p class="">Incubacion</p>
+    </div>
+ </a>
+
+<div class="d-grid gap-2 acordeon_collap">
+    <p>
+        <a class="btn" name="btnGeneral" data-bs-toggle="collapse" href="#AIncubacion" role="button" aria-expanded="true">
+            Incubarse en la DIET te da... <i class="fas fa-plus-circle"></i>
+        </a>
+    </p>
+    <div class="collapse acordeon_lista" id="AIncubacion">
+        <div class="card card-body">
+            <ul><li><b>Mentoría</b> experta </li><li><b>Red</b> de contactos </li><li><b>Validación</b> del modelo de negocio </li><li><b>Reducción</b> de riesgos operativos </li><li><b>Acceso </b>a recursos y herramientas </li></ul>
+        </div>
+    </div>
+</div>
+
+<div class="text-start">
+    <a href="incubaci%C3%B3n.html"  type="button" class="btn m-3   btn-outline-dark" name="btnEnlace">Me interesa</a>
+</div>
+        </div>
+    </div></div>
+</div>
+
+<div class="PatronGris  ">
+    <div class="container    "><h2 class="text-center fw-bold ">Se parte del emprendimiento IPN</h2>
+
+<div class="row py-3  "  > 
+        <div class="col-12 col-sm-4 ">
+            <div class="card_flip">
+    <div class="card_flip_front" style="background-image: url('/assets/files/diet/img/Iconos/startup.png');">
+        <div class="card_flip_txt ">
+            <h3 class="px-3">¿Cómo despegar?</h3>
+        </div>
+    </div>
+    <div class="card_flip_back d-flex flex-column p-4">
+        <p>Incubar una empresa es crucial ya que proporciona recursos, mentoría y redes de contactos. Al seguir un modelo de incubación aumenta la probabilidad de éxito y minimiza riesgos en las etapas iniciales del negocio.</p>
+
+        <div class="mt-auto text-end d-none">
+            <a type="button" href=""  class="btn card_btn rounded-circle"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+        </div>
+        <div class="col-12 col-sm-4 mt-4 mt-sm-0 ">
+            <div class="card_flip">
+    <div class="card_flip_front" style="background-image: url('/assets/files/diet/img/Iconos/molecules-with-hand.png');">
+        <div class="card_flip_txt ">
+            <h3 class="px-3">Emprende IPN</h3>
+        </div>
+    </div>
+    <div class="card_flip_back d-flex flex-column p-4">
+        <p>La dirección impulsa empresas innovadoras y fomenta el emprendimiento, coordinándose con cada Unidad Académica. Invitamos a los estudiantes a acercarse a la UPIS de tu Unidad Académica para recibir apoyo en la formación y estructuración de sus proyectos emprendedores.</p>
+
+        <div class="mt-auto text-end d-none">
+            <a type="button" href=""  class="btn card_btn rounded-circle"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+        </div>
+        <div class="col-12 col-sm-4 mt-4 mt-sm-0 ">
+            <div class="card_flip">
+    <div class="card_flip_front" style="background-image: url('/assets/files/diet/img/Iconos/teamwork.png');">
+        <div class="card_flip_txt ">
+            <h3 class="px-3">Red de aliados</h3>
+        </div>
+    </div>
+    <div class="card_flip_back d-flex flex-column p-4">
+        <p>Invitamos a empresarios, inversionistas y egresados a apoyar la incubación de proyectos del IPN. Su experiencia y recursos son esenciales para impulsar empresas innovadoras, generar riqueza y bienestar nacional, y fomentar una cultura emprendedora en nuestra comunidad politécnica.</p>
+
+        <div class="mt-auto text-end d-none">
+            <a type="button" href=""  class="btn card_btn rounded-circle"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+        </div>
+    </div></div>
+</div>
+
+<div class="bkg_Default  ">
+    <div class="container    "><div class="row py-3 ">
+        <div class="col-12 col-sm-3 ">
+            <div class="card_flip">
+    <div class="card_flip_front" style="background-image: url('/assets/files/diet/img/Iconos/target.png');">
+        <div class="card_flip_txt d-none">
+            <h3 class="px-3"></h3>
+        </div>
+    </div>
+    <div class="card_flip_back d-flex flex-column p-4">
+        <p>Llegaste al lugar correcto para hacer tu servicio social.</p>
+
+        <div class="mt-auto text-end d-none">
+            <a type="button" href=""  class="btn card_btn rounded-circle"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+        </div>
+        <div class="col-12 col-sm-9 mt-4 mt-sm-0 ">
+            <h3 class="text-start fw-bold ">Haz tu servicio social con nosotros</h3>
+
+<h2 class="text-start fw-bold display-6">¿Te interesa hacer tu servicio social o prácticas profesionales con nosotros?</h2>
+
+<div >
+<p>Escríbenos a:</p>
+
+</div>
+
+<h4 class="text-start fw-bold ">servicio.social.diet@ipn.mx</h4>
+        </div>
+</div></div>
+</div>
+
+<div class="bkg_Default  ">
+    <div class="container    "><hr/>
+
+<div class="container">
+        <form class="formulario" name="formulario_registro" id="form-registro" method="post" action="http://www.cpwi-buzon404.ipn.mx/Buzon/mail_v2.php">
+            <!-- Titulo -->
+            <h2 class="text-center">Buzón</h2>
+            <p>Los comentarios, sugerencias o dudas que llegue a tener la comunidad politécnica son de suma importancia para el Instituto, por lo tanto te invitamos a que mediante el siguiente buzón nos hagas llegar tu petición. Será atendida en el menor tiempo posible.</p>
+            <p>Recuerda, ¡Todos Somos Comunidad Politécnica!</p>
+            <br>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <!-- Select 1-->
+                    <div class="form-floating mb-3">
+                        <select class="userOp form-select" id="select1" name="op1" onchange="cargarSelect(this.value);" aria-label="Perfil">
+                            <option value="0">Selecciona..</option>
+                            <option value="1">Alumno(a)</option>
+                            <option value="2">Aspirante</option>
+                            <option value="3">Externo</option>
+                            <option value="4">Docente</option>
+                            <option value="5">Servicios</option>
+                        </select>
+                        <label for="perfil">Perfil</label>
+                    </div>
+                    <br>
+                    <!-- Select 2-->
+                    <div class="form-floating mb-3" id="selector2">
+                        <select class="userOp form-select" id="select2" name="op2" onchange="seleccinado_select2();" aria-label="Area">
+                            <option value="0">Selecciona...</option>
+                        </select>
+                        <label for="select2">Área</label>
+                    </div>
+                    <!-- Bloque datos -->
+                    <div id="blockD" style="display: none;">
+                    <!-- Nombre -->
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" placeholder="Nombre completo" id="textName" required></textarea>
+                        <label id="Nombre" for="nombre">Nombre completo</label>
+                    </div>
+                    <!-- Email -->
+                    <div class="form-floating mb-3">
+                        <textarea type="email" id="textEmail" class="form-control" name="textEmail" placeholder="name@example.com" value="mdo@example.com" required></textarea>
+                        <label for="textEmail">Correo eléctronico</label>
+                    </div>
+                    <!-- Comentarios -->
+                    <div id="Coment" style="display: none;">
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Comentarío" id="commentary" name="commentary" style="height: 100px" required></textarea>
+                            <label for="commentary">Comentario</label>
+                        </div>
+                    </div>
+                    <!-- enviar-->
+                    <div class="form-group mb-3 text-center">
+                        <div id="send" style="display: none;">
+                            <div class="g-recaptcha justify-content-center text-center" data-sitekey="6LfGmOkUAAAAAPygtKGViZH_JzDYGoJ0yai8sSNx"></div>   
+                            <br/>
+                            <input id="btn-submit"  onclick="sendInfo()" class="btn btn-outline-dark" name="btnGeneral" value="Enviar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </div>
+</div>
+</div>
+
+<div class="PatronGris  ">
+    <div class="container    "><h2 class="text-center fw-bold ">Visíta la DIET</h2>
+
+ <div class="row py-3  ">
+        <div class="col-12 col-sm-6  ">
+           <h4 class="text-center fw-bold ">DIET Zacatenco</h4>
+
+<div class="text-center">
+    <img src="/assets/files/diet/img/Encabezados mapas/zacatenco.jpg" class="img-fluid w-100   " alt="Fachada de la DIET zacatenco">
+</div>
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7522.000827779105!2d-99.141991!3d19.498618!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9b46e21f86b%3A0xd7be3681b0ef045c!2sDirecci%C3%B3n%20de%20Incubaci%C3%B3n%20de%20Empresas%20Tecnol%C3%B3gicas%20(DIET%20-%20IPN)!5e0!3m2!1ses!2sus!4v1721325832309!5m2!1ses!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<div >
+<p>Unidad Profesional Adolfo López Mateos, Av. Wilfrido Massieu S/N, Zacatenco, Gustavo A. Madero, 07738 CDMX, México</p>
+
+</div>
+        </div>
+        <div class="col-12 col-sm-6 mt-4 mt-sm-0  ">
+           <h4 class="text-center fw-bold ">DIET Casco de Santo Tomás</h4>
+
+<div class="text-center">
+    <img src="/assets/files/diet/img/Encabezados mapas/casco.jpg" class="img-fluid w-100   " alt="Fachada de la DIET casco de santo tomas">
+</div>
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3762.070824453414!2d-99.165832!3d19.452513!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8c05f4a7623%3A0xb3a854ae59417365!2sDirecci%C3%B3n%20de%20Incubaci%C3%B3n%20de%20Empresas%20Tecnol%C3%B3gicas%20(DIET%20-%20IPN)!5e0!3m2!1ses!2sus!4v1721325852399!5m2!1ses!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<div >
+<p>Manuel Carpio sin número,, esquina Ave de los Maestros, Colonia Sto Tomás, 11340 Colonia Sto Tomás, CDMX, México</p>
+
+</div>
+        </div>
+    </div></div>
+</div>
+
+<div class="bkg_Default p-3 ">
+    <div class="container    "><ul class="nav nav-tabs principal-tabs-nav" role="tablist"></ul><div class="tab-content" id="myTabContent">
+    
+</div>
+                        <div class="text-center">
+                            <a href="agenda-de-eventos.html" target="_blank" type="button" class="btn m-3 btn-outline-dark" name="btnEnlace">Consulta la Agenda Politécnica</a>
+                        </div>
+                    </div>
+</div>
+
+<div class="bkg_GrisClaro  ">
+    <div class="container    "><div class="d-flex flex-wrap justify-content-center">
+    <div class="p-2 ">
+        <a href="DIETIPN.html" target="_blank">
+            <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+                <image width="64" height="64" href="fb.svg" />
+            </svg> 
+        </a>
+    </div>
+    <div class="p-2 ">
+        <a href="DIETipn.html" target="_blank">
+            <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+                <image width="64" height="64" href="x.svg" />
+            </svg> 
+        </a>
+    </div>
+    <div class="p-2 ">
+        <a href="diet_ipn.html" target="_blank">
+            <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+                <image width="64" height="64" href="ig.svg" />
+            </svg> 
+        </a>
+    </div>
+    <div class="p-2 d-none">
+        <a href="" target="_blank">
+            <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+                <image width="64" height="64" href="yt.svg" />
+            </svg> 
+        </a>
+    </div>
+    <div class="p-2 d-none">
+        <a href="" target="_blank">
+            <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+                <image width="64" height="64" href="tt.svg" />
+            </svg> 
+        </a>
+    </div>
+    <div class="p-2 d-none">
+        <a href="" target="_blank">
+            <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+                <image width="64" height="64" href="g.svg" />
+            </svg>
+        </a>
+    </div>
+</div>    
+
+</div>
+</div>
+
+    <div class="footer-ipn">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 text-center">
+                    <img src="/assets/files/main/img/template/footer/pleca-educacion-footer.png" class="img-fluid logo-educacion-footer">
+                </div>
+                <div class="col-lg-8">
+                    <p>INSTITUTO POLITÉCNICO NACIONAL</p>
+                    <p>D.R. Instituto Politécnico Nacional (IPN). Av. Luis Enrique Erro S/N, Unidad Profesional Adolfo López Mateos, Zacatenco, Alcaldía Gustavo A. Madero, C.P. 07738, Ciudad de México. Conmutador: 55 57 29 60 00 / 55 57 29 63 00.</p>
+                    <p class="mb-0">Esta página es una obra intelectual protegida por la Ley Federal del Derecho de Autor, puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica; su uso para otros fines, requiere autorización previa y por escrito de la Dirección General del Instituto.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de busqueda -->
+    <div class="modal fade" id="modalBusqueda" tabindex="-1" aria-labelledby="modalBusqueda" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group input-group-lg">
+                        <input type="text" id="textoBusqueda" class="form-control" placeholder="¿Qué buscas?" aria-label="Busqueda" aria-describedby="boton-busqueda" onkeypress="if(event.keyCode == 13){enviarBusqueda();}" />
+                        <button class="btn btn-primary btn-busqueda" type="button" id="boton-busqueda" onclick="enviarBusqueda();">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+     <!-- Owl carrusel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+     <!-- Galería -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+
+    <!-- JS de bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.js"></script>
+    
+    <!-- Framework gobernación -->
+    <script src="https://framework-gb.cdn.gob.mx/gm/v4/js/gobmx.js"></script>
+    
+    <!-- Scripts template -->
+    <script src="https://www.ipn.mx/assets/files/main/js/index.js"></script>
+    
+    
+
+    </div>
+    <!-- Script para enviar al buscador gratuito -->
+    <script>
+    
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const hashes = urlParams.getAll('tab');
+    
+            hashes.forEach(hash => {
+                const tabTrigger = document.querySelector(`button[data-bs-target="#${hash}"]`);
+    
+                if (tabTrigger) {
+                    const tab = new bootstrap.Tab(tabTrigger);
+                    tab.show();
+                } else {
+                    console.error(`No se encontró el elemento con el hash: #${hash}`);
+                }
+            });
+        });
+    
+        let isStyleChanged = false;
+        
+        
+        function toogleContraste(){
+            
+            isStyleChanged = !isStyleChanged;
+
+            if (isStyleChanged) {
+                const divs = document.querySelectorAll('div');
+                divs.forEach(div => {
+                    const elements = div.querySelectorAll('*');
+                    div.classList.add('text-danger', 'bg-dark');
+                    elements.forEach(el => {
+                        el.classList.add('text-danger');
+                    });
+                });
+            } else {
+                // Restaurar estilos originales
+                const divs = document.querySelectorAll('div');
+                divs.forEach(div => {
+                    const elements = div.querySelectorAll('*');
+                    div.classList.remove('text-danger', 'bg-dark');
+                    elements.forEach(el => {
+                        el.classList.remove('text-danger');
+                    });
+                });
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

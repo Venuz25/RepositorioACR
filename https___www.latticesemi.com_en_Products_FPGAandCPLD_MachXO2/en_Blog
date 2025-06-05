@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+
+
+
+
+<!--[if IE 7]>    <html class="ie lt-ie9 ie7" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9 ie8" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 9]>    <html class="ie ie9" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+<!-- OneTrust Cookies Consent Notice start for www.latticesemi.com -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/8ce0ef32-b483-40ef-a516-d6ebfa92ee46-test/OtAutoBlock.js" ></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="8ce0ef32-b483-40ef-a516-d6ebfa92ee46-test" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for www.latticesemi.com -->
+<head id="hHeadTag">
+
+	<!-- Google Tag Manager -->
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+})(window,document,'script','dataLayer','GTM-MZ9QSXR');</script>
+
+<!-- End Google Tag Manager -->
+
+<!-- Microsoft Clarity - Heatmap -->
+<script>
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "dy0r78kpm3");
+</script>
+<!--End Microsoft Clarity - Heatmap -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" type="text/css" href="" />
+    
+        <link rel="stylesheet" type="text/css" href="/css/lsc-blog.css" />
+    <title>
+	Lattice Blog
+</title><meta name="description" content="Learn about the latest Lattice products and solutions plus industry news and thought leadership." /><link rel="icon" type="image/x-icon" href="/images/favicon.ico" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="VIcurrentDateTime" content="638843326423490595" />
+<script type="text/javascript" src="/layouts/system/VisitorIdentification.js"></script>
+
+	<!-- Conditional Loading of Swiper Stylesheet -->
+<script type="text/javascript">
+    if (window.innerWidth < 768 || (window.innerWidth >= 768 && window.innerWidth <= 1024)) {
+    // Create a link element for the stylesheet
+    var stylesheetLink = document.createElement("link");
+    stylesheetLink.rel = "stylesheet";
+    stylesheetLink.type = "text/css";
+    stylesheetLink.href = "/css/swiperslider.css";
+
+    // Append the link to the head of the document
+    document.head.appendChild(stylesheetLink);
+	
+}
+
+</script>
+        <link type="text/css" href="/css/video-js.css" rel="stylesheet">
+        <!--[if lte IE 7]>
+        <link rel="stylesheet" type="text/css" href="http://www.latticesemi.com/css/video-js-ie7.css" />
+        <![endif]-->
+        <link type="text/css" rel="stylesheet" href="/css/lsc.css">
+
+        
+     
+        <script type="text/javascript">
+            // IE console fix
+            var console = console || { log: function () { }, warn: function () { } };
+            window.lattice = window.lattice || {};
+
+            var $j = window.$j = jQuery.noConflict();
+
+            $j(function () {
+                $j(window).load(function () {
+                    lattice.init($j);
+                });
+            });
+        </script>
+        <script type = "text/javascript">
+            function notificationClickJQuery() {
+                jQuery.ajax({
+                    type: "GET",
+                    url: "~/Services/SitewideNotification.svc/UpdateNotificationforUser",
+                    data: '{currentnotificationid: "' + $("#lblcurrentNotificationID")[0].value + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        jQuery('#dNotificationBar').hide();
+                        return false;
+                    },
+                    failure: function(response) {
+                        alert(response.d);
+                        return true;
+                    }
+                });
+            }
+            function privacypolicyClickJQuery() {
+                jQuery.ajax({
+                    type: "GET",
+                    url: "~/Services/SitewideNotification.svc/UpdatePrivacyPolicyforUser",
+                    data: '{currentnotificationid: "' + $("#lblcurrentPrivacyPolicyID")[0].value + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        jQuery('#dPrivacyPolicyNotificationBar').hide();
+                        return false;
+                    },
+                    failure: function(response) {
+                        alert(response.d);
+                        return true;
+                    }
+                });
+            }
+        </script>
+      <script type="text/javascript" src="/js/jquery.tablesorter.min.js"></script>
+    
+
+	 <script type="text/javascript">
+	 function expiredReCaptcha() 
+{
+    //This method will execute only if Google ReCaptcha expired
+    jQuery("#RecaptchaValidHiddenField").val(""); // making hidden textbox empty 
+	jQuery('#CaptchaErrorMessage').html('Captcha verification failed');  
+			jQuery('#CaptchaErrorMessage').css('color',"red");
+}
+	  var verifyCallback = function(response) {
+         jQuery("#RecaptchaValidHiddenField").val("valid");
+		 if (jQuery("#RecaptchaValidHiddenField").val() !== '') {  
+            //jQuery('#CaptchaErrorMessage').css('color', 'green').html('Success!');  
+		     jQuery(".Recaptcha span.error-message").remove();
+		     jQuery(".form-buttons p.error").attr("style", "display:none");
+        }  else{
+		  document.getElementById("CaptchaErrorMessage").innerHTML = "Required Field";
+		  }
+      };
+  var onloadCallback = function() {
+	 grecaptcha.render('RecaptchaValidHiddenField', {
+          'sitekey' : '6Lci1lYbAAAAACrENFTJJIk2M8u7qa-d2_6O6qaw',
+          'callback' : verifyCallback
+        });
+  };
+</script>
+	  <script src="https://www.recaptcha.net/recaptcha/api.js?onload=onloadCallback"></script>
+
+                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="NLFKM-QREF5-ZS5GY-TB9ZU-TEUFQ",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"NLFKM-QREF5-ZS5GY-TB9ZU-TEUFQ",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="xo7ju7axgz7ig2b3s5qq-f-7669ef0cc-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"39","ak.cp":"1093151","ak.ai":parseInt("650564",10),"ak.ol":"0","ak.cr":101,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"3928674f","ak.r":49140,"ak.a2":e,"ak.m":"b","ak.n":"ff","ak.bpcip":"187.190.154.0","ak.cport":1494,"ak.gh":"23.36.183.235","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1748735841","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==dPQGvhgWlaCW7IcC9Lt9r9c5S8vTB/Cr1ngwg135qdFBsH8OO6Uxj8WqxsETVo4LnLkuHxUQsDrtO/ZiMhLs4TRNGZgizfqTB6MCXq7O32YmxIf+jCfDJCRqyXORYTfGUy5DUxMRf5raMVhBfcvVUs1K/YkYUHK2IjmbLWqnkFwIt5Zp1ldfqoHBjoTOe6YQCOhggMu1JGP3SP4MP2RGhyeqxcszN/HAhbofkxC9JJB8cPYk3QAsYAiw2mE9G6g9YDgS00J4GLDTV5cCsZYGCslUclVgKIEGcr61WKt7ySZcMGyLiDwLBtRwt005BYJWJT6YvxiZYJyrwiUukx8nHgSmiM1AcfHJnGUUDMEj/S7AWJrvmFKXGm2fft8PxuNedMQ6IKrAacpXw8e5+yhtV/7rGDP47mFz797lSjBnozg=","ak.pv":"34","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+  <body>
+  
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src=63
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <form method="post" action="/en/Blog" id="mainform">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D0E5B4D5" />
+</div>
+	
+	<script type="text/javascript">
+		var linkDeleteImageUrl = '/temp/iconcache/network/16x16/link_delete.png';
+	</script>
+	
+ 	<!-- END SYSTEM WIDE NOTIFICATION -->
+      
+    
+
+
+
+<!-- START STRIPE CONTAINER -->
+<div class="stripeContainer headerStripe darkBackground" id="JumpAssetMainNav">
+    <!-- START STRIPE CONTENT -->
+    <div  class="stripeContent stickyNav">
+        <div class="line">
+            <div class="unit size1of4">
+               <div id="desktoplogo">
+                 
+                           <a href="/en">
+                                <img src="/-/media/LatticeSemi/Images/Common/Logo.ashx?h=23&amp;la=en&amp;mw=144&amp;w=144" class="logo" alt="Lattice Semiconductor" width="144" height="23" />
+                            </a>
+                   
+                            <div class="line hamburgermenu">
+							 <div class="unit size1of7" id="mobilemenu"><img src="/images/menu.png" alt="en" width="22px" height="22px" /></div>
+							 
+							 <div class="unit size4of7" id="mobilelogo"><a href="/en">
+                                <img src="/-/media/LatticeSemi/Images/Common/Logo.ashx?h=23&amp;la=en&amp;mw=144&amp;w=144" class="logo" alt="Lattice Semiconductor" width="144" height="23" />
+                            </a></div>
+                            <div class="unit size2of7 lastUnit">
+							<div class="line">
+							<div  class="unit size1of3" id="profile"><img src="/images/profile_icon.png" alt="en" width="22px" height="22px" /></div>
+                                <div class="unit size1of3" id="language">
+                                  
+									<ul>
+                                        <li id="en"><img src='/images/flags/16x16/flag_usa.png' alt="en" /></li>
+                                        <li id="jp"><img src='/images/flags/16x16/flag_Japan.PNG' alt="ja" /></li>
+                                        <li id="cn"><img src='/images/flags/16x16/flag_china.png' alt="zh" /></li>
+                                    </ul>
+                                </div>
+                                <div class="unit size1of3 lastUnit" id="search"><img src="/images/searchmobile.png" alt="en" width="22px" height="22px" /></div>
+                                </div>
+								</div>
+                               
+                        </div>
+                    
+                    
+                   
+                </div> 
+			</div>
+			<div class="unit size3of4 lastUnit">
+			<div class="line">
+				<div class="unit size4of5">
+					<ul class="navItems">
+						<li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Solutions" class="nULink">Applications</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height5">
+		<li><a><span class="fakeLink">Industrial & Auto</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Automotive
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/SolutionCategories/Automotive">Automotive Overview</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/DriverAssistance">ADAS / Driver Assistance</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/FunctionalSafety">Functional Safety</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/InVehicleInfotainment">Infotainment</a></li><li><a href="https://www.latticesemi.com/en/Support/QualityAndReliability">Quality & Reliability</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Factory Automation
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/FunctionalSafety">Functional Safety</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/MachineVision">Machine Vision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/PLCHMI">PLCs</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Robotics">Robotics</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Other Industrial
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Medical">Medical</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Surveillance">Video Surveillance</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Automate">Lattice Automate</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Drive">Lattice Drive</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Comms & Computing</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Client Computing
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Notebooks">Notebooks / PCs</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Printers">Printers</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Tablets">Tablets</a></li>
+				</ul><h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/ORAN">Lattice ORAN</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Datacenter Systems
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/PFR">Platform Firmware Resiliency</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/DatacenterSystemsServerSolutions">Servers</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/DatacenterSystemsStorage">Storage</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/DataCenterSwitches">Switches</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Wireless
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/5G">5G Open RAN</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/HetNetSmallCellsSolutions">HetNet Small Cells</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LowPowerRadios">Low Power Radios</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/MillimeterWaveRadios">Millimeter Wave Radios</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Wireline
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/IntellectualProperty/IPCore/IPCores01/10GbEthernetMAC">10 Gbps Ethernet MAC</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/HitlessUpdates">Hitless Updates</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/IntelligentSFPModules">Intelligent SFP</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/IntellectualProperty/ReferenceDesigns/ReferenceDesign04/RGMIItoGMIIBridge">RGMII to GMII Bridge</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Consumer</span></a><div class="line menuContent">
+			<div class="unit size1of3">
+				<h3>
+					Prosumer Electronics
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/IoT">IoT & Wearables</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/VRHMD">VR Head Mounted Display</a></li>
+				</ul>
+			</div><div class="unit size1of3">
+				<h3>
+					Smart Home
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/SmartHomeSmartRoom">Consumer Robots & Toys</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/SmartHomeControl">Home Control & Security</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Aerospace & Defense</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Aerospace & Defense
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/Defense">Defense Overview</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/GuidanceSystems">Guidance Systems</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Software-Defined-Radio">Software Defined Radio</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Space">Space</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/UAVs">UAVs</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Security</span></a><div class="line menuContent">
+			<div class="unit size1of2">
+				<h3>
+					FPGA-Based Security
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/Lattice-FPGA-Security-Solutions">Security Overview</a></li>
+				</ul>
+			</div><div class="unit size1of2 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Products" class="nULink">Products</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height3">
+		<li><a><span class="fakeLink">FPGAs & Other Devices</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Control & Security FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/MachXO5-NX">MachXO5-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Mach-NX">Mach-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/MachXO3D">MachXO3D</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/MachXO3">MachXO3</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/MachXO2">MachXO2</a></li><li><a href="https://www.latticesemi.com/en/Products/PowerAndClockDevices/PlatformManager2">L-ASC10</a></li>
+				</ul><h3>
+					Platforms
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Avant">Lattice Avant</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeNexus">Lattice Nexus</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Lattice-Nexus-2">Lattice Nexus 2</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					General Purpose FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Avant-X">Avant-X</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Avant-G">Avant-G</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Avant-E">Avant-E</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Certus-N2">Certus-N2</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CertusPro-NX">CertusPro-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/Certus-NX">Certus-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/ECP5">ECP5 & ECP5-5G</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Ultra Low Power FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40UltraPlus">iCE40 UltraPlus</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40Ultra">iCE40 Ultra</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40Ultra">iCE40 UltraLite</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40">iCE40 LP/HX</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Video Connection FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CrossLink-NX">CrossLinkU-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CrossLink-NX">CrossLink-NX</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CrossLinkPlus">CrossLinkPlus</a></li><li><a href="https://www.latticesemi.com/en/Products/FPGAandCPLD/CrossLink">CrossLink</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/en/Products">VIEW ALL DEVICES&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Software Tools</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Software Tools
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/FPGAandLDS/LatticeDiamond">Lattice Diamond</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/FPGAandLDS/LatticePropel">Lattice Propel</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/FPGAandLDS/Radiant">Lattice Radiant</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/AIML/LatticesensAIStudio">Lattice sensAI Studio</a></li><li><a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP/AIML/Lattice-sensAI-Edge-Vision-Engine-SDK">Lattice sensAI EVE SDK</a></li><li><a href="https://www.latticesemi.com/en/Support/Licensing">Software Licensing</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/en/Products/DesignSoftwareAndIP">VIEW ALL SOFTWARE TOOLS&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Solutions</span></a><div class="line menuContent">
+			<div class="unit size1of3">
+				<h3>
+					Solutions
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails01/CommunitySourced">Community Sourced</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=bb168d29ad6b40769878f160546890de&amp;active=demo">Demos</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=6da9534f318a4969a6b5e7dc9081bdba&amp;active=ipcore">IP Cores</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=982db688d64345bbb3af29e62fee1dc3&amp;active=board">Kits & Boards</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=3614c818569f4eecb0602ba20a521a41&amp;active=refdesign">Reference Designs</a></li><li><a href="https://www.latticesemi.com/en/Products/ProgrammingHardware">Programming Hardware</a></li>
+				</ul>
+			</div><div class="unit size1of3">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Automate">Lattice Automate</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/Drive">Lattice Drive</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/ORAN">Lattice ORAN</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h3>
+					FPGA-Based Security
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Products/Lattice-FPGA-Security-Solutions">Security Overview</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/solutionsearch">VIEW ALL SOLUTIONS&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Support" class="nULink">Support</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height6">
+		<li><a><span class="fakeLink">Technical Support</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Support
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/AnswerDatabase">Answer Database</a></li><li><a href="https://www.latticesemi.com/en/Support">Get Technical Support</a></li><li><a href="https://www.latticesemi.com/en/About/ContactUs">General Inquiries</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/en/Support">EXPLORE HELP CENTER&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Software Licensing</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Software Licensing
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Support/Licensing">Request a License</a></li><li><a href="https://www.latticesemi.com/Support/Licensing#purchase">Purchase Software License</a></li><li><a href="https://www.latticesemi.com/en/Support/LatticeIPSupport">IP Licensing Support</a></li><li><a href="https://www.latticesemi.com/Support/Licensing/IPCore/IPCoreNew">New IP License Request</a></li><li><a href="https://www.latticesemi.com/en/Support/Lattice-IP-License-Bundles">IP License Bundles</a></li><li><a href="https://www.latticesemi.com/Support/Licensing/AcademicLicense/Academic%20License%20Request%20Form">Academic License Request</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Quality & Reliability</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Quality & Reliability
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/QualityAndReliability">Quality & Reliability Information</a></li><li><a href="https://www.latticesemi.com/en/Support/QualityAndReliability/ExportClassification">Export Classification Information</a></li><li><a href="https://www.latticesemi.com/en/Support/PCN">Product Change Notifications (PCNs)</a></li><li><a href="https://www.latticesemi.com/en/Support/PartNumberReferenceGuide">Part Number Reference Guide</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Services</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					Design Services
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/LatticeDesignGroup">Lattice Design Group</a></li><li><a href=""></a></li><li><a href="https://www.latticesemi.com/en/Support/ProductCustomization">Product Services</a></li>
+				</ul><h3>
+					
+				</h3><ul>
+					<li><a href=""></a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Secure Supply Chain
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Solutions/Solutions/SolutionsDetails02/LatticeSupplyGuard">Lattice SupplyGuard</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					Training
+				</h3><ul>
+					<li><a href="https://www.latticesemi-insights.com/">Lattice Insights</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					Discontinued Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/MatureAndDiscontinuedDevices">Mature & Discontinued Devices</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Legacy Devices & Software</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Legacy Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/SoftwareArchive">FPGA Software Archive</a></li><li><a href="https://www.latticesemi.com/en/Support/ASSPSoftwareArchive">Silicon Image Software Archive</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Lattice Partner Network</span></a><div class="line menuContent">
+			<div class="unit size1of2">
+				<h3>
+					Partner Program
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Support/Partner-Network">Program Overview</a></li><li><a href="https://www.latticesemi.com/en/Support/Partners">Find Partners</a></li><li><a href="https://www.latticesemi.com/solutionsearch?&amp;qprovider=3e052bdbb99a4c2691d18011e3a24fdf,5233e49f3f684c95a9db94ab3aed059c,1355762face7416da88444b50acab913,edf1088dea6b4972b73b44fad51554ad,47f66166aa4d48599a7df5ef20cae2a2,14d45119e9ce435a962cd7b6c3036e78,a784f36edaf840f8b6908faf3443f7c2,71d36ac2ef8e488abc0bc0c5c4c4e7f3,b08027d6cadc4efdab09ed480e186731,e4fb27cb7bd24c4c96545dccbb6daed0,ea3c5a961c5649f68d8267ee43086d35,358ab1e5969245e5ab3ecf5964b1ec17​  ​">Explore Partner Solutions</a></li>
+				</ul>
+			</div><div class="unit size1of2 lastUnit">
+				<h3>
+					Partner Type
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=3fcabf6c16c647968c89942cd13e2a54">IP Cores</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=d6eef479dc0c4e109dec6f5de39d5812">Design Services</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=08cc134c4b4f46e08010e44dfd4b7043">Boards</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=a26cc42771d949b5837f9be415f95e2e">Programming Services</a></li><li><a href="https://www.latticesemi.com/en/Support/Partners">EDA </a></li><li><a href="https://www.latticesemi.com/en/Support/Partners">Embedded</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Buy/SalesLocator" class="nULink">Buy</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height5">
+		<li><a><span class="fakeLink">Americas Sales</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=74F89870335446AB993BD70BB67F209E">Brazil</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=CC8751866A1A405AA93FB2C743A61159">Canada</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=3F844FA3FC034BD79249267F15208E65">Mexico</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=02D1DC98A6F949BAB8EB61B94AA2B274">Puerto Rico</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=B22CA382BCD9497990EFBEACF5897407">USA</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=4721A7D5228C4A459CCDB00C4AD7B745">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Europe & Africa Sales</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=DFD74C9F2D4B434BB400F68E0CAEC109">Finland</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=171D28DDC08349C1A8267772FDFEB442">France</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=78B777A06EF845BBA57839C084B0DB66">Germany</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=49D9E3960E014D858D6FDAE3D9118C0E">Israel</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=341C8947085D47FCA57ABE17B863962F">Italy</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=A664784F3FC44C248523D10FDAD2E3E7">Norway</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=CA759DC8DE6A4C24B6214F25920BEA8A">Spain</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=C6F72D45022A445BA3ACBA604F9F44E1">Sweden</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=A3769F1BD0DF41E18F11F51A02A45DCE">United Kingdom</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=56406BCD8BF24AD3B2FB1D36EAE47C14">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Asia Pacific Sales</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Sales Locator
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=7F8D51D079FE48E38C541D9598987304">Australia</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=1BF85C6578DF4AE7919633E4AFF9416E">China</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=ACBD88BEC2884BF19239F551E81055B7">India</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=629E693BD3BE454BA6C118B8FE49DDEB">Indonesia</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=C1F83B11B8CA42EDA0E74619D3408D89">Japan</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=5B0541ED60124FC7B3BAE82DC6E8A13D">Singapore</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=B02FB08BD35247598F9FAE9D72B409AB">South Korea</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=756801F046C24109B9744313514EFD9D">Taiwan</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=176373FF64DE4509A517E896C8DF0B97">Vietnam</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=537DBFB9B472419A9CACF6739C609178">VIEW ALL&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Online Store</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Lattice Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/Buy/BuyOnline/SiliconDevices">Silicon Devices</a></li><li><a href="https://www.latticesemi.com/en/Buy/BuyOnline/SoftwareCablesandBoards">Software, Cables, & Boards</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/en/Buy/BuyOnline">BUY ONLINE&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">Discontinued Products</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Discontinued Products
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices.aspx#ProgrammableLogicDistributors">Rochester Electronics</a></li><li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices.aspx#ProgrammableLogicDistributors">Arrow Electronics</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/Blog">Blog</a></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/en/About" class="nULink">About Lattice</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height4">
+		<li><a><span class="fakeLink">About Lattice</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					About Lattice
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/About">About the Company</a></li><li><a href="https://www.latticesemi.com/en/About/ESG">Corporate Stewardship</a></li><li><a href="https://www.latticesemi.com/en/About/ContactUs">Contact Us</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Investor Relations</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Investor Relations
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/About/InvestorRelations">Investor Overview</a></li><li><a href="https://ir.latticesemi.com/investor-overview/shareholder-services/online-investor-kit">Online Investor Kit</a></li><li><a href="https://ir.latticesemi.com/investor-overview/shareholder-services/investor-faqs">Investor FAQ</a></li><li><a href="https://ir.latticesemi.com/investor-overview/corporate-governance/board-of-directors">Board Of Directors</a></li><li><a href="https://www.latticesemi.com/en/About/Management">Management</a></li><li><a href="https://ir.latticesemi.com/investor-overview/highlights">Corporate Governance</a></li><li><a href="https://ir.latticesemi.com/investor-overview/financial-information/sec-filings">SEC Filings</a></li><li><a href="https://ir.latticesemi.com/investor-overview/quarterly-earnings">Quarterly Earnings</a></li><li><a href="https://ir.latticesemi.com/investor-overview/analysts">Analysts</a></li><li><a href="https://www.latticesemi.com/en/About/EthicsContactInformation">Ethics</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Newsroom</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Newsroom
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/About/Newsroom">Announcements</a></li><li><a href="https://www.latticesemi.com/en/Blog">Blogs</a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/Events">Upcoming Product Events </a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/ImageLibrary">Image Library</a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/VideoLibrary">Video Library</a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/Webinars">Webinar Library</a></li><li><a href="https://www.latticesemi.com/en/About/Newsroom/MediaContacts">Media Contacts</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Careers</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Careers
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/en/About/Jobs">Careers Homepage</a></li><li><a href="https://careers-latticesemi.icims.com/jobs/intro?hashed=-625919477&amp;mobile=false&amp;width=1378&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-480&amp;jun1offset=-420">Search Job Openings</a></li><li><a href="https://www.latticesemi.com/en/About/Jobs/OurBenefits">Our Benefits</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li>
+						<li class="flushRight" onclick="showloginDropdown()">
+						<div class="dropdown dropbtn">
+						
+						<div id="myDropdown" class="dropdown-content">
+						
+<a href="/en/Accounts/SignIn" id="header_0_ctl06_SignInLink">Sign In</a>
+						
+<div class="nooverflow"><a href="/en/Accounts/AccountRegister" id="header_0_ctl07_aRegister">Register</a></div>
+						</div>
+						</div>
+						</li>
+						<li class="languageSelectionContainer  noOver">
+							
+
+    
+        <ul class="languageOverlay darkBackground" id="languageOverlay">
+			
+					<li class='visibleLanguage'> 
+                        
+						<a href="/en/Blog" >
+                            <img src='/images/flags/16x16/flag_usa.png' alt="en"/>
+						</a>
+					</li>
+				
+					<li> 
+                        
+						<a href="/ja-JP/Blog" >
+                            <img src='/images/flags/16x16/flag_Japan.PNG' alt="ja"/>
+						</a>
+					</li>
+				
+					<li> 
+                        
+						<a href="/zh-CN/Blog" >
+                            <img src='/images/flags/16x16/flag_china.png' alt="zh"/>
+						</a>
+					</li>
+				
+        </ul>
+         <span id="curlang" style="display:none;">en</span>
+
+						</li>
+					</ul> 
+				</div>
+				<div class="unit size1of5 lastUnit">
+					
+					<div id="header_0_CoveoSearchPanel" class="searchwrapper">
+	
+                        <label for="txtboxSearch">
+						<input name="header_0$ctl05$TXTQuery" type="text" id="header_0_ctl05_TXTQuery" aria-label="Enter search text" autocomplete="off" placeHolder="Search Site" onkeydown="if (event.keyCode == 13) { location.href = &#39;/Search.aspx?&amp;lcid=9&amp;q=&#39; + encodeURIComponent(document.getElementById(&#39;header_0_ctl05_TXTQuery&#39;).value) + &#39;&amp;t=&#39; + (-new Date().getTimezoneOffset()); return false; }" />
+							
+                                
+                        </label>
+                       <img alt="" id="header_0_ctl05_BTNSearch" title="Search" aria-label="Search Site" class="search-button" onclick="location.href = &#39;/Search.aspx?&amp;lcid=9&amp;q=&#39; + encodeURIComponent(document.getElementById(&#39;header_0_ctl05_TXTQuery&#39;).value) + &#39;&amp;t=&#39; + (-new Date().getTimezoneOffset()); return false;" src="/images/search.png" />
+			        
+                       
+                    
+</div>
+				</div>
+			</div>
+			</div>
+        </div>
+    </div>
+	
+</div>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function showloginDropdown() {
+  if (!document.getElementById("myDropdown").classList.contains("show"))
+  document.getElementById("myDropdown").classList.toggle("show");
+  else
+  document.getElementById("myDropdown").classList.remove("show");
+  var menu = document.getElementsByClassName("menuDetails persistMenu");
+  if (menu.length > 0)
+  {
+   //menu[0].style.display = "none";
+   menu[0].parentElement.firstChild.style = "";
+   menu[0].classList.add("hiddenNavigation");
+   menu[0].classList.remove("persistMenu");
+   
+   }
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+    
+    
+
+
+
+<div  class="stripeContainer stripeOne resourcesHeader">
+     <a href="" id="myBtn" class="BackTopActive" aria-label="Back To Top"> </a>
+        <div class="stripeContent ">
+        <!-- END LINE -->
+        <!-- START LINE -->
+        <div class="line flushBottom">
+            <!-- START UNIT -->
+
+            <!-- END UNIT -->
+
+            <!-- START UNIT --> 
+            <div  class="unit size1of1 pageTitle lastUnit">
+                <div class="line">
+                    <div class="unit size1of1">
+                        <!-- START PAGE TITLE -->
+                      
+
+
+<ul class="breadcrumb">
+     <li><a href="/">Home</a>  &gt;</li>
+    
+    <li>Lattice Blog</li>
+</ul>
+<!-- END BREADCRUMBS -->
+
+                      <h1>
+                            Lattice Blog
+                      </h1>
+                      
+                        </div>
+                    
+                        <!-- END PAGE TITLE -->
+                    </div>
+            </div>
+            <!-- END UNIT -->
+
+        </div>
+        <!-- END LINE -->
+    </div>
+    <!-- END STRIPE CONTENT -->
+
+
+</div>
+
+
+     <!-- START SYSTEM WIDE NOTIFICATION -->
+	
+	
+
+<div class="wb">
+    <header id="top">
+    </header>
+    <div class="wb-wrapper">
+        <main>
+            
+
+<div class="wb-entry-list">
+    
+            
+<section class="wb-entry-list-entry">
+    <header>
+        <div class="thumbnail">
+            <img src="/-/media/LatticeSemi/Images/Blogs/2025/5_23_Q2LILive_Recap_Blog.ashx?h=260&amp;la=en&amp;mh=260&amp;mw=370&amp;w=370" class="wb-image" alt="Q2LILive Recap Blog" width="370" height="260" />
+        </div>
+		<h2>
+			<a href="/en/Blog/2025/05/23/08/59/PQC-and-Cyber-Resilience-Protecting-Data-in-the-Quantum-Era">[Blog] PQC &amp; Cyber Resilience: Protecting Data in the Quantum Era</a>
+		</h2>
+        <div class="wb-details">
+            Posted 05/23/2025 by By Mamta Gupta, Senior Director of Security, Datacenter and Comms Segment Marketing; Eric Sivertson, VP of Security Business
+        </div>
+    </header>
+    <div class="description">
+        <div class="summary">
+            <p>Quantum computing has long been discussed as a far-off development in computer science. The claim that widespread accessibility and use is &ldquo;just five years away&rdquo; is a common refrain among many practitioners. But with recent advancements in the field&mdash;including Microsoft&rsquo;s Majorana 1, Google&rsquo;s Willow chip, and IBM's plans to release the largest-ever quantum computer in 2025&mdash; we are closer to realizing its potential than ever before.
+While exciting, these advance...</p>
+        </div>
+        
+        <a id="body_0_weblogmain_0_EntryList_ctl00_0_BlogPostLink_0" class="wb-read-more" href="/en/Blog/2025/05/23/08/59/PQC-and-Cyber-Resilience-Protecting-Data-in-the-Quantum-Era">Read more...</a>
+        </div>
+</section>
+<section class="wb-entry-list-entry">
+    <header>
+        <div class="thumbnail">
+            <img src="/-/media/LatticeSemi/Images/Blogs/2025/5_20_Agiliad-AMR-blog-graphic.ashx?h=260&amp;la=en&amp;mh=260&amp;mw=370&amp;w=370" class="wb-image" alt="Agiliad AMR blog graphic" width="370" height="260" />
+        </div>
+		<h2>
+			<a href="/en/Blog/2025/05/20/06/37/Redefining-Robotics-High-Precision-Autonomous-Mobile-Robots">[Blog] Redefining Robotics: High-Precision Autonomous Mobile Robots</a>
+		</h2>
+        <div class="wb-details">
+            Posted 05/20/2025 by Agiliad
+        </div>
+    </header>
+    <div class="description">
+        <div class="summary">
+            <p>Imagine a robot navigating a crowded factory floor, rerouting itself in real-time around equipment, humans, and unexpected obstacles &mdash; all while maintaining motion control and system stability. This isn&rsquo;t a distant vision; this is the reality engineered by Agiliad in partnership with Lattice Semiconductor. 
+In a market full of autonomous mobile robots (AMRs) that rely on generic control stacks and prebuilt kits, this AMR stands out as a deep-tech system, purpose-built for intelligent...</p>
+        </div>
+        
+        <a id="body_0_weblogmain_0_EntryList_ctl00_1_BlogPostLink_1" class="wb-read-more" href="/en/Blog/2025/05/20/06/37/Redefining-Robotics-High-Precision-Autonomous-Mobile-Robots">Read more...</a>
+        </div>
+</section>
+<section class="wb-entry-list-entry">
+    <header>
+        <div class="thumbnail">
+            <img src="/-/media/LatticeSemi/Images/Blogs/2025/5-16-EtherCAT-blog-image.ashx?h=260&amp;la=en&amp;mh=260&amp;mw=370&amp;w=370" class="wb-image" alt="EtherCAT Blog Image" width="370" height="260" />
+        </div>
+		<h2>
+			<a href="/en/Blog/2025/05/15/09/56/Unlocking-Industry-4-0-Integrating-EtherCAT-and-Lattice-FPGAs-for-Advanced-Automation">[Blog] Unlocking Industry 4.0: Integrating EtherCAT and Lattice FPGAs for Advanced Automation</a>
+		</h2>
+        <div class="wb-details">
+            Posted 05/16/2025 by Karl Wachswender, Senior Principal Architect
+        </div>
+    </header>
+    <div class="description">
+        <div class="summary">
+            <p> As the Industrial sector moves closer to realizing Industry 4.0, the demand for systems that offer resilient connectivity, low power consumption, high performance, and robust security is increasing. 
+ However, implementing a digital transformation is not always straightforward. Businesses must integrate these advanced systems within legacy environments, contending with siloed software, pre-internet equipment, and deeply ingrained workflows. They need solutions that allow for intentional applica...</p>
+        </div>
+        
+        <a id="body_0_weblogmain_0_EntryList_ctl00_2_BlogPostLink_2" class="wb-read-more" href="/en/Blog/2025/05/15/09/56/Unlocking-Industry-4-0-Integrating-EtherCAT-and-Lattice-FPGAs-for-Advanced-Automation">Read more...</a>
+        </div>
+</section>
+<section class="wb-entry-list-entry">
+    <header>
+        <div class="thumbnail">
+            <img src="/-/media/LatticeSemi/Images/Blogs/2025/4_18-Sec-Seminar-Recap-blog_v1.ashx?h=260&amp;la=en&amp;mh=260&amp;mw=370&amp;w=370" class="wb-image" alt="Security-Seminar-Recap-blog" width="370" height="260" />
+        </div>
+		<h2>
+			<a href="/en/Blog/2025/04/17/09/28/The-Future-of-Cybersecurity-Trends-and-Technologies-to-Watch">[Blog] Future Cybersecurity Trends and Technologies to Watch</a>
+		</h2>
+        <div class="wb-details">
+            Posted 04/18/2025 by Mamta Gupta, Senior Director of Security, Datacenter and Comms segment marketing Eric Sivertson, VP of Security Business
+        </div>
+    </header>
+    <div class="description">
+        <div class="summary">
+            <p>Cybersecurity best practices can change on a dime. To help our customers keep up with this rapidly changing field, Lattice runs a regular Security Seminar program where security and FPGA experts dive into the latest security trends, regulations, and implementation across the Communications, Computing, Industrial, Automotive, and Consumer markets. Our goal is to deliver security-relevant insights, real signals, and a sense of what's next, especially if you're building, deploying, or managing trus...</p>
+        </div>
+        
+        <a id="body_0_weblogmain_0_EntryList_ctl00_3_BlogPostLink_3" class="wb-read-more" href="/en/Blog/2025/04/17/09/28/The-Future-of-Cybersecurity-Trends-and-Technologies-to-Watch">Read more...</a>
+        </div>
+</section>
+<section class="wb-entry-list-entry">
+    <header>
+        <div class="thumbnail">
+            <img src="/-/media/LatticeSemi/Images/Blogs/2025/4_4-Avant-Fast-Boot-blog.ashx?h=260&amp;la=en&amp;mh=260&amp;mw=370&amp;w=370" class="wb-image" alt="Innovations in SRAM-based FPGAs: Fast, Secure Boot Times Explained Blog Graphic" width="370" height="260" />
+        </div>
+		<h2>
+			<a href="/en/Blog/2025/04/03/17/25/Innovations-in-SRAM-based-FPGAs-Fast-Secure-Boot-Times-Explained">[Blog] Innovations in SRAM-based FPGAs: Fast, Secure Boot Times Explained</a>
+		</h2>
+        <div class="wb-details">
+            Posted 04/04/2025 by Jim Tavacoli, Sr. Director, Segment Marketing
+        </div>
+    </header>
+    <div class="description">
+        <div class="summary">
+            <p>In the world of programmable logic devices, SRAM-based FPGAs are often misunderstood. These FPGAs offer incredible flexibility and reconfigurability, making them ideal for a wide range of applications from consumer electronics to aerospace. Additionally, SRAM-based FPGAs can achieve high performance and low latency, making them suitable for demanding tasks such as real-time data processing and high-speed communication.
+It's a common misconception that SRAM-based FPGAs are burdened by lengthy boo...</p>
+        </div>
+        
+        <a id="body_0_weblogmain_0_EntryList_ctl00_4_BlogPostLink_4" class="wb-read-more" href="/en/Blog/2025/04/03/17/25/Innovations-in-SRAM-based-FPGAs-Fast-Secure-Boot-Times-Explained">Read more...</a>
+        </div>
+</section>
+<section class="wb-entry-list-entry">
+    <header>
+        <div class="thumbnail">
+            <img src="/-/media/LatticeSemi/Images/Blogs/2025/3-24-embedded-vision-blog.ashx?h=260&amp;la=en&amp;mh=260&amp;mw=370&amp;w=370" class="wb-image" alt="High-Speed Data Transfer: The Future of Embedded Vision - Blog Image" width="370" height="260" />
+        </div>
+		<h2>
+			<a href="/en/Blog/2025/03/21/20/04/High-Speed-Data-Transfer-The-Future-of-Embedded-Vision">[Blog] High-Speed Data Transfer: The Future of Embedded Vision</a>
+		</h2>
+        <div class="wb-details">
+            Posted 03/24/2025 by Mark Hoopes, Sr. Director, Segment Marketing
+        </div>
+    </header>
+    <div class="description">
+        <div class="summary">
+            <p>The demand for high-speed data transfer is growing rapidly. With advancements in smart devices, datacenter systems, and software, organizations need data to move quickly through their technology infrastructures while staying adaptable, scalable, and secure. This increase in real-time data transfer puts more strain on systems, leading to higher infrastructural needs.
+From enhancing cell phone video quality and aiding autonomous vehicles in avoiding crashes to activating smart home security device...</p>
+        </div>
+        
+        <a id="body_0_weblogmain_0_EntryList_ctl00_5_BlogPostLink_5" class="wb-read-more" href="/en/Blog/2025/03/21/20/04/High-Speed-Data-Transfer-The-Future-of-Embedded-Vision">Read more...</a>
+        </div>
+</section>
+<section class="wb-entry-list-entry">
+    <header>
+        <div class="thumbnail">
+            <img src="/-/media/LatticeSemi/Images/Blogs/2025/3_14-EW-Recap-Blog.ashx?h=260&amp;la=en&amp;mh=260&amp;mw=370&amp;w=370" class="wb-image" alt="Embedded World 2025: Lattice&#39;s Cutting-Edge FPGA Solutions" width="370" height="260" />
+        </div>
+		<h2>
+			<a href="/en/Blog/2025/03/12/13/52/Embedded-World-2025-Lattices-Cutting-Edge-FPGA-Solutions">[Blog] Embedded World 2025: Lattice&#39;s Cutting-Edge FPGA Solutions</a>
+		</h2>
+        <div class="wb-details">
+            Posted 03/20/2025 by Lattice Semiconductor
+        </div>
+    </header>
+    <div class="description">
+        <div class="summary">
+            <p>Embedded World is one of the biggest tradeshows in the world, at which Lattice and our ecosystem partners showcase the latest and greatest Lattice FPGA based innovation in a wide range of applications for Automotive, Industrial, and Security applications at the Edge. In case you missed the show, following is a snapshot of our highlights from embedded world 2025. 
+
+Lattice Wins Embedded Computing Design (ECD) &lsquo;Best in Show&rsquo; Award
+Lattice won the prestigious ECD Best in Show&nbsp;award...</p>
+        </div>
+        
+        <a id="body_0_weblogmain_0_EntryList_ctl00_6_BlogPostLink_6" class="wb-read-more" href="/en/Blog/2025/03/12/13/52/Embedded-World-2025-Lattices-Cutting-Edge-FPGA-Solutions">Read more...</a>
+        </div>
+</section>
+<section class="wb-entry-list-entry">
+    <header>
+        <div class="thumbnail">
+            <img src="/-/media/LatticeSemi/Images/Blogs/2025/5-Essential-FPGA-Tips-Blog.ashx?h=260&amp;la=en&amp;mh=260&amp;mw=370&amp;w=370" class="wb-image" alt="5 Essential FPGA Design Tips" width="370" height="260" />
+        </div>
+		<h2>
+			<a href="/en/Blog/2025/02/27/22/11/5-Essential-FPGA-Design-Tips">[Blog] 5 Essential FPGA Design Tips</a>
+		</h2>
+        <div class="wb-details">
+            Posted 02/28/2025 by Chris Sousa, Field Applications Engineer  
+        </div>
+    </header>
+    <div class="description">
+        <div class="summary">
+            <p>Embarking on a new FPGA design can be an exciting yet challenging journey, especially for beginners. The world of FPGAs offers immense potential for creating complex and high-performance digital systems, but it also requires a solid understanding of various design principles and tools. Whether you are a new designer or a seasoned FPGA expert, at times, you might find yourself navigating through unfamiliar territory, from understanding timing constraints to managing multiple clock domains, or in ...</p>
+        </div>
+        
+        <a id="body_0_weblogmain_0_EntryList_ctl00_7_BlogPostLink_7" class="wb-read-more" href="/en/Blog/2025/02/27/22/11/5-Essential-FPGA-Design-Tips">Read more...</a>
+        </div>
+</section>
+<section class="wb-entry-list-entry">
+    <header>
+        <div class="thumbnail">
+            <img src="/-/media/LatticeSemi/Images/Blogs/2025/Contextual-AI-blog.ashx?h=260&amp;la=en&amp;mh=260&amp;mw=370&amp;w=370" class="wb-image" alt="Contextual AI: Enhancing Edge Intelligence with FPGA Technology" width="370" height="260" />
+        </div>
+		<h2>
+			<a href="/en/Blog/2025/02/12/20/42/Contextual-AI-Enhancing-Edge-Intelligence-with-FPGA-Technology">[Blog] Contextual AI: Enhancing Edge Intelligence with FPGA Technology</a>
+		</h2>
+        <div class="wb-details">
+            Posted 02/13/2025 by Hussein Osman, Director, Segment Marketing
+        </div>
+    </header>
+    <div class="description">
+        <div class="summary">
+            <p>Edge AI &mdash; implementing AI models on Edge devices to process algorithms locally rather than in a centralized computing location, like the cloud &mdash; has garnered significant attention as one of the fastest developing areas of artificial intelligence. Calculated at roughly $21 billion USD in 2024, the Edge AI market is expected to reach over $143 billion by 2034. This signals a sustained focus across industries on the development of AI-powered Edge systems. 
+New opportunities for Edge AI ...</p>
+        </div>
+        
+        <a id="body_0_weblogmain_0_EntryList_ctl00_8_BlogPostLink_8" class="wb-read-more" href="/en/Blog/2025/02/12/20/42/Contextual-AI-Enhancing-Edge-Intelligence-with-FPGA-Technology">Read more...</a>
+        </div>
+</section>
+<section class="wb-entry-list-entry">
+    <header>
+        <div class="thumbnail">
+            <img src="/-/media/LatticeSemi/Images/Blogs/2025/Blog_Securing-AI-FPGAs-and-Data-Provenance.ashx?h=260&amp;la=en&amp;mh=260&amp;mw=370&amp;w=370" class="wb-image" alt="[Blog] Securing AI: FPGAs and Data Provenance" width="370" height="260" />
+        </div>
+		<h2>
+			<a href="/en/Blog/2025/01/21/15/55/Securing-AI-FPGAs-and-Data-Provenance">[Blog] Securing AI: FPGAs and Data Provenance</a>
+		</h2>
+        <div class="wb-details">
+            Posted 01/23/2025 by Eric Sivertson, VP of Security
+        </div>
+    </header>
+    <div class="description">
+        <div class="summary">
+            <p>Data powers nearly every facet of today&rsquo;s world, and the volume of data being generated, processed, shared, or otherwise handled increases with every passing year. It is estimated that 90% of the world&rsquo;s data was created in the last two years alone and over 80% of organizations expect to be managing zettabytes of data in 2025, with 147 zettabytes of data having been generated in 2024 alone. For perspective, if a grain of rice was a byte, a zettabyte of rice could cover the entire sur...</p>
+        </div>
+        
+        <a id="body_0_weblogmain_0_EntryList_ctl00_9_BlogPostLink_9" class="wb-read-more" href="/en/Blog/2025/01/21/15/55/Securing-AI-FPGAs-and-Data-Provenance">Read more...</a>
+        </div>
+</section>
+        
+    <div id="body_0_weblogmain_0_PanelViewMore" class="wb-view-more-wrapper">
+	
+        <a href="/en/Blog?count=20" id="body_0_weblogmain_0_ancViewMore" class="wb-view-more">View more</a>
+        <span class="wb-loading-animation" style="display: none;">Loading...</span>
+    
+</div>
+</div>
+
+        </main>
+        <aside>
+            <div id="body_0_weblogsidebar_1_PanelCategories" class="wb-categories wb-panel">
+	
+    <h3>Categories</h3>
+    
+            <ul>
+                
+            <li>
+                <a href="/en/Blog/Categories/All">All</a>
+            </li>
+        
+            <li>
+                <a href="/en/Blog/Categories/Consumer">Consumer</a>
+            </li>
+        
+            <li>
+                <a href="/en/Blog/Categories/Communications">Communications &amp; Computing</a>
+            </li>
+        
+            <li>
+                <a href="/en/Blog/Categories/Industrial">Industrial &amp; Automotive</a>
+            </li>
+        
+            <li>
+                <a href="/en/Blog/Categories/Programmable-Logic">Programmable Logic (FPGA, CPLD…)</a>
+            </li>
+        
+            <li>
+                <a href="/en/Blog/Categories/Video-Connectivity">Video Connectivity (HDMI, USB…)</a>
+            </li>
+        
+            </ul>
+        
+
+</div><div id="body_0_weblogsidebar_1_PanelTagCloud" class="wb-tag-cloud wb-panel">
+	
+    <h3>Tagcloud</h3>
+	
+    <div class="wb-entries">
+        
+                <a data-lastused="2025-02-28T20:54:00"
+                    data-alphabetic="fpga"
+                    data-entrycount="126"
+                    class="wb-weight1"
+                    href="/en/Blog?tag=FPGA">
+                    FPGA
+                </a>
+            
+                <a data-lastused="2025-04-18T19:54:00"
+                    data-alphabetic="ai"
+                    data-entrycount="33"
+                    class="wb-weight4"
+                    href="/en/Blog?tag=AI">
+                    AI
+                </a>
+            
+                <a data-lastused="2025-03-24T20:00:00"
+                    data-alphabetic="automotive"
+                    data-entrycount="27"
+                    class="wb-weight4"
+                    href="/en/Blog?tag=automotive">
+                    automotive
+                </a>
+            
+                <a data-lastused="2023-08-08T18:06:00"
+                    data-alphabetic="industrial"
+                    data-entrycount="25"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Industrial">
+                    Industrial
+                </a>
+            
+                <a data-lastused="2025-01-07T08:00:00"
+                    data-alphabetic="security"
+                    data-entrycount="22"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=security">
+                    security
+                </a>
+            
+                <a data-lastused="2021-05-25T17:19:00"
+                    data-alphabetic="crosslink"
+                    data-entrycount="20"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=CrossLink">
+                    CrossLink
+                </a>
+            
+                <a data-lastused="2025-03-24T20:00:00"
+                    data-alphabetic="embedded vision"
+                    data-entrycount="19"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=embedded+vision">
+                    embedded vision
+                </a>
+            
+                <a data-lastused="2025-02-13T21:00:00"
+                    data-alphabetic="sensai"
+                    data-entrycount="18"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=sensAI">
+                    sensAI
+                </a>
+            
+                <a data-lastused="2025-01-23T20:54:00"
+                    data-alphabetic="cybersecurity"
+                    data-entrycount="18"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Cybersecurity">
+                    Cybersecurity
+                </a>
+            
+                <a data-lastused="2025-01-23T20:54:00"
+                    data-alphabetic="ml"
+                    data-entrycount="17"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=ML">
+                    ML
+                </a>
+            
+                <a data-lastused="2025-04-18T19:54:00"
+                    data-alphabetic="pfr"
+                    data-entrycount="16"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=PFR">
+                    PFR
+                </a>
+            
+                <a data-lastused="2024-10-01T19:54:00"
+                    data-alphabetic="cyber resiliency"
+                    data-entrycount="14"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=cyber+resiliency">
+                    cyber resiliency
+                </a>
+            
+                <a data-lastused="2021-05-25T17:19:00"
+                    data-alphabetic="smart vision"
+                    data-entrycount="14"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=smart+vision">
+                    smart vision
+                </a>
+            
+                <a data-lastused="2025-03-20T07:00:00"
+                    data-alphabetic="connectivity"
+                    data-entrycount="12"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=connectivity">
+                    connectivity
+                </a>
+            
+                <a data-lastused="2023-01-04T20:55:00"
+                    data-alphabetic="low power"
+                    data-entrycount="12"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Low+power">
+                    Low power
+                </a>
+            
+                <a data-lastused="2021-05-25T17:19:00"
+                    data-alphabetic="ice40 ultraplus"
+                    data-entrycount="12"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=iCE40+UltraPlus">
+                    iCE40 UltraPlus
+                </a>
+            
+                <a data-lastused="2025-03-24T20:00:00"
+                    data-alphabetic="edge ai"
+                    data-entrycount="11"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=edge+AI">
+                    edge AI
+                </a>
+            
+                <a data-lastused="2025-02-28T20:54:00"
+                    data-alphabetic="radiant"
+                    data-entrycount="9"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Radiant">
+                    Radiant
+                </a>
+            
+                <a data-lastused="2024-11-14T08:00:00"
+                    data-alphabetic="software"
+                    data-entrycount="9"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Software">
+                    Software
+                </a>
+            
+                <a data-lastused="2024-03-01T08:00:00"
+                    data-alphabetic="adas"
+                    data-entrycount="9"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=ADAS">
+                    ADAS
+                </a>
+            
+                <a data-lastused="2021-11-10T08:00:00"
+                    data-alphabetic="nexus"
+                    data-entrycount="9"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Nexus">
+                    Nexus
+                </a>
+            
+                <a data-lastused="2019-09-06T07:00:00"
+                    data-alphabetic="control pld"
+                    data-entrycount="9"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=control+PLD">
+                    control PLD
+                </a>
+            
+                <a data-lastused="2025-05-23T19:54:00"
+                    data-alphabetic="post-quantum cryptography"
+                    data-entrycount="8"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=post-quantum+cryptography">
+                    post-quantum cryptography
+                </a>
+            
+                <a data-lastused="2025-05-23T19:54:00"
+                    data-alphabetic="hrot"
+                    data-entrycount="8"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=HRoT">
+                    HRoT
+                </a>
+            
+                <a data-lastused="2024-04-18T19:54:00"
+                    data-alphabetic="iot"
+                    data-entrycount="8"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=IoT">
+                    IoT
+                </a>
+            
+                <a data-lastused="2024-02-26T20:54:00"
+                    data-alphabetic="5g"
+                    data-entrycount="8"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=5G">
+                    5G
+                </a>
+            
+                <a data-lastused="2022-12-12T08:00:00"
+                    data-alphabetic="firmware"
+                    data-entrycount="8"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Firmware">
+                    Firmware
+                </a>
+            
+                <a data-lastused="2022-05-09T07:00:00"
+                    data-alphabetic="machine learning"
+                    data-entrycount="8"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Machine+Learning">
+                    Machine Learning
+                </a>
+            
+                <a data-lastused="2021-09-30T20:00:00"
+                    data-alphabetic="machxo3"
+                    data-entrycount="8"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=MachXO3">
+                    MachXO3
+                </a>
+            
+                <a data-lastused="2021-05-25T17:19:00"
+                    data-alphabetic="ecp5"
+                    data-entrycount="8"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=ECP5">
+                    ECP5
+                </a>
+            
+                <a data-lastused="2021-03-31T07:00:00"
+                    data-alphabetic="mipi"
+                    data-entrycount="8"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=MIPI">
+                    MIPI
+                </a>
+            
+                <a data-lastused="2025-05-20T19:54:00"
+                    data-alphabetic="robotics"
+                    data-entrycount="7"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Robotics">
+                    Robotics
+                </a>
+            
+                <a data-lastused="2025-04-18T19:54:00"
+                    data-alphabetic="pqc"
+                    data-entrycount="7"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=PQC">
+                    PQC
+                </a>
+            
+                <a data-lastused="2025-03-20T07:00:00"
+                    data-alphabetic="machine vision"
+                    data-entrycount="7"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=machine+vision">
+                    machine vision
+                </a>
+            
+                <a data-lastused="2024-12-13T08:00:00"
+                    data-alphabetic="developers conference"
+                    data-entrycount="7"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Developers+conference">
+                    Developers conference
+                </a>
+            
+                <a data-lastused="2023-04-14T07:00:00"
+                    data-alphabetic="edge"
+                    data-entrycount="7"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Edge">
+                    Edge
+                </a>
+            
+                <a data-lastused="2018-05-24T22:34:00"
+                    data-alphabetic="hdmi"
+                    data-entrycount="7"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=HDMI">
+                    HDMI
+                </a>
+            
+                <a data-lastused="2025-05-16T19:54:00"
+                    data-alphabetic="industry 4.0"
+                    data-entrycount="6"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=industry+4.0">
+                    industry 4.0
+                </a>
+            
+                <a data-lastused="2024-11-18T08:00:00"
+                    data-alphabetic="oran"
+                    data-entrycount="6"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=ORAN">
+                    ORAN
+                </a>
+            
+                <a data-lastused="2024-09-10T07:00:00"
+                    data-alphabetic="artificial intelligence"
+                    data-entrycount="6"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Artificial+Intelligence">
+                    Artificial Intelligence
+                </a>
+            
+                <a data-lastused="2024-08-14T07:00:00"
+                    data-alphabetic="root of trust"
+                    data-entrycount="6"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=root+of+trust">
+                    root of trust
+                </a>
+            
+                <a data-lastused="2024-04-18T19:54:00"
+                    data-alphabetic="functional safety"
+                    data-entrycount="6"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Functional+Safety">
+                    Functional Safety
+                </a>
+            
+                <a data-lastused="2021-05-25T17:19:00"
+                    data-alphabetic="machxo3d"
+                    data-entrycount="6"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=MachXO3D">
+                    MachXO3D
+                </a>
+            
+                <a data-lastused="2020-06-01T21:36:00"
+                    data-alphabetic="ice40"
+                    data-entrycount="6"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=iCE40">
+                    iCE40
+                </a>
+            
+                <a data-lastused="2018-03-20T07:00:00"
+                    data-alphabetic="vr"
+                    data-entrycount="6"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=VR">
+                    VR
+                </a>
+            
+                <a data-lastused="2017-08-01T07:00:00"
+                    data-alphabetic="power manager"
+                    data-entrycount="6"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Power+manager">
+                    Power manager
+                </a>
+            
+                <a data-lastused="2025-05-16T19:54:00"
+                    data-alphabetic="automation"
+                    data-entrycount="5"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=automation">
+                    automation
+                </a>
+            
+                <a data-lastused="2024-11-14T08:00:00"
+                    data-alphabetic="propel"
+                    data-entrycount="5"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Propel">
+                    Propel
+                </a>
+            
+                <a data-lastused="2024-11-14T08:00:00"
+                    data-alphabetic="diamond"
+                    data-entrycount="5"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Diamond">
+                    Diamond
+                </a>
+            
+                <a data-lastused="2024-09-10T07:00:00"
+                    data-alphabetic="edge computing"
+                    data-entrycount="5"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Edge+computing">
+                    Edge computing
+                </a>
+            
+                <a data-lastused="2024-02-26T20:54:00"
+                    data-alphabetic="communications"
+                    data-entrycount="5"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Communications">
+                    Communications
+                </a>
+            
+                <a data-lastused="2024-02-26T20:54:00"
+                    data-alphabetic="small cell"
+                    data-entrycount="5"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Small+Cell">
+                    Small Cell
+                </a>
+            
+                <a data-lastused="2025-05-23T19:54:00"
+                    data-alphabetic="cyber resilience"
+                    data-entrycount="4"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=cyber+resilience">
+                    cyber resilience
+                </a>
+            
+                <a data-lastused="2025-04-04T19:54:00"
+                    data-alphabetic="lattice avant"
+                    data-entrycount="4"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Lattice+Avant">
+                    Lattice Avant
+                </a>
+            
+                <a data-lastused="2024-07-30T07:00:00"
+                    data-alphabetic="defense"
+                    data-entrycount="4"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Defense">
+                    Defense
+                </a>
+            
+                <a data-lastused="2024-05-23T07:00:00"
+                    data-alphabetic="space"
+                    data-entrycount="4"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Space">
+                    Space
+                </a>
+            
+                <a data-lastused="2024-05-23T07:00:00"
+                    data-alphabetic="aerospace"
+                    data-entrycount="4"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Aerospace">
+                    Aerospace
+                </a>
+            
+                <a data-lastused="2023-11-20T08:00:00"
+                    data-alphabetic="zero trust security"
+                    data-entrycount="4"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Zero+Trust+Security">
+                    Zero Trust Security
+                </a>
+            
+                <a data-lastused="2021-09-28T20:00:00"
+                    data-alphabetic="sentry"
+                    data-entrycount="4"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Sentry">
+                    Sentry
+                </a>
+            
+                <a data-lastused="2018-03-20T07:00:00"
+                    data-alphabetic="virtual reality"
+                    data-entrycount="4"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=virtual+reality">
+                    virtual reality
+                </a>
+            
+                <a data-lastused="2017-08-29T07:00:00"
+                    data-alphabetic="lattice"
+                    data-entrycount="4"
+                    class="wb-weight5"
+                    href="/en/Blog?tag=Lattice">
+                    Lattice
+                </a>
+            
+                <a data-lastused="2025-05-23T19:54:00"
+                    data-alphabetic="fpgas"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=FPGAs">
+                    FPGAs
+                </a>
+            
+                <a data-lastused="2025-05-23T19:54:00"
+                    data-alphabetic="cyber regulations"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=cyber+regulations">
+                    cyber regulations
+                </a>
+            
+                <a data-lastused="2025-05-20T19:54:00"
+                    data-alphabetic="motion control"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Motion+control">
+                    Motion control
+                </a>
+            
+                <a data-lastused="2025-02-13T21:00:00"
+                    data-alphabetic="hmi"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=HMI">
+                    HMI
+                </a>
+            
+                <a data-lastused="2025-01-07T08:00:00"
+                    data-alphabetic="nexus 2"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Nexus+2">
+                    Nexus 2
+                </a>
+            
+                <a data-lastused="2024-10-01T19:54:00"
+                    data-alphabetic="crypto-agile"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=crypto-agile">
+                    crypto-agile
+                </a>
+            
+                <a data-lastused="2024-08-14T07:00:00"
+                    data-alphabetic="post quantum cryptography"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Post+Quantum+Cryptography">
+                    Post Quantum Cryptography
+                </a>
+            
+                <a data-lastused="2024-07-30T07:00:00"
+                    data-alphabetic="swap-c"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=SWaP-C">
+                    SWaP-C
+                </a>
+            
+                <a data-lastused="2024-04-11T14:55:00"
+                    data-alphabetic="embedded world"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=embedded+world">
+                    embedded world
+                </a>
+            
+                <a data-lastused="2024-04-11T14:55:00"
+                    data-alphabetic="5g oran"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=5G+ORAN">
+                    5G ORAN
+                </a>
+            
+                <a data-lastused="2024-03-28T19:30:00"
+                    data-alphabetic="sustainability"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=sustainability">
+                    sustainability
+                </a>
+            
+                <a data-lastused="2024-03-01T08:00:00"
+                    data-alphabetic="infotainment"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Infotainment">
+                    Infotainment
+                </a>
+            
+                <a data-lastused="2023-10-31T07:00:00"
+                    data-alphabetic="platform firmware resilience"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Platform+Firmware+Resilience">
+                    Platform Firmware Resilience
+                </a>
+            
+                <a data-lastused="2023-06-09T20:00:00"
+                    data-alphabetic="system control"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=system+control">
+                    system control
+                </a>
+            
+                <a data-lastused="2022-12-12T08:00:00"
+                    data-alphabetic="supply chain"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Supply+Chain">
+                    Supply Chain
+                </a>
+            
+                <a data-lastused="2022-08-30T07:00:00"
+                    data-alphabetic="motor control"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=motor+control">
+                    motor control
+                </a>
+            
+                <a data-lastused="2021-11-10T08:00:00"
+                    data-alphabetic="certuspro-nx"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=CertusPro-NX">
+                    CertusPro-NX
+                </a>
+            
+                <a data-lastused="2021-09-28T20:00:00"
+                    data-alphabetic="supplyguard"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=SupplyGuard">
+                    SupplyGuard
+                </a>
+            
+                <a data-lastused="2021-08-25T19:55:00"
+                    data-alphabetic="certus-nx"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Certus-NX">
+                    Certus-NX
+                </a>
+            
+                <a data-lastused="2021-03-31T07:00:00"
+                    data-alphabetic="crosslink-nx"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=CrossLink-NX">
+                    CrossLink-NX
+                </a>
+            
+                <a data-lastused="2021-03-01T08:00:00"
+                    data-alphabetic="mvision"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=mVision">
+                    mVision
+                </a>
+            
+                <a data-lastused="2020-06-04T18:45:00"
+                    data-alphabetic="lattice diamond"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Lattice+Diamond">
+                    Lattice Diamond
+                </a>
+            
+                <a data-lastused="2018-05-24T22:34:00"
+                    data-alphabetic="displayport"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=DisplayPort">
+                    DisplayPort
+                </a>
+            
+                <a data-lastused="2016-07-07T07:00:00"
+                    data-alphabetic="usb type-c"
+                    data-entrycount="3"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=USB+Type-C">
+                    USB Type-C
+                </a>
+            
+                <a data-lastused="2025-05-23T19:54:00"
+                    data-alphabetic="quantum computing"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Quantum+computing">
+                    Quantum computing
+                </a>
+            
+                <a data-lastused="2025-05-20T19:54:00"
+                    data-alphabetic="amr"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=AMR">
+                    AMR
+                </a>
+            
+                <a data-lastused="2025-05-20T19:54:00"
+                    data-alphabetic="sensor fusion"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Sensor+Fusion">
+                    Sensor Fusion
+                </a>
+            
+                <a data-lastused="2025-04-18T19:54:00"
+                    data-alphabetic="data provenance"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Data+Provenance">
+                    Data Provenance
+                </a>
+            
+                <a data-lastused="2025-04-18T19:54:00"
+                    data-alphabetic="crypto agility"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=crypto+agility">
+                    crypto agility
+                </a>
+            
+                <a data-lastused="2025-04-04T19:54:00"
+                    data-alphabetic="bitstream"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=bitstream">
+                    bitstream
+                </a>
+            
+                <a data-lastused="2025-02-28T20:54:00"
+                    data-alphabetic="timing constraints"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=timing+constraints">
+                    timing constraints
+                </a>
+            
+                <a data-lastused="2025-01-17T21:00:00"
+                    data-alphabetic="hirel"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=HiRel">
+                    HiRel
+                </a>
+            
+                <a data-lastused="2024-10-01T19:54:00"
+                    data-alphabetic="cyberattacks"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=cyberattacks">
+                    cyberattacks
+                </a>
+            
+                <a data-lastused="2024-06-28T07:00:00"
+                    data-alphabetic="risc-v"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=RISC-V">
+                    RISC-V
+                </a>
+            
+                <a data-lastused="2024-06-28T07:00:00"
+                    data-alphabetic="freertos"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=FreeRTOS">
+                    FreeRTOS
+                </a>
+            
+                <a data-lastused="2024-04-18T19:54:00"
+                    data-alphabetic="opc-ua"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=OPC-UA">
+                    OPC-UA
+                </a>
+            
+                <a data-lastused="2024-03-28T19:30:00"
+                    data-alphabetic="hyperloop"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=hyperloop">
+                    hyperloop
+                </a>
+            
+                <a data-lastused="2024-03-01T08:00:00"
+                    data-alphabetic="fusa"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=FuSa">
+                    FuSa
+                </a>
+            
+                <a data-lastused="2024-03-01T08:00:00"
+                    data-alphabetic="ev"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=EV">
+                    EV
+                </a>
+            
+                <a data-lastused="2023-09-26T19:54:00"
+                    data-alphabetic="usb"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=USB">
+                    USB
+                </a>
+            
+                <a data-lastused="2023-08-24T16:43:00"
+                    data-alphabetic="application design"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=application+design">
+                    application design
+                </a>
+            
+                <a data-lastused="2023-06-09T20:00:00"
+                    data-alphabetic="control fpga"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Control+FPGA">
+                    Control FPGA
+                </a>
+            
+                <a data-lastused="2023-05-25T07:00:00"
+                    data-alphabetic="network security"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=network+security">
+                    network security
+                </a>
+            
+                <a data-lastused="2023-01-04T20:55:00"
+                    data-alphabetic="aerospace and defense"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Aerospace+and+defense">
+                    Aerospace and defense
+                </a>
+            
+                <a data-lastused="2022-06-09T07:00:00"
+                    data-alphabetic="leo"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=LEO">
+                    LEO
+                </a>
+            
+                <a data-lastused="2022-05-03T07:00:00"
+                    data-alphabetic="design tools"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Design+Tools">
+                    Design Tools
+                </a>
+            
+                <a data-lastused="2022-02-08T08:00:00"
+                    data-alphabetic="lattice nexus"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Lattice+Nexus">
+                    Lattice Nexus
+                </a>
+            
+                <a data-lastused="2021-12-15T08:00:00"
+                    data-alphabetic="lattice radiant"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Lattice+Radiant">
+                    Lattice Radiant
+                </a>
+            
+                <a data-lastused="2021-08-24T18:03:00"
+                    data-alphabetic="fd-soi"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=FD-SOI">
+                    FD-SOI
+                </a>
+            
+                <a data-lastused="2021-04-07T20:25:00"
+                    data-alphabetic="mach-nx"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Mach-NX">
+                    Mach-NX
+                </a>
+            
+                <a data-lastused="2019-11-01T18:05:00"
+                    data-alphabetic="consumer"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Consumer">
+                    Consumer
+                </a>
+            
+                <a data-lastused="2019-04-10T16:44:00"
+                    data-alphabetic="fpgas in machine vision"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=FPGAs+in+machine+vision">
+                    FPGAs in machine vision
+                </a>
+            
+                <a data-lastused="2019-04-10T16:44:00"
+                    data-alphabetic="object detection"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=object+detection">
+                    object detection
+                </a>
+            
+                <a data-lastused="2018-09-26T07:00:00"
+                    data-alphabetic="smart factory"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=smart+factory">
+                    smart factory
+                </a>
+            
+                <a data-lastused="2018-08-21T07:00:00"
+                    data-alphabetic="inferencing"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=Inferencing">
+                    Inferencing
+                </a>
+            
+                <a data-lastused="2018-05-24T22:34:00"
+                    data-alphabetic="vip"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=VIP">
+                    VIP
+                </a>
+            
+                <a data-lastused="2018-03-20T07:00:00"
+                    data-alphabetic="ar"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=AR">
+                    AR
+                </a>
+            
+                <a data-lastused="2018-03-01T08:00:00"
+                    data-alphabetic="cpld"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=CPLD">
+                    CPLD
+                </a>
+            
+                <a data-lastused="2017-03-28T07:00:00"
+                    data-alphabetic="hdr"
+                    data-entrycount="2"
+                    class="wb-weight0"
+                    href="/en/Blog?tag=HDR">
+                    HDR
+                </a>
+            
+    </div>
+
+</div>
+
+
+<!-- START CROSS-CELL NAVIGATION -->
+
+    
+
+<!-- END CROSS-CELL NAVIGATION -->
+
+        </aside>
+    </div>
+    <footer id="bottom">
+        
+    </footer>
+</div>
+
+      
+	
+
+<div class="stripeContainer footerStripe">
+	<div class="stripeContent">
+            <div class="line">
+                <div class="unit size2of7">
+					<img src="/images/Lattice_Logo_Yellow_White_Tagline.png" width="200px">
+				</div>
+                <div class="unit size4of7">
+		    	    
+                        
+				            <div class="unit size1of3">
+                                
+                                <h4>ABOUT LATTICE</h4>
+<ul>
+    <li><a href="https://www.latticesemi.com/About">Our Company</a></li>
+    <li><a href="https://www.latticesemi.com/About/Newsroom">Newsroom</a></li>
+    <li><a href="http://ir.latticesemi.com">Investor Relations</a></li>
+    <li><a href="https://www.latticesemi.com/About/Jobs">Careers</a></li>
+    <li><a href="https://www.latticesemi.com/Accounts/YourAccount/NewsletterSubscriptions">Newsletter</a></li>
+</ul>
+				            </div> 
+                        
+				            <div class="unit size1of3">
+                                
+                                <h4>SALES</h4>
+<ul>
+       <li><a href="https://www.latticesemi.com/Buy">Americas</a></li>
+        <li><a href="https://www.latticesemi.com/Buy">Europe &amp; Africa</a></li>
+        <li><a href="https://www.latticesemi.com/Buy">Asia Pacific</a></li>
+        <li><a href="https://www.latticesemi.com/Buy/BuyOnline">Online Store</a></li>
+</ul>
+				            </div> 
+                        
+				            <div class="unit size1of3">
+                                
+                                <h4>SUPPORT</h4>
+<ul>
+    <li><a href="https://www.latticesemi.com/Support/SubmitTechSupport">Technical Support</a></li>
+    <li><a href="https://www.latticesemi.com/Support/Licensing">Software Licensing</a></li>
+    <li><a href="https://www.latticesemi.com/Support/Partner-Network">Partner Network</a></li>
+    <li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices">Legacy Devices &amp; Software</a></li>
+    <li><a href="https://www.latticesemi-insights.com/">Training</a></li>
+    <li><a href="https://www.latticesemi.com/About/ContactUs">Contact Us</a></li>
+</ul>
+				            </div> 
+                         
+                </div>
+                <div class="unit size1of7 lastUnit rText">
+                    <div class="title"><h4>FOLLOW</h4></div>
+					<div>
+			        
+
+		    <div class="line flatList iconList">
+			    
+				    <div class="unit size1of6">
+					  
+                         <a href="https://www.linkedin.com/company/lattice-semiconductor" aria-label="LinkedIn">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.facebook.com/latticesemi" aria-label="Facebook">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.twitter.com/latticesemi" aria-label="Twitter">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.youtube.com/latticesemiconductor" aria-label="YouTube">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.weibo.com/latticesemi" aria-label="Weibo">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+		    </div>
+
+            <img src="https://www.latticesemi.com/images/Qrcode_for_Lattice_sm.gif" alt="Lattice QR code">
+                    </div>
+			    </div>
+            </div>
+            <div class="line">
+                <div class="unit size1of1 lastUnit">
+                    <ul class="flatList smallList">
+                        <li><span>&copy;2025 Lattice Semiconductor</span> | </li>
+                        <li>
+<a href="https://www.latticesemi.com/About/LegalNotices.aspx">
+Legal Notices
+</a>
+|
+</li>
+<li>
+<a href="https://www.latticesemi.com/About/LegalNotices/PrivacyPolicy.aspx">
+Privacy Policy
+</a>
+|
+</li>
+<li>
+<a href="https://www.latticesemi.com/About/Sitemap.aspx">
+Site Map
+</a>
+|
+</li>
+<li>
+<a href="https://www.latticesemi.com/About/UseOfCookies.aspx">
+Use of Cookies
+</a>
+|
+</li>
+<li>
+<a href="https://www.latticesemi.com/About/LegalNotices/AccessibilityStatement.aspx">Accessibility Statement</a>
+</li>
+                    </ul>
+                    
+                </div>
+            </div>
+	</div>
+</div>
+
+  </form>      
+      <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','/js/analytics.js','ga');
+ 
+  ga('create', 'UA-2724384-1', 'auto');
+ga('require', 'linkid', 'linkid.js');
+var urlCapture = /(\/en|\/ja\-jp|\/zh\-cn)?([^.]+)(.aspx)?/ig;
+var urlPieces = urlCapture.exec(window.location.pathname);
+
+if(urlPieces[2] != undefined)
+     ga('set', 'page', urlPieces[2]);
+
+  ga('send', 'pageview');
+
+jQuery('a[href*=latticestore]').each(function () {
+      jQuery(this).on('click', function() {
+        ga('send', 'event', 'Outgoing store link', 'click', jQuery(this).text());
+      });
+	  });
+
+jQuery('a[href*=Buy]').each(function () {
+      jQuery(this).on('click', function() {
+        ga('send', 'event', 'Contact Sales Button', 'click', jQuery(this).text());
+      });
+	  });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src=https://www.googletagmanager.com/gtag/js?id=G-4EQQCB3EBE></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4EQQCB3EBE');
+</script>
+
+  
+  <!--   <script type="text/javascript" src="/js/SitecoreClientTracking.js"></script> -->
+    <script type="text/javascript" src="/js/video.js"></script>
+    <script type="text/javascript">
+            jQuery.noConflict();
+            videojs.options.flash.swf = "/js/video-js.swf"
+    </script>
+    <script type="text/javascript" src="/js/lsc.js"></script>
+  
+      
+  </body>
+</html>
+

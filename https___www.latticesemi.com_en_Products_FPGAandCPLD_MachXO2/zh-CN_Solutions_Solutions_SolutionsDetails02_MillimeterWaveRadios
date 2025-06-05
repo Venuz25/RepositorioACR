@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+
+
+
+
+<!--[if IE 7]>    <html class="ie lt-ie9 ie7" lang="zh" xml:lang="zh" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9 ie8" lang="zh" xml:lang="zh" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 9]>    <html class="ie ie9" lang="zh" xml:lang="zh" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="zh" xml:lang="zh" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+<!-- OneTrust Cookies Consent Notice start for www.latticesemi.com -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/8ce0ef32-b483-40ef-a516-d6ebfa92ee46-test/OtAutoBlock.js" ></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="8ce0ef32-b483-40ef-a516-d6ebfa92ee46-test" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for www.latticesemi.com -->
+<head id="hHeadTag">
+
+	<!-- Google Tag Manager -->
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+})(window,document,'script','dataLayer','GTM-MZ9QSXR');</script>
+
+<!-- End Google Tag Manager -->
+
+<!-- Microsoft Clarity - Heatmap -->
+<script>
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "dy0r78kpm3");
+</script>
+<!--End Microsoft Clarity - Heatmap -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>
+	毫米波无线通信
+</title><meta name="keywords" content="HetNet Millimeter Wave Radio, Lattice Enable E-band Radio, Lattice HetNet E band, Millimeter Wave HetNet  " /><meta name="description" content="实现V波段和E波段无线通信" /><link rel="icon" type="image/x-icon" href="/images/favicon.ico" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /><meta http-equiv="content-type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="VIcurrentDateTime" content="638843328072211938" />
+<script type="text/javascript" src="/layouts/system/VisitorIdentification.js"></script>
+
+	<!-- Conditional Loading of Swiper Stylesheet -->
+<script type="text/javascript">
+    if (window.innerWidth < 768 || (window.innerWidth >= 768 && window.innerWidth <= 1024)) {
+    // Create a link element for the stylesheet
+    var stylesheetLink = document.createElement("link");
+    stylesheetLink.rel = "stylesheet";
+    stylesheetLink.type = "text/css";
+    stylesheetLink.href = "/css/swiperslider.css";
+
+    // Append the link to the head of the document
+    document.head.appendChild(stylesheetLink);
+	
+}
+
+</script>
+        <link type="text/css" href="/css/video-js.css" rel="stylesheet">
+        <!--[if lte IE 7]>
+        <link rel="stylesheet" type="text/css" href="http://www.latticesemi.com/css/video-js-ie7.css" />
+        <![endif]-->
+        <link type="text/css" rel="stylesheet" href="/css/lsc.css">
+
+        
+     
+        <script type="text/javascript">
+            // IE console fix
+            var console = console || { log: function () { }, warn: function () { } };
+            window.lattice = window.lattice || {};
+
+            var $j = window.$j = jQuery.noConflict();
+
+            $j(function () {
+                $j(window).load(function () {
+                    lattice.init($j);
+                });
+            });
+        </script>
+        <script type = "text/javascript">
+            function notificationClickJQuery() {
+                jQuery.ajax({
+                    type: "GET",
+                    url: "~/Services/SitewideNotification.svc/UpdateNotificationforUser",
+                    data: '{currentnotificationid: "' + $("#lblcurrentNotificationID")[0].value + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        jQuery('#dNotificationBar').hide();
+                        return false;
+                    },
+                    failure: function(response) {
+                        alert(response.d);
+                        return true;
+                    }
+                });
+            }
+            function privacypolicyClickJQuery() {
+                jQuery.ajax({
+                    type: "GET",
+                    url: "~/Services/SitewideNotification.svc/UpdatePrivacyPolicyforUser",
+                    data: '{currentnotificationid: "' + $("#lblcurrentPrivacyPolicyID")[0].value + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        jQuery('#dPrivacyPolicyNotificationBar').hide();
+                        return false;
+                    },
+                    failure: function(response) {
+                        alert(response.d);
+                        return true;
+                    }
+                });
+            }
+        </script>
+      <script type="text/javascript" src="/js/jquery.tablesorter.min.js"></script>
+    
+
+	 <script type="text/javascript">
+	 function expiredReCaptcha() 
+{
+    //This method will execute only if Google ReCaptcha expired
+    jQuery("#RecaptchaValidHiddenField").val(""); // making hidden textbox empty 
+	jQuery('#CaptchaErrorMessage').html('Captcha verification failed');  
+			jQuery('#CaptchaErrorMessage').css('color',"red");
+}
+	  var verifyCallback = function(response) {
+         jQuery("#RecaptchaValidHiddenField").val("valid");
+		 if (jQuery("#RecaptchaValidHiddenField").val() !== '') {  
+            //jQuery('#CaptchaErrorMessage').css('color', 'green').html('Success!');  
+		     jQuery(".Recaptcha span.error-message").remove();
+		     jQuery(".form-buttons p.error").attr("style", "display:none");
+        }  else{
+		  document.getElementById("CaptchaErrorMessage").innerHTML = "Required Field";
+		  }
+      };
+  var onloadCallback = function() {
+	 grecaptcha.render('RecaptchaValidHiddenField', {
+          'sitekey' : '6Lci1lYbAAAAACrENFTJJIk2M8u7qa-d2_6O6qaw',
+          'callback' : verifyCallback
+        });
+  };
+</script>
+	  <script src="https://www.recaptcha.net/recaptcha/api.js?onload=onloadCallback"></script>
+
+                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="NLFKM-QREF5-ZS5GY-TB9ZU-TEUFQ",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"NLFKM-QREF5-ZS5GY-TB9ZU-TEUFQ",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="xo7ju7axgz7iw2b3tada-f-9199fe6b8-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"39","ak.cp":"1093151","ak.ai":parseInt("650564",10),"ak.ol":"0","ak.cr":51,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"392b20c4","ak.r":49140,"ak.a2":e,"ak.m":"b","ak.n":"ff","ak.bpcip":"187.190.154.0","ak.cport":1353,"ak.gh":"23.36.183.235","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1748736006","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==R8/bu+GsUooBEth5S/89ndUvDvSqkgvJ8HmGa+BmoWp92yxz7dwYHn2OCgLgOO922+5KTUyU7uId78R3rkfbVEyMa0crKD84WBTU1iODiVGfxRRPyRO1XgHDfCfEepdn0zj8Jm1QX6Nki1ZQ9Mhrx6v7xO3S66006hZZNuzNLgnzZYoqzdTHIDBhW7yW0p9ITwve53HC2/wkLQm2viXqY9zNh/ENOfB4bqzwmKloXr/JLMVulBdEqey59RVIPiNrjfDvqEQbJDkWVkqL41zT3a21UI86qTAmmyvtWXs3VyEF9vSbE0yLRFpXSMy1dcDJzyPVBRcjfySSHFnEgwAujE/WNW7HI/RurwjgxCW8tFlEHat+0lO0SHtYeBc4qPKg8SuTIfXKWs1TaFkXkApdTBD2tpVLmKxTxSeBmN46r4E=","ak.pv":"34","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+  <body>
+  
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src=63
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <form method="post" action="/zh-CN/Solutions/Solutions/SolutionsDetails02/MillimeterWaveRadios" id="mainform">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['mainform'];
+if (!theForm) {
+    theForm = document.mainform;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D0E5B4D5" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="XXtlQA8SpZTDgPAsRgaHoB/DNTXHQ0fNXQTTxG8mLfsBNc44WMRQzSe2MT71rNQajGGzFaMWG2SP3CMnN7rXRRKphQ6ZK7PLnobKCbl/p8Ch/+HlgIUXTMNBpR0OBYU9BYBWBqJ/XNKSJ9F14vA1E8/LwYeQDy2qlRVMtlPrKYWSbiDI+KMseqBo7X6ZsdwUej65HRcStZS3ArzeczA9AbwQ4g1xOZiPeiP/2BWZLGy0brIRM+PdxyFMAGk58LZk7XUOXq6/je4ecaCX+GISt5K1j9k=" />
+</div>
+	
+	<script type="text/javascript">
+		var linkDeleteImageUrl = '/temp/iconcache/network/16x16/link_delete.png';
+	</script>
+	
+ 	<!-- END SYSTEM WIDE NOTIFICATION -->
+      
+    
+
+
+
+<!-- START STRIPE CONTAINER -->
+<div class="stripeContainer headerStripe darkBackground" id="JumpAssetMainNav">
+    <!-- START STRIPE CONTENT -->
+    <div  class="stripeContent stickyNav">
+        <div class="line">
+            <div class="unit size1of4">
+               <div id="desktoplogo">
+                 
+                           <a href="/zh-CN">
+                                <img src="/-/media/LatticeSemi/Images/Common/Logo.ashx?h=23&amp;la=zh-CN&amp;mw=144&amp;w=144" class="logo" alt="Lattice Semiconductor" width="144" height="23" />
+                            </a>
+                   
+                            <div class="line hamburgermenu">
+							 <div class="unit size1of7" id="mobilemenu"><img src="/images/menu.png" alt="en" width="22px" height="22px" /></div>
+							 
+							 <div class="unit size4of7" id="mobilelogo"><a href="/zh-CN">
+                                <img src="/-/media/LatticeSemi/Images/Common/Logo.ashx?h=23&amp;la=zh-CN&amp;mw=144&amp;w=144" class="logo" alt="Lattice Semiconductor" width="144" height="23" />
+                            </a></div>
+                            <div class="unit size2of7 lastUnit">
+							<div class="line">
+							<div  class="unit size1of3" id="profile"><img src="/images/profile_icon.png" alt="en" width="22px" height="22px" /></div>
+                                <div class="unit size1of3" id="language">
+                                  
+									<ul>
+                                        <li id="en"><img src='/images/flags/16x16/flag_usa.png' alt="en" /></li>
+                                        <li id="jp"><img src='/images/flags/16x16/flag_Japan.PNG' alt="ja" /></li>
+                                        <li id="cn"><img src='/images/flags/16x16/flag_china.png' alt="zh" /></li>
+                                    </ul>
+                                </div>
+                                <div class="unit size1of3 lastUnit" id="search"><img src="/images/searchmobile.png" alt="en" width="22px" height="22px" /></div>
+                                </div>
+								</div>
+                               
+                        </div>
+                    
+                    
+                   
+                </div> 
+			</div>
+			<div class="unit size3of4 lastUnit">
+			<div class="line">
+				<div class="unit size4of5">
+					<ul class="navItems">
+						<li class="primaryNavigation"><a href="https://www.latticesemi.com/zh-CN/Solutions" class="nULink">应用市场</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height5">
+		<li><a><span class="fakeLink">工业</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					汽车
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/SolutionCategories/Automotive">汽车解决方案概览</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails01/DriverAssistance">ADAS/驾驶员辅助系统</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails01/FunctionalSafety">功能安全</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails01/InVehicleInfotainment">信息娱乐系统</a></li><li><a href="https://www.latticesemi.com/zh-CN/Support/QualityAndReliability">质量和可靠性</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					工厂自动化
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails01/FunctionalSafety">功能安全</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/MachineVision">嵌入式视觉</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/SolutionCategories/Automotive">汽车</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/Robotics">AI/机器学习</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					其他工业领域
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/Medical">HDMI 接口桥接</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/Surveillance">视频监控</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					解决方案集合
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/Automate">Lattice Automate</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/Drive">Lattice Drive</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">通信</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					客户端计算
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/Notebooks">笔记本电脑/PC</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/Printers">打印机</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/Tablets">平板电脑</a></li>
+				</ul><h3>
+					解决方案集合
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/ORAN">Lattice ORAN</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					数据中心和边缘计算
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/PFR">平台固件保护恢复（PFR）</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails01/DatacenterSystemsServerSolutions">数据中心系统——服务器</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails01/DatacenterSystemsStorage">存储</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails01/DataCenterSwitches">交换机</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					无线
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails01/5G">5G Open RAN</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails01/HetNetSmallCellsSolutions">HetNet小型蜂窝网络</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/LowPowerRadios">低功耗无线通信</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/MillimeterWaveRadios">毫米波无线通信</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					有线
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Products/DesignSoftwareAndIP/IntellectualProperty/IPCore/IPCores01/10GbEthernetMAC">10Gbps以太网MAC</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails01/HitlessUpdates">无中断更新</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/IntelligentSFPModules">智能SFP</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/DesignSoftwareAndIP/IntellectualProperty/ReferenceDesigns/ReferenceDesign04/RGMIItoGMIIBridge">RGMII至GMII桥接</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">消费电子</span></a><div class="line menuContent">
+			<div class="unit size1of3">
+				<h3>
+					家庭
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/IoT">AI/机器学习</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/VRHMD">嵌入式视觉</a></li>
+				</ul>
+			</div><div class="unit size1of3">
+				<h3>
+					移动
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/SmartHomeSmartRoom">嵌入式视觉</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/SmartHomeControl">AI/机器学习</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h3>
+					解决方案集合
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Aerospace & Defense</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					Aerospace & Defense
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails01/Defense">Defense Overview</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails01/GuidanceSystems">Guidance Systems</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/Software-Defined-Radio">Software Defined Radio</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/Space">Space</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/UAVs">UAVs</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Security</span></a><div class="line menuContent">
+			<div class="unit size1of2">
+				<h3>
+					FPGA-Based Security
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Products/Lattice-FPGA-Security-Solutions">Security Overview</a></li>
+				</ul>
+			</div><div class="unit size1of2 lastUnit">
+				<h3>
+					Solution Stacks
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/zh-CN/Products" class="nULink">产品系列</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height3">
+		<li><a><span class="fakeLink">可编程逻辑</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					控制和安全
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/MachXO5-NX">MachXO5-NX</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/Mach-NX">Mach-NX</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/MachXO3D">MachXO3D</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/MachXO3">MachXO3</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/MachXO2">MachXO2</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/PowerAndClockDevices/PlatformManager2">L-ASC10</a></li>
+				</ul><h3>
+					FPGA平台
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/Avant">Lattice Avant</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/LatticeNexus">Lattice Nexus</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/Lattice-Nexus-2">Lattice Nexus 2</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					通用FPGA
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/Avant-X">Avant-X</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/Avant-G">Avant-G</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/Avant-E">Avant-E</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/Certus-N2">Certus-N2</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/CertusPro-NX">CertusPro-NX</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/Certus-NX">Certus-NX</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/ECP5">ECP5 & ECP5-5G</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					超低功耗
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/iCE40UltraPlus">iCE40 UltraPlus</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/iCE40Ultra">iCE40 Ultra</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/iCE40Ultra">iCE40 UltraLite</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/iCE40">iCE40 LP/HX</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					视频互连
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/CrossLink-NX">CrossLinkU-NX</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/CrossLink-NX">CrossLink-NX</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/CrossLinkPlus">CrossLinkPlus</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/FPGAandCPLD/CrossLink">CrossLink</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/zh-CN/Products">查看所有器件&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">软件工具</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					软件工具
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Products/DesignSoftwareAndIP/FPGAandLDS/LatticeDiamond">Lattice Diamond</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/DesignSoftwareAndIP/FPGAandLDS/LatticePropel">Lattice Propel</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/DesignSoftwareAndIP/FPGAandLDS/Radiant">Lattice Radiant</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/DesignSoftwareAndIP/AIML/LatticesensAIStudio">Lattice sensAI Studio</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/DesignSoftwareAndIP/AIML/Lattice-sensAI-Edge-Vision-Engine-SDK">Lattice sensAI EVE SDK</a></li><li><a href="https://www.latticesemi.com/zh-CN/Support/Licensing">软件许可</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/zh-CN/Products/DesignSoftwareAndIP">查看所有软件工具&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">解决方案</span></a><div class="line menuContent">
+			<div class="unit size1of3">
+				<h3>
+					解决方案
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails01/CommunitySourced">第三方资源</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=bb168d29ad6b40769878f160546890de&amp;active=demo">演示</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=6da9534f318a4969a6b5e7dc9081bdba&amp;active=ipcore">IP核</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=982db688d64345bbb3af29e62fee1dc3&amp;active=board">开发套件和开发板</a></li><li><a href="https://www.latticesemi.com/solutionsearch?qiptype=3614c818569f4eecb0602ba20a521a41&amp;active=refdesign">参考设计</a></li><li><a href="https://www.latticesemi.com/zh-CN/Products/ProgrammingHardware">可编程硬件</a></li>
+				</ul>
+			</div><div class="unit size1of3">
+				<h3>
+					解决方案集合
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/Automate">Lattice Automate</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/Drive">Lattice Drive</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/mVision">Lattice mVision</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/ORAN">Lattice ORAN</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/sensAI">Lattice sensAI</a></li><li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/LatticeSentry">Lattice Sentry</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h3>
+					FPGA-Based Security
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Products/Lattice-FPGA-Security-Solutions">Security Overview</a></li>
+				</ul>
+			</div><div class="unit size1of3 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/solutionsearch">查看所有解决方案&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/zh-CN/Support" class="nULink">技术支持</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height6">
+		<li><a><span class="fakeLink">技术支持</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					支持中心
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Support/AnswerDatabase">答案数据库</a></li><li><a href="https://www.latticesemi.com/zh-CN/Support">获得技术支持</a></li><li><a href="https://www.latticesemi.com/zh-CN/About/ContactUs">一般咨询</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/zh-CN/Support">探索帮助中心&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">许可证</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					软件许可
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Support/Licensing">工具器件支持</a></li><li><a href="https://www.latticesemi.com/Support/Licensing#purchase">购买软件许可</a></li><li><a href="https://www.latticesemi.com/zh-CN/Support/LatticeIPSupport">IP许可支持</a></li><li><a href="https://www.latticesemi.com/Support/Licensing/IPCore/IPCoreNew">获取新的IP许可</a></li><li><a href="https://www.latticesemi.com/zh-CN/Support/Lattice-IP-License-Bundles">IP License Bundles</a></li><li><a href="https://www.latticesemi.com/Support/Licensing/AcademicLicense/Academic%20License%20Request%20Form">学术许可申请</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">质量和可靠性</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					质量和可靠性
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Support/QualityAndReliability">质量和可靠性中心</a></li><li><a href="https://www.latticesemi.com/zh-CN/Support/QualityAndReliability/ExportClassification">出口分类信息</a></li><li><a href="https://www.latticesemi.com/zh-CN/Support/PCN">产品变更通知（PCN）</a></li><li><a href="https://www.latticesemi.com/zh-CN/Support/PartNumberReferenceGuide">部件编号参考指南</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">服务</span></a><div class="line menuContent">
+			<div class="unit size1of4">
+				<h3>
+					设计服务
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Support/LatticeDesignGroup">莱迪思设计团队（LDG）</a></li><li><a href="">莱迪思合作伙伴网络</a></li><li><a href="https://www.latticesemi.com/zh-CN/Support/ProductCustomization">产品服务</a></li>
+				</ul><h3>
+					编程
+				</h3><ul>
+					<li><a href="">编程服务合作伙伴</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					保障供应链安全
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Solutions/Solutions/SolutionsDetails02/LatticeSupplyGuard">Lattice SupplyGuard</a></li>
+				</ul>
+			</div><div class="unit size1of4">
+				<h3>
+					培训
+				</h3><ul>
+					<li><a href="https://www.latticesemi-insights.com/">Lattice Insights</a></li>
+				</ul>
+			</div><div class="unit size1of4 lastUnit">
+				<h3>
+					停产产品
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Support/MatureAndDiscontinuedDevices">成熟&停产器件</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">旧产品和软件</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					旧版本软件和文档
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Support/SoftwareArchive">软件存档</a></li><li><a href="https://www.latticesemi.com/zh-CN/Support/ASSPSoftwareArchive">矽映软件存档</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">Lattice Partner Network</span></a><div class="line menuContent">
+			<div class="unit size1of2">
+				<h3>
+					Partner Program
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Support/Partner-Network">Program Overview</a></li><li><a href="https://www.latticesemi.com/zh-CN/Support/Partners">Find Partners</a></li><li><a href="https://www.latticesemi.com/solutionsearch?&amp;qprovider=3e052bdbb99a4c2691d18011e3a24fdf,5233e49f3f684c95a9db94ab3aed059c,1355762face7416da88444b50acab913,edf1088dea6b4972b73b44fad51554ad,47f66166aa4d48599a7df5ef20cae2a2,14d45119e9ce435a962cd7b6c3036e78,a784f36edaf840f8b6908faf3443f7c2,71d36ac2ef8e488abc0bc0c5c4c4e7f3,b08027d6cadc4efdab09ed480e186731,e4fb27cb7bd24c4c96545dccbb6daed0,ea3c5a961c5649f68d8267ee43086d35,358ab1e5969245e5ab3ecf5964b1ec17​  ​">Explore Partner Solutions</a></li>
+				</ul>
+			</div><div class="unit size1of2 lastUnit">
+				<h3>
+					Partner Type
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=3fcabf6c16c647968c89942cd13e2a54">IP Cores</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=d6eef479dc0c4e109dec6f5de39d5812">Design Services</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=08cc134c4b4f46e08010e44dfd4b7043">Boards</a></li><li><a href="https://www.latticesemi.com/support/partners.aspx?qparttype=a26cc42771d949b5837f9be415f95e2e">Programming Services</a></li><li><a href="https://www.latticesemi.com/zh-CN/Support/Partners">EDA </a></li><li><a href="https://www.latticesemi.com/zh-CN/Support/Partners">Embedded</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/zh-CN/Buy/SalesLocator" class="nULink">立即购买</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height5">
+		<li><a><span class="fakeLink">美洲</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					销售导航
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=74F89870335446AB993BD70BB67F209E">巴西</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=CC8751866A1A405AA93FB2C743A61159">加拿大</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=3F844FA3FC034BD79249267F15208E65">墨西哥</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=02D1DC98A6F949BAB8EB61B94AA2B274">波多黎各</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=B22CA382BCD9497990EFBEACF5897407">美国</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=4721A7D5228C4A459CCDB00C4AD7B745">查看全部&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">欧洲和非洲</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					销售导航
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=DFD74C9F2D4B434BB400F68E0CAEC109">芬兰</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=171D28DDC08349C1A8267772FDFEB442">法国</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=78B777A06EF845BBA57839C084B0DB66">德国</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=49D9E3960E014D858D6FDAE3D9118C0E">以色列</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=341C8947085D47FCA57ABE17B863962F">意大利</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=A664784F3FC44C248523D10FDAD2E3E7">挪威</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=CA759DC8DE6A4C24B6214F25920BEA8A">西班牙</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=C6F72D45022A445BA3ACBA604F9F44E1">瑞典</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=A3769F1BD0DF41E18F11F51A02A45DCE">英国</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=56406BCD8BF24AD3B2FB1D36EAE47C14">查看全部&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">亚太地区</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					销售导航
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=7F8D51D079FE48E38C541D9598987304">澳大利亚</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=1BF85C6578DF4AE7919633E4AFF9416E">中国</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=ACBD88BEC2884BF19239F551E81055B7">印度</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=629E693BD3BE454BA6C118B8FE49DDEB">印度尼西亚</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=C1F83B11B8CA42EDA0E74619D3408D89">日本</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=5B0541ED60124FC7B3BAE82DC6E8A13D">新加坡</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=B02FB08BD35247598F9FAE9D72B409AB">韩国</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=756801F046C24109B9744313514EFD9D">台湾地区</a></li><li><a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=176373FF64DE4509A517E896C8DF0B97">越南</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/Buy/SalesLocator.aspx?loc=537DBFB9B472419A9CACF6739C609178">查看全部&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">在线商店</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					莱迪思产品
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/Buy/BuyOnline/SiliconDevices">器件</a></li><li><a href="https://www.latticesemi.com/zh-CN/Buy/BuyOnline/SoftwareCablesandBoards">软件、电缆、开发板等</a></li>
+				</ul>
+			</div><div class="unit size1of1 lastUnit">
+				<h4>
+					<a href="https://www.latticesemi.com/zh-CN/Buy/BuyOnline">在线购买&nbsp;&nbsp;&nbsp;&nbsp; &#8594;</a>
+				</h4>
+			</div>
+		</div></li><li><a><span class="fakeLink">停产的器件</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					停产的产品
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices.aspx#ProgrammableLogicDistributors">Rochester Electronics</a></li><li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices.aspx#ProgrammableLogicDistributors">Arrow Electronics</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/zh-CN/Blog" class="nULink">博客文章</a></li><li class="primaryNavigation"><a href="https://www.latticesemi.com/zh-CN/About" class="nULink">关于我们</a><div class="menuDetails">
+	<ul class="flatList actionItems stripeContent height4">
+		<li><a><span class="fakeLink">关于我们</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					关于莱迪思
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/About">关于我们</a></li><li><a href="https://www.latticesemi.com/zh-CN/About/ESG">企业社会责任</a></li><li><a href="https://www.latticesemi.com/zh-CN/About/ContactUs">联系我们</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">投资者关系</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					投资者关系
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/About/InvestorRelations">投资者信息概览</a></li><li><a href="https://ir.latticesemi.com/investor-overview/shareholder-services/online-investor-kit">投资者实用信息</a></li><li><a href="https://ir.latticesemi.com/investor-overview/shareholder-services/investor-faqs">投资者FAQ</a></li><li><a href="https://ir.latticesemi.com/investor-overview/corporate-governance/board-of-directors">董事会成员</a></li><li><a href="https://www.latticesemi.com/zh-CN/About/Management">管理团队</a></li><li><a href="https://ir.latticesemi.com/investor-overview/highlights">企业运营管理</a></li><li><a href="https://ir.latticesemi.com/investor-overview/financial-information/sec-filings">提交美国证交会的文档</a></li><li><a href="https://ir.latticesemi.com/investor-overview/quarterly-earnings">季度收益</a></li><li><a href="https://ir.latticesemi.com/investor-overview/analysts">分析师</a></li><li><a href="https://www.latticesemi.com/zh-CN/About/EthicsContactInformation">商业道德</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">新闻中心</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					新闻中心
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/About/Newsroom">新闻发布</a></li><li><a href="https://www.latticesemi.com/zh-CN/Blog">博客文章</a></li><li><a href="https://www.latticesemi.com/zh-CN/About/Newsroom/Events">即将到来的产品活动</a></li><li><a href="https://www.latticesemi.com/zh-CN/About/Newsroom/ImageLibrary">图片库</a></li><li><a href="https://www.latticesemi.com/zh-CN/About/Newsroom/VideoLibrary">视频库</a></li><li><a href="https://www.latticesemi.com/zh-CN/About/Newsroom/Webinars">网络研讨会</a></li><li><a href="https://www.latticesemi.com/zh-CN/About/Newsroom/MediaContacts">媒体联络</a></li>
+				</ul>
+			</div>
+		</div></li><li><a><span class="fakeLink">职业中心</span></a><div class="line menuContent">
+			<div class="unit size1of1 lastUnit">
+				<h3>
+					职业中心
+				</h3><ul>
+					<li><a href="https://www.latticesemi.com/zh-CN/About/Jobs">职业中心</a></li><li><a href="https://careers-latticesemi.icims.com/jobs/intro?hashed=-625919477&amp;mobile=false&amp;width=1378&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-480&amp;jun1offset=-420">招聘中心</a></li><li><a href="https://www.latticesemi.com/zh-CN/About/Jobs/OurBenefits">员工福利</a></li>
+				</ul>
+			</div>
+		</div></li>
+	</ul>
+</div></li>
+						<li class="flushRight" onclick="showloginDropdown()">
+						<div class="dropdown dropbtn">
+						
+						<div id="myDropdown" class="dropdown-content">
+						
+<a href="/zh-CN/Accounts/SignIn" id="header_0_ctl06_SignInLink">登录</a>
+						
+<div class="nooverflow"><a href="/zh-CN/Accounts/AccountRegister" id="header_0_ctl07_aRegister">注册</a></div>
+						</div>
+						</div>
+						</li>
+						<li class="languageSelectionContainer  noOver">
+							
+
+    
+        <ul class="languageOverlay darkBackground" id="languageOverlay">
+			
+					<li> 
+                        
+						<a href="/en/Solutions/Solutions/SolutionsDetails02/MillimeterWaveRadios" >
+                            <img src='/images/flags/16x16/flag_usa.png' alt="en"/>
+						</a>
+					</li>
+				
+					<li> 
+                        
+						<a href="/ja-JP/Solutions/Solutions/SolutionsDetails02/MillimeterWaveRadios" >
+                            <img src='/images/flags/16x16/flag_Japan.PNG' alt="ja"/>
+						</a>
+					</li>
+				
+					<li class='visibleLanguage'> 
+                        
+						<a href="/zh-CN/Solutions/Solutions/SolutionsDetails02/MillimeterWaveRadios" >
+                            <img src='/images/flags/16x16/flag_china.png' alt="zh"/>
+						</a>
+					</li>
+				
+        </ul>
+         <span id="curlang" style="display:none;">zh-CN</span>
+
+						</li>
+					</ul> 
+				</div>
+				<div class="unit size1of5 lastUnit">
+					
+					<div id="header_0_CoveoSearchPanel" class="searchwrapper">
+	
+                        <label for="txtboxSearch">
+						<input name="header_0$ctl05$TXTQuery" type="text" id="header_0_ctl05_TXTQuery" aria-label="Enter search text" autocomplete="off" placeHolder="Search Site" onkeydown="if (event.keyCode == 13) { location.href = &#39;/Search.aspx?&amp;lcid=9&amp;q=&#39; + encodeURIComponent(document.getElementById(&#39;header_0_ctl05_TXTQuery&#39;).value) + &#39;&amp;t=&#39; + (-new Date().getTimezoneOffset()); return false; }" />
+							
+                                
+                        </label>
+                       <img alt="" id="header_0_ctl05_BTNSearch" title="Search" aria-label="Search Site" class="search-button" onclick="location.href = &#39;/Search.aspx?&amp;lcid=9&amp;q=&#39; + encodeURIComponent(document.getElementById(&#39;header_0_ctl05_TXTQuery&#39;).value) + &#39;&amp;t=&#39; + (-new Date().getTimezoneOffset()); return false;" src="/images/search.png" />
+			        
+                       
+                    
+</div>
+				</div>
+			</div>
+			</div>
+        </div>
+    </div>
+	
+</div>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function showloginDropdown() {
+  if (!document.getElementById("myDropdown").classList.contains("show"))
+  document.getElementById("myDropdown").classList.toggle("show");
+  else
+  document.getElementById("myDropdown").classList.remove("show");
+  var menu = document.getElementsByClassName("menuDetails persistMenu");
+  if (menu.length > 0)
+  {
+   //menu[0].style.display = "none";
+   menu[0].parentElement.firstChild.style = "";
+   menu[0].classList.add("hiddenNavigation");
+   menu[0].classList.remove("persistMenu");
+   
+   }
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+    
+    
+
+
+
+<div  class="stripeContainer stripeOne solutionsHeader">
+     <a href="" id="myBtn" class="BackTopActive" aria-label="Back To Top"> </a>
+        <div class="stripeContent ">
+        <!-- END LINE -->
+        <!-- START LINE -->
+        <div class="line flushBottom">
+            <!-- START UNIT -->
+
+            <!-- END UNIT -->
+
+            <!-- START UNIT --> 
+            <div  class="unit size1of1 pageTitle lastUnit">
+                <div class="line">
+                    <div class="unit size1of1">
+                        <!-- START PAGE TITLE -->
+                      
+
+
+<ul class="breadcrumb">
+     <li></li>
+    
+            <li>
+                <a id="header_1_breadcrumb_0_repBreadcrumb_hTags_0" href="/zh-CN/Solutions">应用</a> >
+
+            </li>
+        
+    <li>毫米波无线通信</li>
+</ul>
+<!-- END BREADCRUMBS -->
+
+                      <h1>
+                            HetNet毫米波无线通信解决方案
+                      </h1>
+                      <h2>实现V波段和E波段无线通信</h2>
+                        </div>
+                    
+                        <!-- END PAGE TITLE -->
+                    </div>
+            </div>
+            <!-- END UNIT -->
+
+        </div>
+        <!-- END LINE -->
+    </div>
+    <!-- END STRIPE CONTENT -->
+
+
+</div>
+
+
+     <!-- START SYSTEM WIDE NOTIFICATION -->
+	
+	
+
+<!-- START STRIPE CONTAINER -->
+<div class="stripeContainer stripeTwo">
+
+
+    <!-- START STRIPE CONTENT -->
+    <div class="stripeContent">
+
+
+
+        <!-- START LINE -->
+        <div class="line">
+            <div class="unit size1of4 flushLeft left-content">
+                
+
+
+<div class="leftcontentbarsection">
+    <div class="featuredproducts">
+          <h4></h4>
+        
+    </div>
+    <div class="featuredsolutions">
+         <h4></h4>
+        
+    </div>
+</div>
+
+
+<!-- START CROSS-CELL NAVIGATION -->
+
+    
+            <div class="sidebarNavBlock">
+            <div id="body_0_leftrail_1_Repeater1_ctl00_0_outerdiv_0">
+<!-- START LINK IMAGE MODULE -->
+<a href="http://ww3.latticesemi.com/Newsletter-Subscription-Campaign_SubscribetoLatticeCN.html"> 
+    
+    <br />
+    <img src="/-/media/LatticeSemi/Images/SidebarAds/Newsletter_Subscribe_cn.ashx?h=227&amp;la=zh-CN&amp;w=220" alt="Newsletter Subscription" width="220" height="227" /><br />
+     
+    
+</a>
+<!-- END  LINK IMAGE MODULE  -->
+</div>
+
+            </div>
+        
+
+<!-- END CROSS-CELL NAVIGATION -->
+
+            </div>
+            <div class="unit lastUnit size3of4 page-content">
+                
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f7a872fddd46d5"></script> 
+<script type="text/javascript">
+    var tweettext = 'Check out HetNet毫米波无线通信解决方案 from @latticesemi'; 
+    var addthis_share = addthis_share || {}
+    addthis_share = {
+	    passthrough : {
+	        twitter: {
+	            text: tweettext
+	        }
+	    }
+    }
+</script>
+ 
+<meta property="og:title" content="了解更多有关 HetNet毫米波无线通信解决方案 的信息，请点击 www.latticesemi.com! http://t.cn/RXUHWlF" />
+
+    <div class="addthisbutton">
+        
+        <!-- AddThis Button BEGIN -->
+       
+        <!-- AddThis Button END -->
+     <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
+    </div>
+    <div class="clear"></div>
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<!-- START Category Landing Block -->
+
+
+<div class="line">
+    <div class="unit size1of1 lastUnit">
+        
+<!-- START RICH TEXT FIELD SAMPLE -->
+<div id="body_0_content_1_rtDescription_Container" class="rich-text">
+	<p><strong>适用于ODU的低成本连接&mdash;&mdash;</strong> <a href="/zh-CN/Products/FPGAandCPLD/LatticeECP3">LatticeECP3</a>提供紧凑、基于SERDES的连接解决方案，适用于所有室外单元（ODU）无线通信，包括以太网交换和JESD204B接口。</p>
+<p><strong>灵活、瞬时启动的系统控制&mdash;&mdash;</strong>拥有嵌入式闪存和高I\O数的超低密度器件，如<a href="/zh-CN/Products/FPGAandCPLD/MachXO3">MachXO3</a>，提供复位发生、时钟处理、I/O扩展和桥接等特性，是用于系统控制功能的最佳选择。</p>
+<p><strong>集成的电源管理&mdash;&mdash;</strong>可编程、高精度、混合信号产品，如<a href="/zh-CN/Products/PowerAndClockDevices/PowerManager">Power Manager II</a>，提供多种电源管理功能，包括断电保护支持。</p>
+</div>
+<!-- END RICH TEXT FIELD SAMPLE -->
+    </div>
+
+   
+    <div class="unit size1of1 sharedRightGutter noLeftMargin">
+        
+    </div>
+
+    
+
+<!-- START RESPONSIVE VIDEO PLAYER -->
+<div id="body_0_content_1_videoplayer_0_divVideoPlayer" class="video-player">
+    
+</div>
+<!-- END RESPONSIVE VIDEO PLAYER -->
+
+
+</div>
+
+
+
+<!-- START Action Links Block -->
+
+        <ul class="action-links">
+    
+        </ul>
+    
+<!-- END Action Links Block -->
+
+
+<!-- END Category Landing Block -->
+
+
+            </div>
+             
+                                       
+            
+        </div>
+        <!-- END LINE -->
+        <!--START Tabbed Section -->
+        <div class="unit size1of1 page-content">
+            
+
+<!-- START CONTENT TAB WIDGET -->
+    
+            <!-- START TABBED CONTENT SECTION -->
+            
+                <h3 id="body_0_tabbedsection_0_rptTabs_ctl01_0_hSectionTitle_0" class="tabHeader">
+                            立即跳转到
+     </h3>
+ 
+            
+            <ul class="inlineList tBG clear">
+			
+        
+            <li>
+                <a href="#_CA7561D2D8E24E76BFE1929D445B00FF">
+                    框图
+                </a>
+            </li>
+        
+            <li>
+                <a href="#_033487BA6A52408DB18545F904167C41">
+                    文档
+                </a>
+            </li>
+        
+            <li>
+                <a href="#_C640B309478D466BA70393D5B52A9FE7">
+                    支持
+                </a>
+            </li>
+        
+            </ul>
+        
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_1" class="tabHeader">
+                <a id="_CA7561D2D8E24E76BFE1929D445B00FF">
+                    框图
+                </a>
+            </h3>
+                
+<!-- START DIAGRAM TAB CONTENT -->
+    <p id="body_0_tabbedsection_0_rptTabs_ctl01_1_ctl00_1_Container_1"></p>
+    
+            <img src="/-/media/LatticeSemi/Images/SolutionsImages/Market/WirelessMillimeterWaveSolution.ashx?mw=600&amp;mh=372&amp;hash=ACB5FDDEC28E637D9A7D9EADBA20D69002463147" alt="Millimeter Wave Radio Solution" />
+        
+<!-- START DIAGRAM TAB CONTENT -->
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_2" class="tabHeader">
+                <a id="_033487BA6A52408DB18545F904167C41">
+                    文档
+                </a>
+            </h3>
+                
+
+<!-- START DOCUMENT EXPLORER TAB -->
+<div>
+
+
+<script type="text/javascript">
+    $j(document).ready(function() {
+        document.cookie = "ZipDownload=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    });
+    
+</script>
+<script>
+    function temp() {
+        //var div = document.getElementById("demopopup");
+        //div.style.visibility = "visible";
+        //alert(div.style.visibility);
+    }
+    function showlogindiv(controlId) {
+        var control = document.getElementById(controlId);
+        control.style.display = "block";
+        return false;
+        //alert(document.body.bgColor);
+    }
+    function hidelogindiv(controlId) {
+        var control = document.getElementById(controlId);
+        control.style.display = "none";
+    }
+</script>
+
+
+<!-- START DOCUMENT EXPLORER -->
+<table class="fullSize docTypes">
+    
+    
+             <tbody>
+                 <tr>
+        
+                    <td class="active">
+                        <div class="docType">
+                            资讯资源
+                        </div>
+                        <ul>
+                        
+                                        <li>
+                                            <a href="/zh-CN/Solutions/Solutions/SolutionsDetails02/MillimeterWaveRadios?ActiveTab=Product+Brochure#_033487BA6A52408DB18545F904167C41"
+                                            class="activeLink"
+                                                onclick="return swapActive(this,'_C4E6169C339446D29D90BDE760A3A38C');">
+                                                Product Brochure 
+                                            </a>    
+                                        </li>
+                            
+                    </ul></td>
+            
+                </tr>
+            </tbody>
+        
+</table>
+<!-- START CONTENT TAB WIDGET -->
+<!-- END TABBED CONTENT TABS -->
+
+        <!-- Start category 资讯资源   -->            
+                
+                <!-- START Product Brochure document type listing SECTION -->
+                <table id="_C4E6169C339446D29D90BDE760A3A38C" class="docList fullSize activeDocList">
+                    
+                                <thead>
+                                        <tr>
+                                            <td class="noSort subscribeimg" aria-label="No value"></td>
+                                            <td class="noSort downloadimg" aria-label="No value"></td>
+                                            <th class="document-title headerSortDown">标题</th>
+                                            <th>编号</th>
+                                            <th>版本</th>
+                                            <th>日期</th>
+                                            <th>格式</th>
+                                            <th class="noSort">文件大小</th>
+                                        </tr>
+                                    </thead>
+									<tfoot>
+                                    <tr>
+                                        <td class="noSort checkbox lightYellowBackground">
+                                        
+                                          <span style="color:#FFF3D3;">  
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_checkSubAll" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$checkSubAll" disabled="disabled" onclick="swapCheckedSubProd(this.checked);" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_checkSubAll">a</label></span></span>
+                                        </td>
+                                        <td class="noSort checkbox lightestBlueBackground">
+                                        <input type="checkbox" id="checkAll" value="false" onclick="swapCheckedDocsProd(this.checked);" aria-label="No Text" />
+                                        </td>
+                                         <td colspan="6" class="noSort">
+                                       选择全部
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$SubscriptionButtonAlt" value="订阅文档更新通知" onclick="showlogindiv(&#39;demopopup&#39;);return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_SubscriptionButtonAlt" class="button disableSub" /> 
+                                        <input type="submit" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl00$DownloadButton" value="以Zip文件格式下载所选项" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_DownloadButton" class="button download" /> 
+                                        </td>
+                                    </tr> 
+                                        
+                                    </tfoot>
+                                     <tbody>
+                        
+                                    <tr>
+                                      <td class="checkbox lightYellowBackground" onclick="showlogindiv('demopopup')"> 
+                                          <span style="color:#FFF3D3;">    
+                                            <span class="aspNetDisabled"><input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_SubCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubCheckbox" disabled="disabled" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_SubCheckbox_0">a</label></span></span> 
+                                              
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$SubHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_SubHiddenField_0" value="{A0780119-C715-4ABA-B956-A549583CB42D}" />
+                                        </td>
+                                        <td class="checkbox lightestBlueBackground">
+                                            <span style="color:#D4ECF7;">  
+                                             <input id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_docCheckbox_0" type="checkbox" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docCheckbox" /><label for="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_docCheckbox_0">a</label></span>
+                                            <input type="hidden" name="body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$DocumentsRepeater$ctl00$DocumentTableRepeater$ctl00$DocumentListRepeater$ctl01$docHiddenField" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_DocumentsRepeater_2_DocumentTableRepeater_0_DocumentListRepeater_0_docHiddenField_0" value="{A0780119-C715-4ABA-B956-A549583CB42D}" />
+                                        </td>
+                                        <td class="document-title">
+                                            <a href="/view_document?document_id=50001">
+                                                Lattice HetNet Solutions Brochure
+                                            </a>
+                                            <br />
+                                            <span class="document-notes"></span>
+                                        </td>
+                                       
+                                        <td>I0234</td>
+                                        <td>1.0</td>
+                                        <td>11/12/2013</td>
+                                        <td>PDF</td>
+                                        <td>2.2 MB</td>
+                                    </tr>
+                        
+                                </tbody>                                 
+                        
+                </table>
+            
+         
+        <!-- END TABBED CONTENT SECTION -->
+    
+<script type="text/javascript">/* <![CDATA[ */
+jQuery(document).ready(
+	function() {
+		jQuery(".activeDocList").tablesorter(
+						{
+				
+				headers: {
+					
+					6: {sorter: false }
+				}
+			}
+		);
+	}
+);
+
+/* ]]> */</script>
+
+<span class="DocMsg"></span>
+<span id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_lmsg_2"></span>
+<div id="demopopup" style="width:300px;height:150px;display:none;border:4px solid #FFC222;left:60px;top:0;background-color:white;padding:10px; display:none;position:fixed;z-index:1000;top:50%;left:50%;margin-top:-75px;margin-left:-150px;">
+    
+    <h3>请登录网站账户之后订阅更新通知</h3>
+请登录或注册一个新账户。
+    <table style="margin-top:20px;">
+        <tr style="padding:10px;">
+            <td style="border-right:1px solid #D0D0D0;"><a id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_lnkloginbtn_2" href="javascript:__doPostBack(&#39;body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$lnkloginbtn&#39;,&#39;&#39;)">Login</a></td>
+            <td><a onclick="hidelogindiv(&#39;demopopup&#39;); return false;" id="body_0_tabbedsection_0_rptTabs_ctl01_2_SectionFileDownloads_2_NotLogin_2" href="javascript:__doPostBack(&#39;body_0$tabbedsection_0$rptTabs$ctl02$ctl01$SectionFileDownloads$NotLogin&#39;,&#39;&#39;)">Not Now</a></td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+</div>
+<!-- END DOCUMENT EXPLORER TAB -->
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+            <!-- START TABBED CONTENT SECTION -->
+            <h3 id="body_0_tabbedsection_0_rptTabs_hSectionTitle_3" class="tabHeader">
+                <a id="_C640B309478D466BA70393D5B52A9FE7">
+                    支持
+                </a>
+            </h3>
+                
+
+<!-- START KEY POINT SECTION  -->
+<div class="line">
+                
+            
+            
+                    
+                    <div class="unit size1of4">
+                        <h4>技术支持</h4>
+
+<p>有问题？我们来帮助您</p>
+
+    
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/zh-CN/Products/DesignSoftwareAndIP">
+                                    设计软件
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/zh-CN/Support">
+                                    获得技术支持
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+        
+
+        
+                    </div>
+
+                
+                    
+                    <div class="unit size1of4">
+                        <h4>许可证</h4>
+
+<p>获得您需要的软件和IP许可证</p>
+
+    
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/zh-CN/Support/Licensing">
+                                    莱迪思软件许可证
+                                </a>
+                            
+                            
+                        </li>
+                    
+                        <li>
+                            
+                                <a href="/zh-CN/Support/Licensing">
+                                    更多许可证信息
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/zh-CN/Support/Licensing">
+                                    莱迪思IP核许可证
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+        
+
+        
+                    </div>
+
+                
+                    
+            
+            
+                    
+                    <div class="unit size1of4">
+                        <h4>质量和可靠性</h4>
+
+<p>相关参考资料有助于解决您的问题</p>
+
+    
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/zh-CN/Support/QualityAndReliability">
+                                    质量和可靠性中心
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/zh-CN/Support/PCN">
+                                    产品变更通知（PCN）
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+        
+
+        
+                    </div>
+
+                
+                    
+                    <div class="unit size1of4 lastUnit">
+                        <h4>服务</h4>
+
+<p>更多可用的外部资源</p>
+
+    
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/zh-CN/Support/DesignServices">
+                                    设计服务
+                                </a>
+                            
+                            
+                        </li>
+                    
+                        <li>
+                            
+                                <a href="/Home/Support/ThirdPartyProgramming.aspx">
+                                    适用于莱迪思器件的第三方编程支持
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+            <ul>
+                
+                        <li>
+                            
+                                <a href="/support/partners.aspx?qparttype=3dc8f4105fae42ac883c1e9384d7d4a7">
+                                    培训
+                                </a>
+                            
+                            
+                        </li>
+                    
+            </ul>
+        
+        
+
+        
+                    </div>
+
+                
+        
+</div>
+<!-- END KEY POINT SECTION -->
+
+            <!-- END TABBED CONTENT SECTION -->
+        
+<!-- END CONTENT TAB WIDGET -->
+
+        </div>
+        <!--END Tabbed Section -->
+    </div>
+    <!-- END STRIPE CONTENT -->
+
+
+</div>
+
+<!-- END STRIPE CONTAINER -->
+      
+	
+
+<div class="stripeContainer footerStripe">
+	<div class="stripeContent">
+            <div class="line">
+                <div class="unit size2of7">
+					<img src="/images/Lattice_Logo_Yellow_White_Tagline.png" width="200px">
+				</div>
+                <div class="unit size4of7">
+		    	    
+                        
+				            <div class="unit size1of3">
+                                
+                                <h4>ABOUT LATTICE</h4>
+<ul>
+    <li><a href="https://www.latticesemi.com/About">Our Company</a></li>
+    <li><a href="https://www.latticesemi.com/About/Newsroom">Newsroom</a></li>
+    <li><a href="http://ir.latticesemi.com">Investor Relations</a></li>
+    <li><a href="https://www.latticesemi.com/About/Jobs">Careers</a></li>
+    <li><a href="https://www.latticesemi.com/Accounts/YourAccount/NewsletterSubscriptions">Newsletter</a></li>
+</ul>
+				            </div> 
+                        
+				            <div class="unit size1of3">
+                                
+                                <h4>SALES</h4>
+<ul>
+       <li><a href="https://www.latticesemi.com/Buy">Americas</a></li>
+        <li><a href="https://www.latticesemi.com/Buy">Europe &amp; Africa</a></li>
+        <li><a href="https://www.latticesemi.com/Buy">Asia Pacific</a></li>
+        <li><a href="https://www.latticesemi.com/Buy/BuyOnline">Online Store</a></li>
+</ul>
+				            </div> 
+                        
+				            <div class="unit size1of3">
+                                
+                                <h4>SUPPORT</h4>
+<ul>
+    <li><a href="https://www.latticesemi.com/Support/SubmitTechSupport">Technical Support</a></li>
+    <li><a href="https://www.latticesemi.com/Support/Licensing">Software Licensing</a></li>
+    <li><a href="https://www.latticesemi.com/Support/Partner-Network">Partner Network</a></li>
+    <li><a href="https://www.latticesemi.com/Support/MatureAndDiscontinuedDevices">Legacy Devices &amp; Software</a></li>
+    <li><a href="https://www.latticesemi-insights.com/">Training</a></li>
+    <li><a href="https://www.latticesemi.com/About/ContactUs">Contact Us</a></li>
+</ul>
+				            </div> 
+                         
+                </div>
+                <div class="unit size1of7 lastUnit rText">
+                    <div class="title"><h4>FOLLOW</h4></div>
+					<div>
+			        
+
+		    <div class="line flatList iconList">
+			    
+				    <div class="unit size1of6">
+					  
+                         <a href="https://www.linkedin.com/company/lattice-semiconductor" aria-label="LinkedIn">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://i.youku.com/latticesemi" aria-label="Youku">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+				    <div class="unit size1of6">
+					  
+                         <a href="http://www.weibo.com/latticesemi" aria-label="Weibo">
+				            &nbsp;
+                        </a>
+				    </div>
+				    
+		    </div>
+
+            <img src="https://www.latticesemi.com/images/Qrcode_for_Lattice_sm.gif" alt="Lattice QR code">
+                    </div>
+			    </div>
+            </div>
+            <div class="line">
+                <div class="unit size1of1 lastUnit">
+                    <ul class="flatList smallList">
+                        <li><span>&copy;2025 Lattice Semiconductor</span> | </li>
+                        <li>
+            <a href="https://www.latticesemi.com/About/LegalNotices.aspx">
+                法律声明    
+            </a>
+            |
+        </li>
+    
+        <li>
+            <a href="https://www.latticesemi.com/About/LegalNotices/PrivacyPolicy.aspx">
+                隐私条款    
+            </a>
+            |
+        </li>
+    
+        <li>
+            <a href="https://www.latticesemi.com/About/Sitemap.aspx">
+                网站地图    
+            </a>
+            |
+        </li>
+    
+        <li>
+            <a href="https://www.latticesemi.com/About/UseOfCookies.aspx">
+                Cookie的使用    
+            </a>
+            
+        </li>
+
+                    </ul>
+                    
+                </div>
+            </div>
+	</div>
+</div>
+
+  </form>      
+      <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','/js/analytics.js','ga');
+ 
+  ga('create', 'UA-2724384-5', 'auto');
+var urlCapture = /(\/en|\/ja\-jp|\/zh\-cn)?([^.]+)(.aspx)?/ig;
+var urlPieces = urlCapture.exec(window.location.pathname);
+
+if(urlPieces[2] != undefined)
+     ga('set', 'page', urlPieces[2]);
+
+  ga('send', 'pageview');
+
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?84ad8dd689516c3b53f6c7ab6eb7f992";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+
+jQuery.ajax({
+  url: '//munchkin.marketo.net/munchkin.js',
+  dataType: 'script',
+  cache: true,
+  success: function() {
+    Munchkin.init('632-NZA-960');
+  }
+});
+
+jQuery(document).ready(function () {
+        jQuery('a[href*="view_document"]').each(function () {
+            jQuery(this).on('click', function () {
+                Munchkin.munchkinFunction('clickLink', {
+                    href: jQuery(this).text()
+                });
+            })
+        })
+    })
+</script>
+  
+  <!--   <script type="text/javascript" src="/js/SitecoreClientTracking.js"></script> -->
+    <script type="text/javascript" src="/js/video.js"></script>
+    <script type="text/javascript">
+            jQuery.noConflict();
+            videojs.options.flash.swf = "/js/video-js.swf"
+    </script>
+    <script type="text/javascript" src="/js/lsc.js"></script>
+  
+      
+  </body>
+</html>
+
