@@ -1,375 +1,307 @@
 import java.io.*;
 import java.net.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.util.*;
 import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.*;
+import java.nio.file.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class WGET {
-    private static final int DEFAULT_THREADS = 3;
-    private static final int DEFAULT_DEPTH = 2;
-    private static final int RETRY_COUNT = 3;
-    private static final int CONNECT_TIMEOUT = 15000;
-    private static final int READ_TIMEOUT = 15000;
+    private static final String USER_AGENT = "Mozilla/5.0";
+    private static final Pattern LINK_PATTERN = Pattern.compile("href=\"(.*?)\"", Pattern.CASE_INSENSITIVE);
+    private static final Pattern SRC_PATTERN = Pattern.compile("src=\"(.*?)\"", Pattern.CASE_INSENSITIVE);
     
-    private final ExecutorService threadPool;
-    private final Set<String> downloadedUrls;
-    private final Queue<String> urlQueue;
-    private final int maxDepth;
-    private final String baseUrl;
-    private final String saveDir;
-    private final AtomicInteger successCount = new AtomicInteger(0);
-    private final AtomicInteger errorCount = new AtomicInteger(0);
-
-    public WGET(String startUrl, int maxThreads, int maxDepth) {
-        this.threadPool = Executors.newFixedThreadPool(maxThreads);
-        this.downloadedUrls = Collections.synchronizedSet(new HashSet<>());
-        this.urlQueue = new ConcurrentLinkedQueue<>();
-        this.maxDepth = maxDepth;
-        this.baseUrl = normalizeUrl(extractBaseUrl(startUrl));
-        this.saveDir = createSaveDirectory(startUrl);
-        
-        urlQueue.add(normalizeUrl(startUrl) + "|0");
-    }
-
-    private String extractBaseUrl(String url) {
-        try {
-            URI uri = new URI(url);
-            String base = uri.getScheme() + "://" + uri.getHost();
-            if (uri.getPort() != -1 && uri.getPort() != 80) {
-                base += ":" + uri.getPort();
-            }
-            return base;
-        } catch (URISyntaxException e) {
-            return url;
-        }
-    }
-
-    private String normalizeUrl(String url) {
-        url = url.replaceFirst("^(https?:/)([^/])", "$1/$2");
-        url = url.replaceAll("/+$", "");
-        if (url.contains("?C=") || url.contains("?c=")) {
-            url = url.split("\\?")[0];
-        }
-        return url;
-    }
-
-    private String createSaveDirectory(String url) {
-        String dirName = url.replaceAll("[^a-zA-Z0-9.-]", "_");
-        if (dirName.endsWith("_")) {
-            dirName = dirName.substring(0, dirName.length() - 1);
-        }
-        File dir = new File(dirName);
-        if (!dir.exists()) {
-            dir.mkdir();
-        }
-        return dirName;
-    }
-
-    public void startDownload() {
-        System.out.println("Iniciando descarga desde: " + baseUrl);
-        System.out.println("Guardando en directorio: " + saveDir);
-        
-        long startTime = System.currentTimeMillis();
-        int downloadedCount = 0;
-        
-        while (true) {
-            String urlWithDepth = urlQueue.poll();
-            if (urlWithDepth == null) {
-                if (allTasksCompleted()) {
-                    break;
-                }
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-                continue;
-            }
-
-            String[] parts = urlWithDepth.split("\\|");
-            String url = parts[0];
-            int depth = Integer.parseInt(parts[1]);
-
-            if (!downloadedUrls.contains(url)) {
-                downloadedUrls.add(url);
-                threadPool.execute(new DownloadTask(url, depth, this));
-                downloadedCount++;
-            }
-        }
-
-        threadPool.shutdown();
-        try {
-            if (!threadPool.awaitTermination(30, TimeUnit.MINUTES)) {
-                threadPool.shutdownNow();
-            }
-        } catch (InterruptedException e) {
-            threadPool.shutdownNow();
-            Thread.currentThread().interrupt();
-        }
-        
-        long endTime = System.currentTimeMillis();
-        System.out.println("\nResumen de descarga:");
-        System.out.println("Archivos intentados: " + downloadedCount);
-        System.out.println("Descargas exitosas: " + successCount.get());
-        System.out.println("Errores: " + errorCount.get());
-        System.out.println("Tiempo total: " + (endTime - startTime)/1000 + " segundos");
-    }
-
-    private boolean allTasksCompleted() {
-        return ((ThreadPoolExecutor) threadPool).getActiveCount() == 0 && urlQueue.isEmpty();
-    }
-
-    public synchronized void addUrlToQueue(String url, int depth) {
-        if (depth < maxDepth && !downloadedUrls.contains(url) && !urlQueue.contains(url + "|" + (depth + 1))) {
-            url = normalizeUrl(url);
-            if (!url.startsWith(baseUrl)) {
-                return;
-            }
-            
-            try {
-                url = URLEncoder.encode(url, StandardCharsets.UTF_8.toString())
-                        .replaceAll("%3A", ":")
-                        .replaceAll("%2F", "/")
-                        .replaceAll("%3F", "?")
-                        .replaceAll("%3D", "=")
-                        .replaceAll("%26", "&");
-            } catch (UnsupportedEncodingException e) {
-                System.err.println("Error codificando URL: " + url);
-                return;
-            }
-            
-            if (!url.contains("?C=") && !url.contains("?c=")) {
-                urlQueue.add(url + "|" + (depth + 1));
-            }
-        }
-    }
-
-    class DownloadTask implements Runnable {
-        private final String url;
-        private final int depth;
-        private final WGET wget;
-
-        public DownloadTask(String url, int depth, WGET wget) {
-            this.url = url;
-            this.depth = depth;
-            this.wget = wget;
-        }
-
-        @Override
-        public void run() {
-            int attempts = 0;
-            while (attempts < RETRY_COUNT) {
-                try {
-                    String encodedUrl = URLEncoder.encode(url, StandardCharsets.UTF_8.toString())
-                            .replaceAll("%3A", ":")
-                            .replaceAll("%2F", "/")
-                            .replaceAll("%3F", "?")
-                            .replaceAll("%3D", "=")
-                            .replaceAll("%26", "&");
-                    
-                    URL website = new URL(encodedUrl);
-                    HttpURLConnection connection = (HttpURLConnection) website.openConnection(Proxy.NO_PROXY);
-                    
-                    connection.setRequestMethod("GET");
-                    connection.setConnectTimeout(CONNECT_TIMEOUT);
-                    connection.setReadTimeout(READ_TIMEOUT);
-                    connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
-                    connection.setRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
-                    connection.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
-                    connection.setInstanceFollowRedirects(true);
-                    
-                    int responseCode = connection.getResponseCode();
-                    if (responseCode != HttpURLConnection.HTTP_OK) {
-                        handleErrorResponse(responseCode);
-                        wget.errorCount.incrementAndGet();
-                        return;
-                    }
-
-                    String contentType = connection.getContentType();
-                    String fileName = getFileName(url, contentType);
-                    File outputFile = createOutputFile(fileName);
-                    
-                    try (InputStream in = connection.getInputStream();
-                         FileOutputStream out = new FileOutputStream(outputFile)) {
-                        
-                        byte[] buffer = new byte[8192];
-                        int bytesRead;
-                        while ((bytesRead = in.read(buffer)) != -1) {
-                            out.write(buffer, 0, bytesRead);
-                        }
-                    }
-                    
-                    System.out.println("Descargado: " + outputFile.getPath());
-                    wget.successCount.incrementAndGet();
-                    
-                    if (contentType != null && contentType.contains("text/html")) {
-                        processHtmlContent(outputFile);
-                    }
-                    
-                    return;
-                    
-                } catch (SocketTimeoutException e) {
-                    System.err.println("Timeout [" + (attempts+1) + "/" + RETRY_COUNT + "]: " + url);
-                } catch (ConnectException e) {
-                    System.err.println("Conexion rechazada [" + (attempts+1) + "/" + RETRY_COUNT + "]: " + url);
-                } catch (FileNotFoundException e) {
-                    System.err.println("No encontrado: " + url);
-                    wget.errorCount.incrementAndGet();
-                    return;
-                } catch (Exception e) {
-                    System.err.println("Error en " + url + ": " + e.getClass().getSimpleName());
-                }
-                
-                attempts++;
-                if (attempts < RETRY_COUNT) {
-                    try {
-                        Thread.sleep(2000 * attempts);
-                    } catch (InterruptedException ie) {
-                        Thread.currentThread().interrupt();
-                    }
-                }
-            }
-            System.err.println("Fallo después de " + RETRY_COUNT + " intentos: " + url);
-            wget.errorCount.incrementAndGet();
-        }
-
-        private void handleErrorResponse(int responseCode) {
-            switch (responseCode) {
-                case HttpURLConnection.HTTP_NOT_FOUND:
-                    System.err.println("404 Pagina no existe: " + url);
-                    break;
-                case HttpURLConnection.HTTP_FORBIDDEN:
-                    System.err.println("403 Acceso prohibido: " + url);
-                    break;
-                case HttpURLConnection.HTTP_BAD_REQUEST:
-                    System.err.println("400 Peticion mal formada: " + url);
-                    break;
-                default:
-                    System.err.println("HTTP " + responseCode + " para: " + url);
-            }
-        }
-
-        private String getFileName(String url, String contentType) {
-            String cleanUrl = url.split("\\?")[0].split("#")[0];
-            
-            if (cleanUrl.equals(baseUrl) || cleanUrl.equals(baseUrl + "/")) {
-                return "index.html";
-            }
-            
-            String fileName = cleanUrl.substring(cleanUrl.lastIndexOf('/') + 1);
-            if (fileName.isEmpty() || cleanUrl.endsWith("/")) {
-                return "index.html";
-            }
-            
-            if (!fileName.contains(".")) {
-                if (contentType != null) {
-                    if (contentType.contains("text/html")) return fileName + ".html";
-                    if (contentType.contains("text/plain")) return fileName + ".txt";
-                    if (contentType.contains("application/pdf")) return fileName + ".pdf";
-                    if (contentType.contains("application/msword")) return fileName + ".doc";
-                    if (contentType.contains("image/jpeg")) return fileName + ".jpg";
-                    if (contentType.contains("image/png")) return fileName + ".png";
-                }
-                return fileName + ".html";
-            }
-            
-            return fileName;
-        }
-
-        private File createOutputFile(String fileName) {
-            String relativePath = url.substring(baseUrl.length());
-            if (relativePath.startsWith("/")) {
-                relativePath = relativePath.substring(1);
-            }
-            
-            String safeFileName = fileName.replaceAll("[\\\\/:*?\"<>|]", "_");
-            String safeRelativePath = relativePath.replaceAll("[\\\\/:*?\"<>|]", "_");
-            
-            String filePath;
-            if (safeRelativePath.isEmpty() || safeRelativePath.equals(safeFileName)) {
-                filePath = saveDir + File.separator + safeFileName;
-            } else {
-                filePath = saveDir + File.separator + safeRelativePath;
-            }
-            
-            File outputFile = new File(filePath);
-            outputFile.getParentFile().mkdirs();
-            return outputFile;
-        }
-
-        private void processHtmlContent(File htmlFile) {
-            try {
-                String htmlContent = new String(Files.readAllBytes(htmlFile.toPath()), StandardCharsets.UTF_8);
-                Pattern pattern = Pattern.compile("href=[\"']([^\"'?#]+)[\"'?#]");
-                Matcher matcher = pattern.matcher(htmlContent);
-                
-                while (matcher.find()) {
-                    String link = matcher.group(1).trim();
-                    if (link.isEmpty() || link.startsWith("#") || 
-                        link.startsWith("javascript:") || link.startsWith("mailto:")) {
-                        continue;
-                    }
-                    
-                    try {
-                        String absoluteUrl;
-                        if (link.startsWith("http")) {
-                            absoluteUrl = link;
-                        } else if (link.startsWith("/")) {
-                            absoluteUrl = baseUrl + link;
-                        } else {
-                            String basePath = url.substring(0, url.lastIndexOf('/') + 1);
-                            absoluteUrl = basePath + link;
-                        }
-                        
-                        absoluteUrl = absoluteUrl.replaceAll("/\\./", "/")
-                                                .replaceAll("/[^/]+/\\.\\./", "/")
-                                                .replaceAll("/+", "/")
-                                                .split("#")[0];
-                        
-                        if (!absoluteUrl.contains("conócenos") && 
-                            !absoluteUrl.contains("trámites") &&
-                            !absoluteUrl.matches(".*[áéíóúÁÉÍÓÚ].*")) {
-                            wget.addUrlToQueue(absoluteUrl, depth);
-                        }
-                    } catch (Exception e) {
-                        System.err.println("Error procesando enlace: " + link);
-                    }
-                }
-            } catch (Exception e) {
-                System.err.println("Error procesando HTML: " + htmlFile.getPath());
-            }
-        }
-    }
-
+    private static ExecutorService threadPool;
+    private static Queue<String> urlQueue = new ConcurrentLinkedQueue<>();
+    private static Set<String> downloadedUrls = ConcurrentHashMap.newKeySet();
+    private static Set<String> failedUrls = ConcurrentHashMap.newKeySet();
+    private static AtomicInteger successCount = new AtomicInteger(0);
+    private static AtomicInteger totalAttempts = new AtomicInteger(0);
+    
+    private static int maxDepth;
+    private static String baseUrl;
+    private static String outputDir = "Descargas";
+    private static String siteFolderName;
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
+        System.out.println("=== Aplicación WGET ===");
         System.out.print("Ingrese la URL a descargar: ");
-        String url = scanner.nextLine().trim();
+        baseUrl = scanner.nextLine().trim();
         
-        if (!url.startsWith("http://") && !url.startsWith("https://")) {
-            url = "http://" + url;
+        try {
+            URL urlObj = new URL(baseUrl);
+            siteFolderName = urlObj.getHost();
+            if (siteFolderName.startsWith("www.")) {
+                siteFolderName = siteFolderName.substring(4);
+            }
+        } catch (MalformedURLException e) {
+            System.err.println("URL inválida: " + e.getMessage());
+            return;
         }
         
-        System.out.print("Numero de hilos (default 3): ");
-        String threadsInput = scanner.nextLine().trim();
-        int threads = threadsInput.isEmpty() ? DEFAULT_THREADS : Integer.parseInt(threadsInput);
+        System.out.print("Ingrese el número de hilos: ");
+        int threadCount = scanner.nextInt();
         
-        System.out.print("Profundidad maxima (default 2): ");
-        String depthInput = scanner.nextLine().trim();
-        int depth = depthInput.isEmpty() ? DEFAULT_DEPTH : Integer.parseInt(depthInput);
+        System.out.print("Ingrese la profundidad máxima: ");
+        maxDepth = scanner.nextInt();
         
-        System.out.println("\nConfiguracion:");
-        System.out.println("URL: " + url);
-        System.out.println("Hilos: " + threads);
-        System.out.println("Profundidad: " + depth);
-        System.out.println("Reintentos: " + RETRY_COUNT);
-        System.out.println("Timeout: " + (CONNECT_TIMEOUT/1000) + " segundos\n");
+        // Mostrar resumen de configuración
+        System.out.println("\n=== Configuración ===");
+        System.out.println("URL: " + baseUrl);
+        System.out.println("Número de hilos: " + threadCount);
+        System.out.println("Profundidad máxima: " + maxDepth);
+        System.out.println("Directorio de salida: " + outputDir + "/" + siteFolderName);
+        System.out.println("====================\n");
         
-        WGET wget = new WGET(url, threads, depth);
-        wget.startDownload();
+        // Crear directorio de salida
+        try {
+            Files.createDirectories(Paths.get(outputDir, siteFolderName));
+        } catch (IOException e) {
+            System.err.println("Error al crear el directorio de salida: " + e.getMessage());
+            return;
+        }
+
+        threadPool = Executors.newFixedThreadPool(threadCount);
+
+        urlQueue.add(baseUrl + "|0");
+        
+        while (!urlQueue.isEmpty() || getActiveCount() > 0) {
+            String urlWithDepth = urlQueue.poll();
+            if (urlWithDepth != null) {
+                threadPool.execute(() -> processUrl(urlWithDepth));
+            } else {
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+        }
+        
+        threadPool.shutdown();
+        try {
+            threadPool.awaitTermination(1, TimeUnit.MINUTES);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        
+        // Mostrar resumen final
+        System.out.println("\n=== Resumen Final ===");
+        System.out.println("Total de archivos intentados: " + totalAttempts.get());
+        System.out.println("Descargas exitosas: " + successCount.get());
+    }
+    
+    private static int getActiveCount() {
+        if (threadPool instanceof ThreadPoolExecutor) {
+            return ((ThreadPoolExecutor) threadPool).getActiveCount();
+        }
+        return 0;
+    }
+    
+    private static void processUrl(String urlWithDepth) {
+        String[] parts = urlWithDepth.split("\\|");
+        String url = parts[0];
+        int depth = Integer.parseInt(parts[1]);
+        
+        if (downloadedUrls.contains(url)) {
+            return;
+        }
+        
+        downloadedUrls.add(url);
+        totalAttempts.incrementAndGet();
+        
+        try {
+            System.out.println("Descargando: " + url);
+            
+            URL urlObj = new URL(url);
+            HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("User-Agent", USER_AGENT);
+            
+            int responseCode = connection.getResponseCode();
+            
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                String filePath = getLocalFilePath(url);
+                File outputFile = new File(filePath);
+                
+                outputFile.getParentFile().mkdirs();
+                
+                try (InputStream inputStream = connection.getInputStream();
+                     FileOutputStream outputStream = new FileOutputStream(outputFile)) {
+                    
+                    byte[] buffer = new byte[4096];
+                    int bytesRead;
+                    while ((bytesRead = inputStream.read(buffer)) != -1) {
+                        outputStream.write(buffer, 0, bytesRead);
+                    }
+                }
+                
+                System.out.println("Guardado como: " + filePath);
+                successCount.incrementAndGet();
+                
+                if (depth < maxDepth && (url.endsWith(".html") || url.endsWith(".htm") || 
+                    connection.getContentType().contains("text/html"))) {
+                    
+                    String htmlContent = new String(Files.readAllBytes(outputFile.toPath()));
+                    processLinks(htmlContent, url, depth);
+                    ensureHtmlExtension(outputFile);
+                }
+
+                String htmlContent = new String(Files.readAllBytes(outputFile.toPath()));
+                String modifiedContent = rewriteLinks(htmlContent, url, filePath);
+                Files.write(outputFile.toPath(), modifiedContent.getBytes());
+            } else {
+                System.err.println("Error al descargar " + url + " - Código: " + responseCode);
+                failedUrls.add(url + " (Código: " + responseCode + ")");
+            }
+        } catch (Exception e) {
+            System.err.println("Error al procesar " + url + ": " + e.getMessage());
+            failedUrls.add(url + " (Error: " + e.getMessage() + ")");
+        }
+    }
+    
+    private static void ensureHtmlExtension(File file) throws IOException {
+        String path = file.getAbsolutePath();
+        if (!path.endsWith(".html") && !path.endsWith(".htm")) {
+            File newFile = new File(path + ".html");
+            if (file.renameTo(newFile)) {
+                System.out.println("Renombrado a: " + newFile.getPath());
+            } else {
+                System.err.println("No se pudo renombrar el archivo: " + path);
+            }
+        }
+    }
+    
+    private static void processLinks(String htmlContent, String baseUrl, int currentDepth) {
+        // Procesar enlaces href
+        Matcher hrefMatcher = LINK_PATTERN.matcher(htmlContent);
+        while (hrefMatcher.find()) {
+            String link = hrefMatcher.group(1);
+            processFoundLink(link, baseUrl, currentDepth);
+        }
+        
+        // Procesar enlaces src
+        Matcher srcMatcher = SRC_PATTERN.matcher(htmlContent);
+        while (srcMatcher.find()) {
+            String link = srcMatcher.group(1);
+            processFoundLink(link, baseUrl, currentDepth);
+        }
+    }
+    
+    private static void processFoundLink(String link, String baseUrl, int currentDepth) {
+        if (link.startsWith("javascript:") || link.startsWith("mailto:") || link.startsWith("#")) {
+            return;
+        }
+        
+        try {
+            URL absoluteUrl = new URL(new URL(baseUrl), link);
+            String normalizedUrl = absoluteUrl.toString().split("#")[0]; // Eliminar fragmentos
+            
+            if (!downloadedUrls.contains(normalizedUrl)) {
+                urlQueue.add(normalizedUrl + "|" + (currentDepth + 1));
+            }
+        } catch (MalformedURLException e) {
+            System.err.println("Enlace inválido: " + link + " en " + baseUrl);
+        }
+    }
+    
+    private static String getLocalFilePath(String url) throws MalformedURLException {
+        URL urlObj = new URL(url);
+        String path = urlObj.getPath();
+
+        // Quitar parámetros y fragmentos
+        path = path.split("\\?")[0].split("#")[0];
+
+        // Si termina en '/', agregar index.html
+        if (path.endsWith("/")) {
+            path += "index.html";
+        } else {
+            // Si no tiene extensión (p. ej. termina en /abc), agregar /index.html
+            String[] segments = path.split("/");
+            String lastSegment = segments[segments.length - 1];
+            if (!lastSegment.contains(".")) {
+                path += ".html";
+            }
+        }
+
+        // Asegurar que el host no tenga 'www.'
+        String host = urlObj.getHost();
+        if (host.startsWith("www.")) {
+            host = host.substring(4);
+        }
+
+        String filePath = outputDir + "/" + siteFolderName + path;
+        filePath = filePath.replaceAll("/{2,}", "/");
+
+        return filePath;
+    }
+    
+    private static String rewriteLinks(String htmlContent, String baseUrl, String filePath) throws MalformedURLException {
+        // Convertir la ruta del archivo local a formato URL
+        String localBasePath = new File(outputDir, siteFolderName).toURI().toString();
+
+        // Procesar enlaces href
+        Matcher hrefMatcher = LINK_PATTERN.matcher(htmlContent);
+        StringBuffer sb = new StringBuffer();
+
+        while (hrefMatcher.find()) {
+            String originalLink = hrefMatcher.group(1);
+            String newLink = convertToLocalLink(originalLink, baseUrl, localBasePath);
+            hrefMatcher.appendReplacement(sb, "href=\"" + newLink + "\"");
+        }
+        hrefMatcher.appendTail(sb);
+
+        // Procesar enlaces src (similar)
+        Matcher srcMatcher = SRC_PATTERN.matcher(sb.toString());
+        sb = new StringBuffer();
+
+        while (srcMatcher.find()) {
+            String originalLink = srcMatcher.group(1);
+            String newLink = convertToLocalLink(originalLink, baseUrl, localBasePath);
+            srcMatcher.appendReplacement(sb, "src=\"" + newLink + "\"");
+        }
+        srcMatcher.appendTail(sb);
+
+        return sb.toString();
+    }
+
+    private static String convertToLocalLink(String originalLink, String baseUrl, String localBasePath) throws MalformedURLException {
+        // Ignorar enlaces especiales
+        if (originalLink.startsWith("javascript:") || originalLink.startsWith("mailto:") || originalLink.startsWith("#")) {
+            return originalLink;
+        }
+
+        URL resolvedUrl;
+        // Si es una URL absoluta
+        if (originalLink.startsWith("http://") || originalLink.startsWith("https://")) {
+            resolvedUrl = new URL(originalLink);
+            // Si es del mismo dominio, convertir a local
+            if (resolvedUrl.getHost().equals(new URL(baseUrl).getHost())) {
+                return handleLocalPath(resolvedUrl.getPath(), localBasePath);
+            }
+            return originalLink;
+        }
+
+        // Resolver la URL relativa/absoluta contra la base
+        resolvedUrl = new URL(new URL(baseUrl), originalLink);
+        return handleLocalPath(resolvedUrl.getPath(), localBasePath);
+    }
+
+    private static String handleLocalPath(String path, String localBasePath) {
+        // Quitar parámetros y fragmentos
+        path = path.split("\\?")[0].split("#")[0];
+
+        // Manejar rutas que terminan con /
+        if (path.endsWith("/")) {
+            path += "index.html";
+        }
+        // Manejar rutas de directorio sin / al final
+        else if (!path.contains(".")) {
+            path += "/index.html";
+        }
+
+        return localBasePath + path;
     }
 }
