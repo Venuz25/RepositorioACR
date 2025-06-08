@@ -47,7 +47,6 @@ public class WGET {
         System.out.print("Ingrese la profundidad máxima: ");
         maxDepth = scanner.nextInt();
         
-        // Mostrar resumen de configuración
         System.out.println("\n=== Configuración ===");
         System.out.println("URL: " + baseUrl);
         System.out.println("Número de hilos: " + threadCount);
@@ -55,7 +54,6 @@ public class WGET {
         System.out.println("Directorio de salida: " + outputDir + "/" + siteFolderName);
         System.out.println("====================\n");
         
-        // Crear directorio de salida
         try {
             Files.createDirectories(Paths.get(outputDir, siteFolderName));
         } catch (IOException e) {
@@ -87,7 +85,6 @@ public class WGET {
             Thread.currentThread().interrupt();
         }
         
-        // Mostrar resumen final
         System.out.println("\n=== Resumen Final ===");
         System.out.println("Total de archivos intentados: " + totalAttempts.get());
         System.out.println("Descargas exitosas: " + successCount.get());
@@ -175,14 +172,12 @@ public class WGET {
     }
     
     private static void processLinks(String htmlContent, String baseUrl, int currentDepth) {
-        // Procesar enlaces href
         Matcher hrefMatcher = LINK_PATTERN.matcher(htmlContent);
         while (hrefMatcher.find()) {
             String link = hrefMatcher.group(1);
             processFoundLink(link, baseUrl, currentDepth);
         }
         
-        // Procesar enlaces src
         Matcher srcMatcher = SRC_PATTERN.matcher(htmlContent);
         while (srcMatcher.find()) {
             String link = srcMatcher.group(1);
@@ -197,7 +192,7 @@ public class WGET {
         
         try {
             URL absoluteUrl = new URL(new URL(baseUrl), link);
-            String normalizedUrl = absoluteUrl.toString().split("#")[0]; // Eliminar fragmentos
+            String normalizedUrl = absoluteUrl.toString().split("#")[0]; 
             
             if (!downloadedUrls.contains(normalizedUrl)) {
                 urlQueue.add(normalizedUrl + "|" + (currentDepth + 1));
@@ -211,14 +206,11 @@ public class WGET {
         URL urlObj = new URL(url);
         String path = urlObj.getPath();
 
-        // Quitar parámetros y fragmentos
         path = path.split("\\?")[0].split("#")[0];
 
-        // Si termina en '/', agregar index.html
         if (path.endsWith("/")) {
             path += "index.html";
         } else {
-            // Si no tiene extensión (p. ej. termina en /abc), agregar /index.html
             String[] segments = path.split("/");
             String lastSegment = segments[segments.length - 1];
             if (!lastSegment.contains(".")) {
@@ -226,7 +218,6 @@ public class WGET {
             }
         }
 
-        // Asegurar que el host no tenga 'www.'
         String host = urlObj.getHost();
         if (host.startsWith("www.")) {
             host = host.substring(4);
@@ -239,10 +230,8 @@ public class WGET {
     }
     
     private static String rewriteLinks(String htmlContent, String baseUrl, String filePath) throws MalformedURLException {
-        // Convertir la ruta del archivo local a formato URL
         String localBasePath = new File(outputDir, siteFolderName).toURI().toString();
 
-        // Procesar enlaces href
         Matcher hrefMatcher = LINK_PATTERN.matcher(htmlContent);
         StringBuffer sb = new StringBuffer();
 
@@ -253,7 +242,6 @@ public class WGET {
         }
         hrefMatcher.appendTail(sb);
 
-        // Procesar enlaces src (similar)
         Matcher srcMatcher = SRC_PATTERN.matcher(sb.toString());
         sb = new StringBuffer();
 
@@ -268,36 +256,29 @@ public class WGET {
     }
 
     private static String convertToLocalLink(String originalLink, String baseUrl, String localBasePath) throws MalformedURLException {
-        // Ignorar enlaces especiales
         if (originalLink.startsWith("javascript:") || originalLink.startsWith("mailto:") || originalLink.startsWith("#")) {
             return originalLink;
         }
 
         URL resolvedUrl;
-        // Si es una URL absoluta
         if (originalLink.startsWith("http://") || originalLink.startsWith("https://")) {
             resolvedUrl = new URL(originalLink);
-            // Si es del mismo dominio, convertir a local
             if (resolvedUrl.getHost().equals(new URL(baseUrl).getHost())) {
                 return handleLocalPath(resolvedUrl.getPath(), localBasePath);
             }
             return originalLink;
         }
 
-        // Resolver la URL relativa/absoluta contra la base
         resolvedUrl = new URL(new URL(baseUrl), originalLink);
         return handleLocalPath(resolvedUrl.getPath(), localBasePath);
     }
 
     private static String handleLocalPath(String path, String localBasePath) {
-        // Quitar parámetros y fragmentos
         path = path.split("\\?")[0].split("#")[0];
 
-        // Manejar rutas que terminan con /
         if (path.endsWith("/")) {
             path += "index.html";
         }
-        // Manejar rutas de directorio sin / al final
         else if (!path.contains(".")) {
             path += "/index.html";
         }
