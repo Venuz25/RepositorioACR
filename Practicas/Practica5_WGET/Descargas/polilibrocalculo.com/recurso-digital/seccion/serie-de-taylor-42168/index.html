@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google AddSense meta tag start -->
+    <meta name="google-adsense-account" content="ca-pub-6185263339178151">
+    <!-- Google AddSense meta tag end -->
+
+    
+<meta name="description" content="Serie de Taylor">
+
+
+    <link rel="stylesheet" href="https://polilibro-bucket.s3.amazonaws.com/static/css/style.css">
+    <link rel="icon" href="https://polilibro-bucket.s3.amazonaws.com/static/images/logo.svg" type="image/png">
+    <title>
+        
+Unidad IV | Serie de Taylor
+
+    </title>
+
+    <!-- Google AddSense script start -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6185263339178151"
+     crossorigin="anonymous"></script>
+     <!-- Google AddSense script end -->
+
+    
+<script>
+    MathJax = {
+        svg: { fontCache: 'global' },
+        loader: { load: ['[tex]/mathtools'] },
+        tex: { packages: { '[+]': ['mathtools'] } },
+    };
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+</head>
+
+<body>
+    <!-- Page main content -->
+    
+<!-- ========================= SIDEBAR START// ========================= -->
+<nav class="sidebar sidebar--green active" id="sidebar">
+    <div class="flow sidebar__container">
+        <div class="sidebar__box">
+            <img src="https://polilibro-bucket.s3.amazonaws.com/static/images/logo.svg" alt="Cálculo-aplicado" class="sidebar__logo">
+            <a class="sidebar__title" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//index.html">Unidad IV</a>
+        </div>
+
+        
+        <div class="dropdown dropdown--green">
+            <button class="dropdown__button"> 4.1 Series de Potencia </button>
+            <ul class="dropdown__list" role="list" id="list">
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/series-de-potencias-42110/index.html">4.1.1 Introducción</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/radio-e-intervalo-de-convergencia-de-una-serie-de-potencias-42149/index.html">4.1.2 Radio e intervalo de convergencia</a></li>
+                
+            </ul>
+        </div>
+        
+        <div class="dropdown dropdown--green">
+            <button class="dropdown__button"> 4.2 Series de Taylor y McLaurin </button>
+            <ul class="dropdown__list" role="list" id="list">
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/serie-de-taylor-42168/index.html">4.2.1 Serie de Taylor</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/serie-de-mclaurin-42181/index.html">4.2.2 Serie de McLaurin</a></li>
+                
+            </ul>
+        </div>
+        
+
+    </div>
+
+    <ul class="sidebar__list" role="list">
+        <li>
+            <img class="sidebar__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/exercises-list.svg" alt="Listas de ejercicios">
+            <a class="sidebar__link" id="modal-1" href="#" role="modal-button">Listas de Ejercicios</a>
+        </li>
+        <li>
+            <img class="sidebar__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/activities.svg" alt="Actividades">
+            <a class="sidebar__link" id="modal-2" href="#" role="modal-button">Actividades</a>
+        </li>
+        <li>
+            <img class="sidebar__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/assessment.svg" alt="Evaluación">
+            
+            <a class="sidebar__link" href="#">Evaluación</a>
+            
+        </li>
+        <li>
+            <img class="sidebar__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/resources.svg" alt="Recursos digitales">
+            <a class="sidebar__link" id="modal-3" href="#" role="modal-button">Recursos</a>
+        </li>
+    </ul>
+
+    <button class="sidebar__button sidebar__button-close" id="close-button">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M20 40C31.0284 40 40 31.0284 40 20C40 8.97164 31.0284 0 20 0C8.97164 0 0 8.97164 0 20C0 31.0284 8.97164 40 20 40ZM15.4884 12.845C14.8367 12.1934 14.8367 11.14 15.4884 10.4884C15.8134 10.1634 16.24 10 16.6667 10C17.0934 10 17.5201 10.1634 17.8451 10.4884L26.1784 18.8216C26.83 19.4733 26.83 20.5266 26.1784 21.1783L17.845 29.5116C17.1934 30.1633 16.14 30.1633 15.4884 29.5116C14.8367 28.86 14.8367 27.8066 15.4884 27.155L22.6434 20L15.4884 12.845Z" />
+        </svg>
+    </button>
+
+</nav>
+<!-- ========================= SIDEBAR END// ========================= -->
+
+<!-- MODAL START - EXERCISES LIST //-->
+<div class="modal" aria-labelledby="modal-1" role="modal">
+    <button class="modal__button" role="modal-close">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.7485 15.025L29.4299 3.34324C30.1901 2.58339 30.1901 1.35482 29.4299 0.594973C28.67 -0.164877 27.4415 -0.164877 26.6816 0.594973L14.9998 12.2767L3.31843 0.594973C2.55822 -0.164877 1.33 -0.164877 0.570155 0.594973C-0.190052 1.35482 -0.190052 2.58339 0.570155 3.34324L12.2516 15.025L0.570155 26.7068C-0.190052 27.4666 -0.190052 28.6952 0.570155 29.455C0.948834 29.8341 1.44674 30.0245 1.94429 30.0245C2.44184 30.0245 2.93939 29.8341 3.31843 29.455L14.9998 17.7733L26.6816 29.455C27.0606 29.8341 27.5582 30.0245 28.0557 30.0245C28.5533 30.0245 29.0508 29.8341 29.4299 29.455C30.1901 28.6952 30.1901 27.4666 29.4299 26.7068L17.7485 15.025Z" />
+        </svg>
+    </button>
+    <div class="flow modal__content">
+        <h3 class="modal__title">
+            Listas de Ejercicios de la Unidad IV
+        </h3>
+
+        <!-- Accordion start // -->
+        <div class="accordion accordion--modal flow">
+
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/exercises-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 4.1 Series de Potencia </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/list-4.1.pdf" download>
+                                    Lista de ejercicios de la lección 4.1 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/exercises-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 4.2 Series de Taylor y McLaurin </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/list-4.2.pdf" download>
+                                    Lista de ejercicios de la lección 4.2 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Accordion end // -->
+
+    </div>
+</div>
+<!-- MODAL END //-->
+
+<!-- MODAL START - ACTIVITIES //-->
+<div class="modal" aria-labelledby="modal-2" role="modal">
+    <button class="modal__button" role="modal-close">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.7485 15.025L29.4299 3.34324C30.1901 2.58339 30.1901 1.35482 29.4299 0.594973C28.67 -0.164877 27.4415 -0.164877 26.6816 0.594973L14.9998 12.2767L3.31843 0.594973C2.55822 -0.164877 1.33 -0.164877 0.570155 0.594973C-0.190052 1.35482 -0.190052 2.58339 0.570155 3.34324L12.2516 15.025L0.570155 26.7068C-0.190052 27.4666 -0.190052 28.6952 0.570155 29.455C0.948834 29.8341 1.44674 30.0245 1.94429 30.0245C2.44184 30.0245 2.93939 29.8341 3.31843 29.455L14.9998 17.7733L26.6816 29.455C27.0606 29.8341 27.5582 30.0245 28.0557 30.0245C28.5533 30.0245 29.0508 29.8341 29.4299 29.455C30.1901 28.6952 30.1901 27.4666 29.4299 26.7068L17.7485 15.025Z" />
+        </svg>
+    </button>
+    <div class="flow modal__content">
+        <h3 class="modal__title">
+            Actividades de la Unidad IV
+        </h3>
+
+        <!-- Accordion start // -->
+        <div class="accordion accordion--modal flow">
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/activities-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 4.1 Series de Potencia </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/activities-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 4.2 Series de Taylor y McLaurin </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+        </div>
+        <!-- Accordion end // -->
+
+    </div>
+</div>
+<!-- MODAL END //-->
+
+<!-- MODAL START - RESOURCES //-->
+<div class="modal" aria-labelledby="modal-3" role="modal">
+    <button class="modal__button" role="modal-close">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.7485 15.025L29.4299 3.34324C30.1901 2.58339 30.1901 1.35482 29.4299 0.594973C28.67 -0.164877 27.4415 -0.164877 26.6816 0.594973L14.9998 12.2767L3.31843 0.594973C2.55822 -0.164877 1.33 -0.164877 0.570155 0.594973C-0.190052 1.35482 -0.190052 2.58339 0.570155 3.34324L12.2516 15.025L0.570155 26.7068C-0.190052 27.4666 -0.190052 28.6952 0.570155 29.455C0.948834 29.8341 1.44674 30.0245 1.94429 30.0245C2.44184 30.0245 2.93939 29.8341 3.31843 29.455L14.9998 17.7733L26.6816 29.455C27.0606 29.8341 27.5582 30.0245 28.0557 30.0245C28.5533 30.0245 29.0508 29.8341 29.4299 29.455C30.1901 28.6952 30.1901 27.4666 29.4299 26.7068L17.7485 15.025Z" />
+        </svg>
+    </button>
+    <div class="flow modal__content">
+        <h3 class="modal__title">
+            Recursos de la Unidad IV
+        </h3>
+
+        <!-- Accordion start // -->
+        <div class="accordion accordion--modal flow">
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/slide-modal.svg"
+                            alt="Diapositivas de la Unidad">
+                        <h2 class="accordion__title"> 4.1 Series de Potencia </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/slide-4.1.pdf" download>
+                                    Diapositiva de la lección 4.1 </a>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/slide-modal.svg"
+                            alt="Diapositivas de la Unidad">
+                        <h2 class="accordion__title"> 4.2 Series de Taylor y McLaurin </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/slide-4.2.pdf" download>
+                                    Diapositiva de la lección 4.2 </a>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+        </div>
+        <!-- Accordion end // -->
+
+    </div>
+</div>
+<!-- MODAL END //-->
+
+<!-- ========================= NAVIGATION START// ========================= -->
+<nav class="navigation navigation--green">
+    <ul class="navigation__list" role="list">
+        <li class="navigation__item">
+            <div class="navigation__logo-box">
+                <img src="https://polilibro-bucket.s3.amazonaws.com/static/images/logo.svg" alt="Cálculo-aplicado" class="navigation__logo">
+                <a class="navigation__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//index.html">Cálculo Aplicado</a>
+            </div>
+        </li>
+
+        <li class="navigation__item">
+            <div class="navigation__button">
+                <span class="navigation__icon">&nbsp;</span>
+            </div>
+        </li>
+    </ul>
+</nav>
+<!-- ========================= NAVIGATION END// ========================= -->
+
+<!-- ========================= NAVIGATION-MOBILE START// ========================= -->
+<nav class="navigation-mobile navigation-mobile--green">
+    <!-- Accordion-mobile start // -->
+    <div class="accordion accordion--green">
+
+        
+        <div class="accordion__item">
+            <button class="accordion__button">
+                4.1 Series de Potencia
+                <span class="plus left-auto">&#43;</span>
+                <span class="minus left-auto">&#8722;</span>
+            </button>
+            <div class="accordion__content">
+                <ul class="accordion__list" role="list" id="list">
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/series-de-potencias-42110/index.html">4.1.1 Introducción</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/radio-e-intervalo-de-convergencia-de-una-serie-de-potencias-42149/index.html">4.1.2 Radio e intervalo de convergencia</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+        <div class="accordion__item">
+            <button class="accordion__button">
+                4.2 Series de Taylor y McLaurin
+                <span class="plus left-auto">&#43;</span>
+                <span class="minus left-auto">&#8722;</span>
+            </button>
+            <div class="accordion__content">
+                <ul class="accordion__list" role="list" id="list">
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/serie-de-taylor-42168/index.html">4.2.1 Serie de Taylor</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/serie-de-mclaurin-42181/index.html">4.2.2 Serie de McLaurin</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+
+
+        <div class="accordion__item">
+            <button class="accordion__button">
+                Recursos Unidad IV
+                <span class="plus left-auto">&#43;</span>
+                <span class="minus left-auto">&#8722;</span>
+            </button>
+
+            <div class="accordion__content">
+                <ul class="accordion__list" role="list" id="list">
+                    <li>
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/exercises-list.svg"
+                            alt="Listas de ejercicios">
+                        <a class="accordion__link" href="#" id="modal-1" role="modal-button"> Listas de Ejercicios
+                        </a>
+                    </li>
+                    <li>
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/activities.svg" alt="Actividades">
+                        <a class="accordion__link" href="#" id="modal-2" role="modal-button"> Actividades </a>
+                    </li>
+                    <li>
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/assessment.svg" alt="Evaluación">
+                        
+                        <a class="accordion__link" href="#">Evaluación</a>
+                        
+                    </li>
+                    <li>
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/resources.svg"
+                            alt="Recursos digitales">
+                        <a class="accordion__link" href="#" id="modal-3" role="modal-button"> Recursos </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accordion-mobile end // -->
+</nav>
+<!-- ========================= NAVIGATION-MOBILE END// ========================= -->
+
+
+<!-- ========================= MAIN START// ========================= -->
+<main class="unit-container">
+    <button class="sidebar__button sidebar__button-open" id="open-button">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M20 0C8.97164 0 0 8.97164 0 20C0 31.0284 8.97164 40 20 40C31.0284 40 40 31.0284 40 20C40 8.97164 31.0284 0 20 0ZM24.5116 27.155C25.1633 27.8066 25.1633 28.86 24.5116 29.5116C24.1866 29.8366 23.76 30 23.3333 30C22.9066 30 22.4799 29.8366 22.1549 29.5116L13.8216 21.1784C13.17 20.5267 13.17 19.4734 13.8216 18.8217L22.155 10.4884C22.8066 9.83672 23.86 9.83672 24.5116 10.4884C25.1633 11.14 25.1633 12.1934 24.5116 12.845L17.3566 20L24.5116 27.155Z" />
+        </svg>
+    </button>
+    <!-- ========================= SECTION CONTENT START// ========================= -->
+    <section class="unit-section flow">
+        <h3 class="heading-tertiary heading-tertiary--green">4.2 Series de Taylor y McLaurin</h3>
+
+<h4 class="heading-quaternary heading-quaternary--green">4.2.1 Serie de Taylor</h4>
+
+<p class="text">La <strong>Serie de Taylor</strong> es una serie funcional que surge de una ecuaci&oacute;n en la cual se puede encontrar una soluci&oacute;n aproximada a una funci&oacute;n.<br />
+<br />
+<b>&iquest;Para qu&eacute; sirve?</b> La serie de Taylor proporciona una buena forma de aproximar el valor de una funci&oacute;n en un punto en t&eacute;rminos del valor de la funci&oacute;n y sus derivadas en otro punto. Por supuesto, para hacer esta aproximaci&oacute;n s&oacute;lo se pueden tomar unas cuantas expresiones de esta serie, por lo que el resto resulta en un error conocido como el <b>t&eacute;rmino residual</b>, es a criterio del que aplica la serie en n&uacute;mero de t&eacute;rminos que ha de incluir la aproximaci&oacute;n.<br />
+<br />
+<b>&iquest;C&oacute;mo funciona?</b> La serie de Taylor se basa en ir haciendo operaciones seg&uacute;n una ecuaci&oacute;n general y mientras m&aacute;s operaciones tenga la serie m&aacute;s exacto ser&aacute; el resultado que se est&aacute; buscando.</p>
+
+<p class="text">En series de potencias representamos una serie como una funci&oacute;n con derivadas de todos los &oacute;rdenes, pero &iquest;es posible representar una funci&oacute;n como una serie de potencias? Veamos esto a continuaci&oacute;n:<br />
+<br />
+Supongamos que la funci&oacute;n \(f(x)\) es la suma de una serie de potencias, esto es: \[ f(x) = \sum_{n=0}^{\infty} c_{n}(x-a)^{n} = c_{0} + c_{1}(x-a) + c_{2}(x-a)^{2} + ⋯ + c_{n}(x-a)^{n} \]</p>
+
+<p class="text equation-justify">Las derivadas de \(f(x)\) son: \[ f&#39;(x) = c_{1} + 2\;c_{2}(x-a) + 3\;c_{3}(x-a)^{2} + ⋯ + n\;c_{n}(x-a)^{n-1} \] \[ f&#39;&#39;(x) = 2\;c_{2} + 6\;c_{3}(x-a) + 12\;c_{4}(x-a)^{2} + ⋯ + n(n-1)\;c_{n}(x-a)^{n-2} \] \[ f&#39;&#39;(x) = 6\;c_{3} + 24\;c_{4}(x-a) + 60\;c_{5}(x-a)^{2} + ⋯ + n(n-1)(n-2)\;c_{n}(x-a)^{n-3} \] De este modo tenemos que: \[ f^{n}(x) = n!\,c_{n} \] Evaluando en \(x=a\), tenemos: \[ f(a) = c_{0}, f&#39;(a) = c_{1}, f&#39;&#39;(a) = 2c_{2}, f&#39;&#39;&#39;(a) = 6c_{3} = 3!\,c_{3} \Rightarrow f^{n}(a) = n! \, c_{n} \] De donde se tiene que: \[ c_{1} = f&#39;(a), c_{2} = \frac{f&#39;&#39;(a)}{2!}, c_{3} = \frac{f&#39;&#39;&#39;(a)}{3!}, ⋯, c_{n} = \frac{f^{n}(a)}{n!} \] Estos deben de ser los coeficientes de la serie de potencias que representa a la funci&oacute;n \(f(x)\), por lo tanto: \[ f(x) = f(a) + f&#39;(a)(x-a) + \frac{f&#39;&#39;(a)}{2!}(x-a)^{2} + \frac{f&#39;&#39;&#39;(a)}{3!} (x-a)^{3} + ⋯ + \frac{f^{n}(a)}{n!} (x-a)^{n} \] Con esto, hemos encontrado los coeficientes de la funci&oacute;n que la representan como una serie de potencias, lo cual queda planteado en el teorema siguiente.</p>
+<!-- Accordion start // -->
+
+<div class="accordion accordion--green flow">
+<div class="accordion__item"><button class="accordion__button">Teorema | Serie de Taylor <span class="plus left-auto">+</span> <span class="minus left-auto">&minus;</span></button>
+
+<div class="accordion__content">
+<p class="accordion__text equation-center">Si la funci&oacute;n \(f\) tiene una representaci&oacute;n en forma de serie de potencias en \(a\), esto es si: \[ f(x) = \sum_{n=0}^{\infty} c_{n} (x-a)^{n} \;con\; |x-a| \lt R \] Los coeficientes est&aacute;n expresados por la f&oacute;rmula: \[ c_{n} = \frac{f^{n}(a)}{n!} \] \[ f(x) = f(a) + f&#39;(a)(x-a) + \frac{f&#39;&#39;(a)}{2!}(x-a)^{2} + \] \[ \frac{f&#39;&#39;&#39;(a)}{3!} (x-a)^{3} + ⋯ + \frac{f^{n}(a)}{n!} (x-a)^{n} \] Esta serie se denomina Serie de Taylor de la funci&oacute;n en \(a\) (alrededor de \(a\) o centrada en \(a\)).</p>
+</div>
+</div>
+</div>
+<!-- Accordion end // -->
+
+<h4 class="heading-normal heading-normal--green">Ejemplo 1.</h4>
+
+<p class="text">Hallar la Serie de Taylor generada por la funci&oacute;n \( f(x) = \displaystyle\frac{1}{x} \) alrededor del punto \(a=1\). Como primer paso calcularemos las derivadas de la funci&oacute;n y las evaluaremos en el punto dado.</p>
+
+<div class="table">
+<table>
+	<tbody>
+		<tr class="table__row">
+			<td class="table__col" colspan="3">Derivadas</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col"><b>Derivada de la funci&oacute;n</b></td>
+			<td class="table__col"><b>\(f(a)\)</b></td>
+			<td class="table__col"><b>Valor de la funci&oacute;n</b></td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">\( f(x) = \frac{1}{x} \)</td>
+			<td class="table__col">\( f(1) = \frac{1}{1} = 1 \)</td>
+			<td class="table__col">\( f(1) = 1 \)</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">\( f&#39;(x) = -\frac{1}{x^{2}} \)</td>
+			<td class="table__col">\( f&#39;(1) = -\frac{1}{1^{2}} = - 1 \)</td>
+			<td class="table__col">\( f&#39;(1) = - 1 \)</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">\( f&#39;&#39;(x) = \frac{2}{x^{3}} \)</td>
+			<td class="table__col">\( f&#39;&#39;(1) = \frac{2}{1^{3}} = 2 \)</td>
+			<td class="table__col">\( f&#39;&#39;(1) = 2 \)</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">\( f&#39;&#39;&#39;(x) = - \frac{6}{x^{4}} \)</td>
+			<td class="table__col">\( f&#39;&#39;&#39;(1) = - \frac{6}{1^{4}} = -6 \)</td>
+			<td class="table__col">\( f&#39;&#39;&#39;(1) = -6 \)</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">\( f^{IV}(x) = \frac{24}{x^{5}} \)</td>
+			<td class="table__col">\( f^{IV}(1) = \frac{24}{1^{5}} = 24 \)</td>
+			<td class="table__col">\( f^{IV}(1) = 24 \)</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">:</td>
+			<td class="table__col">:</td>
+			<td class="table__col">:</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">\( f^{n}(x) = (-1)^{n} \frac{n!}{x^{n+1}} \)</td>
+			<td class="table__col">\( f^{n}(1) = (-1)^{n} \frac{n!}{1^{n+1}} \)</td>
+			<td class="table__col">\( f^{n}(1) = (-1)^{n}n! \)</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<p class="text">As&iacute; entonces se tiene que: \[ \frac{1}{x} = 1 - 1(x-1) + \frac{2(x-1)^{2}}{2!} - \frac{6(x-1)^{3}}{3!} + \] \[ \frac{24(x-1)^{4}}{4!} + ⋯ + \frac{(-1)^{n}\,n!\,(x-1)^{n}}{n!} + ⋯ + \] Simplificando tenemos que: \[ \frac{1}{x} = 1 - 1(x-1) + (x-1)^{2} - (x-1)^{3} + \] \[ (x-1)^{4} + ⋯ + (-1)^{n}(x-1)^{n} + ⋯ + \] As&iacute; la serie de Taylor es: \[ \sum_{n=0}^{\infty} (-1)^{n}(x-1)^{n} \]</p>
+
+<h4 class="heading-normal heading-normal--green">Ejemplo 2.</h4>
+
+<p class="text">Hallar la Serie de Taylor generada por la funci&oacute;n \( f(x) = \sin{x} \) alrededor del punto \(a = \displaystyle\frac{\pi}{4} \).</p>
+
+<div class="table">
+<table>
+	<tbody>
+		<tr class="table__row">
+			<td class="table__col" colspan="3">Derivadas</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col"><b>Derivada de la funci&oacute;n</b></td>
+			<td class="table__col"><b>\(f(a)\)</b></td>
+			<td class="table__col"><b>Valor de la funci&oacute;n</b></td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">\( f(x) = \sin{x} \)</td>
+			<td class="table__col">\( f(\frac{\pi}{4}) = \sin{(\frac{\pi}{4})} = \frac{\sqrt{2}}{2} \)</td>
+			<td class="table__col">\( f(\frac{\pi}{4}) = \frac{\sqrt{2}}{2} \)</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">\( f&#39;(x) = \cos{x} \)</td>
+			<td class="table__col">\( f&#39;(\frac{\pi}{4}) = \cos{(\frac{\pi}{4})} = \frac{\sqrt{2}}{2} \)</td>
+			<td class="table__col">\( f&#39;(\frac{\pi}{4}) = \frac{\sqrt{2}}{2} \)</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">\( f&#39;&#39;(x) = -\sin{x} \)</td>
+			<td class="table__col">\( f&#39;&#39;(\frac{\pi}{4}) = -\sin{(\frac{\pi}{4})} = -\frac{\sqrt{2}}{2} \)</td>
+			<td class="table__col">\( f&#39;&#39;(\frac{\pi}{4}) = -\frac{\sqrt{2}}{2} \)</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">\( f&#39;&#39;&#39;(x) = -\cos{x} \)</td>
+			<td class="table__col">\( f&#39;&#39;&#39;(\frac{\pi}{4}) = -\cos{(\frac{\pi}{4})} = -\frac{\sqrt{2}}{2} \)</td>
+			<td class="table__col">\( f&#39;&#39;&#39;(\frac{\pi}{4}) = -\frac{\sqrt{2}}{2} \)</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">\( f^{IV}(x) = \sin{x} \)</td>
+			<td class="table__col">\( f^{IV}(\frac{\pi}{4}) = \sin{(\frac{\pi}{4})} = \frac{\sqrt{2}}{2} \)</td>
+			<td class="table__col">\( f^{IV}(\frac{\pi}{4}) = \frac{\sqrt{2}}{2} \)</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">⋯</td>
+			<td class="table__col">⋯</td>
+			<td class="table__col">\( f^{V}(\frac{\pi}{4}) = \frac{\sqrt{2}}{2} \)</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">⋯</td>
+			<td class="table__col">⋯</td>
+			<td class="table__col">\( f^{VI}(\frac{\pi}{4}) = -\frac{\sqrt{2}}{2} \)</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">⋯</td>
+			<td class="table__col">⋯</td>
+			<td class="table__col">\( f^{VII}(\frac{\pi}{4}) = -\frac{\sqrt{2}}{2} \)</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">:</td>
+			<td class="table__col">:</td>
+			<td class="table__col">:</td>
+		</tr>
+		<tr class="table__row">
+			<td class="table__col">&nbsp;</td>
+			<td class="table__col">&nbsp;</td>
+			<td class="table__col">\( f^{n} (\frac{\pi}{4}) = (-1)^{m} \frac{\sqrt{2}}{2} \)</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<p class="text equation-justify">Determinemos la Serie de Taylor: \[ f(x) = f(a) + f&#39;(a)(x-a) + \frac{f&#39;&#39;(a)}{2!}(x-a)^{2} + \frac{f&#39;&#39;&#39;(a)}{3!} (x-a)^{3} + ⋯ + \frac{f^{n}(a)}{n!} (x-a)^{n} \] \[ f(x) = \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} \left( x - \frac{\pi}{4} \right) - \frac{\sqrt{2}}{2} \frac{1}{2!} \left( x - \frac{\pi}{4} \right)^2 - \frac{\sqrt{2}}{2} \frac{1}{3!} \left( x - \frac{\pi}{4} \right)^3 + \] \[ + \frac{\sqrt{2}}{2} \frac{1}{4!} \left( x - \frac{\pi}{4} \right)^4 + \frac{\sqrt{2}}{2} \frac{1}{5!} \left( x - \frac{\pi}{4} \right)^5 - \frac{\sqrt{2}}{2}\frac{1}{6!} \left( x - \frac{\pi}{4} \right)^6 + ⋯ \] Se puede observar que en el t&eacute;rmino general se tienen los coeficientes \( \displaystyle\frac{\sqrt{2}}{2} \), \(\displaystyle\frac{1}{n!} \) y el factor \(\left( x - \displaystyle\frac{\pi}{4} \right)\), pero no podemos determinar de manera &uacute;nica el signo, por lo que podemos considerar que el t&eacute;rmino general es:</p>
+
+<p class="text">\[ (-1)^{m} \frac{\sqrt{2}}{2} \frac{1}{n!} \left( x - \frac{\pi}{4} \right)^{n} \] Para alg&uacute;n \(m\) entero. Luego suponemos la serie de Taylor queda como sigue: \[ \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} \left( x - \frac{\pi}{4} \right) - \frac{\sqrt{2}}{2} \frac{1}{2!} \left( x - \frac{\pi}{4} \right)^2 - \frac{\sqrt{2}}{2} \frac{1}{3!} \left( x - \frac{\pi}{4} \right)^3 + \] \[ + \frac{\sqrt{2}}{2} \frac{1}{4!} \left( x - \frac{\pi}{4} \right)^4 + \frac{\sqrt{2}}{2} \frac{1}{5!} \left( x - \frac{\pi}{4} \right)^5 + ⋯ \] \[ + (-1)^{p} \frac{\sqrt{2}}{2} \frac{1}{(n-1)!} \left( x - \frac{\pi}{4} \right)^{n-1} + (-1)^{m} \frac{\sqrt{2}}{2} \frac{1}{n!} \left( x - \frac{\pi}{4} \right)^{n} + ⋯ \] Como en todos los t&eacute;rminos est&aacute; el coeficiente \(\displaystyle\frac{\sqrt{2}}{2}\) este puede factorizarse, teniendo: \[ \frac{\sqrt{2}}{2} \bigg( 1 + \left( x - \frac{\pi}{4} \right) - \frac{1}{2!} \left( x - \frac{\pi}{4} \right)^{2} - \frac{1}{3!} \left( x - \frac{\pi}{4} \right)^{3} + \frac{1}{4!} \left( x - \frac{\pi}{4} \right)^{4} + ⋯ \] \[ + \frac{1}{5!} \left( x - \frac{\pi}{4} \right)^{5} + ⋯ + (-1)^{p} \frac{1}{(n-1)!} \left( x - \frac{\pi}{4} \right)^{n-1} + (-1)^{m} \frac{1}{n!} \left( x - \frac{\pi}{4} \right)^{n} \bigg) \] Agrupando los t&eacute;rminos de potencia par e impar tenemos. \[ \frac{\sqrt{2}}{2} \Bigg( \bigg( 1 - \frac{1}{2!} \left( x - \frac{\pi}{4} \right)^{2} + \frac{1}{4!} \left( x - \frac{\pi}{4} \right)^{4} - \frac{1}{6!} \left( x - \frac{\pi}{4} \right)^{6} + ⋯ \bigg)\] \[ + \bigg( \left( x - \frac{\pi}{4} \right) - \frac{1}{3!}\left( x - \frac{\pi}{4} \right)^{3} + \frac{1}{5!} \left( x - \frac{\pi}{4} \right)^{5} - \frac{1}{7!} \left( x - \frac{\pi}{4} \right)^{7} + ⋯ \bigg) \Bigg) \]</p>
+
+<p class="text equation-justify">Al realizar este proceso podemos determinar un t&eacute;rmino general para cada uno de ellos. \[ Potencia\;par:\; (-1)^{n} \frac{1}{(2n)!} \left( x - \frac{\pi}{4} \right)^{2n} \] \[ Potencia\;impar:\; (-1)^{n} \frac{1}{(2n+1)!} \left( x - \frac{\pi}{4} \right)^{2n+1} \] En esta expresi&oacute;n se puede apreciar una forma general definida para determinar el t&eacute;rmino n-&eacute;simo. Por lo que el t&eacute;rmino general de la serie de Taylor es:</p>
+
+<p class="text">\[ (-1)^{n} \frac{1}{(2n)!} \left( x - \frac{\pi}{4} \right)^{2n} + (-1)^{n} \frac{1}{(2n+1)!} \left( x - \frac{\pi}{4} \right)^{2n+1} \] \[ = (-1)^{n} \left( \frac{1}{(2n)!} \left( x - \frac{\pi}{4} \right)^{2n} + \frac{1}{(2n+1)!} \left( x - \frac{\pi}{4} \right)^{2n+1} \right) \] Por lo que serie de Taylor es: \[ \frac{\sqrt{2}}{2} \sum_{n=0}^{\infty} (-1)^{n} \left( \frac{1}{(2n)!} \left( x - \frac{\pi}{4} \right)^{2n} + \frac{1}{(2n+1)!} \left( x - \frac{\pi}{4} \right)^{2n+1} \right) \]</p>
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+</main>
+<!-- ========================= MAIN END// ========================= -->
+
+
+
+    <!-- Additional scripts -->
+    
+<script src="https://polilibro-bucket.s3.amazonaws.com/static/js/app.js"></script>
+
+    <script src="https://polilibro-bucket.s3.amazonaws.com/static/js/modal.js"></script>
+</body>
+
+</html>

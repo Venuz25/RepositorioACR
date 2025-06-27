@@ -1,0 +1,610 @@
+
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google AddSense meta tag start -->
+    <meta name="google-adsense-account" content="ca-pub-6185263339178151">
+    <!-- Google AddSense meta tag end -->
+
+    
+<meta name="description" content="Regla de L&#x27;Hôpital">
+
+
+    <link rel="stylesheet" href="https://polilibro-bucket.s3.amazonaws.com/static/css/style.css">
+    <link rel="icon" href="https://polilibro-bucket.s3.amazonaws.com/static/images/logo.svg" type="image/png">
+    <title>
+        
+Unidad II | Regla de L&#x27;Hôpital
+
+    </title>
+
+    <!-- Google AddSense script start -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6185263339178151"
+     crossorigin="anonymous"></script>
+     <!-- Google AddSense script end -->
+
+    
+<script>
+    MathJax = {
+        svg: { fontCache: 'global' },
+        loader: { load: ['[tex]/mathtools'] },
+        tex: { packages: { '[+]': ['mathtools'] } },
+    };
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+</head>
+
+<body>
+    <!-- Page main content -->
+    
+<!-- ========================= SIDEBAR START// ========================= -->
+<nav class="sidebar sidebar--blue active" id="sidebar">
+    <div class="flow sidebar__container">
+        <div class="sidebar__box">
+            <img src="https://polilibro-bucket.s3.amazonaws.com/static/images/logo.svg" alt="Cálculo-aplicado" class="sidebar__logo">
+            <a class="sidebar__title" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//index.html">Unidad II</a>
+        </div>
+
+        
+        <div class="dropdown dropdown--blue">
+            <button class="dropdown__button"> 2.1 Formas indeterminadas </button>
+            <ul class="dropdown__list" role="list" id="list">
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/formas-indeterminadas-40736/index.html">2.1.1 Introducción</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/regla-de-lhopital-40813/index.html">2.1.2 La regla de L’ Hôpital</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/producto-indeterminado-40842/index.html">2.1.3 Producto indeterminado</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/diferencia-indeterminada-40861/index.html">2.1.4 Diferencia indeterminada</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/potencias-indeterminadas-40874/index.html">2.1.5 Potencias indeterminadas</a></li>
+                
+            </ul>
+        </div>
+        
+        <div class="dropdown dropdown--blue">
+            <button class="dropdown__button"> 2.2 Integrales impropias </button>
+            <ul class="dropdown__list" role="list" id="list">
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/integrales-impropias-40892/index.html">2.2.1 Introducción</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/integrales-impropias-con-limites-de-integracion-infinitos-40932/index.html">2.2.2 Integrales impropias con límites...</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/integrales-impropias-con-discontinuidades-infinitas-40978/index.html">2.2.3 Integrales con discontinuidades...</a></li>
+                
+            </ul>
+        </div>
+        
+
+    </div>
+
+    <ul class="sidebar__list" role="list">
+        <li>
+            <img class="sidebar__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/exercises-list.svg" alt="Listas de ejercicios">
+            <a class="sidebar__link" id="modal-1" href="#" role="modal-button">Listas de Ejercicios</a>
+        </li>
+        <li>
+            <img class="sidebar__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/activities.svg" alt="Actividades">
+            <a class="sidebar__link" id="modal-2" href="#" role="modal-button">Actividades</a>
+        </li>
+        <li>
+            <img class="sidebar__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/assessment.svg" alt="Evaluación">
+            
+            <a class="sidebar__link" href="https://polilibro-bucket.s3.amazonaws.com/media/exams/exam-2.pdf" download>Evaluación</a>
+            
+        </li>
+        <li>
+            <img class="sidebar__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/resources.svg" alt="Recursos digitales">
+            <a class="sidebar__link" id="modal-3" href="#" role="modal-button">Recursos</a>
+        </li>
+    </ul>
+
+    <button class="sidebar__button sidebar__button-close" id="close-button">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M20 40C31.0284 40 40 31.0284 40 20C40 8.97164 31.0284 0 20 0C8.97164 0 0 8.97164 0 20C0 31.0284 8.97164 40 20 40ZM15.4884 12.845C14.8367 12.1934 14.8367 11.14 15.4884 10.4884C15.8134 10.1634 16.24 10 16.6667 10C17.0934 10 17.5201 10.1634 17.8451 10.4884L26.1784 18.8216C26.83 19.4733 26.83 20.5266 26.1784 21.1783L17.845 29.5116C17.1934 30.1633 16.14 30.1633 15.4884 29.5116C14.8367 28.86 14.8367 27.8066 15.4884 27.155L22.6434 20L15.4884 12.845Z" />
+        </svg>
+    </button>
+
+</nav>
+<!-- ========================= SIDEBAR END// ========================= -->
+
+<!-- MODAL START - EXERCISES LIST //-->
+<div class="modal" aria-labelledby="modal-1" role="modal">
+    <button class="modal__button" role="modal-close">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.7485 15.025L29.4299 3.34324C30.1901 2.58339 30.1901 1.35482 29.4299 0.594973C28.67 -0.164877 27.4415 -0.164877 26.6816 0.594973L14.9998 12.2767L3.31843 0.594973C2.55822 -0.164877 1.33 -0.164877 0.570155 0.594973C-0.190052 1.35482 -0.190052 2.58339 0.570155 3.34324L12.2516 15.025L0.570155 26.7068C-0.190052 27.4666 -0.190052 28.6952 0.570155 29.455C0.948834 29.8341 1.44674 30.0245 1.94429 30.0245C2.44184 30.0245 2.93939 29.8341 3.31843 29.455L14.9998 17.7733L26.6816 29.455C27.0606 29.8341 27.5582 30.0245 28.0557 30.0245C28.5533 30.0245 29.0508 29.8341 29.4299 29.455C30.1901 28.6952 30.1901 27.4666 29.4299 26.7068L17.7485 15.025Z" />
+        </svg>
+    </button>
+    <div class="flow modal__content">
+        <h3 class="modal__title">
+            Listas de Ejercicios de la Unidad II
+        </h3>
+
+        <!-- Accordion start // -->
+        <div class="accordion accordion--modal flow">
+
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/exercises-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 2.1 Formas indeterminadas </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/list-2.1.pdf" download>
+                                    Lista de ejercicios de la lección 2.1 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/exercises-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 2.2 Integrales impropias </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/list-2.2.pdf" download>
+                                    Lista de ejercicios de la lección 2.2 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Accordion end // -->
+
+    </div>
+</div>
+<!-- MODAL END //-->
+
+<!-- MODAL START - ACTIVITIES //-->
+<div class="modal" aria-labelledby="modal-2" role="modal">
+    <button class="modal__button" role="modal-close">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.7485 15.025L29.4299 3.34324C30.1901 2.58339 30.1901 1.35482 29.4299 0.594973C28.67 -0.164877 27.4415 -0.164877 26.6816 0.594973L14.9998 12.2767L3.31843 0.594973C2.55822 -0.164877 1.33 -0.164877 0.570155 0.594973C-0.190052 1.35482 -0.190052 2.58339 0.570155 3.34324L12.2516 15.025L0.570155 26.7068C-0.190052 27.4666 -0.190052 28.6952 0.570155 29.455C0.948834 29.8341 1.44674 30.0245 1.94429 30.0245C2.44184 30.0245 2.93939 29.8341 3.31843 29.455L14.9998 17.7733L26.6816 29.455C27.0606 29.8341 27.5582 30.0245 28.0557 30.0245C28.5533 30.0245 29.0508 29.8341 29.4299 29.455C30.1901 28.6952 30.1901 27.4666 29.4299 26.7068L17.7485 15.025Z" />
+        </svg>
+    </button>
+    <div class="flow modal__content">
+        <h3 class="modal__title">
+            Actividades de la Unidad II
+        </h3>
+
+        <!-- Accordion start // -->
+        <div class="accordion accordion--modal flow">
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/activities-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 2.1 Formas indeterminadas </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/act-2.1.pdf" download>
+                                    Actividad de la lección 2.1 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/activities-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 2.2 Integrales impropias </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/act-2.2.pdf" download>
+                                    Actividad de la lección 2.2 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+        </div>
+        <!-- Accordion end // -->
+
+    </div>
+</div>
+<!-- MODAL END //-->
+
+<!-- MODAL START - RESOURCES //-->
+<div class="modal" aria-labelledby="modal-3" role="modal">
+    <button class="modal__button" role="modal-close">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.7485 15.025L29.4299 3.34324C30.1901 2.58339 30.1901 1.35482 29.4299 0.594973C28.67 -0.164877 27.4415 -0.164877 26.6816 0.594973L14.9998 12.2767L3.31843 0.594973C2.55822 -0.164877 1.33 -0.164877 0.570155 0.594973C-0.190052 1.35482 -0.190052 2.58339 0.570155 3.34324L12.2516 15.025L0.570155 26.7068C-0.190052 27.4666 -0.190052 28.6952 0.570155 29.455C0.948834 29.8341 1.44674 30.0245 1.94429 30.0245C2.44184 30.0245 2.93939 29.8341 3.31843 29.455L14.9998 17.7733L26.6816 29.455C27.0606 29.8341 27.5582 30.0245 28.0557 30.0245C28.5533 30.0245 29.0508 29.8341 29.4299 29.455C30.1901 28.6952 30.1901 27.4666 29.4299 26.7068L17.7485 15.025Z" />
+        </svg>
+    </button>
+    <div class="flow modal__content">
+        <h3 class="modal__title">
+            Recursos de la Unidad II
+        </h3>
+
+        <!-- Accordion start // -->
+        <div class="accordion accordion--modal flow">
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/slide-modal.svg"
+                            alt="Diapositivas de la Unidad">
+                        <h2 class="accordion__title"> 2.1 Formas indeterminadas </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/slide-2.1.pdf" download>
+                                    Diapositiva de la lección 2.1 </a>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/slide-modal.svg"
+                            alt="Diapositivas de la Unidad">
+                        <h2 class="accordion__title"> 2.2 Integrales impropias </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/slide-2.2.pdf" download>
+                                    Diapositiva de la lección 2.2 </a>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+        </div>
+        <!-- Accordion end // -->
+
+    </div>
+</div>
+<!-- MODAL END //-->
+
+<!-- ========================= NAVIGATION START// ========================= -->
+<nav class="navigation navigation--blue">
+    <ul class="navigation__list" role="list">
+        <li class="navigation__item">
+            <div class="navigation__logo-box">
+                <img src="https://polilibro-bucket.s3.amazonaws.com/static/images/logo.svg" alt="Cálculo-aplicado" class="navigation__logo">
+                <a class="navigation__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//index.html">Cálculo Aplicado</a>
+            </div>
+        </li>
+
+        <li class="navigation__item">
+            <div class="navigation__button">
+                <span class="navigation__icon">&nbsp;</span>
+            </div>
+        </li>
+    </ul>
+</nav>
+<!-- ========================= NAVIGATION END// ========================= -->
+
+<!-- ========================= NAVIGATION-MOBILE START// ========================= -->
+<nav class="navigation-mobile navigation-mobile--blue">
+    <!-- Accordion-mobile start // -->
+    <div class="accordion accordion--blue">
+
+        
+        <div class="accordion__item">
+            <button class="accordion__button">
+                2.1 Formas indeterminadas
+                <span class="plus left-auto">&#43;</span>
+                <span class="minus left-auto">&#8722;</span>
+            </button>
+            <div class="accordion__content">
+                <ul class="accordion__list" role="list" id="list">
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/formas-indeterminadas-40736/index.html">2.1.1 Introducción</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/regla-de-lhopital-40813/index.html">2.1.2 La regla de L’ Hôpital</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/producto-indeterminado-40842/index.html">2.1.3 Producto indeterminado</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/diferencia-indeterminada-40861/index.html">2.1.4 Diferencia indeterminada</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/potencias-indeterminadas-40874/index.html">2.1.5 Potencias indeterminadas</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+        <div class="accordion__item">
+            <button class="accordion__button">
+                2.2 Integrales impropias
+                <span class="plus left-auto">&#43;</span>
+                <span class="minus left-auto">&#8722;</span>
+            </button>
+            <div class="accordion__content">
+                <ul class="accordion__list" role="list" id="list">
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/integrales-impropias-40892/index.html">2.2.1 Introducción</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/integrales-impropias-con-limites-de-integracion-infinitos-40932/index.html">2.2.2 Integrales impropias con límites...</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/integrales-impropias-con-discontinuidades-infinitas-40978/index.html">2.2.3 Integrales con discontinuidades...</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+
+
+        <div class="accordion__item">
+            <button class="accordion__button">
+                Recursos Unidad II
+                <span class="plus left-auto">&#43;</span>
+                <span class="minus left-auto">&#8722;</span>
+            </button>
+
+            <div class="accordion__content">
+                <ul class="accordion__list" role="list" id="list">
+                    <li>
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/exercises-list.svg"
+                            alt="Listas de ejercicios">
+                        <a class="accordion__link" href="#" id="modal-1" role="modal-button"> Listas de Ejercicios
+                        </a>
+                    </li>
+                    <li>
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/activities.svg" alt="Actividades">
+                        <a class="accordion__link" href="#" id="modal-2" role="modal-button"> Actividades </a>
+                    </li>
+                    <li>
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/assessment.svg" alt="Evaluación">
+                        
+                        <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/exams/exam-2.pdf" download>Evaluación</a>
+                        
+                    </li>
+                    <li>
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/resources.svg"
+                            alt="Recursos digitales">
+                        <a class="accordion__link" href="#" id="modal-3" role="modal-button"> Recursos </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accordion-mobile end // -->
+</nav>
+<!-- ========================= NAVIGATION-MOBILE END// ========================= -->
+
+
+<!-- ========================= MAIN START// ========================= -->
+<main class="unit-container">
+    <button class="sidebar__button sidebar__button-open" id="open-button">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M20 0C8.97164 0 0 8.97164 0 20C0 31.0284 8.97164 40 20 40C31.0284 40 40 31.0284 40 20C40 8.97164 31.0284 0 20 0ZM24.5116 27.155C25.1633 27.8066 25.1633 28.86 24.5116 29.5116C24.1866 29.8366 23.76 30 23.3333 30C22.9066 30 22.4799 29.8366 22.1549 29.5116L13.8216 21.1784C13.17 20.5267 13.17 19.4734 13.8216 18.8217L22.155 10.4884C22.8066 9.83672 23.86 9.83672 24.5116 10.4884C25.1633 11.14 25.1633 12.1934 24.5116 12.845L17.3566 20L24.5116 27.155Z" />
+        </svg>
+    </button>
+    <!-- ========================= SECTION CONTENT START// ========================= -->
+    <section class="unit-section flow">
+        <h3 class="heading-tertiary heading-tertiary--blue">2.1 Formas indeterminadas</h3>
+
+<h4 class="heading-quaternary heading-quaternary--blue">2.1.2 Cocientes indeterminados \( (\frac{0}{0}, \frac{\infty}{\infty} )\) y la Regla de L&#39;H&ocirc;pital</h4>
+
+<p class="text equation-justify">En el estudio del c&aacute;lculo con frecuencia aparecen l&iacute;mites de la forma donde ambas funciones \(f(x)\) y \(g(x)\) tienen l&iacute;mite \(0\) cuando \(x\) tiende a \(c\). En consecuencia, se dice que \(\frac{f(x)}{g(x)}\) tienen la forma indeterminada \(\frac{0}{0}\) en \(x=c\). Por otro lado, si los l&iacute;mites de \(f(x)\) y \(g(x)\) son \(\infty\) o bien \(-\infty\) cuando \(x\) tiende a \(c\), se dice \(\frac{f(x)}{g(x)}\) tiene la forma indeterminada \(\frac{\infty}{\infty}\) en \(x=c\).</p>
+
+<p class="text">Los cocientes indeterminados se tienen presentes en l&iacute;mites como los siguientes: \[ \lim_{x \to 2} \frac{x^2-4}{3x-6}, \lim_{x \to \infty} \frac{x^4-3x^3+5x^2-3x+8}{(x^2-2)^2}, \lim_{x \to 0} \frac{3^x-1}{x}, \lim_{x \to 0} \frac{\tan x - x}{x^3}, \lim_{x \to \infty} \frac{e^{x^2}}{x^2} \] De los cuales se obtienen las siguientes formas indeterminadas \[ \frac{0}{0}, \frac{\infty}{\infty}, \frac{0}{0}, \frac{0}{0}, \frac{\infty}{\infty}, \:\: respectivamente. \] En el caso de los dos primeros l&iacute;mites \( \lim\limits_{x \to 2} \frac{x^2-4}{3x-6}, \lim\limits_{x \to \infty} \frac{x^4-3x^3+5x^2-3x+8}{(x^2-2)^2} \) es posible calcularlos usando t&eacute;cnicas algebraicas, pero los l&iacute;mites \( \lim\limits_{x \to 0} \frac{3^x-1}{x}, \lim\limits_{x \to 0} \frac{\tan x - x}{x^3}, \lim\limits_{x \to \infty} \frac{e^{x^2}}{x^2} \) no se pueden determinar usando procedimientos algebraicos, esto es debido a que en ellos combinamos las funciones algebraicas con las funciones transcendentes, por lo que necesitaremos otra t&eacute;cnica para su soluci&oacute;n. Esta otra t&eacute;cnica se denomina Regla de L&#39;H&ocirc;pital, pero para poder llegar a su definici&oacute;n y comprender c&oacute;mo surgi&oacute;, es importante que revisemos primero la <strong>F&oacute;rmula de Cauchy</strong>.</p>
+<!-- Accordion start // -->
+
+<div class="accordion accordion--blue flow">
+<div class="accordion__item"><button class="accordion__button">F&oacute;rmula de Cauchy <span class="plus left-auto">+</span> <span class="minus left-auto">&minus;</span></button>
+
+<div class="accordion__content equation-center">
+<p class="accordion__text">Si las funciones \(f\) y \(g\) son continuas en el intervalo cerrado \([a, b]\) y derivables en el intervalo abierto \((a, b)\) y si \(g&#39;(x) \neq 0 \: \forall x\) en \((a, b)\), entonces existe un n&uacute;mero \(w\) en \((a, b)\) tal que: \begin{equation} \frac{f(b)-f(a)}{g(b)-g(a)} = \frac{f&#39;(w)}{g&#39;(w)} \end{equation}</p>
+</div>
+</div>
+</div>
+<!-- Accordion end // -->
+
+<p class="text"><strong>Demostraci&oacute;n.</strong> La primer condici&oacute;n que se debe cumplir es que \(g(b)-g(a) \neq 0\), ya que de acuerdo al <strong>Teorema de Rolle </strong> si una funci&oacute;n \(f\) es continua en el intervalo cerrado \([a, b]\), derivable en el intervalo abierto \((a, b)\) y \(f(a)=f(b)\), entonces existe al menos un n&uacute;mero \(c\) en \((a, b)\) tal que \(f&#39;(c)=0\). Por lo que si existe un n&uacute;mero \(c\) en \((a, b)\) tal que \(g&#39;(c)=0\), entonces se contradice la hip&oacute;tesis sobre \(g&#39;(x)\).</p>
+
+<p class="text">Sea \(h\) una nueva funci&oacute;n definida de la siguiente manera: \[ h(x)=[f(b)-f(a)]g(x)-[g(b)-g(a)]f(x) \:\: \forall x \:\:en\:\: [a, b] \] \begin{array}{rcl} h(a)&amp;=&amp;[f(b)g(a)-f(a)g(a)]-[g(b)f(a)-g(a)f(a)]\\ h(a)&amp;=&amp;[f(b)g(a)-g(b)f(a)] \end{array} \begin{array}{rcl} h(b)&amp;=&amp;[f(b)g(b)-f(a)g(b)]-[g(b)f(b)-g(a)f(b)] \\ h(b)&amp;=&amp;[g(a)f(b)-f(a)g(b)] \end{array} Por lo tanto, se tiene que \(h(a)=h(b)\).</p>
+
+<p class="text">Dado que \(f\) y \(g\) son continuas en \([a, b]\) y derivables en \((a, b)\), se deduce que \(h\) es continua en \([a, b]\), derivable en \((a, b)\) y por el Teorema de Rolle existe un n&uacute;mero \(w\) en \((a, b)\) tal que \(h&#39;(w) = 0\), es decir: \[ h&#39;(w)=[f(b)-f(a)]g&#39;(w)-[g(b)-g(a)]f&#39;(w)=0 \] En consecuencia tenemos que: \[ \frac{f(b)-f(a)}{g(b)-g(a)} = \frac{f&#39;(w)}{g&#39;(w)} \] Para el caso particular en el que \(g(x)=x\) se tiene que: \[ \frac{f(b)-f(a)}{b-a} = \frac{f&#39;(w)}{1} \] Realizando un despeje nos damos cuenta que obtenemos el Teorema del Valor Medio: \[ f(b)-f(a) = f&#39;(w)(b-a) \] <strong>Lo anterior demuestra que la f&oacute;rmula de Cauchy es una generalizaci&oacute;n del Teorema del Valor Medio</strong></p>
+
+<p class="text">Como ya vimos anteriormente es posible eliminar la indeterminaci&oacute;n de un l&iacute;mite utilizando alguna t&eacute;cnica algebraica, pero ahora introduciremos la Regla de L&#39;H&ocirc;pital.</p>
+<!-- Accordion start // -->
+
+<div class="accordion accordion--blue flow">
+<div class="accordion__item"><button class="accordion__button">Regla de L&#39;H&ocirc;pital <span class="plus left-auto">+</span> <span class="minus left-auto">&minus;</span></button>
+
+<div class="accordion__content equation-center">
+<p class="accordion__text">Sea \((a, b)\) un intervalo abierto que contiene a \(c\) y sean \(f\) y \(g\) funciones definidas y derivables en \((a, b)\), excepto posiblemente en \(c\). Si \(g&#39;(x) \neq 0\) para \(x \neq 0\) y sup&oacute;ngase que: \[ \lim_{ x \to c } f(x) = 0 \:\:y\:\: \lim_{ x \to c } g(x) = 0 \] O que: \[ \lim_{ x \to c } f(x) = \pm\infty \:\:y\:\: \lim_{ x \to c } g(x) = \pm\infty \] En ambos casos tenemos que: \[ \lim_{ x \to c } \frac{f(x)}{g(x)} = \frac{0}{0} \:\:o\:bien\:\: \lim_{ x \to c } \frac{f(x)}{g(x)} = \pm \frac{\infty}{\infty} \] Por lo tanto: \[ \lim_{ x \to c } \frac{f(x)}{g(x)} = \lim_{ x \to c } \frac{f&#39;(x)}{g&#39;(x)} \] Siempre que \( \lim\limits_{ x \to c } \frac{f&#39;(x)}{g&#39;(x)} \) exista o en su caso \(\lim\limits_{x \to c } \frac{f&#39;(x)}{g&#39;(x)} = \infty\)</p>
+</div>
+</div>
+</div>
+<!-- Accordion end // -->
+
+<p class="text"><strong>Demostraci&oacute;n.</strong> Supongamos que \(\lim\limits_{x \to c} \frac{f(x)}{g(x)} = \frac{0}{0} \) y que \(\lim\limits_{x \to c} \frac{f&#39;(x)}{g&#39;(x)} = L \) para un n&uacute;mero real \(L\). Se quiere demostrar que: \begin{equation} \lim_{x \to c} \frac{f(x)}{g(x)} = L \end{equation}</p>
+
+<p class="text">Sean \(F\) y \(G\) tales que: \[ F(x) = f(x) \:\: si \:\: x \neq c \:\:y\:\: F(c)=0 \] \[ G(x) = g(x) \:\: si \:\: x \neq c \:\:y\:\: G(c)=0 \] Como \(\lim\limits_{x \to c} F(x) = \lim\limits_{x \to c} f(x) = 0 = F(c)\) la funci&oacute;n \(F\) es continua en \(c\) y por lo tanto es continua en todo el intervalo \((a, b)\); adem&aacute;s \(F&#39;(x) = f&#39;(x)\) y \(G&#39;(x) = g&#39;(x)\) siempre que \(x \neq c\).</p>
+
+<p class="text">Aplicando la f&oacute;rmula de Cauchy a los intervalos \([c,x]\) o \([x,c]\) resulta que existe un n&uacute;mero \(w\) entre \(c\) y \(x\) tal que: \[ \frac{F(x)-F(c)}{G(x)-G(c)} = \frac{F&#39;(w)}{G&#39;(w)} = \frac{f&#39;(w)}{g&#39;(w)} \] Aprovechando el hecho de que \(F(x)=f(x), G(x)=g(x) \:\:y\:\: F(c)=G(c)=0\), se tiene que: \[ \frac{f(x)}{g(x)} = \frac{f&#39;(w)}{g&#39;(w)} \] Y como \(w\) se encuentra entre \(c\) y \(x\) resulta que: \[ \lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f&#39;(w)}{g&#39;(w)} = L \]</p>
+
+<h4 class="heading-normal heading-normal--blue">Ejemplo 1. Determinar el valor del l&iacute;mite si es que existe.</h4>
+
+<p class="text">\[ \lim_{x \to 2} \frac{x^2-4}{3x-6} \] Al evaluar el l&iacute;mite vemos que obtenems una forma indeterminada. \[ \lim_{x \to 2} \frac{x^2-4}{3x-6} = \frac{0}{0} \] Veamos si podemos calcular el valor del l&iacute;mite usando t&eacute;cnicas algebraicas: \[ \lim_{x \to 2} \frac{x^2-4}{3x-6} = \lim_{x \to 2} \frac{(x-2)(x+2)}{3(x-2)} = \lim_{x \to 2} \frac{x+2}{3} = \frac{4}{3} \] Asimismo, verifiquemos el resultado utilizando la regla de L&#39;H&ocirc;pital: \[ \lim_{x \to 2} \frac{x^2-4}{3x-6} = \lim_{x \to 2} \frac{2x}{3} = \frac{4}{3} \] Como podemos observar, utilizando t&eacute;cnicas algebraicas o la regla de L&#39;H&ocirc;pital obtenemos el mismo resultado.</p>
+
+<h4 class="heading-normal heading-normal--blue">Ejemplo 2. Determinar el valor del l&iacute;mite si es que existe.</h4>
+
+<p class="text">\[ \lim_{x \to \infty} \frac{x^4-3x^3+5x^2-3x+8}{(x^2-2)^2} \] Al evaluar el l&iacute;mite se tiene una forma indeterminada: \[ \lim_{x \to \infty} \frac{x^4-3x^3+5x^2-3x+8}{(x^2-2)^2} = \frac{\infty}{\infty} \] Resolviendo algebraicamente tenemos lo siguiente: \[ \lim_{x \to \infty} \frac{x^4-3x^3+5x^2-3x+8}{(x^2-2)^2} = \lim_{x \to \infty} \frac{\frac{x^4-3x^3+5x^2-3x+8}{x^4}}{\frac{(x^2-2)^2}{x^4}} \] \[ \Rightarrow \lim_{x \to \infty} \frac{1-\frac{3}{x}+\frac{5}{x^2}-\frac{3}{x^3}+\frac{8}{x^4}}{\left( 1 - \frac{2}{x^2} \right)^2} = \lim_{x \to \infty} \frac{1-\frac{3}{x}+\frac{5}{x^2}-\frac{3}{x^3}+\frac{8}{x^4}}{\left( 1 - \frac{2}{x^2} \right)^2} \] \[ \Rightarrow \frac{1-\frac{3}{\infty}+\frac{5}{\infty^2}-\frac{3}{\infty^3}+\frac{8}{\infty^4}}{\left( 1 - \frac{2}{\infty^2} \right)^2} = 1 \] Utilizando la regla de L&#39;H&ocirc;pital tenemos: \[ \lim_{x \to \infty} \frac{x^4-3x^3+5x^2-3x+8}{(x^2-2)^2} \] \[ \Rightarrow \lim_{x \to \infty} \frac{4x^3-9x^2+10x-3}{2(x^2-2)2x} \] \[ \Rightarrow \lim_{x \to \infty} \frac{4x^3-9x^2+10x-3}{4x(x^2-2)} \] Al evaluar el l&iacute;mite despu&eacute;s de aplicar la regla de L&#39;H&ocirc;pital vemos que a&uacute;n obtenemos una indeterminaci&oacute;n: \[ \lim_{x \to \infty} \frac{4x^3-9x^2+10x-3}{4x(x^2-2)} = \frac{\infty}{\infty} \] Apliquemos nuevamente la regla de L&#39;H&ocirc;pital: \[ \lim_{x \to \infty} \frac{4x^3-9x^2+10x-3}{4x^3-8x} = \lim_{x \to \infty} \frac{12x^2-18x+10}{12x^2-8} = \frac{\infty}{\infty} \] Tal y como podemos observar a&uacute;n seguimos teniendo una indeterminaci&oacute;n, por lo que volveremos a aplicar la regla de L&#39;H&ocirc;pital: \[ \lim_{x \to \infty} \frac{12x^2-18x+10}{12x^2-8} = \lim_{x \to \infty} \frac{24x-18}{24x} = \frac{\infty}{\infty} \] El resultado obtenido a&uacute;n es una indeterminaci&oacute;n, por lo que podemos tratar de aplicar la regla de L&#39;H&ocirc;pital una vez m&aacute;s: \[ \lim_{x \to \infty} \frac{24x-18}{24x} = \lim_{x \to \infty} \frac{24}{24} = 1 \] Por lo tanto: \[ \lim_{x \to \infty} \frac{x^4-3x^3+5x^2-3x+8}{(x^2-2)^2} = 1 \] Como pudimos observar, no siempre usar la regla de L&rsquo;H&ocirc;pital nos da el procedimiento m&aacute;s directo para determinar el valor del l&iacute;mite de una funci&oacute;n. Pero cuando se trata de una funci&oacute;n trascendente o una compuesta por funciones transcendentes y algebraicas, no es posible resolverlo con t&eacute;cnicas algebraicas, por lo que es imprescindible usar la regla de L&#39;H&ocirc;pital.</p>
+
+<h4 class="heading-normal heading-normal--blue">Ejemplo 3. Calcular el l&iacute;mite de la siguiente funci&oacute;n.</h4>
+
+<p class="text">\[ y = \lim_{x \to 0} \frac{e^x-1}{x} \] Al evaluar el l&iacute;mite se tiene una forma indeterminada: \[ \lim_{x \to 0} \frac{e^x-1}{x} = \frac{e^0-1}{0} = \frac{0}{0} \] Por lo que procederemos a aplicar la regla de L&#39;H&ocirc;pital (derivando el numerador y el denominador): \[ \lim_{x \to 0} \frac{e^x-1}{x} = \lim_{x \to 0} \frac{e^x}{1} = \frac{e^0}{1} = \frac{1}{1} = 1 \] Como se puede observar en la gr&aacute;fica cuando \(x\) se acerca a cero, por la derecha o por la izquierda, la funci&oacute;n se aproxima \(1\).</p>
+
+<figure class="figure"><img alt="gráfica-de-fx" class="figure__img" src="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//media/uploads/2021/09/09/picture-4_NxQm1ns.png" />
+<figcaption class="figure__caption">Figura 4. Gr&aacute;fica de la funci&oacute;n \( y = \frac{e^x-1}{x}\).</figcaption>
+</figure>
+
+<h4 class="heading-normal heading-normal--blue">Ejemplo 4. Calcular el l&iacute;mite de la siguiente funci&oacute;n.</h4>
+
+<p class="text">\[ y = \lim_{x \to 1} \frac{x^3-3x+2}{1-x+\ln(x)} \] Al evaluar el l&iacute;mite se tiene una indeterminaci&oacute;n de cociente, por lo que procederemos a aplicar la regla de L&#39;H&ocirc;pital. <strong>La regla de L&rsquo;H&ocirc;pital se puede aplicar sucesivamente siempre y cuando se trate de cocientes indeterminados </strong> \[ \lim_{x \to 1} \frac{x^3-3x+2}{1-x+\ln(x)} = \lim_{x \to 1} \frac{3x^2-3}{-1+\frac{1}{x}} \] Aplicando el valor al cual tiende \(x\) en el l&iacute;mite, vemos que obtenemos nuevamente una indeterminaci&oacute;n de cocientes: \[ \lim_{x \to 1} \frac{3x^2-3}{-1+\frac{1}{x}} = \frac{3-3}{0} = \frac{0}{0} \] Como se obtuvo una indeterminaci&oacute;n de cociente, podemos volver a aplicar la Regla de L&#39;H&ocirc;pital \[ \lim_{x \to 1} \frac{3x^2-3}{-1+\frac{1}{x}} = \lim_{x \to 1} \frac{6x}{-\frac{1}{x^2}} \] Se sustituye por \(1\) que es el valor al que tiende \(x\) para as&iacute; obtener el valor del l&iacute;mite: \[ \lim_{x \to 1} \frac{6x}{-\frac{1}{x^2}} = \frac{6}{-1} = -6 \] En la siguiente gr&aacute;fica se observa que cuando \(x\) se aproxima a \(1\) la funci&oacute;n se aproxima a \(-6\).</p>
+
+<figure class="figure"><img alt="gráfica-de-fx" class="figure__img" src="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//media/uploads/2021/09/09/picture-5_PdklgHu.png" />
+<figcaption class="figure__caption">Figura 5. Gr&aacute;fica de la funci&oacute;n \( y = \frac{x^3-3x+2}{1-x+\ln(x)} \).</figcaption>
+</figure>
+
+<h4 class="heading-normal heading-normal--blue">Ejercicios complementarios de la secci&oacute;n.</h4>
+
+<p class="text"><b>1.</b> Determina el l&iacute;mite si es que existe de: \[ \lim_{x \to 1} \frac{x^{a}-ax+a-1}{(x-1)^{2}} \] Evaluando en \(1\) tenemos que: \[ \frac{1^{a}-a(1)+a-1}{(1-1)^{2}} = \frac{1-a+a-1}{(0)^{2}} = \frac{0}{0} \] Vemos que obtenemos una indeterminaci&oacute;n de cociente, por lo que podemos aplicar la regla de L&#39;H&ocirc;pital: \[ \lim_{x \to 1} \frac{ \displaystyle\frac{dy}{dx} \Big(x^{a}-ax+a-1\Big)}{ \displaystyle\frac{dy}{dx} (x-1)^{2}} = \lim_{x \to 1} \frac{ax^{a-1}-a}{2x-2} \] Evaluando en \(1\) tenemos que: \[ \frac{a(1)^{a-1}-a}{2(1)-2} = \frac{a-a}{2-2} = \frac{0}{0} \] Vemos que obtenemos una indeterminaci&oacute;n de cociente, por lo que podemos aplicar la regla de L&#39;H&ocirc;pital nuevamente: \[ \lim_{x \to 1} \frac{ \displaystyle\frac{dy}{dx} \Big(ax^{a-1}-a\Big)}{ \displaystyle\frac{dy}{dx} \Big(2x-2\Big)} = \lim_{x \to 1} \frac{(a^{2}-1)x^{a-2}}{2} \] Evaluando el l&iacute;mite tenemos que: \[ \frac{(a^{2}-1)(1)^{a-2}}{2} = \frac{a^{2}-1}{2} \] Por lo tanto el l&iacute;mite queda como sigue: \[ \lim_{x \to 1} \frac{x^{a}-ax+a-1}{(x-1)^{2}} = \frac{a^{2}-1}{2} \]</p>
+
+<p class="text"><b>2.</b> Determina el l&iacute;mite si es que existe de: \[ \lim_{x \to 0} \frac{\cos{(x)} -1 + \displaystyle\frac{1}{2}x^{2}}{x^{4}} \] Evaluando el l&iacute;mite en cero tenemos que: \[ \frac{\cos{(0)} -1 + \displaystyle\frac{1}{2}(0)^{2}}{(0)^{4}} = \frac{1-1+0}{0} = \frac{0}{0} \] Vemos que obtenemos una indeterminaci&oacute;n de cociente, por lo que podemos aplicar la regla de L&#39;H&ocirc;pital: \[ \lim_{x \to 0} \frac{ \displaystyle\frac{dy}{dx} \left(\cos{(x)} -1 + \displaystyle\frac{1}{2}x^{2}\right)}{\displaystyle\frac{dy}{dx} \Big(x^{4}\Big)} = \lim_{x \to 0} \frac{-\sin{(x)} + \displaystyle\frac{1}{2}(2x)}{4x^{3}} \] Evaluamos nuevamente el l&iacute;mite: \[ \frac{-\sin{(0)} + 0}{4(0)^{3}} = \frac{0}{0} \] Vemos que podemos aplicar L&#39;H&ocirc;pital hasta desaparecer la variable del denominador que causa la indeterminaci&oacute;n: \[ \lim_{x \to 0} \frac{ \displaystyle\frac{dy}{dx} \Big(-\sin{(x)} + x\Big)}{\displaystyle\frac{dy}{dx} \Big(4x^{3}\Big)} = \lim_{x \to 0} \frac{ \displaystyle\frac{dy}{dx} \Big(-\cos{(x)} + 1\Big)}{\displaystyle\frac{dy}{dx} \Big(12x^{2}\Big)} \] \[ = \lim_{x \to 0} \frac{ \displaystyle\frac{dy}{dx} \Big(\sin{(x)} \Big)}{\displaystyle\frac{dy}{dx} \Big(24x\Big)} = \lim_{x \to 0} \frac{\cos{x}}{24} \] Finalmente, evaluando el l&iacute;mite tenemos que: \[ \frac{\cos{0}}{24} = \frac{1}{24} \] Por lo tanto el l&iacute;mite queda como sigue: \[ \lim_{x \to 0} \frac{\cos{(x)} -1 + \displaystyle\frac{1}{2}x^{2}}{x^{4}} = \frac{1}{24} \]</p>
+
+<p class="text"><b>3.</b> Hallar los valores de \(a\) y \(b\) tales que: \[ \lim_{x \to 0} \frac{\sin{(2x)}+ax+bx^{3}}{x^{3}} = 0 \] Evaluando el l&iacute;mite obtenemos lo siguiente: \[ \frac{\sin{(2(0))}+a(0)+b(0)^{3}}{(0)^{3}} = \frac{\sin{(0)}+0+0}{0} = \frac{0}{0} \] Al obtener una forma indeterminada de cociente podemos aplicar la regla de L&#39;H&ocirc;pital: \[ \lim_{x \to 0} \frac{\displaystyle\frac{dy}{dx} \Big(\sin{(2x)}+ax+bx^{3}\Big)}{ \displaystyle\frac{dy}{dx} \Big(x^{3}\Big)} = \lim_{x \to 0} \frac{2\cos{(2x)}+a+3bx^{2}}{3x^{2}} \] Evaluamos el l&iacute;mite: \[ \frac{2\cos{2(0)}+a+3b(0)^{2}}{3(0)^{2}} = \frac{2+a}{0} \] Si \(2+a\) es un n&uacute;mero real \(n\) diferente de cero el l&iacute;mite no existir&iacute;a ya que se tendr&iacute;a \( \displaystyle\frac{n}{0} = \pm\infty \), pero el problema indica que el l&iacute;mite si existe porque vale \(0\), de modo que la &uacute;nica opci&oacute;n para el numerador es que sea cero, esto es: \[ 2 + a = 0 \;luego\; a = -2\] Realizando el cambio vemos que nuevamente obtenemos una forma indeterminada, por lo que volvemos a aplicar la regla de L&#39;H&ocirc;pital y se tiene: \[ \lim_{x \to 0} \frac{\displaystyle\frac{dy}{dx} \Big(2\cos{(2x)}+a+3bx^{2}\Big)}{\displaystyle\frac{dy}{dx}\Big(3x^{2}\Big)} = \lim_{x \to 0} \frac{-4\sin{(2x)} + 6bx}{6x} \] Evaluamos el l&iacute;mite: \[ \frac{-4\sin{2(0)} + 6b(0)}{6(0)} = \frac{0}{0} \] Podemos volver a aplicar la regla de L&#39;H&ocirc;pital: \[ \lim_{x \to 0} \frac{ \displaystyle\frac{dy}{dx}\Big( -4\sin{(2x)} + 6bx \Bigg)}{\displaystyle\frac{dy}{dx}\Big(6x\Big)} = \lim_{x \to 0} \frac{-8\cos{(2x)} + 6b}{6} \] Finalmente, evaluamos el l&iacute;mite: \[ \frac{-8\cos{(2(0))} + 6b}{6} = \frac{-8+6b}{6} \] As&iacute;, tenemos que el valor del l&iacute;mite es \( \displaystyle\frac{-8+6b}{6} \) y que es \(0\), luego: \begin{array} {rcl} \displaystyle\frac{-8+6b}{6} &amp;=&amp; 0 \\ -8+6b &amp;=&amp; 0 \\ 6b &amp;=&amp; 8 \\ b &amp;=&amp; \displaystyle\frac{8}{6} \\ b &amp;=&amp; \displaystyle\frac{4}{3} \end{array} Por lo tanto, los valores de \(a\) y \(b\) para los cuales el l&iacute;mite existe y vale \(0\) son: \[ a = -2 \;\;y\;\; b = \frac{4}{3} \]</p>
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+</main>
+<!-- ========================= MAIN END// ========================= -->
+
+
+
+    <!-- Additional scripts -->
+    
+<script src="https://polilibro-bucket.s3.amazonaws.com/static/js/app.js"></script>
+
+    <script src="https://polilibro-bucket.s3.amazonaws.com/static/js/modal.js"></script>
+</body>
+
+</html>

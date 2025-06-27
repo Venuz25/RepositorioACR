@@ -1,0 +1,999 @@
+
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google AddSense meta tag start -->
+    <meta name="google-adsense-account" content="ca-pub-6185263339178151">
+    <!-- Google AddSense meta tag end -->
+
+    
+<meta name="description" content="Integral definida">
+
+
+    <link rel="stylesheet" href="https://polilibro-bucket.s3.amazonaws.com/static/css/style.css">
+    <link rel="icon" href="https://polilibro-bucket.s3.amazonaws.com/static/images/logo.svg" type="image/png">
+    <title>
+        
+Unidad I | Integral definida
+
+    </title>
+
+    <!-- Google AddSense script start -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6185263339178151"
+     crossorigin="anonymous"></script>
+     <!-- Google AddSense script end -->
+
+    
+<script>
+    MathJax = {
+        svg: { fontCache: 'global' },
+        loader: { load: ['[tex]/mathtools'] },
+        tex: { packages: { '[+]': ['mathtools'] } },
+    };
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+</head>
+
+<body>
+    <!-- Page main content -->
+    
+<!-- ========================= SIDEBAR START// ========================= -->
+<nav class="sidebar sidebar--red active" id="sidebar">
+    <div class="flow sidebar__container">
+        <div class="sidebar__box">
+            <img src="https://polilibro-bucket.s3.amazonaws.com/static/images/logo.svg" alt="Cálculo-aplicado" class="sidebar__logo">
+            <a class="sidebar__title" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//index.html">Unidad I</a>
+        </div>
+
+        
+        <div class="dropdown dropdown--red">
+            <button class="dropdown__button"> 1.1 Área bajo la curva </button>
+            <ul class="dropdown__list" role="list" id="list">
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/area-bajo-la-curva-40276/index.html">1.1.1 Introducción</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/sumas-de-riemann-62347/index.html">1.1.2 Sumas de Riemann</a></li>
+                
+            </ul>
+        </div>
+        
+        <div class="dropdown dropdown--red">
+            <button class="dropdown__button"> 1.2 Integral definida </button>
+            <ul class="dropdown__list" role="list" id="list">
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/integral-definida-62619/index.html">1.2.1 Introducción</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/propiedades-de-la-integral-definida-40389/index.html">1.2.2 Propiedades de la integral definida</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/teorema-fundamental-del-calculo-40410/index.html">1.2.3 Teorema fundamental del cálculo</a></li>
+                
+            </ul>
+        </div>
+        
+        <div class="dropdown dropdown--red">
+            <button class="dropdown__button"> 1.3 Integración numérica </button>
+            <ul class="dropdown__list" role="list" id="list">
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/integracion-numerica-regla-del-trapecio-40472/index.html">1.3.1 Trapecio</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/integracion-numerica-regla-de-simpson-40494/index.html">1.3.2 Simpson</a></li>
+                
+            </ul>
+        </div>
+        
+        <div class="dropdown dropdown--red">
+            <button class="dropdown__button"> 1.4 Aplicaciones integral definida </button>
+            <ul class="dropdown__list" role="list" id="list">
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/aplicaciones-de-la-integral-definida-40529/index.html">1.4.1 Introducción</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/area-entre-curvas-40571/index.html">1.4.2 Área entre curvas</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/volumenes-de-solidos-de-revolucion-discos-arandelas-capas-cilindricas-40638/index.html">1.4.3 Vólumenes de sólidos de revolu...</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/volumenes-por-secciones-transversales-40670/index.html">1.4.4 Vólumenes por secciones trans...</a></li>
+                
+                <li><a href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/longitud-de-arco-y-area-de-superficie-40716/index.html">1.4.5 Longitud de arco y área de su...</a></li>
+                
+            </ul>
+        </div>
+        
+
+    </div>
+
+    <ul class="sidebar__list" role="list">
+        <li>
+            <img class="sidebar__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/exercises-list.svg" alt="Listas de ejercicios">
+            <a class="sidebar__link" id="modal-1" href="#" role="modal-button">Listas de Ejercicios</a>
+        </li>
+        <li>
+            <img class="sidebar__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/activities.svg" alt="Actividades">
+            <a class="sidebar__link" id="modal-2" href="#" role="modal-button">Actividades</a>
+        </li>
+        <li>
+            <img class="sidebar__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/assessment.svg" alt="Evaluación">
+            
+            <a class="sidebar__link" href="https://polilibro-bucket.s3.amazonaws.com/media/exams/exam-1.pdf" download>Evaluación</a>
+            
+        </li>
+        <li>
+            <img class="sidebar__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/resources.svg" alt="Recursos digitales">
+            <a class="sidebar__link" id="modal-3" href="#" role="modal-button">Recursos</a>
+        </li>
+    </ul>
+
+    <button class="sidebar__button sidebar__button-close" id="close-button">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M20 40C31.0284 40 40 31.0284 40 20C40 8.97164 31.0284 0 20 0C8.97164 0 0 8.97164 0 20C0 31.0284 8.97164 40 20 40ZM15.4884 12.845C14.8367 12.1934 14.8367 11.14 15.4884 10.4884C15.8134 10.1634 16.24 10 16.6667 10C17.0934 10 17.5201 10.1634 17.8451 10.4884L26.1784 18.8216C26.83 19.4733 26.83 20.5266 26.1784 21.1783L17.845 29.5116C17.1934 30.1633 16.14 30.1633 15.4884 29.5116C14.8367 28.86 14.8367 27.8066 15.4884 27.155L22.6434 20L15.4884 12.845Z" />
+        </svg>
+    </button>
+
+</nav>
+<!-- ========================= SIDEBAR END// ========================= -->
+
+<!-- MODAL START - EXERCISES LIST //-->
+<div class="modal" aria-labelledby="modal-1" role="modal">
+    <button class="modal__button" role="modal-close">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.7485 15.025L29.4299 3.34324C30.1901 2.58339 30.1901 1.35482 29.4299 0.594973C28.67 -0.164877 27.4415 -0.164877 26.6816 0.594973L14.9998 12.2767L3.31843 0.594973C2.55822 -0.164877 1.33 -0.164877 0.570155 0.594973C-0.190052 1.35482 -0.190052 2.58339 0.570155 3.34324L12.2516 15.025L0.570155 26.7068C-0.190052 27.4666 -0.190052 28.6952 0.570155 29.455C0.948834 29.8341 1.44674 30.0245 1.94429 30.0245C2.44184 30.0245 2.93939 29.8341 3.31843 29.455L14.9998 17.7733L26.6816 29.455C27.0606 29.8341 27.5582 30.0245 28.0557 30.0245C28.5533 30.0245 29.0508 29.8341 29.4299 29.455C30.1901 28.6952 30.1901 27.4666 29.4299 26.7068L17.7485 15.025Z" />
+        </svg>
+    </button>
+    <div class="flow modal__content">
+        <h3 class="modal__title">
+            Listas de Ejercicios de la Unidad I
+        </h3>
+
+        <!-- Accordion start // -->
+        <div class="accordion accordion--modal flow">
+
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/exercises-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 1.1 Área bajo la curva </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/list-1.1.pdf" download>
+                                    Lista de ejercicios de la lección 1.1 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/exercises-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 1.2 Integral definida </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/list-1.2.pdf" download>
+                                    Lista de ejercicios de la lección 1.2 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/exercises-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 1.3 Integración numérica </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/list-1.3.pdf" download>
+                                    Lista de ejercicios de la lección 1.3 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/exercises-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 1.4 Aplicaciones integral definida </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/list-1.4.pdf" download>
+                                    Lista de ejercicios de la lección 1.4 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/list-1.4.3.pdf" download>
+                                    Lista de ejercicios de la lección 1.4.3 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/list-1.4.4.pdf" download>
+                                    Lista de ejercicios de la lección 1.4.4 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/list-1.4.5.pdf" download>
+                                    Lista de ejercicios de la lección 1.4.5 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Accordion end // -->
+
+    </div>
+</div>
+<!-- MODAL END //-->
+
+<!-- MODAL START - ACTIVITIES //-->
+<div class="modal" aria-labelledby="modal-2" role="modal">
+    <button class="modal__button" role="modal-close">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.7485 15.025L29.4299 3.34324C30.1901 2.58339 30.1901 1.35482 29.4299 0.594973C28.67 -0.164877 27.4415 -0.164877 26.6816 0.594973L14.9998 12.2767L3.31843 0.594973C2.55822 -0.164877 1.33 -0.164877 0.570155 0.594973C-0.190052 1.35482 -0.190052 2.58339 0.570155 3.34324L12.2516 15.025L0.570155 26.7068C-0.190052 27.4666 -0.190052 28.6952 0.570155 29.455C0.948834 29.8341 1.44674 30.0245 1.94429 30.0245C2.44184 30.0245 2.93939 29.8341 3.31843 29.455L14.9998 17.7733L26.6816 29.455C27.0606 29.8341 27.5582 30.0245 28.0557 30.0245C28.5533 30.0245 29.0508 29.8341 29.4299 29.455C30.1901 28.6952 30.1901 27.4666 29.4299 26.7068L17.7485 15.025Z" />
+        </svg>
+    </button>
+    <div class="flow modal__content">
+        <h3 class="modal__title">
+            Actividades de la Unidad I
+        </h3>
+
+        <!-- Accordion start // -->
+        <div class="accordion accordion--modal flow">
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/activities-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 1.1 Área bajo la curva </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/act-1.1.pdf" download>
+                                    Actividad de la lección 1.1 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/activities-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 1.2 Integral definida </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/act-1.2.pdf" download>
+                                    Actividad de la lección 1.2 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/activities-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 1.3 Integración numérica </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/act-1.3.pdf" download>
+                                    Actividad de la lección 1.3 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/activities-modal.svg"
+                            alt="Listas de ejercicios">
+                        <h2 class="accordion__title"> 1.4 Aplicaciones integral definida </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/act-1.4.2.pdf" download>
+                                    Actividad de la lección 1.4.2 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/act-1.4.3.pdf" download>
+                                    Actividad de la lección 1.4.3 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/act-1.4.4.pdf" download>
+                                    Actividad de la lección 1.4.4 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/act-1.4.5.1.pdf" download>
+                                    Actividad de la lección 1.4.5.1 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/act-1.4.5.2.pdf" download>
+                                    Actividad de la lección 1.4.5.2 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+        </div>
+        <!-- Accordion end // -->
+
+    </div>
+</div>
+<!-- MODAL END //-->
+
+<!-- MODAL START - RESOURCES //-->
+<div class="modal" aria-labelledby="modal-3" role="modal">
+    <button class="modal__button" role="modal-close">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.7485 15.025L29.4299 3.34324C30.1901 2.58339 30.1901 1.35482 29.4299 0.594973C28.67 -0.164877 27.4415 -0.164877 26.6816 0.594973L14.9998 12.2767L3.31843 0.594973C2.55822 -0.164877 1.33 -0.164877 0.570155 0.594973C-0.190052 1.35482 -0.190052 2.58339 0.570155 3.34324L12.2516 15.025L0.570155 26.7068C-0.190052 27.4666 -0.190052 28.6952 0.570155 29.455C0.948834 29.8341 1.44674 30.0245 1.94429 30.0245C2.44184 30.0245 2.93939 29.8341 3.31843 29.455L14.9998 17.7733L26.6816 29.455C27.0606 29.8341 27.5582 30.0245 28.0557 30.0245C28.5533 30.0245 29.0508 29.8341 29.4299 29.455C30.1901 28.6952 30.1901 27.4666 29.4299 26.7068L17.7485 15.025Z" />
+        </svg>
+    </button>
+    <div class="flow modal__content">
+        <h3 class="modal__title">
+            Recursos de la Unidad I
+        </h3>
+
+        <!-- Accordion start // -->
+        <div class="accordion accordion--modal flow">
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/slide-modal.svg"
+                            alt="Diapositivas de la Unidad">
+                        <h2 class="accordion__title"> 1.1 Área bajo la curva </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/slide-1.1.pdf" download>
+                                    Diapositiva de la lección 1.1 </a>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/slide-modal.svg"
+                            alt="Diapositivas de la Unidad">
+                        <h2 class="accordion__title"> 1.2 Integral definida </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/slide-1.2.pdf" download>
+                                    Diapositiva de la lección 1.2 </a>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/slide-modal.svg"
+                            alt="Diapositivas de la Unidad">
+                        <h2 class="accordion__title"> 1.3 Integración numérica </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/slide-1.3.pdf" download>
+                                    Diapositiva de la lección 1.3 </a>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion__item">
+                <button class="accordion__button">
+                    <div class="accordion__box">
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/slide-modal.svg"
+                            alt="Diapositivas de la Unidad">
+                        <h2 class="accordion__title"> 1.4 Aplicaciones integral definida </h2>
+                    </div>
+                    <span class="plus left-auto">&#43;</span>
+                    <span class="minus left-auto">&#8722;</span>
+                </button>
+                <div class="accordion__content">
+                    <ul class="accordion__list" role="list" id="list">
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/slide-1.4.2.pdf" download>
+                                    Diapositiva de la lección 1.4.2 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/slide-1.4.3.pdf" download>
+                                    Diapositiva de la lección 1.4.3 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/slide-1.4.4.pdf" download>
+                                    Diapositiva de la lección 1.4.4 </a>
+                            </div>
+                        </li>
+                        
+                        
+
+                        
+                        <li>
+                            <div class="accordion__box">
+                                <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/modal-icons/pdf.svg"
+                                    alt="Listas de ejercicios">
+                                <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/files/slide-1.4.5.pdf" download>
+                                    Diapositiva de la lección 1.4.5 </a>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            
+
+        </div>
+        <!-- Accordion end // -->
+
+    </div>
+</div>
+<!-- MODAL END //-->
+
+<!-- ========================= NAVIGATION START// ========================= -->
+<nav class="navigation navigation--red">
+    <ul class="navigation__list" role="list">
+        <li class="navigation__item">
+            <div class="navigation__logo-box">
+                <img src="https://polilibro-bucket.s3.amazonaws.com/static/images/logo.svg" alt="Cálculo-aplicado" class="navigation__logo">
+                <a class="navigation__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//index.html">Cálculo Aplicado</a>
+            </div>
+        </li>
+
+        <li class="navigation__item">
+            <div class="navigation__button">
+                <span class="navigation__icon">&nbsp;</span>
+            </div>
+        </li>
+    </ul>
+</nav>
+<!-- ========================= NAVIGATION END// ========================= -->
+
+<!-- ========================= NAVIGATION-MOBILE START// ========================= -->
+<nav class="navigation-mobile navigation-mobile--red">
+    <!-- Accordion-mobile start // -->
+    <div class="accordion accordion--red">
+
+        
+        <div class="accordion__item">
+            <button class="accordion__button">
+                1.1 Área bajo la curva
+                <span class="plus left-auto">&#43;</span>
+                <span class="minus left-auto">&#8722;</span>
+            </button>
+            <div class="accordion__content">
+                <ul class="accordion__list" role="list" id="list">
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/area-bajo-la-curva-40276/index.html">1.1.1 Introducción</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/sumas-de-riemann-62347/index.html">1.1.2 Sumas de Riemann</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+        <div class="accordion__item">
+            <button class="accordion__button">
+                1.2 Integral definida
+                <span class="plus left-auto">&#43;</span>
+                <span class="minus left-auto">&#8722;</span>
+            </button>
+            <div class="accordion__content">
+                <ul class="accordion__list" role="list" id="list">
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/integral-definida-62619/index.html">1.2.1 Introducción</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/propiedades-de-la-integral-definida-40389/index.html">1.2.2 Propiedades de la integral definida</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/teorema-fundamental-del-calculo-40410/index.html">1.2.3 Teorema fundamental del cálculo</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+        <div class="accordion__item">
+            <button class="accordion__button">
+                1.3 Integración numérica
+                <span class="plus left-auto">&#43;</span>
+                <span class="minus left-auto">&#8722;</span>
+            </button>
+            <div class="accordion__content">
+                <ul class="accordion__list" role="list" id="list">
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/integracion-numerica-regla-del-trapecio-40472/index.html">1.3.1 Trapecio</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/integracion-numerica-regla-de-simpson-40494/index.html">1.3.2 Simpson</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+        <div class="accordion__item">
+            <button class="accordion__button">
+                1.4 Aplicaciones integral definida
+                <span class="plus left-auto">&#43;</span>
+                <span class="minus left-auto">&#8722;</span>
+            </button>
+            <div class="accordion__content">
+                <ul class="accordion__list" role="list" id="list">
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/aplicaciones-de-la-integral-definida-40529/index.html">1.4.1 Introducción</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/area-entre-curvas-40571/index.html">1.4.2 Área entre curvas</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/volumenes-de-solidos-de-revolucion-discos-arandelas-capas-cilindricas-40638/index.html">1.4.3 Vólumenes de sólidos de revolu...</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/volumenes-por-secciones-transversales-40670/index.html">1.4.4 Vólumenes por secciones trans...</a></li>
+                    
+                    <li><a class="accordion__link" href="file:/C:/Users/areli/OneDrive/Documentos/Escuela/Aplicaciones%20para%20Comunicaciones%20en%20Red/RepositorioACR/Practicas/Practica5_WGET/Descargas/polilibrocalculo.com//recurso-digital/seccion/longitud-de-arco-y-area-de-superficie-40716/index.html">1.4.5 Longitud de arco y área de su...</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+
+
+        <div class="accordion__item">
+            <button class="accordion__button">
+                Recursos Unidad I
+                <span class="plus left-auto">&#43;</span>
+                <span class="minus left-auto">&#8722;</span>
+            </button>
+
+            <div class="accordion__content">
+                <ul class="accordion__list" role="list" id="list">
+                    <li>
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/exercises-list.svg"
+                            alt="Listas de ejercicios">
+                        <a class="accordion__link" href="#" id="modal-1" role="modal-button"> Listas de Ejercicios
+                        </a>
+                    </li>
+                    <li>
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/activities.svg" alt="Actividades">
+                        <a class="accordion__link" href="#" id="modal-2" role="modal-button"> Actividades </a>
+                    </li>
+                    <li>
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/assessment.svg" alt="Evaluación">
+                        
+                        <a class="accordion__link" href="https://polilibro-bucket.s3.amazonaws.com/media/exams/exam-1.pdf" download>Evaluación</a>
+                        
+                    </li>
+                    <li>
+                        <img class="accordion__icon" src="https://polilibro-bucket.s3.amazonaws.com/static/images/icons/resources.svg"
+                            alt="Recursos digitales">
+                        <a class="accordion__link" href="#" id="modal-3" role="modal-button"> Recursos </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accordion-mobile end // -->
+</nav>
+<!-- ========================= NAVIGATION-MOBILE END// ========================= -->
+
+
+<!-- ========================= MAIN START// ========================= -->
+<main class="unit-container">
+    <button class="sidebar__button sidebar__button-open" id="open-button">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M20 0C8.97164 0 0 8.97164 0 20C0 31.0284 8.97164 40 20 40C31.0284 40 40 31.0284 40 20C40 8.97164 31.0284 0 20 0ZM24.5116 27.155C25.1633 27.8066 25.1633 28.86 24.5116 29.5116C24.1866 29.8366 23.76 30 23.3333 30C22.9066 30 22.4799 29.8366 22.1549 29.5116L13.8216 21.1784C13.17 20.5267 13.17 19.4734 13.8216 18.8217L22.155 10.4884C22.8066 9.83672 23.86 9.83672 24.5116 10.4884C25.1633 11.14 25.1633 12.1934 24.5116 12.845L17.3566 20L24.5116 27.155Z" />
+        </svg>
+    </button>
+    <!-- ========================= SECTION CONTENT START// ========================= -->
+    <section class="unit-section flow">
+        <h3 class="heading-tertiary heading-tertiary--red">1.2 Integral definida</h3>
+
+<h4 class="heading-quaternary heading-quaternary--red">1.2.1 Introducci&oacute;n</h4>
+
+<p class="text">En la secci&oacute;n anterior calculamos el &aacute;rea de una regi&oacute;n usando aproximaciones con rect&aacute;ngulos inscritos y circunscritos de igual anchura, pero este no es el &uacute;nico m&eacute;todo existente. Tanto el &aacute;rea de una regi&oacute;n \(R\) y la integral definida se calculan usando el mismo procedimiento definido anteriormente, es decir, Sumas de Riemann. Por lo tanto, &iquest;es posible determinar el &aacute;rea bajo la curva con una integral definida?</p>
+<!-- Accordion start // -->
+
+<div class="accordion accordion--red flow">
+<div class="accordion__item"><button class="accordion__button">Definici&oacute;n | Integral definida <span class="plus left-auto">+</span> <span class="minus left-auto">&minus;</span></button>
+
+<div class="accordion__content">
+<p class="accordion__text equation-center">Sea una funci&oacute;n \(f\) definida en un intervalo cerrado \([a,b]\). La integral definida de \(f\) entre \(a\) y \(b\) se denota por \(\int_{a}^{b} f(x) \,dx\) y est&aacute; definida como: \[ \int_{a}^{b} f(x) \,dx = \lim_{n\to\infty}\sum_{i=1}^n f(x_{i})\Delta(x) \] Por lo que si deseamos determinar el valor de una integral definida, se debe de determinar el l&iacute;mite de las Sumas de Riemann.</p>
+</div>
+</div>
+</div>
+<!-- Accordion end // -->
+
+<p class="text"><strong>Teorema</strong> Si \(f\) es una funci&oacute;n integrable y \(f(x)\geq0\) para todo \(x\) en \([a,b]\), entonces el &aacute;rea bajo la gr&aacute;fica de \(f\) entre \(a\) y \(b\) es \(\int_{a}^{b} f(x) \,dx\), esto es: \[ A = \int_{a}^{b} f(x) \,dx \]</p>
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+</main>
+<!-- ========================= MAIN END// ========================= -->
+
+
+
+    <!-- Additional scripts -->
+    
+<script src="https://polilibro-bucket.s3.amazonaws.com/static/js/app.js"></script>
+
+    <script src="https://polilibro-bucket.s3.amazonaws.com/static/js/modal.js"></script>
+</body>
+
+</html>
