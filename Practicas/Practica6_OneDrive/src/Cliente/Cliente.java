@@ -5,6 +5,7 @@ import java.io.*;
 import java.net.*;
 import java.nio.*;
 import java.nio.channels.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.*;
@@ -12,8 +13,8 @@ import java.util.concurrent.*;
 public class Cliente {
     private static final int PUERTO = 1234;
     private static final String HOST = "127.0.0.1";
-    private static final int TIMEOUT = 5000; // 5 segundos
-    private static final int BUFFER_SIZE = 8192; // 8KB
+    private static final int TIMEOUT = 5000;
+    private static final int BUFFER_SIZE = 8192;
     
     private static String carpetaLocal = "";
     private static String carpetaRemota = "";
@@ -21,7 +22,7 @@ public class Cliente {
     private static String rutaActualRemota = "";
     private static final String sep = System.getProperty("file.separator");
 
-    // ---------- Conexión no bloqueante ----------
+    // ---------- Conexión ----------
     
     private static SocketChannel conectar() throws IOException {
         SocketChannel clientChannel = SocketChannel.open();
@@ -31,38 +32,33 @@ public class Cliente {
         if (!clientChannel.finishConnect()) {
             throw new IOException("No se pudo conectar al servidor");
         }
-        
         return clientChannel;
     }
     
     private static void enviarOperacion(SocketChannel channel, int codigo, String... parametros) throws IOException {
         ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
         DataOutputStream dos = new DataOutputStream(byteOut);
-        
         dos.writeInt(codigo);
         for (String param : parametros) {
             dos.writeUTF(param);
         }
-        
+        dos.flush();
+
         ByteBuffer buffer = ByteBuffer.wrap(byteOut.toByteArray());
         while (buffer.hasRemaining()) {
             channel.write(buffer);
         }
     }
+
+    // ---------- Manejo de rutas ----------
     
-    private static DataInputStream recibirRespuesta(SocketChannel channel) throws IOException {
-        ByteBuffer buffer = ByteBuffer.allocate(BUFFER_SIZE);
-        int bytesRead = channel.read(buffer);
-        
-        if (bytesRead == -1) {
-            throw new IOException("El servidor cerró la conexión");
-        }
-        
-        buffer.flip();
-        return new DataInputStream(new ByteArrayInputStream(buffer.array(), 0, bytesRead));
+    public static String getRutaActualLocal() {
+        return rutaActualLocal;
     }
 
-    // ---------- Selección de carpetas ----------
+    public static String getRutaActualRemota() {
+        return rutaActualRemota;
+    }
 
     public static void seleccionarCarpetaLocal() {
         JFileChooser chooser = new JFileChooser();
@@ -70,19 +66,10 @@ public class Cliente {
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
             carpetaLocal = chooser.getSelectedFile().getAbsolutePath();
             rutaActualLocal = carpetaLocal;
-            actualizarVistaLocal();
         }
     }
     
-    public static boolean verificarServidorActivo() {
-        try (SocketChannel channel = conectar()) {
-            return true;
-        } catch (IOException e) {
-            return false;
-        }
-    }
-
-    public static void seleccionarCarpetaRemota() {
+    public static void seleccionarCarpetaRemota(DefaultListModel<String> modeloRemoto) {
         if (!verificarServidorActivo()) {
             JOptionPane.showMessageDialog(null,
                 "El servidor no está disponible",
@@ -96,25 +83,32 @@ public class Cliente {
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
             carpetaRemota = chooser.getSelectedFile().getAbsolutePath();
             rutaActualRemota = carpetaRemota;
-            enviarRutaRemota(rutaActualRemota);
+            enviarRutaRemota(rutaActualRemota, modeloRemoto);
         }
     }
 
-    public static void enviarRutaRemota(String ruta) {
+    private static boolean verificarServidorActivo() {
         try (SocketChannel channel = conectar()) {
-            // Enviar operación
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
+    }
+
+    private static void enviarRutaRemota(String ruta, DefaultListModel<String> modeloRemoto) {
+        try (SocketChannel channel = conectar()) {
             ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
             DataOutputStream dos = new DataOutputStream(byteOut);
-            dos.writeInt(10); // Código para operación de ruta remota
+            dos.writeInt(10);
             dos.writeUTF(ruta);
 
             ByteBuffer buffer = ByteBuffer.wrap(byteOut.toByteArray());
             channel.write(buffer);
 
-            // Recibir confirmación (esperar respuesta completa)
-            ByteBuffer responseBuffer = ByteBuffer.allocate(4); // Tamaño de un int
+            // Esperar confirmación
+            ByteBuffer responseBuffer = ByteBuffer.allocate(4);
             int bytesRead = 0;
-            while (bytesRead < 4) { // Asegurarnos de leer los 4 bytes del int
+            while (bytesRead < 4) {
                 int n = channel.read(responseBuffer);
                 if (n == -1) break;
                 bytesRead += n;
@@ -130,35 +124,27 @@ public class Cliente {
             if (confirmacion != 1) {
                 throw new IOException("El servidor rechazó la operación");
             }
+            
+            actualizarVistaRemota(modeloRemoto);
         } catch (IOException e) {
-            SwingUtilities.invokeLater(() -> {
+            SwingUtilities.invokeLater(() -> 
                 JOptionPane.showMessageDialog(null, 
                     "Error al establecer ruta remota: " + e.getMessage(),
                     "Error de conexión",
-                    JOptionPane.ERROR_MESSAGE);
-            });
-            e.printStackTrace();
+                    JOptionPane.ERROR_MESSAGE));
         }
-
-        // Actualizar vista después de una pequeña pausa para asegurar sincronización
-        try {
-            Thread.sleep(100); // Pequeña pausa
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-        actualizarVistaRemota();
     }
 
-    // ---------- Vistas ----------
-
-    public static void actualizarVistas() {
-        actualizarVistaLocal();
-        actualizarVistaRemota();
+    // ---------- Manejo de vistas ----------
+    
+    public static void actualizarVistas(DefaultListModel<String> modeloLocal, DefaultListModel<String> modeloRemoto) {
+        actualizarVistaLocal(modeloLocal);
+        actualizarVistaRemota(modeloRemoto);
     }
 
-    public static void actualizarVistaLocal() {
+    public static void actualizarVistaLocal(DefaultListModel<String> modeloLocal) {
         SwingUtilities.invokeLater(() -> {
-            DropBox.modeloLocal.clear();
+            modeloLocal.clear();
             if (rutaActualLocal == null || rutaActualLocal.isEmpty()) return;
 
             File f = new File(rutaActualLocal);
@@ -166,25 +152,23 @@ public class Cliente {
             if (archivos != null) {
                 Arrays.sort(archivos);
                 for (File archivo : archivos) {
-                    if (archivo.isDirectory())
-                        DropBox.modeloLocal.addElement("📂 " + archivo.getName());
-                    else
-                        DropBox.modeloLocal.addElement(archivo.getName());
+                    modeloLocal.addElement(archivo.isDirectory() ? 
+                        "📂 " + archivo.getName() : archivo.getName());
                 }
             }
         });
     }
 
-    public static void actualizarVistaRemota() {
+    public static void actualizarVistaRemota(DefaultListModel<String> modeloRemoto) {
         try (SocketChannel channel = conectar()) {
             // Enviar solicitud
             ByteBuffer requestBuffer = ByteBuffer.allocate(4);
-            requestBuffer.putInt(1); // Código para solicitar lista de archivos
+            requestBuffer.putInt(1);
             requestBuffer.flip();
             channel.write(requestBuffer);
 
             // Recibir respuesta
-            ByteBuffer sizeBuffer = ByteBuffer.allocate(4); // Para el tamaño (int)
+            ByteBuffer sizeBuffer = ByteBuffer.allocate(4);
             int bytesRead = 0;
             while (bytesRead < 4) {
                 int n = channel.read(sizeBuffer);
@@ -197,37 +181,35 @@ public class Cliente {
             }
 
             sizeBuffer.flip();
-            int n = sizeBuffer.getInt();
+            int numArchivos = sizeBuffer.getInt();
 
-            // Leer los elementos de la lista
+            // Leer lista de archivos
             List<String> elementos = new ArrayList<>();
             List<Boolean> esCarpetaList = new ArrayList<>();
 
-            for (int i = 0; i < n; i++) {
-                // Leer nombre (UTF)
+            for (int i = 0; i < numArchivos; i++) {
+                // Leer nombre
                 ByteBuffer nameLengthBuffer = ByteBuffer.allocate(2);
                 bytesRead = 0;
                 while (bytesRead < 2) {
-                    int m = channel.read(nameLengthBuffer);
-                    if (m == -1) break;
-                    bytesRead += m;
+                    int n = channel.read(nameLengthBuffer);
+                    if (n == -1) break;
+                    bytesRead += n;
                 }
-
                 nameLengthBuffer.flip();
                 int nameLength = nameLengthBuffer.getShort() & 0xFFFF;
 
                 ByteBuffer nameBuffer = ByteBuffer.allocate(nameLength);
                 bytesRead = 0;
                 while (bytesRead < nameLength) {
-                    int m = channel.read(nameBuffer);
-                    if (m == -1) break;
-                    bytesRead += m;
+                    int n = channel.read(nameBuffer);
+                    if (n == -1) break;
+                    bytesRead += n;
                 }
-
                 nameBuffer.flip();
                 String nombre = new String(nameBuffer.array(), 0, nameLength, "UTF-8");
 
-                // Leer booleano
+                // Leer tipo (archivo/carpeta)
                 ByteBuffer boolBuffer = ByteBuffer.allocate(1);
                 channel.read(boolBuffer);
                 boolBuffer.flip();
@@ -237,63 +219,127 @@ public class Cliente {
                 esCarpetaList.add(esCarpeta);
             }
 
-            // Actualizar la vista en el hilo de Swing
+            // Actualizar vista
             SwingUtilities.invokeLater(() -> {
-                DropBox.modeloRemoto.clear();
+                modeloRemoto.clear();
                 for (int i = 0; i < elementos.size(); i++) {
-                    DropBox.modeloRemoto.addElement(
+                    modeloRemoto.addElement(
                         esCarpetaList.get(i) ? "⇳ " + elementos.get(i) : elementos.get(i)
                     );
                 }
             });
 
         } catch (IOException e) {
-            SwingUtilities.invokeLater(() -> {
+            SwingUtilities.invokeLater(() -> 
                 JOptionPane.showMessageDialog(null, 
                     "Error al actualizar vista remota: " + e.getMessage(),
                     "Error de conexión",
-                    JOptionPane.ERROR_MESSAGE);
-            });
-            e.printStackTrace();
+                    JOptionPane.ERROR_MESSAGE));
         }
     }
 
-    // ---------- Navegación entre carpetas ----------
-
-    public static void entrarSubcarpeta(String nombre, boolean remoto) {
-        if (!nombre.startsWith("📂 ")) return;
-
-        nombre = nombre.replace("📂 ", "");
+    // ---------- Navegación ----------
+    
+    public static void entrarSubcarpeta(String nombre, boolean remoto, 
+                                  DefaultListModel<String> modelo,
+                                  JProgressBar barraProgreso) {
+        if (!nombre.startsWith("📂 ") && !nombre.startsWith("⇳ ")) return;
+        nombre = nombre.replace("📂 ", "").replace("⇳ ", "");
 
         if (remoto) {
             rutaActualRemota += sep + nombre;
-            enviarRutaRemota(rutaActualRemota);
+            enviarRutaRemota(rutaActualRemota, modelo);
         } else {
             rutaActualLocal += sep + nombre;
-            actualizarVistaLocal();
+            actualizarVistaLocal(modelo);
         }
     }
 
-    public static void subirNivel(boolean remoto) {
+    public static void subirNivel(boolean remoto, 
+                                DefaultListModel<String> modelo,
+                                JProgressBar barraProgreso) {
         if (remoto) {
             if (rutaActualRemota.equals(carpetaRemota)) return;
             rutaActualRemota = new File(rutaActualRemota).getParent();
-            enviarRutaRemota(rutaActualRemota);
+            enviarRutaRemota(rutaActualRemota, modelo);
         } else {
             if (rutaActualLocal.equals(carpetaLocal)) return;
             rutaActualLocal = new File(rutaActualLocal).getParent();
-            actualizarVistaLocal();
+            actualizarVistaLocal(modelo);
         }
     }
 
-    // ---------- Transferencias ----------
+    // ---------- Operaciones de archivos ----------
+    
+    public static void transferirArchivos(boolean enRemoto, 
+                                    JList<String> listaOrigen,
+                                    DefaultListModel<String> modeloOrigen,
+                                    DefaultListModel<String> modeloDestino,
+                                    JProgressBar barraProgreso) {
+        int[] indices = listaOrigen.getSelectedIndices();
+        if (indices.length == 0) {
+            JOptionPane.showMessageDialog(null, 
+            "Seleccione archivos para transferir");
+            return;
+        }
 
-    private static void enviarArchivo(File f) throws IOException {
+        new Thread(() -> {
+             try {
+                 if (enRemoto) {
+                    // Subir archivos al servidor
+                    for (int i : indices) {
+                        String nombre = modeloOrigen.getElementAt(i);
+                        File f = new File(rutaActualLocal + sep + nombre.replace("📂 ", ""));
+                        enviarArchivo(f, barraProgreso);
+                    }
+                    actualizarVistaRemota(modeloDestino);
+                } else {
+                    try (SocketChannel channel = conectar()) {
+                        for (int i : indices) {
+                            String nombreOriginal = modeloOrigen.getElementAt(i);
+                            if (nombreOriginal == null) {
+                                throw new IOException("Nombre de archivo es null");
+                            }
+
+                            boolean esCarpeta = nombreOriginal.startsWith("⇳");
+                            String nombre = nombreOriginal.replace("⇳ ", "");
+
+                            if (esCarpeta) {
+                                descargarCarpeta(channel, nombre, barraProgreso);
+                            } else {
+                                descargarArchivo(channel, nombre, barraProgreso);
+                            }
+                        }
+                        actualizarVistaLocal(modeloDestino);
+                    }
+                }
+            } catch (IOException e) {
+                SwingUtilities.invokeLater(() -> {
+                    String mensajeError = "Error al transferir archivos: ";
+                    if (e.getMessage() != null) {
+                        mensajeError += e.getMessage();
+                    } else if (e instanceof EOFException) {
+                        mensajeError += "El servidor cerró la conexión abruptamente";
+                    } else {
+                        mensajeError += "Error desconocido (" + e.getClass().getSimpleName() + ")";
+                    }
+
+                    JOptionPane.showMessageDialog(null, 
+                        mensajeError,
+                        "Error de transferencia",
+                        JOptionPane.ERROR_MESSAGE);
+                });
+                e.printStackTrace();
+            }
+        }).start();
+    }
+
+    private static void enviarArchivo(File f, JProgressBar barraProgreso) throws IOException {
         if (f.isDirectory()) {
             File[] hijos = f.listFiles();
             if (hijos != null) {
                 for (File hijo : hijos) {
-                    enviarArchivo(hijo);
+                    enviarArchivo(hijo, barraProgreso);
                 }
             }
             return;
@@ -307,18 +353,17 @@ public class Cliente {
             // Enviar metadatos
             ByteArrayOutputStream metaOut = new ByteArrayOutputStream();
             DataOutputStream metaDos = new DataOutputStream(metaOut);
-            metaDos.writeInt(0); // Código de operación
+            metaDos.writeInt(0);
             metaDos.writeUTF(rutaRelativa);
             metaDos.writeLong(f.length());
             
             ByteBuffer metaBuffer = ByteBuffer.wrap(metaOut.toByteArray());
             channel.write(metaBuffer);
             
-            // Enviar contenido del archivo
-            long enviados = 0;
+            // Enviar contenido
             byte[] buffer = new byte[BUFFER_SIZE];
             int n;
-            
+            long enviados = 0;
             while ((n = fis.read(buffer)) != -1) {
                 ByteBuffer fileBuffer = ByteBuffer.wrap(buffer, 0, n);
                 while (fileBuffer.hasRemaining()) {
@@ -327,131 +372,91 @@ public class Cliente {
                 
                 enviados += n;
                 int porcentaje = (int) ((enviados * 100) / f.length());
-                SwingUtilities.invokeLater(() -> DropBox.barraProgreso.setValue(porcentaje));
+                SwingUtilities.invokeLater(() -> barraProgreso.setValue(porcentaje));
             }
             
-            SwingUtilities.invokeLater(() -> {
-                DropBox.barraProgreso.setValue(0);
-                System.out.println("Archivo enviado: " + rutaRelativa);
-            });
+            SwingUtilities.invokeLater(() -> barraProgreso.setValue(0));
         }
     }
 
-    public static void transferirArchivos(boolean enRemoto) {
-        if (enRemoto) {
-            int[] indices = DropBox.listaLocal.getSelectedIndices();
-            if (indices.length == 0) {
-                JOptionPane.showMessageDialog(null, "Seleccione archivos locales para transferir.");
-                return;
-            }
+    private static void descargarArchivo(SocketChannel channel, 
+                                    String nombre,
+                                    JProgressBar barraProgreso) throws IOException {
+        try {
+            // 1. Enviar solicitud
+            enviarOperacion(channel, 2, nombre);
 
-            new Thread(() -> {
-                try {
-                    for (int i : indices) {
-                        String nombre = DropBox.modeloLocal.getElementAt(i);
-                        File f = new File(rutaActualLocal + sep + nombre.replace("📂 ", ""));
-                        enviarArchivo(f);
-                    }
-                    actualizarVistaRemota();
-                } catch (IOException e) {
-                    SwingUtilities.invokeLater(() -> 
-                        JOptionPane.showMessageDialog(null, 
-                            "Error al transferir archivos: " + e.getMessage(),
-                            "Error de transferencia",
-                            JOptionPane.ERROR_MESSAGE));
-                    e.printStackTrace();
+            // 2. Esperar respuesta con timeout
+            channel.configureBlocking(true); // Cambiamos a bloqueante para esta operación
+            channel.socket().setSoTimeout(5000); // Timeout de 5 segundos
+
+            // 3. Leer tamaño del nombre del archivo (2 bytes)
+            ByteBuffer nameLengthBuffer = ByteBuffer.allocate(2);
+            int bytesRead = channel.read(nameLengthBuffer);
+            if (bytesRead != 2) {
+                throw new IOException("No se recibió el tamaño del nombre del archivo");
+            }
+            nameLengthBuffer.flip();
+            int nameLength = nameLengthBuffer.getShort() & 0xFFFF;
+
+            // 4. Leer nombre del archivo
+            ByteBuffer nameBuffer = ByteBuffer.allocate(nameLength);
+            bytesRead = channel.read(nameBuffer);
+            if (bytesRead != nameLength) {
+                throw new IOException("No se recibió el nombre completo del archivo");
+            }
+            nameBuffer.flip();
+            String nombreArchivo = StandardCharsets.UTF_8.decode(nameBuffer).toString();
+
+            // 5. Leer tamaño del archivo (8 bytes)
+            ByteBuffer sizeBuffer = ByteBuffer.allocate(8);
+            bytesRead = channel.read(sizeBuffer);
+            if (bytesRead != 8) {
+                throw new IOException("No se recibió el tamaño del archivo");
+            }
+            sizeBuffer.flip();
+            long tam = sizeBuffer.getLong();
+
+            // 6. Crear archivo local
+            File destino = new File(rutaActualLocal + sep + nombreArchivo);
+            destino.getParentFile().mkdirs();
+
+            // 7. Descargar contenido
+            try (FileOutputStream fos = new FileOutputStream(destino)) {
+                byte[] buffer = new byte[BUFFER_SIZE];
+                long recibidos = 0;
+
+                while (recibidos < tam) {
+                    int n = channel.read(ByteBuffer.wrap(buffer));
+                    if (n == -1) break;
+
+                    fos.write(buffer, 0, n);
+                    recibidos += n;
+
+                    int porcentaje = (int) ((recibidos * 100) / tam);
+                    SwingUtilities.invokeLater(() -> barraProgreso.setValue(porcentaje));
                 }
-            }).start();
-
-        } else {
-            int[] indices = DropBox.listaRemota.getSelectedIndices();
-            if (indices.length == 0) {
-                JOptionPane.showMessageDialog(null, "Seleccione archivos remotos para transferir.");
-                return;
             }
 
-            new Thread(() -> {
-                try (SocketChannel channel = conectar()) {
-                    for (int i : indices) {
-                        String nombreOriginal = DropBox.modeloRemoto.getElementAt(i);
-                        boolean esCarpeta = nombreOriginal.startsWith("📂");
-                        String nombre = nombreOriginal.replace("📂 ", "");
-
-                        if (esCarpeta) {
-                            descargarCarpeta(channel, nombre);
-                        } else {
-                            descargarArchivo(channel, nombre);
-                        }
-                    }
-                    actualizarVistaLocal();
-                } catch (IOException e) {
-                    SwingUtilities.invokeLater(() -> 
-                        JOptionPane.showMessageDialog(null, 
-                            "Error al transferir archivos: " + e.getMessage(),
-                            "Error de transferencia",
-                            JOptionPane.ERROR_MESSAGE));
-                    e.printStackTrace();
-                }
-            }).start();
+            SwingUtilities.invokeLater(() -> barraProgreso.setValue(0));
+        } finally {
+            channel.configureBlocking(false); // Volvemos a modo no bloqueante
         }
     }
 
-    private static void descargarArchivo(SocketChannel channel, String nombre) throws IOException {
-        // Enviar solicitud
-        enviarOperacion(channel, 2, nombre);
-        
-        // Recibir respuesta
-        ByteBuffer buffer = ByteBuffer.allocate(BUFFER_SIZE);
-        channel.read(buffer);
-        buffer.flip();
-        
-        DataInputStream dis = new DataInputStream(new ByteArrayInputStream(buffer.array(), 0, buffer.limit()));
-        
-        String nombreArchivo = dis.readUTF();
-        long tam = dis.readLong();
-        File destino = new File(rutaActualLocal + sep + nombreArchivo);
-        destino.getParentFile().mkdirs();
-        
-        try (FileOutputStream fos = new FileOutputStream(destino)) {
-            long recibidos = 0;
-            while (recibidos < tam) {
-                buffer.clear();
-                int n = channel.read(buffer);
-                if (n == -1) break;
-                
-                buffer.flip();
-                byte[] data = new byte[n];
-                buffer.get(data);
-                fos.write(data);
-                
-                recibidos += n;
-                int porcentaje = (int) ((recibidos * 100) / tam);
-                SwingUtilities.invokeLater(() -> DropBox.barraProgreso.setValue(porcentaje));
-            }
-            
-            SwingUtilities.invokeLater(() -> {
-                DropBox.barraProgreso.setValue(0);
-                System.out.println("Archivo recibido: " + nombreArchivo);
-            });
-        }
-    }
-
-    private static void descargarCarpeta(SocketChannel channel, String nombreCarpeta) throws IOException {
-        // Enviar solicitud
+    private static void descargarCarpeta(SocketChannel channel, String nombreCarpeta, JProgressBar barraProgreso) throws IOException {
         enviarOperacion(channel, 11, nombreCarpeta);
         
-        // Recibir respuesta
         ByteBuffer buffer = ByteBuffer.allocate(BUFFER_SIZE);
         channel.read(buffer);
         buffer.flip();
         
         DataInputStream dis = new DataInputStream(new ByteArrayInputStream(buffer.array(), 0, buffer.limit()));
-        
         int cantidad = dis.readInt();
+        
         for (int i = 0; i < cantidad; i++) {
             String rutaRel = dis.readUTF();
             long tam = dis.readLong();
-            
             File destino = new File(rutaActualLocal + sep + rutaRel);
             destino.getParentFile().mkdirs();
             
@@ -469,89 +474,75 @@ public class Cliente {
                     
                     recibidos += n;
                     int porcentaje = (int) ((recibidos * 100) / tam);
-                    SwingUtilities.invokeLater(() -> DropBox.barraProgreso.setValue(porcentaje));
+                    SwingUtilities.invokeLater(() -> barraProgreso.setValue(porcentaje));
                 }
-                
-                System.out.println("Archivo recibido: " + rutaRel);
             }
         }
-        
-        SwingUtilities.invokeLater(() -> DropBox.barraProgreso.setValue(0));
+        SwingUtilities.invokeLater(() -> barraProgreso.setValue(0));
     }
 
     // ---------- Operaciones básicas ----------
-
-    public static void eliminarSeleccionado(boolean remoto) {
-        if (remoto) eliminarRemoto();
-        else eliminarLocal();
-    }
-
-    private static void eliminarRemoto() {
-        int[] indices = DropBox.listaRemota.getSelectedIndices();
+    
+    public static void eliminarSeleccionado(boolean remoto, 
+                                      DefaultListModel<String> modelo,
+                                      JList<String> listaLocal,
+                                      JList<String> listaRemota,
+                                      JProgressBar barraProgreso) {
+        JList<String> lista = remoto ? listaRemota : listaLocal;
+        int[] indices = lista.getSelectedIndices();
         if (indices.length == 0) {
-            JOptionPane.showMessageDialog(null, "Seleccione archivos remotos para eliminar.");
+            JOptionPane.showMessageDialog(null, 
+                "Seleccione archivos para eliminar");
             return;
         }
 
         int confirm = JOptionPane.showConfirmDialog(null,
-                "¿Estás seguro de que deseas eliminar los elementos seleccionados?",
-                "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
+            "¿Estás seguro de que deseas eliminar los elementos seleccionados?",
+            "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
         if (confirm != JOptionPane.YES_OPTION) return;
 
         new Thread(() -> {
-            try (SocketChannel channel = conectar()) {
-                ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
-                DataOutputStream dos = new DataOutputStream(byteOut);
-                
-                dos.writeInt(5); // Código de eliminación
-                dos.writeInt(indices.length);
-                
-                for (int i = 0; i < indices.length; i++) {
-                    String nombre = DropBox.modeloRemoto.getElementAt(indices[i]).replace("📂 ", "");
-                    dos.writeUTF(nombre);
-                    
-                    final int porcentaje = (int) (((i + 1) * 100.0) / indices.length);
-                    SwingUtilities.invokeLater(() -> DropBox.barraProgreso.setValue(porcentaje));
+            try {
+                if (remoto) {
+                    try (SocketChannel channel = conectar()) {
+                        ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
+                        DataOutputStream dos = new DataOutputStream(byteOut);
+                        dos.writeInt(5);
+                        dos.writeInt(indices.length);
+                        
+                        for (int i = 0; i < indices.length; i++) {
+                            String nombre = modelo.getElementAt(indices[i]).replace("📂 ", "");
+                            dos.writeUTF(nombre);
+                            
+                            int porcentaje = (int) (((i + 1) * 100.0) / indices.length);
+                            SwingUtilities.invokeLater(() -> barraProgreso.setValue(porcentaje));
+                        }
+                        
+                        ByteBuffer buffer = ByteBuffer.wrap(byteOut.toByteArray());
+                        channel.write(buffer);
+                    }
+                } else {
+                    for (int i = 0; i < indices.length; i++) {
+                        String nombre = modelo.getElementAt(indices[i]).replace("📂 ", "");
+                        File f = new File(rutaActualLocal + sep + nombre);
+                        eliminarRecursivo(f);
+                        
+                        int porcentaje = (int) (((i + 1) * 100.0) / indices.length);
+                        SwingUtilities.invokeLater(() -> barraProgreso.setValue(porcentaje));
+                    }
                 }
-                
-                ByteBuffer buffer = ByteBuffer.wrap(byteOut.toByteArray());
-                channel.write(buffer);
-                
-                actualizarVistaRemota();
+                if (remoto) {
+                    actualizarVistaRemota(modelo);
+                } else {
+                    actualizarVistaLocal(modelo);
+                }
             } catch (IOException e) {
                 SwingUtilities.invokeLater(() -> 
                     JOptionPane.showMessageDialog(null, 
                         "Error al eliminar archivos: " + e.getMessage(),
-                        "Error de eliminación",
+                        "Error",
                         JOptionPane.ERROR_MESSAGE));
-                e.printStackTrace();
             }
-        }).start();
-    }
-
-    private static void eliminarLocal() {
-        int[] indices = DropBox.listaLocal.getSelectedIndices();
-        if (indices.length == 0) {
-            JOptionPane.showMessageDialog(null, "Seleccione archivos locales para eliminar.");
-            return;
-        }
-
-        int confirm = JOptionPane.showConfirmDialog(null,
-                "¿Estás seguro de que deseas eliminar los elementos seleccionados?",
-                "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
-        if (confirm != JOptionPane.YES_OPTION) return;
-
-        new Thread(() -> {
-            for (int i = 0; i < indices.length; i++) {
-                String nombre = DropBox.modeloLocal.getElementAt(indices[i]).replace("📂 ", "");
-                File f = new File(rutaActualLocal + sep + nombre);
-                
-                final int porcentaje = (int) (((i + 1) * 100.0) / indices.length);
-                SwingUtilities.invokeLater(() -> DropBox.barraProgreso.setValue(porcentaje));
-                
-                eliminarRecursivo(f);
-            }
-            actualizarVistaLocal();
         }).start();
     }
 
@@ -567,111 +558,117 @@ public class Cliente {
         f.delete();
     }
 
-    public static void crearArchivo(boolean remoto) {
+    public static void crearArchivo(boolean remoto, 
+                              DefaultListModel<String> modelo,
+                              JList<String> listaLocal,
+                              JList<String> listaRemota,
+                              JProgressBar barraProgreso) {
         String nombre = JOptionPane.showInputDialog("Nombre del archivo:");
         if (nombre == null || nombre.isEmpty()) return;
 
-        if (remoto) {
-            new Thread(() -> {
-                try (SocketChannel channel = conectar()) {
-                    enviarOperacion(channel, 6, nombre);
-                    SwingUtilities.invokeLater(() -> {
-                        DropBox.barraProgreso.setValue(100);
-                        actualizarVistaRemota();
-                    });
-                } catch (IOException e) {
-                    SwingUtilities.invokeLater(() -> 
-                        JOptionPane.showMessageDialog(null, 
-                            "Error al crear archivo: " + e.getMessage(),
-                            "Error",
-                            JOptionPane.ERROR_MESSAGE));
-                    e.printStackTrace();
-                }
-            }).start();
-        } else {
+        new Thread(() -> {
             try {
-                File f = new File(carpetaLocal + sep + nombre);
-                if (f.createNewFile()) {
-                    SwingUtilities.invokeLater(() -> {
-                        DropBox.barraProgreso.setValue(100);
-                        actualizarVistaLocal();
-                    });
+                if (remoto) {
+                    try (SocketChannel channel = conectar()) {
+                        enviarOperacion(channel, 6, nombre);
+                    }
+                } else {
+                    File f = new File(rutaActualLocal + sep + nombre);
+                    f.createNewFile();
                 }
+                SwingUtilities.invokeLater(() -> {
+                    barraProgreso.setValue(100);
+                    if (remoto) {
+                        actualizarVistaRemota(modelo);
+                    } else {
+                        actualizarVistaLocal(modelo);
+                    }
+                });
             } catch (IOException e) {
-                e.printStackTrace();
+                SwingUtilities.invokeLater(() -> 
+                    JOptionPane.showMessageDialog(null, 
+                        "Error al crear archivo: " + e.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE));
             }
-        }
+        }).start();
     }
 
-    public static void crearCarpeta(boolean remoto) {
+    public static void crearCarpeta(boolean remoto, 
+                              DefaultListModel<String> modelo,
+                              JList<String> listaLocal,
+                              JList<String> listaRemota,
+                              JProgressBar barraProgreso) {
         String nombre = JOptionPane.showInputDialog("Nombre de la carpeta:");
         if (nombre == null || nombre.isEmpty()) return;
 
-        if (remoto) {
-            new Thread(() -> {
-                try (SocketChannel channel = conectar()) {
-                    enviarOperacion(channel, 7, nombre);
-                    SwingUtilities.invokeLater(() -> {
-                        DropBox.barraProgreso.setValue(100);
-                        actualizarVistaRemota();
-                    });
-                } catch (IOException e) {
-                    SwingUtilities.invokeLater(() -> 
-                        JOptionPane.showMessageDialog(null, 
-                            "Error al crear carpeta: " + e.getMessage(),
-                            "Error",
-                            JOptionPane.ERROR_MESSAGE));
-                    e.printStackTrace();
+        new Thread(() -> {
+            try {
+                if (remoto) {
+                    try (SocketChannel channel = conectar()) {
+                        enviarOperacion(channel, 7, nombre);
+                    }
+                } else {
+                    File dir = new File(rutaActualLocal + sep + nombre);
+                    dir.mkdirs();
                 }
-            }).start();
-        } else {
-            File dir = new File(carpetaLocal + sep + nombre);
-            if (dir.mkdirs()) {
                 SwingUtilities.invokeLater(() -> {
-                    DropBox.barraProgreso.setValue(100);
-                    actualizarVistaLocal();
+                    barraProgreso.setValue(100);
+                    if (remoto) {
+                        actualizarVistaRemota(modelo);
+                    } else {
+                        actualizarVistaLocal(modelo);
+                    }
                 });
+            } catch (IOException e) {
+                SwingUtilities.invokeLater(() -> 
+                    JOptionPane.showMessageDialog(null, 
+                        "Error al crear carpeta: " + e.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE));
             }
-        }
+        }).start();
     }
 
-    public static void renombrarSeleccionado(boolean remoto) {
+    public static void renombrarSeleccionado(boolean remoto, 
+                                       DefaultListModel<String> modelo,
+                                       JList<String> listaLocal,
+                                       JList<String> listaRemota,
+                                       JProgressBar barraProgreso) {
         String nuevo = JOptionPane.showInputDialog("Nuevo nombre:");
         if (nuevo == null || nuevo.isEmpty()) return;
 
-        if (remoto) {
-            int i = DropBox.listaRemota.getSelectedIndex();
-            if (i == -1) return;
-            String actual = DropBox.modeloRemoto.getElementAt(i).replace("📂 ", "");
-            
-            new Thread(() -> {
-                try (SocketChannel channel = conectar()) {
-                    enviarOperacion(channel, 8, actual, nuevo);
-                    SwingUtilities.invokeLater(() -> {
-                        DropBox.barraProgreso.setValue(100);
-                        actualizarVistaRemota();
-                    });
-                } catch (IOException e) {
-                    SwingUtilities.invokeLater(() -> 
-                        JOptionPane.showMessageDialog(null, 
-                            "Error al renombrar: " + e.getMessage(),
-                            "Error",
-                            JOptionPane.ERROR_MESSAGE));
-                    e.printStackTrace();
+        JList<String> lista = remoto ? listaRemota : listaLocal;
+        int i = lista.getSelectedIndex();
+        if (i == -1) return;
+        String actual = modelo.getElementAt(i).replace(remoto ? "📂 " : "📂 ", "");
+        
+        new Thread(() -> {
+            try {
+                if (remoto) {
+                    try (SocketChannel channel = conectar()) {
+                        enviarOperacion(channel, 8, actual, nuevo);
+                    }
+                } else {
+                    File oldFile = new File(rutaActualLocal + sep + actual);
+                    File newFile = new File(rutaActualLocal + sep + nuevo);
+                    oldFile.renameTo(newFile);
                 }
-            }).start();
-        } else {
-            int i = DropBox.listaLocal.getSelectedIndex();
-            if (i == -1) return;
-            String actual = DropBox.modeloLocal.getElementAt(i).replace("📂 ", "");
-            File oldFile = new File(carpetaLocal + sep + actual);
-            File newFile = new File(carpetaLocal + sep + nuevo);
-            if (oldFile.renameTo(newFile)) {
                 SwingUtilities.invokeLater(() -> {
-                    DropBox.barraProgreso.setValue(100);
-                    actualizarVistaLocal();
+                    barraProgreso.setValue(100);
+                    if (remoto) {
+                        actualizarVistaRemota(modelo);
+                    } else {
+                        actualizarVistaLocal(modelo);
+                    }
                 });
+            } catch (IOException e) {
+                SwingUtilities.invokeLater(() -> 
+                    JOptionPane.showMessageDialog(null, 
+                        "Error al renombrar: " + e.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE));
             }
-        }
+        }).start();
     }
 }
