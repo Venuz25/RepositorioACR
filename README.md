@@ -4,7 +4,7 @@
       <td style="border: none; vertical-align: middle;"><img src="https://www.escom.ipn.mx/x/ee2021/images/galeriaEE2021/escudo_ESCOM.png" width="200" alt="Logo"></td>
       <td style="border: none; vertical-align: middle; text-align: left;">
         <h1>Aplicaciones para Comunicaciones en Red</h1>
-        <p>Repositorio para la materia de Aplicaciones para Comunicaciones en Red</p>
+        <p>Repositorio para la materia de Aplicaciones para Comunicaciones en Red.</p>
         <p><em>Prof. Moreno Cervantes Axel Ernesto</em></p>
       </td>
     </tr>
